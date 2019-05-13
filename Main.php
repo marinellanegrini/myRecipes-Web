@@ -1,5 +1,5 @@
 <?php
-require_once '/Users/ariannatusi/Works/myRecipesWeb/Classes.php';
+require_once 'Classes.php';
 
 
 $primo= "Primo";
@@ -33,11 +33,9 @@ print($p1->getCognome()."\n");
 print($p1->getUsername()."\n");
 print($p1->getPassword()."\n");
 print($p1->getEmail()."\n");
-echo implode(" ", $p1->getCommenti());
+echo implode(" ", $p1->getCommenti());*/
 
-*/
-
-	/*$nome="carota";
+$nome="carota";
 
 
 
@@ -100,7 +98,7 @@ echo implode(" ", $p1->getCommenti());
 
 	$ricetta->addCommento($comm1);
 
-	print_r($ricettadb->exist(6));*/
+	print_r($ricettadb->exist(6));
 
 	$fr=new FRicetta();
 	

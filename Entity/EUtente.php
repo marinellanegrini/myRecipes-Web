@@ -1,5 +1,5 @@
 <?php
-require_once '/Users/marinellanegrini/Documents/Workspace/myRecipesWeb/Classes.php';
+require_once 'Classes.php';
 
 /**
  * La classe EUtente contiene tutti gli attributi e metodi base riguardanti gli utenti. 

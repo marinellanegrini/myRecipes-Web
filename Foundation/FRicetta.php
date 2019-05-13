@@ -1,5 +1,5 @@
 <?php
-require_once '/Users/marinellanegrini/Documents/Workspace/myRecipesWeb/Classes.php';
+require_once 'Classes.php';
 
 /** 
 * La classe FRicetta gestisce la persistenza di oggetti ERicetta
