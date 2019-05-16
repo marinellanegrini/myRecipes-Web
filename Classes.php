@@ -33,4 +33,6 @@ require_once 'Foundation/FUtente.php';
 
 require_once 'Foundation/FUtPrefRic.php';
 
+require_once 'Foundation/PersistentManager.php';
+
 ?>

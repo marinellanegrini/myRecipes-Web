@@ -1,7 +1,7 @@
 <?php
 require_once 'Classes.php';
 
-
+/*
 $primo= "Primo";
 $v= new ECommento("ciao","2019/09/20","15:02:30",1,2);
 $v->setId(1);
@@ -35,7 +35,7 @@ print($p1->getPassword()."\n");
 print($p1->getEmail()."\n");
 echo implode(" ", $p1->getCommenti());*/
 
-$nome="carota";
+/*$nome="carota";
 
 
 
@@ -96,14 +96,13 @@ $nome="carota";
 
 	$ricetta->addCommento($comm);
 
-	$ricetta->addCommento($comm1);
+	$ricetta->addCommento($comm1);*/
 
-	print_r($ricettadb->exist(6));
+	$pm = PersistentManager::getInstance();
+	$r = $pm->loadById("ricetta", 2);
+	print ($r);
 
-	$fr=new FRicetta();
-	
-	$ricette = $fr->ricercaPerIngrediente(array(7));
-	print_r($ricette);
+
 	
 	
 	
