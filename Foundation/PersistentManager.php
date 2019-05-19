@@ -165,6 +165,137 @@ class PersistentManager {
         return $ret;
     }
 
+     /**
+     * Metodo che effettua delete di un oggetto
+     * @param $id dell'oggetto
+     * @param $nameobj nome dell'oggetto
+     * @return bool esito
+     */
+    public function delete($nameobj,$id){
+    	switch ($nameobj){
+    		case "categoria":
+    			$del= new FCategoria();
+    			$ret= $del->delete($id);
+    			break;
+    		case "cibo":
+    			$del= new FCibo();
+    			$ret= $del->delete($id);
+    			break;
+    		case "commento":
+    			$del= new FCommento();
+    			$ret= $del->delete($id);
+    			break;
+    		case "ingrediente":
+    			$del= new FIngrediente();
+    			$ret= $del->delete($id);
+    			break;
+    		case "ricetta":
+    			$del= new FRicetta();
+    			$ret= $del->delete($id);
+    			break;
+    		case "rictoingr":
+    			$del= new FRictoIngr();
+    			$ret= $del->delete($id);
+    			break;
+    		case "utente":
+    			$del= new FUtente();
+    			$ret= $del->delete($id);
+    			break;
+    		default:
+    			$ret = null;
+    	}
+    	return $ret;
+    }
+
+    /**
+     * @param $idric id della ricetta
+     * @param $idut id dell'utente
+     * @return bool esito
+     */
+    public function deleteUtPrefRic($idric, $idut)
+    {
+    	$del= new FUtPrefRic();
+    	$ret= $del->delete($idric,$idut);
+    	return $ret;
+    }
+
+    /**
+     * @param $id dell'oggetto
+     * @param $nameobj nome dell'oggetto
+     * @return bool esito
+     */
+    public function exist($nameobj,$id)
+    {
+    	switch ($nameobj){
+    		case "categoria":
+    			$del= new FCategoria();
+    			$ret= $del->exist($id);
+    			break;
+    		case "cibo":
+    			$del= new FCibo();
+    			$ret= $del->exist($id);
+    			break;
+    		case "commento":
+    			$del= new FCommento();
+    			$ret= $del->exist($id);
+    			break;
+    		case "ingrediente":
+    			$del= new FIngrediente();
+    			$ret= $del->exist($id);
+    			break;
+    		case "ricetta":
+    			$del= new FRicetta();
+    			$ret= $del->exist($id);
+    			break;
+    		case "rictoingr":
+    			$del= new FRictoIngr();
+    			$ret= $del->exist($id);
+    			break;
+    		case "utente":
+    			$del= new FUtente();
+    			$ret= $del->exist($id);
+    			break;
+    		default:
+    			$ret = null;
+    	}
+    	return $ret;
+    }
+
+    /**
+     * Metodo che effettua la load degli id di una categoria in base al nome
+     * @param $nomi array di nomi di categorie
+     * @return bool esito
+     */
+    public function loadIdCatNam($nomi){
+    	$del= new FCategoria();
+    	$ret= $del->loadIdCatbyName($nomi);
+    	return $ret;
+    }
+
+
+    /**
+     * Metodo che effettua la load di un commento dato l'id della ricetta
+     * @param $id id di ricette
+     * @return bool esito
+     */
+    public function loadCommByRic($id){
+    	$del= new FCommento();
+    	$ret= $del->loadByIdRicetta($id);
+    	return $ret;
+    }
+
+    /**
+     * Metodo che effettua la load di un commento dato l'id dell'utente
+     * @param $id id di ricette
+     * @return bool esito
+     */
+    public function loadCommByIdUt($id){
+    	$del= new FCommento();
+    	$ret= $del->loadByIdUtente($id);
+    	return $ret;
+    }
+
+
 
 
 
