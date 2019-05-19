@@ -70,7 +70,7 @@ class FUtPrefRic
 	}
 
 	/** 
-	* Recupera tutti gli id delle ricette di tuple con un certo id utente
+	* Recupera tutti gli id delle ricette di tuple con un certo id utente (ricette preferite dall'utente)
 	* @param $idr, id dell'utente
 	* @return array di id di ricetta
 	*/
