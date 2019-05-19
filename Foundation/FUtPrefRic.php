@@ -53,7 +53,7 @@ class FUtPrefRic
 	* @return boolean
 	*/
 	public function delete($idric,$idut){
-		$query = "DELETE FROM utprefric(id_ricetta,id_utente) WHERE id_ricetta=$idric AND id_utente=$idut;";
+		$query = "DELETE FROM utprefric WHERE id_ricetta=".$idric." AND id_utente=".$idut.";";
 		try {
 			$this->db->beginTransaction();
 			$stmt = $this->db->prepare($query);
