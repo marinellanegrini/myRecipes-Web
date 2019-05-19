@@ -295,10 +295,93 @@ class PersistentManager {
     	return $ret;
     }
 
+    /**
+     * Metodo che effettua la ricerca di oggetti
+     * @param $nameobj nome dell'oggetto
+     * @param string $val da ricercare
+     * @param $attr attributo su cui ricercare $val
+     * @return oggetti recuperati
+     */
+    public function search($nameobj,$val, $attr){
+        switch ($nameobj){
+            case "cibo":
+                $fcib = new FCibo();
+                $ret = $fcib->search($val,$attr);
+                break;
+            case "commento":
+                $fcom = new FCommento();
+                $ret = $fcom->search($val,$attr);
+                break;
+            case "ricetta":
+                $fr = new FRicetta();
+                $ret = $fr->search($val,$attr);
+                break;
+            case "utente":
+                $fu = new FUtente();
+                $ret = $fu->search($val,$attr);
+                break;
+            default:
+                $ret = null;
+        }
+        return $ret;
+    }
 
 
 
+    /**
+     * Metodo che effettua una load di oggetti dati gli id
+     * @param $nameobjs nome degli oggetti
+     * @param $ids degli oggetti da recuperare
+     * @return tuple
+     *
+     */
+    public function loadAllByIds ($nameobjs, $ids){
+        switch ($nameobjs){
+            case "commento":
+                $fcom = new FCommento();
+                $ret = $fcom->loadAllByIds($ids);
+                break;
+            case "ingrediente":
+                $fi = new FIngrediente();
+                $ret = $fi->loadAllByIds($ids);
+                break;
+            case "ricetta":
+                $fr = new FRicetta();
+                $ret = $fr->loadAllByIds($ids);
+                break;
+            case "utente":
+                $fu = new FUtente();
+                $ret = $fu->loadAllByIds($ids);
+                break;
+            default:
+                $ret = null;
+        }
+        return $ret;
 
+    }
+
+    /**
+     * Metodo che esegue la load di un utente in base all'username
+     * @param $username dell'utente
+     * @return EUtente recuperato
+     */
+    public function loadUtByUsername($username){
+        $ut = new FUtente();
+        $ret = $ut->loadByUsername($username);
+        return $ret;
+    }
+
+
+    /**
+     * Recupera tutti gli id delle ricette con un certo id utente
+     * @param $id, id dell'utente
+     * @return array di id di ricetta
+     */
+    public function loadIdRicettabyIdUtente($id){
+       $upr = new FUtPrefRic();
+       $ret = $upr->loadIdRicbyIdUt($id);
+       return $ret;
+    }
 
 
 }
