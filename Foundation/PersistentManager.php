@@ -19,7 +19,7 @@ class PersistentManager {
 
 
     /**
-     * Metodo che effettua una load dato l'id e l'oggetto da recuperare
+     * Metodo che effettua una load dato l'id e il nome dell'oggetto da recuperare
      * @param $nameobj nome dell'oggetto
      * @param $id dell'oggetto da recuperare
      * @return ECategoria|ECibo|EIngrediente|ERicetta|EUtente|oggetto*
@@ -58,6 +58,38 @@ class PersistentManager {
             case "utprefric":
                 $fupr = new FUtPrefRic();
                 $ret = $fupr->loadById($id);
+                break;
+            default:
+                $ret = null;
+        }
+        return $ret;
+
+    }
+
+    /**
+     * Metodo che effettua una load dato un gruppo di ids e il nome degli oggetti da recuperare
+     * @param $nameobj nome dell'oggetto
+     * @param $id array degli oggetti da recuperare
+     * @return Array di oggetti recuperati
+     *
+     */
+    public function loadAllByIds ($nameobj, $id){
+        switch ($nameobj){
+            case "commento":
+                $fcom = new FCommento();
+                $ret = $fcom->loadAllByIds($id);
+                break;
+            case "ingrediente":
+                $fi = new FIngrediente();
+                $ret = $fi->loadAllByIds($id);
+                break;
+            case "ricetta":
+                $fr = new FRicetta();
+                $ret = $fr->loadAllByIds($id);
+                break;
+            case "utente":
+                $fu = new FUtente();
+                $ret = $fu->loadAllByIds($id);
                 break;
             default:
                 $ret = null;
@@ -327,38 +359,61 @@ class PersistentManager {
     }
 
 
+    /** Metodo che restituisce gli IDs ingrediente noti gli ID dei cibi
+     * @param $ids array di ids cibo
+     * @return array di id ingrediente
+     */
+    public function loadIdIngrByIdCibo($ids){
+        $fingr = new FIngrediente();
+        $ris = $fingr->loadIdIngrbyIdCibo($ids);
+        return $ris;
+    }
 
     /**
-     * Metodo che effettua una load di oggetti dati gli id
-     * @param $nameobjs nome degli oggetti
-     * @param $ids degli oggetti da recuperare
-     * @return tuple
+     * Metodo che permette di effettuare la ricerca per ingrediente
+     * @param $idscibo id dei cibi selezionati dall'utente
+     * @return array di ERicetta recuperate con la ricerca
      *
      */
-    public function loadAllByIds ($nameobjs, $ids){
-        switch ($nameobjs){
-            case "commento":
-                $fcom = new FCommento();
-                $ret = $fcom->loadAllByIds($ids);
-                break;
-            case "ingrediente":
-                $fi = new FIngrediente();
-                $ret = $fi->loadAllByIds($ids);
-                break;
-            case "ricetta":
-                $fr = new FRicetta();
-                $ret = $fr->loadAllByIds($ids);
-                break;
-            case "utente":
-                $fu = new FUtente();
-                $ret = $fu->loadAllByIds($ids);
-                break;
-            default:
-                $ret = null;
-        }
+    public function ricercaTramiteIngrediente($idscibo){
+        $fr = new FRicetta();
+        $ret = $fr->ricercaPerIngrediente($idscibo);
+        return $ret;
+    }
+
+    /**
+     * Metodo che permette di effettuare la ricerca tramite filtri
+     * @param $idcat id della categoria della ricetta da cercare
+     * @param $tprep tempo di preparazione (fino a 60 min l'intero rappresenta il numero di minuti, per tempi maggiori di un'ora il numero è >=61)
+     * @param $diff intero che rappresenta la difficoltà
+     * @return array di ERicetta recuperate con la ricerca
+     *
+     */
+    public function ricercaTramiteFiltri($idcat, $tprep, $diff){
+        $filtri['cat'] = $idcat;
+        $filtri['diff'] = $diff;
+        $filtri['tprep'] = $tprep;
+        $fr = new FRicetta();
+        $ret = $fr->ricercaPerFiltri($filtri);
         return $ret;
 
     }
+
+
+    /**
+     *
+     * Metodo che, dato un id ricetta, recupera gli ids di tutti gli ingredienti che hanno quell'id ricetta
+     * @param $idr idricetta
+     * @return array di id igrediente
+     *
+     */
+    public function loadIdIngrByIdRicetta($idr){
+        $frti = new FRictoIngr();
+        $ret = $frti->loadIdIngrbyIdRic($idr);
+        return $ret;
+    }
+
+    
 
     /**
      * Metodo che esegue la load di un utente in base all'username

@@ -137,7 +137,7 @@ class FRicetta extends FDatabase
 
 	/**
 	* Metodo che permette di effettuare una ricerca di ricette per ingredienti
-	* @param $ids array di ids ingredienti
+	* @param $ids array di ids cibo
 	* @return array di ERicetta 
 	*/
 	public function ricercaPerIngrediente($ids){
