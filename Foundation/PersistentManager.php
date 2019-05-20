@@ -438,7 +438,7 @@ class PersistentManager {
        return $ret;
     }
 
-  
+
 
 
 }
