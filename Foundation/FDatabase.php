@@ -208,6 +208,31 @@ class FDatabase
 	}
 
 
+    /**
+     * Metodo che carica un'intera table dal database
+     * @return tuple recuperate
+     *
+     */
+	public function loadAll(){
+	    $query = "SELECT * FROM ".$this->table.";";
+        try {
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            return $rows;
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+
+    }
+
+
 
 
 }
