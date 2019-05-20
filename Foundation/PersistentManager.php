@@ -443,7 +443,8 @@ class PersistentManager {
      * @return array di oggetti Ecibo
      */
     public function loadAllObjects(){
-        $cib = new ECibo();
+        
+        $cib = new FCibo();
         $ret = $cib->loadAll();
         return $ret;
     }
