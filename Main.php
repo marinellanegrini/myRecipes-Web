@@ -98,11 +98,15 @@ echo implode(" ", $p1->getCommenti());*/
 
 	$ricetta->addCommento($comm1);*/
 
-	$pm = PersistentManager::getInstance();
-	$r = $pm->loadById("ricetta", 2);
-	print ($r);
 
-	$pm->update("ricetta",3,'nome','patatine fritte');
+
+
+
+	$g = new GestioneRicette();
+	$ar= array(7);
+	$ricetta = $g->cercaIngre($ar);
+
+	print_r($ricetta);
 
 
 	

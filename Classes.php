@@ -35,4 +35,7 @@ require_once 'Foundation/FUtPrefRic.php';
 
 require_once 'Foundation/PersistentManager.php';
 
+
+//Inclusioni del package Controller
+require_once 'Controller/GestioneRicette.php';
 ?>
