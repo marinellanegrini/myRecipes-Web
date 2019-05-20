@@ -103,7 +103,8 @@ echo implode(" ", $p1->getCommenti());*/
 
 
 	$g = new GestioneRicette();
-	$ricetta = $g->cercaAv(5,30,2);
+	$ar= array(7);
+	$ricetta = $g->cercaIngre($ar);
 
 	print_r($ricetta);
 
