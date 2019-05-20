@@ -438,7 +438,14 @@ class PersistentManager {
        return $ret;
     }
 
-
-
+    /**
+     * Recupera tutti gli oggetti ECibo dal database
+     * @return array di oggetti Ecibo
+     */
+    public function loadAllObjects(){
+        $cib = new ECibo();
+        $ret = $cib->loadAll();
+        return $ret;
+    }
 
 }
