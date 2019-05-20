@@ -102,10 +102,10 @@ echo implode(" ", $p1->getCommenti());*/
 
 
 
-	$fc = new FCibo();
-	$array = $fc->loadAll();
+	$g = new GestioneRicette();
+	$ricetta = $g->cercaAv(5,30,2);
 
-	print_r($array);
+	print_r($ricetta);
 
 
 	
