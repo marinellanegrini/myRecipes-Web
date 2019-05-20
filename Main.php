@@ -102,6 +102,8 @@ echo implode(" ", $p1->getCommenti());*/
 	$r = $pm->loadById("ricetta", 2);
 	print ($r);
 
+	$pm->update("ricetta",3,'nome','patatine fritte');
+
 
 	
 	
