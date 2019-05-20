@@ -444,7 +444,7 @@ class PersistentManager {
      */
     public function loadAllObjects(){
 
-        $cib = new ECibo();
+        $cib = new FCibo();
         $ret = $cib->loadAll();
         return $ret;
     }
