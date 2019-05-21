@@ -53,8 +53,6 @@ class GestioneRicette {
         $ret = $pm->loadById("ricetta",$id);
         return $ret;
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Metodo che dato l'id restituisce una ricetta
@@ -94,7 +92,6 @@ class GestioneRicette {
     }
 	
 }
->>>>>>> fc38088e8128f5e6e71e2bd919108a981ca1c49c
 
     /**
      * Metodo che permette di rimuovere una ricetta dai preferiti
