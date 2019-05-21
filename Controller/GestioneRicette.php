@@ -55,7 +55,6 @@ class GestioneRicette {
     }
 
     /**
-<<<<<<< HEAD
      * Metodo che dato l'id restituisce una ricetta
      * @param $id identificativo della ricetta
      * @return oggetto ERicetta
@@ -69,8 +68,8 @@ class GestioneRicette {
         $return= $pm->update("ricetta",$idricetta,'nsalvataggi',$n);
         $ut=  $pm->storeUtPrefRic($idricetta, $idutente);
     }
-=======
-     * Metodo che permettte di gestire l'inserimento di un commento dell'utente
+
+     /** Metodo che permettte di gestire l'inserimento di un commento dell'utente
      * @param $idricetta id ricetta commentata
      * @param $testo testo del commento
      * @param $data data di inserimento
@@ -90,7 +89,6 @@ class GestioneRicette {
             //errore nell'inserimento, comunica alla vista di inserire l'esito
             print ("inserimento non corretto");
         }
->>>>>>> e0f28f0ec3877a29674efbdc78506784f584aee9
     }
 	
 }
