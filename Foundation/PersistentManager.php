@@ -151,6 +151,17 @@ class PersistentManager {
     }
 
     /**
+     * @param $idric idricetta
+     * @param $idut id utente
+     * @return bool esito
+     */
+    public function storeUtPrefRic($idric, $idut){
+        $frti = new FUtPrefRic();
+        $ret = $frti->store($idric,$idut);
+        return $ret;
+    }
+
+    /**
      * @param $nameobj nome dell'oggetto
      * @param $id id dell'oggetto
      * @param $attr attributo da aggiornare

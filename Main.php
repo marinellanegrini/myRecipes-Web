@@ -99,22 +99,6 @@ echo implode(" ", $p1->getCommenti());*/
 	$ricetta->addCommento($comm1);
 
 
-
-
-
-	$g = new GestioneRicette();
-	$ar= array(7);
-	$ricetta = $g->cercaIngre($ar);
-
-	print_r($ricetta);
-
-
-g = new GestioneRicette();
-
-$ricetta = $g->selezionaRicetta(1);
-
-print_r($ricetta);
-	
 */
 
 $g = new GestioneRicette();
@@ -122,9 +106,4 @@ $g = new GestioneRicette();
 $g->rimuoviDaPreferiti(1, 1);
 		
 
-	
-
-	
-
-	
 ?>
