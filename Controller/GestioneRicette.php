@@ -53,8 +53,20 @@ class GestioneRicette {
         $ret = $pm->loadById("ricetta",$id);
         return $ret;
     }
-	
+
+    /**
+     * Metodo che permette di rimuovere una ricetta dai preferiti
+     * @param $idricetta identificativo ricetta
+     */
+    public function rimuoviDaPreferiti($idricetta, $idut){
+
+        $pm = PersistentManager::getInstance();
+        $ret1 = $pm->loadById("ricetta",$idricetta);
+        $ret1->decrementaSalvataggi();
+        $n = $ret1->getNsalvataggi();
+        $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
+        $pm->deleteUtPrefRic($idricetta, $idut);
+    }
+
 }
-
-
 ?>
