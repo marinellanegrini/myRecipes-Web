@@ -102,12 +102,7 @@ echo implode(" ", $p1->getCommenti());*/
 
 
 
-	$g = new GestioneRicette();
-	$ricetta = $g->AggiungiaiPreferiti(2,4);
 
-
-
-	
 	
 	
 
