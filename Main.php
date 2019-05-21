@@ -103,10 +103,7 @@ echo implode(" ", $p1->getCommenti());*/
 
 
 	$g = new GestioneRicette();
-	$ar= array(7);
-	$ricetta = $g->cercaIngre($ar);
-
-	print_r($ricetta);
+	$g->aggiungiCommento(2,"ricetta molto bella","2018/05/17","10:00:00",3);
 
 
 	

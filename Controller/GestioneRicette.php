@@ -44,14 +44,37 @@ class GestioneRicette {
     }
 
     /**
-     * Metodo che dato l'id restituisce una ricetta
-     * @param $id identificativo ricetta
+     * Metodo che dato l'id della ricetta selezionata restituisce una ricetta
+     * @param $id identificativo ricetta selezionata dall'utente
      * @return oggetto ERicetta
      */
     public function selezionaRicetta($id){
         $pm = PersistentManager::getInstance();
         $ret = $pm->loadById("ricetta",$id);
         return $ret;
+    }
+
+    /**
+     * Metodo che permettte di gestire l'inserimento di un commento dell'utente
+     * @param $idricetta id ricetta commentata
+     * @param $testo testo del commento
+     * @param $data data di inserimento
+     * @param $ora ora di inserimento
+     * @param $idutente utente che ha inserito il commento
+     *
+     */
+    public function aggiungiCommento($idricetta, $testo, $data, $ora, $idutente){
+        $com = new ECommento($testo, $data, $ora, $idutente, $idricetta );
+        $pm = PersistentManager::getInstance();
+        $id = $pm->store($com);
+        if ($id){
+            //inserimento corretto, comunica alla vista di inserire l'esito
+            print ("inserimento corretto");
+        }
+        else {
+            //errore nell'inserimento, comunica alla vista di inserire l'esito
+            print ("inserimento non corretto");
+        }
     }
 	
 }
