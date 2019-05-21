@@ -53,6 +53,21 @@ class GestioneRicette {
         $ret = $pm->loadById("ricetta",$id);
         return $ret;
     }
+
+    /**
+     * Metodo che dato l'id restituisce una ricetta
+     * @param $id identificativo della ricetta
+     * @return oggetto ERicetta
+     */
+    public function AggiungiaiPreferiti($idricetta, $idutente){
+        $pm = PersistentManager::getInstance();
+        $ret = $pm->loadById("ricetta",$idricetta);
+        
+        $ret->incrementasalvataggi();
+        $n = $ret->getNsalvataggi();
+        $return= $pm->update("ricetta",$idricetta,'nsalvataggi',$n);
+        $ut=  $pm->storeUtPrefRic($idricetta, $idutente);
+    }
 	
 }
 

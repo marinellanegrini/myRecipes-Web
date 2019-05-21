@@ -103,10 +103,8 @@ echo implode(" ", $p1->getCommenti());*/
 
 
 	$g = new GestioneRicette();
-	$ar= array(7);
-	$ricetta = $g->cercaIngre($ar);
+	$ricetta = $g->AggiungiaiPreferiti(2,4);
 
-	print_r($ricetta);
 
 
 	
