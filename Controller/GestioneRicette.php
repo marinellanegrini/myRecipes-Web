@@ -91,7 +91,6 @@ class GestioneRicette {
         }
     }
 
-
     /**
      * Metodo che permette di rimuovere una ricetta dai preferiti
      * @param $idricetta identificativo ricetta
