@@ -90,8 +90,7 @@ class GestioneRicette {
             print ("inserimento non corretto");
         }
     }
-	
-}
+
 
     /**
      * Metodo che permette di rimuovere una ricetta dai preferiti

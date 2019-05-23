@@ -75,8 +75,6 @@ echo implode(" ", $p1->getCommenti());*/
 	//print($ricetta);
 	$p1->addPreferito($ricetta);
 	
-	
-	
 	$ricettadb = new FRicetta();
 	$ricettadb->store($ricetta);
 
@@ -104,6 +102,5 @@ echo implode(" ", $p1->getCommenti());*/
 $g = new GestioneRicette();
 
 $g->rimuoviDaPreferiti(1, 1);
-		
 
 ?>
