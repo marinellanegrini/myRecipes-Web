@@ -1,8 +1,9 @@
 <?php
 require('Smarty/smarty-libs/libs/Smarty.class.php');
-/** class VProfilo gestisce l'input/output che permette all'utente di visualizzare il proprio profilo
+
+/** class VErrore gestisce l'input/output per gli errori
  */
-class VProfilo
+class VErrore
 {
     private $smarty;
 
@@ -15,14 +16,9 @@ class VProfilo
         $this->smarty->setConfigDir('Smarty/smarty-dir/configs');
     }
 
-    /**
-     * Funzione che mostra il profilo dell'utente
-     * @param $utente da mostrare
-     */
-    public function mostraProfilo($utente){
-        //Assegnare a Smarty per mostrare il profilo
+    public function mostraErrore($messaggio){
+        $this->smarty->assign('messaggio',$messaggio);
+        $this->smarty->display('Error.tpl');
     }
 
 }
-
-

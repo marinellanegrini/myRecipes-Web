@@ -47,10 +47,14 @@ class CGestioneUtente
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
-            //login avvenuto con successo, mostrare la pagina precedente
+            //login avvenuto con successo, mostrare l'homepage
+            $viewhome = new VHomepage();
+            $viewhome->mostraHomepage();
+
         }
         else {
-            //username e/o password errati, mostrare errore o nuovamente login
+            $viewerr = new VErrore();
+            $viewerr->mostraErrore("Username e/o password errate");
         }
     }
 

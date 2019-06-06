@@ -35,8 +35,8 @@ class VLogin
      */
     public function mostraFormLogin($ruolo){
 
-        //comunica  a smarty di mostrare la form di login, passando l'informazione sul ruolo
-        // l'href legato al tasto di "entra" è diverso nei due casi:
+        $this->smarty->assign('ruolo', $ruolo);
+        $this->smarty->display("Login.tpl");
 
     }
 

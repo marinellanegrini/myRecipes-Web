@@ -13,26 +13,36 @@ class CFrontController
 
         $path = $_SERVER['REQUEST_URI'];
         $array = explode('/', $path);
-        $controller = $array[2];
-        $controller = "CGestione".$controller;
-        if(class_exists($controller)){
-            $metodo = $array[3];
-            if(method_exists($controller,$metodo)){
-                $c = new $controller();
-                if(isset($array[4])){
-                    $parametro = $array[4];
-                    $c->$metodo($parametro);
+        array_shift($array);
+        $count = count($array);
+        if($array[$count-1]==null){
+            unset($array[$count-1]);
+        }
+        if(count($array)!=1){
+            $controller = $array[1];
+            $controller = "CGestione".$controller;
+            if(class_exists($controller)){
+                $metodo = $array[2];
+                if(method_exists($controller,$metodo)){
+                    $c = new $controller();
+                    if(isset($array[3])){
+                        $parametro = $array[3];
+                        $c->$metodo($parametro);
+                    } else {
+                        $c->$metodo();
+                    }
                 } else {
-                    $c->$metodo();
+                    header('HTTP/1.1 405 Method Not Allowed');
+                    exit;
                 }
-            } else {
-                header('HTTP/1.1 405 Method Not Allowed');
-                exit;
             }
+
         } else {
-            header('HTTP/1.1 404 Not Found');
-            exit;
+            $view = new VHomepage();
+            $view->mostraHomepage();
+
         }
 
-    }
+        }
+
 }

@@ -1,8 +1,9 @@
 <?php
 require('Smarty/smarty-libs/libs/Smarty.class.php');
-/** class VProfilo gestisce l'input/output che permette all'utente di visualizzare il proprio profilo
+
+/** class VHomepage gestisce la prima pagina
  */
-class VProfilo
+class VHomepage
 {
     private $smarty;
 
@@ -15,14 +16,13 @@ class VProfilo
         $this->smarty->setConfigDir('Smarty/smarty-dir/configs');
     }
 
-    /**
-     * Funzione che mostra il profilo dell'utente
-     * @param $utente da mostrare
-     */
-    public function mostraProfilo($utente){
-        //Assegnare a Smarty per mostrare il profilo
+    public function mostraHomepage(){
+        $sessione = Sessione::getInstance();
+        if($sessione->isLoggedUtente()){
+            $this->smarty->display('ListaRicetteUtReg.tpl');
+        } else {
+            $this->smarty->display('ListaRicetteUtNonReg.tpl');
+        }
     }
 
 }
-
-

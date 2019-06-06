@@ -8,7 +8,7 @@
   <title>Lista Ricette</title>
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-light" style="">
@@ -18,7 +18,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <img class="img-fluid d-block w-75" src="../img/logobiancopieno.png">
+          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
         </div>
       </div>
       <div class="container">
@@ -27,7 +27,7 @@
         </button>
         <div class="topnav1 pull-right">
           <a href="#home">Home</a>
-          <a href="#news">Login</a>
+          <a href="/myRecipes-Web/Utente/Login">Login</a>
           <a href="#contact">Login amministratore</a>
           <a href="#contact">Registrazione</a>
         </div>
@@ -84,7 +84,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"> </li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="../img/carbonara.jpg">
+              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/carbonara.jpg">
                 <div class="carousel-caption">
                   <p>Primi piatti</p>
                   <h1>Carbonara</h1>
