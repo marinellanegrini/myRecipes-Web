@@ -7,7 +7,7 @@
   <!-- PAGE settings -->
   <title>Dettaglio Ricetta</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-light" style="">
@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <img class="img-fluid d-block w-75" src="../img/logobiancopieno.png">
+          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
         </div>
       </div>
       <div class="container">

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-light" style="	box-shadow: 0px 0px 4px  black;">
@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <img class="img-fluid d-block w-75" src="../img/logobiancopieno.png ">
+          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">

@@ -2,80 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9ccd244-d919-4f14-a5bc-36322aae1873" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/View/VErrore.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/VHomepage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/64be0573-447d-42e6-b44c-ec92a12658e2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/64be0573-447d-42e6-b44c-ec92a12658e2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eec84d83-1483-46cf-a8ad-d63948c1f6b7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eec84d83-1483-46cf-a8ad-d63948c1f6b7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myRecipes-Web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myRecipes-Web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CFrontController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CFrontController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CGestioneAmministratore.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGestioneAmministratore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CGestioneRicette.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGestioneRicette.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/CGestioneUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/CGestioneUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/.idea/Entity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/.idea/Entity.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entity/EImmagine.php" beforeDir="false" afterPath="$PROJECT_DIR$/Entity/EImmagine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FCategoria.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FCategoria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FCibo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FCibo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FCommento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FCommento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FDatabase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FGalleryRicetta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FGalleryRicetta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FImgCibo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FImgCibo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FImgRicetta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FImgRicetta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FImgUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FImgUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FIngrediente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FIngrediente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FPersistentManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FPersistentManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FRicetta.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRicetta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FRictoIngr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FRictoIngr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtPrefRic.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtPrefRic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foundation/FUtente.php" beforeDir="false" afterPath="$PROJECT_DIR$/Foundation/FUtente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Installation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Installation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sessione.php" beforeDir="false" afterPath="$PROJECT_DIR$/Sessione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/BannaCommento.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/DettaglioRicetta.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Error.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/HomepageAmministratore.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/ListaRicetteUtNonReg.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/ListaRicetteUtReg.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Login.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/ModificaProfilo.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Monitoraggio.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/NuovaRicetta.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/NuovoIngrediente.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Preferiti.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Profilo.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Registrazione.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/Ricerca per Ingredienti.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/RicercaPerFiltri.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/RisultatiRicercaUtNonReg.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/RisultatiRicercaUtReg.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/Templates/css/wireframe.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/img/bacon-cheese-burger.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/img/bacon-cheese-burger.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/img/carbonara.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/img/carbonara.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Smarty/img/logobiancopieno.png" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/img/logobiancopieno.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VCommenti.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VCommenti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VDettaglio.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VDettaglio.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VGestioneAmministratore.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VGestioneAmministratore.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VInserimentoRicetta.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VInserimentoRicetta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VLogin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VPreferiti.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VPreferiti.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VProfilo.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VProfilo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRegistrazione.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRegistrazione.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRicerca.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRicerca.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/VRisultati.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/VRisultati.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autoload.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/autoload.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/link.php" beforeDir="false" afterPath="$PROJECT_DIR$/link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testmain.php" beforeDir="false" afterPath="$PROJECT_DIR$/testmain.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/BannaCommento.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/BannaCommento.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/DettaglioRicetta.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/DettaglioRicetta.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/HomepageAmministratore.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/HomepageAmministratore.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ModificaProfilo.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/ModificaProfilo.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Monitoraggio.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Monitoraggio.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovoIngrediente.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovoIngrediente.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Preferiti.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Preferiti.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Profilo.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Profilo.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Registrazione.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Registrazione.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Ricerca per Ingredienti.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/Ricerca per Ingredienti.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RicercaPerFiltri.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RicercaPerFiltri.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,46 +32,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/CGestioneRicette.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovaRicetta.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-230">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Controller/CGestioneUtente.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="-184">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/VErrore.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Preferiti.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+            <state relative-caret-position="210">
+              <caret line="14" column="147" selection-start-line="14" selection-start-column="147" selection-end-line="14" selection-end-column="147" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Error.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/CFrontController.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Profilo.tpl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <caret line="16" column="147" lean-forward="true" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="147" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Registrazione.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,47 +75,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="118" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="118" />
+            <state relative-caret-position="243">
+              <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/VLogin.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Ricerca per Ingredienti.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="225">
+              <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Login.tpl">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RicercaPerFiltri.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="91" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="91" />
-              <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controller/CGestioneAmministratore.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            <state relative-caret-position="225">
+              <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/View/VHomepage.php">
+        <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="60" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+            <state relative-caret-position="225">
+              <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -203,13 +146,27 @@
         <option value="$PROJECT_DIR$/Main.php" />
         <option value="$PROJECT_DIR$/Controller/GestioneRicette.php" />
         <option value="$PROJECT_DIR$/View/VHomepage.php" />
-        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl" />
         <option value="$PROJECT_DIR$/Controller/CFrontController.php" />
         <option value="$PROJECT_DIR$/View/VLogin.php" />
         <option value="$PROJECT_DIR$/View/VErrore.php" />
         <option value="$PROJECT_DIR$/Controller/CGestioneUtente.php" />
         <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Login.tpl" />
         <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Error.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/BannaCommento.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/HomepageAmministratore.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Monitoraggio.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovoIngrediente.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/DettaglioRicetta.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/ModificaProfilo.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Preferiti.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Profilo.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Registrazione.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/Ricerca per Ingredienti.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/RicercaPerFiltri.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl" />
+        <option value="$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl" />
       </list>
     </option>
   </component>
@@ -234,51 +191,7 @@
             <path>
               <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
               <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
               <item name="Foundation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Smarty" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Smarty" type="462c0819:PsiDirectoryNode" />
-              <item name="smarty-dir" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Smarty" type="462c0819:PsiDirectoryNode" />
-              <item name="smarty-dir" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Smarty" type="462c0819:PsiDirectoryNode" />
-              <item name="smarty-dir" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="Smarty" type="462c0819:PsiDirectoryNode" />
-              <item name="smarty-dir" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myRecipes-Web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myRecipes-Web" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,17 +253,18 @@
       <workItem from="1558604365101" duration="220000" />
       <workItem from="1559830100182" duration="2396000" />
       <workItem from="1559833435417" duration="4206000" />
+      <workItem from="1559838296706" duration="651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10302000" />
+    <option name="totallyTimeSpent" value="10953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25035766" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25444266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -411,24 +325,17 @@
         <state relative-caret-position="-6610" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/CGestioneRicette.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/CFrontController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="118" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/CGestioneAmministratore.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -439,20 +346,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Login.tpl">
+    <entry file="file://$PROJECT_DIR$/Controller/CGestioneAmministratore.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="91" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="91" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Error.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="75">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -463,6 +360,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/CGestioneUtente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/View/VErrore.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -470,17 +374,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/CGestioneRicette.php">
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovoIngrediente.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-230">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="105">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/CGestioneUtente.php">
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/BannaCommento.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="15">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/DettaglioRicetta.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="117" selection-start-line="17" selection-start-column="117" selection-end-line="17" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Error.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/HomepageAmministratore.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Login.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="9" column="91" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ModificaProfilo.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="146" selection-start-line="16" selection-start-column="146" selection-end-line="16" selection-end-column="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Monitoraggio.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/NuovaRicetta.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Preferiti.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="147" selection-start-line="14" selection-start-column="147" selection-end-line="14" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Profilo.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="147" lean-forward="true" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Registrazione.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/Ricerca per Ingredienti.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RicercaPerFiltri.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
         </state>
       </provider>
     </entry>
