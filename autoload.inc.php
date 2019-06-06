@@ -18,6 +18,13 @@ function my_autoloader($class_name) {
     }
 }
 
+function autoloader_session($class_name){
+    if($class_name=="Sessione"){
+        include_once ($class_name.'.php');
+    }
+}
+spl_autoload_register('autoloader_session');
 spl_autoload_register('my_autoloader');
+
 
 ?>

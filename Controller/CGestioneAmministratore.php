@@ -6,11 +6,34 @@
 class CGestioneAmministratore
 {
     /**
-     * Metodo per avviare il login amministratore (mostrare la form di login)
+     * Metodo per avviare il login amministratore
+     * 1) Se la richiesta è GET, mostriamo la form di Login (se l'admin è loggato redirect alla home page)
+     * 2) Se la richiesta è POST richiamiamo il metodo Entra()
      */
     public function Login(){
-        $view = new VLogin();
-        $view->mostraFormLogin("amministratore");
+        $sessione = Sessione::getInstance();
+        if($_SERVER['REQUEST_METHOD']=="GET"){
+
+            if($sessione->isLoggedAdmin()){
+                //redirect alla home page
+            } else {
+                $view = new VLogin();
+                $view->mostraFormLogin("amministratore");
+            }
+        }
+        else if($_SERVER['REQUEST_METHOD']=="POST"){
+            if($sessione->isLoggedAdmin()){
+                //redirect alla home page
+            } else {
+                $this->Entra();
+            }
+
+        }
+        else {
+            header('HTTP/1.1 405 Method Not Allowed');
+            header('Allow: GET, POST');
+        }
+
     }
 
     /**
@@ -55,6 +78,21 @@ class CGestioneAmministratore
         if($session->isLoggedAdmin()){
             $view = new VGestioneAmministratore();
             $view->mostraFormCommenti();
+        } else {
+            //errore admin non loggato redirect form di login amministratore
+        }
+
+    }
+
+    /**
+     * Funzione per avviare l'inserimento di un nuovo cibo (mostrare form per l'inserimento)
+     * solo se l'admin è loggato, altrimenti redirect form di login amministratore
+     */
+    public function InserisciCibo(){
+        $session = Sessione::getInstance();
+        if($session->isLoggedAdmin()){
+            $view = new VGestioneAmministratore();
+            $view->mostraFormCibo();
         } else {
             //errore admin non loggato redirect form di login amministratore
         }
@@ -163,6 +201,36 @@ class CGestioneAmministratore
             header('HTTP/1.1 405 Method Not Allowed');
             header('Allow: POST');
         }
+    }
+
+    /**
+     * Inserimento di un nuovo cibo (solo se admin loggato)
+     */
+    public function Cibo(){
+        if (($_SERVER['REQUEST_METHOD'] == "POST")) {
+            $session = Sessione::getInstance();
+            if ($session->isLoggedAdmin()) {
+                $view = new VGestioneAmministratore();
+                $cibo = $view->recuperaCibo();
+                $ciboobj = new ECibo($cibo['nome']);
+                $ciboobj->setImmagine($cibo['img']); //manca ancora l'id esterno (assegnato nella store di ECibo quando facciamo store dell'immagine)
+                $pm = FPersistentManager::getInstance();
+                $id = $pm->store($ciboobj);
+                if($id){
+                    //inserimento corretto redirect alla home page amministratore
+                }
+                else {
+                    //errore inserimento cibo errata
+                }
+
+            } else {
+                //errore admin non loggato redirect form di login amministratore
+            }
+        } else {
+            header('HTTP/1.1 405 Method Not Allowed');
+            header('Allow: POST');
+        }
+
     }
 
 

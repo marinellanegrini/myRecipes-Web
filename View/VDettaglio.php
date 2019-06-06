@@ -32,10 +32,16 @@ class VDettaglio
         if($session->isLoggedUtente()){
             // la ricetta mostrata avrà il cuore pieno o vuoto a seconda se la ricetta che stiamo mostrando è preferita
             // o no dall'utente (passiamo l'informazione a smarty che fa la if)
+            print ("loggato");
+            print_r($preferita);
+            print_r($ricetta);
 
             //passaggio ricetta a smarty per utente loggato piu informazione se la ricetta è preferita o no
         } else {
             //passaggio ricetta a smarty per utenti non loggati
+            print ("non loggato");
+            print_r($preferita);
+            print_r($ricetta);
         }
     }
 

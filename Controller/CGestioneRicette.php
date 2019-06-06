@@ -89,7 +89,12 @@ class CGestioneRicette {
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
         $session = Sessione::getInstance();
-        $preferita = $pm->UtentePrefRic($id,$session->getUtente()->getId());
+        if($session->isLoggedUtente()){
+            $preferita = $pm->UtentePrefRic($id,$session->getUtente()->getId());
+        } else {
+            $preferita = false;
+        }
+
         $view = new VDettaglio();
         $view->mostraRicetta($ricetta, $preferita);
     }
@@ -128,6 +133,9 @@ class CGestioneRicette {
             $n = $ric->getNsalvataggi();
             $pm->update("ricetta",$idricetta,'nsalvataggi',$n); //aggiornamento ricetta db
             $esito =  $pm->storeUtPrefRic($idricetta, $idutente); //aggiunta di una entry
+            //devo aggiornare l'oggetto utente nei dati di sessione
+            $utente = $pm->loadById("utente", $idutente);
+            $session->setUtenteLoggato($utente);
             if($esito){
                 //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
             }
@@ -155,6 +163,9 @@ class CGestioneRicette {
                 $com = new ECommento($commento['testo'], $commento['data'], $commento['ora'], $idutente, $idricetta);
                 $pm = FPersistentManager::getInstance();
                 $id = $pm->store($com);
+                //devo aggiornare l'oggetto utente nei dati di sessione
+                $utente = $pm->loadById("utente", $idutente);
+                $session->setUtenteLoggato($utente);
                 if($id){
                     //inserimento corretto, redirect a dettaglio ricetta attuale (usiamo il metodo Ricetta di questo controller)
                 } else {
@@ -193,6 +204,9 @@ class CGestioneRicette {
         $n = $ret1->getNsalvataggi();
         $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
         $esito = $pm->deleteUtPrefRic($idricetta, $idutente);
+        //devo aggiornare l'oggetto utente nei dati di sessione
+        $utente = $pm->loadById("utente", $idutente);
+        $session->setUtenteLoggato($utente);
         if($esito){
             //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
         }

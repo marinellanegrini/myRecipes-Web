@@ -12,7 +12,7 @@ class Sessione
      */
     public static function getInstance(){ //restituisce l'unica istanza (creandola se non esiste gia)
         if(static::$instance==null){
-            static::$instance=new FPersistentManager();
+            static::$instance=new Sessione();
         }
         return static::$instance;
     }

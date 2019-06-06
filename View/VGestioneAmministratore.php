@@ -27,6 +27,26 @@ class VGestioneAmministratore
     }
 
     /**
+     * Metodo per recuperare il cibo inserito dall'amministratore
+     * @return $cibo array associtivo
+     */
+    public function recuperaCibo(){
+        $cibo = array();
+        if(isset($_POST['nome'])){
+            $cibo['nome'] = $_POST['nome'];
+        }
+        if(isset($_FILES['imgcibo'])){
+            $fotocibo = $_FILES['imgcibo']['tmp_name'];
+            $typefotoc = $_FILES['imgcibo']['type'];
+            $fotoobj = new EImmagine($fotocibo, $typefotoc);
+            $cibo['img'] = $fotoobj;
+        }
+        return $cibo;
+
+
+    }
+
+    /**
      * Funzione per mostrare la form di inserimento di una ricetta
      */
     public function mostraFormInserimento($ningredienti){
@@ -39,7 +59,14 @@ class VGestioneAmministratore
      * Funzione per mostrare la form di inserimento di filtri per la ricerca di commenti
      */
     public function mostraFormCommenti(){
-        //assegnazione a smarty per mostrare i filtri per la ricerca commenti (if per controllare se l'admin è loggato)
+        //assegnazione a smarty per mostrare i filtri per la ricerca commenti
 
+    }
+
+    /**
+     * Funzione per mostrare la form di inserimento di un nuovo cibo
+     */
+    public function mostraFormCibo(){
+        //assegnazione a smarty per mostrare la form di inserimento di un nuovo cibo
     }
 }

@@ -28,6 +28,7 @@ class FCibo extends FDatabase{
 		$stmt->bindValue(':nome', $cibo->getNome(), PDO::PARAM_STR);
 	}
 
+
 	/** Metodo che crea un oggetto ECibo a partire dalla tupla della tabella cibo
 	* @param $row array che rappresenta la tupla
 	* @return ECibo
@@ -37,6 +38,27 @@ class FCibo extends FDatabase{
 		$ciboObj->setId($row['id']);
 		return $ciboObj;
 	}
+
+    /**
+     * Store di un cibo nel db
+     * @param ECibo $cibo
+     * @return bool|id inserito
+     */
+	public function store($cibo){
+        $id = parent::store($cibo);
+        if($id){
+
+            //salvataggio immagine del cibo
+            $img = $cibo->getImmagine();
+            $img->setIdesterno($id);
+            $fimric = new FImgCibo();
+            $fimric->store($img);
+            return $id;
+
+        }
+        else return false;
+
+    }
 
 	/** Load di un cibo sul DB. Specializza il metodo load di FDatabase
 	* @param $id del cibo da caricare

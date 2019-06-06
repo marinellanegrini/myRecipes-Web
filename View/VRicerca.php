@@ -1,5 +1,6 @@
 <?php
 require('Smarty/smarty-libs/libs/Smarty.class.php');
+
 /** class VRicerca che gestisce l'input/output per l'inizializzazione della ricerca (mostra filtri/lista di ingredienti a seconda della modalità scelta)*/
 class VRicerca
 {
@@ -21,10 +22,15 @@ class VRicerca
     public function mostraIngredienti($cibi){
 
         //assegnazione a smarty per mostrare i cibi selezionabili (if per utenti loggati e non)
+
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
+            print("utente loggato ");
+            print_r($cibi);
 
         } else {
+            print("utente non loggato ");
+            print_r($cibi);
 
         }
     }
@@ -35,9 +41,14 @@ class VRicerca
     public function mostraFiltri(){
         //assegnazione a smarty per mostrare i filtri della ricerca avanzata (if per utenti loggati e non)
         $session = Sessione::getInstance();
+
         if($session->isLoggedUtente()){
+            print("utente loggato ");
+            print_r("filtri");
 
         } else {
+            print("utente non loggato ");
+            print_r("filtri");
 
         }
     }

@@ -494,4 +494,16 @@ class FPersistentManager {
         return $ret;
     }
 
+    /**
+     * Verifica se è presente un utente con un certo username
+     * @param $username
+     * @return bool|null esito
+     *
+     */
+    public function esisteUsername($username){
+        $fu = new FUtente();
+        $esito = $fu->esisteUsername($username);
+        return $esito;
+    }
+
 }

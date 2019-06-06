@@ -157,6 +157,33 @@ class FUtente extends FDatabase
 
     }
 
+    /**
+     * Funzione che verifica se è presente un utente con un certo username
+     * @param $username
+     * @return bool|null esito
+     */
+    public function esisteUsername($username){
+        $query = "SELECT * FROM ".$this->table." WHERE username= '".$username."';";
+        try{
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            if(($row != null) && (count($row)>0)){
+                return true;
+            }
+            else return false;
+
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+    }
+
 
 
 }
