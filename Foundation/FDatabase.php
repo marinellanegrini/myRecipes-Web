@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /** Lo scopo di questa classe è gestire la connessione con il DBMS e contiene i metodi utili 
 * per effettuare le query al Database

@@ -13,6 +13,8 @@ class ECibo
 	private $id;
 	/**nome del cibo*/
 	private $nome;
+	/**immagine del cibo*/
+	private $immagine;
 
 	public function __construct(string $nome){
 		$this->nome = $nome;
@@ -53,6 +55,23 @@ class ECibo
 	public function setNome(string $nome){
         $this->nome=$nome;
     }
+
+	/**
+	 * @return EImmagine del cibo
+	 */
+	public function getImmagine()
+	{
+		return clone $this->immagine;
+	}
+
+	/**
+	 * @param EImmagine $immagine del cibo
+	 */
+	public function setImmagine($immagine): void
+	{
+		$this->immagine = $immagine;
+	}
+
 
     /**
      * Stampa le informazioni del cibo

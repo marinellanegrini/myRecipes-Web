@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /**
  * La classe FCommento fornisce la persistenza
@@ -18,8 +18,8 @@ class FCommento extends FDatabase
 	}
 
 	/** 
-	* Metodo che effettua il bind degli attributi della tabella
-	* ECommento, con i valori contenuti nella tabella ECommento
+	* Metodo che effettua il bind degli attributi di
+	* ECommento, con i valori contenuti nella tabella commento
 	* @param $stmt
 	* @param $commento da salvare
 	*/
@@ -46,7 +46,7 @@ class FCommento extends FDatabase
     }
 
     /** 
-    * Permette di caricare un commento sul db
+    * Permette di caricare un commento dal db
     * @param $id del commento
     * @return oggetto di tipo ECommento
     */
@@ -120,12 +120,12 @@ class FCommento extends FDatabase
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $this->db->commit();
-            $arrayut=array();
+            $arraycom=array();
             foreach ($rows as $row){
-                $ut=$this->getObjectFromRow($row);
-                array_push($arrayut,$ut);
+                $com=$this->getObjectFromRow($row);
+                array_push($arraycom,$com);
             }
-            return $arrayut;
+            return $arraycom;
         }
 
         catch (PDOException $e)
@@ -152,6 +152,60 @@ class FCommento extends FDatabase
             return $arrayobj;
         }
         else return null;
+
+    }
+
+    /**
+     * Metodo che permette all'amministratore di recuperare commenti da una parola nel testo e indicando il numero di commenti da ottenere
+     * @param $filtri array associativo che contiene i filtri inseriti per i commenti (NULL se nessun filtro è stato inserito)
+     * la componente 'ultimi' è un intero che rappresenta quanti commenti ottenere, 'parola' è la parola contenuta nel testo dei commenti che si vogliono ottenere
+     * @return array di ECommento recuperati secondo i filtri
+     *
+     */
+    public function ricercaCommenti($filtri){
+        $last = $filtri['ultimi'];
+        $parola = $filtri['parola'];
+
+
+        if($last != null && $parola != null){
+            $array = parent::search($parola, 'testo');
+            if(($array!=null) && (count($array)>0)){
+                $ids = array();
+                foreach($array as $a){
+
+                    array_push($ids, $a['id']); //array di id
+                }
+                $s = implode(", ", $ids);
+                $s = "(".$s.")";
+                $query = "SELECT * FROM commento WHERE id IN ".$s." ORDER BY data DESC, ora DESC LIMIT ".$last.";";
+            }
+        } elseif($last == null && $parola != null) {
+            $query = "SELECT * FROM commento WHERE testo LIKE '%".$parola."%' ORDER BY data DESC, ora DESC;";
+        } elseif ($last != null && $parola == null){
+            $query = "SELECT * FROM commento ORDER BY data DESC, ora DESC LIMIT ".$last.";";
+
+        }
+
+
+        try {
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            $arraycom=array();
+            foreach ($rows as $row){
+                $com = $this->getObjectFromRow($row);
+                array_push($arraycom,$com);
+            }
+            return $arraycom;
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
 
     }
 }

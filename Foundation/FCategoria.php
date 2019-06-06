@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Classes.php';
+
 
 /**
  * La classe FCategoria fornisce query per gli oggetti ECategoria

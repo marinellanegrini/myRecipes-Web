@@ -1,5 +1,4 @@
 <?php
-require_once 'Classes.php';
 
 /**
 * La classe FRictoIngr gestisce la persistenza dell'associazione tra ERicetta ed EIngrediente

@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /** 
 * La classe FRicetta gestisce la persistenza di oggetti ERicetta
@@ -49,6 +49,8 @@ class FRicetta extends FDatabase
 		$ricettaObj->setId($row['id']);
 		$ricettaObj->setIngredienti($row['ingredienti']);
 		$ricettaObj->setCommenti($row['commenti']);
+		$ricettaObj->setImmagine($row['immagine']);
+		$ricettaObj->setImgpreparazione($row['gallery']);
 		return $ricettaObj;
 	}
 
@@ -68,6 +70,14 @@ class FRicetta extends FDatabase
 		$fcomm = new FCommento();
 		$arraycomm = $fcomm->loadByIdRicetta($row['id']); 
 		$row['commenti'] = $arraycomm;
+		//caricamento immagine principale della ricetta
+        $fimprin = new FImgRicetta();
+        $img = $fimprin->loadByIdRicetta($row['id']);
+        $row['immagine'] = $img;
+        //caricamento della gallery
+        $fgallery = new FGalleryRicetta();
+        $gallery = $fgallery->loadByIdRicetta($row['id']);
+        $row['gallery'] = $gallery;
 		return $row;
 	}
 
@@ -89,6 +99,21 @@ class FRicetta extends FDatabase
 				
 				$fricingr->store($id,$i->getId());
 			}
+
+			//salvataggio immagine principale della ricetta
+            $imgprinc = $ricetta->getImmagine();
+			$imgprinc->setIdesterno($id);
+            $fimric = new FImgRicetta();
+            $fimric->store($imgprinc);
+
+            //salvataggio della gallery della ricetta
+            $gallery = $ricetta->getImgpreparazione();
+            $fgallery = new FGalleryRicetta();
+            foreach ($gallery as $img){
+                $img->setIdesterno($id);
+                $fgallery->store($img);
+            }
+
 
 			return $id;
 

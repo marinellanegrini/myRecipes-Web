@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /**
  * La classe EUtente contiene tutti gli attributi e metodi base riguardanti gli utenti. 
@@ -12,6 +12,7 @@ require_once 'Classes.php';
  * -activate: account attivo o no;
  * -commento: contiene tutti i commenti che l'utente ha fatto
  * -preferiti: contiente tutte le ricette preferite dall'utente
+ * -immagine: foto profilo dell'utente
  *  @author Gruppo 7
  *  @package Entity
  */ 
@@ -36,13 +37,17 @@ class EUtente
 	private $nome;
 	/** cognome utente */
 	private $cognome;
+	/** immagine del profilo */
+	private $immagine;
+
+
 
 	/** costruttore */
 	public function __construct($usern,$pass,$emai,$nom,$cogno){
 		$this->username = $usern;
 		$this->password = $pass;
 		$this->email = $emai;
-		$this->stato = false;
+		$this->stato = true;
 		$this->_commento = array();
 		$this->_preferito = array();
 		$this->nome = $nom;
@@ -192,6 +197,22 @@ class EUtente
     public function setPreferiti($p){
         $this->_preferito=$p;
     }
+
+	/**
+	 * @return EImmagine dell'utente
+	 */
+	public function getImmagine()
+	{
+		return clone $this->immagine;
+	}
+
+	/**
+	 * @param EImmagine $immagine
+	 */
+	public function setImmagine($immagine): void
+	{
+		$this->immagine = $immagine;
+	}
 
 	 /**
      * Verificano la corrispondenza con il valore in input con i requisiti richiesti
