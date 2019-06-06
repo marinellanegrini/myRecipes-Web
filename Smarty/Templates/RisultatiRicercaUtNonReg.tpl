@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <img class="img-fluid d-block w-75" src="/Users/ariannatusi/Desktop/Prova/logobiancopieno.png ">
+          <img class="img-fluid d-block w-75" src="../img/logobiancopieno.png ">
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
@@ -22,6 +22,7 @@
         <div class="topnav1 pull-right">
           <a href="#home">Home</a>
           <a href="#news">Login</a>
+          <a href="#news">Login amministratore</a>
           <a href="#contact">Registrazione</a>
         </div>
       </div>
@@ -91,15 +92,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <p class="mb-0 mt-2">© 2010 All rights reserved</p>
+          <p class="mb-0 mt-2">© 2019 All rights reserved</p>
         </div>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+ 
 </body>
 
 </html>
