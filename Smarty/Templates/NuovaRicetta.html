@@ -154,7 +154,9 @@
         </div>
       </div>
     </div> Inserisci foto principale:<br><br>
-    <input type="file" name="immprincipale" class="ml-5 py-2"><br>
+    <input type="file" id="files"  name="immprincipale" class="ml-5 py-2" style="">
+    <label for="files">Click me to upload image</label>
+    <br>
     <br>Inserisci le foto del procedimento: <br><br>
     <input type="file" name="gallery[]" class="ml-5">
     <button class="btn bg-primary" type="button" onclick="nuovefoto()" style="	border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;">
@@ -165,7 +167,10 @@
         <div id="nuoveimmagini" style="" class=""></div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2 pull-right" style=" position: absolute; right:100; bottom:"><b>Inserisci ricetta</b></button>
+    <br>
+    <div class="row pull-right ">
+    <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5" style=""><b>Inserisci ricetta</b></button>
+  </div>
   </form>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
