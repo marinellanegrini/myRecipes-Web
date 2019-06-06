@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /**
 * La classe FIngrediente gestisce la persistenza di oggetti EIngrediente
@@ -110,6 +110,33 @@ class FIngrediente extends FDatabase
 		}
 
 	}
+
+
+    /**
+     * @param $qta del cibo
+     * @param $idcibo id del cibo
+     * @return id dell'ingrediente se esiste, altrimenti null
+     */
+	public function esisteIngrediente($qta, $idcibo){
+        $query = "SELECT id FROM ".$this->table." WHERE id_cibo=".$idcibo." AND qta=".$qta.";";
+        try {
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+
+            if(count($row)) {
+                return $row[0]['id'];
+            } else return null;
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+    }
 
 
 

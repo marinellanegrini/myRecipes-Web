@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /** La classe Eingrediente contiene contiene un cibo e la relativa quantità usata in una *ricetta.
 * Contiene i seguenti attributi:

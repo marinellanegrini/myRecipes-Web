@@ -78,9 +78,41 @@ CREATE TABLE commento(
 	FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
 	)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE imgutente(
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    data BLOB NOT NULL,
+    type VARCHAR(20) NOT NULL,
+    id_utente SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE imgcibo(
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    data BLOB NOT NULL,
+    type VARCHAR(20) NOT NULL,
+    id_cibo SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_cibo) REFERENCES cibo(id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE imgricetta(
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    data BLOB NOT NULL,
+    type VARCHAR(20) NOT NULL,
+    id_ricetta SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE galleryricetta(
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    data BLOB NOT NULL,
+    type VARCHAR(20) NOT NULL,
+    id_ricetta SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /**
 * Inserimento dei dati nella tabella utente
 */
@@ -125,7 +157,7 @@ INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 ('Uno schifo, meglio il Mc Flurry del mc','2018-09-01','08:15:22',false,5,2),
 ('Un piatto veramente delicato','2019-03-13','17:59:48',false,4,1),
 ('Consiglio di mettere meno zucchero, uscirà più soffice','2019-04-15','09:58:32',false,6,1),
-('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','17:59:48',false,7,1);
+('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','19:59:48',false,7,1);
 
 
 

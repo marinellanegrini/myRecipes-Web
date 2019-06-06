@@ -1,7 +1,7 @@
 <?php
-require_once 'Classes.php';
 
-class PersistentManager {
+/** Classe FPersistentManager unico punto d'accesso per Foundation */
+class FPersistentManager {
 
     /** l'unica istanza della classe */
     private static $instance = null;
@@ -12,7 +12,7 @@ class PersistentManager {
      */
     public static function getInstance(){ //restituisce l'unica istanza (creandola se non esiste gia)
         if(static::$instance==null){
-            static::$instance=new PersistentManager();
+            static::$instance=new FPersistentManager();
         }
         return static::$instance;
     }
@@ -69,7 +69,7 @@ class PersistentManager {
     /**
      * Metodo che effettua una load dato un gruppo di ids e il nome degli oggetti da recuperare
      * @param $nameobj nome dell'oggetto
-     * @param $id array degli oggetti da recuperare
+     * @param $id array di id degli oggetti da recuperare
      * @return Array di oggetti recuperati
      *
      */
@@ -203,7 +203,7 @@ class PersistentManager {
                 $ret = $fupr->update($id,$attr,$val);
                 break;
             default:
-                $ret = null;
+                $ret = false;
         }
         return $ret;
     }
@@ -245,7 +245,7 @@ class PersistentManager {
     			$ret= $del->delete($id);
     			break;
     		default:
-    			$ret = null;
+    			$ret = false;
     	}
     	return $ret;
     }
@@ -260,6 +260,18 @@ class PersistentManager {
     	$del= new FUtPrefRic();
     	$ret= $del->delete($idric,$idut);
     	return $ret;
+    }
+
+    /**
+     * Metodo che verifica se un utente preferisce una ricetta
+     * @param $idric idricetta
+     * @param $idut idutente
+     * @return bool|null esito
+     */
+    public function UtentePrefRic($idric,$idut){
+        $utpr = new FUtPrefRic();
+        $esito = $utpr->UtPrefRic($idric, $idut);
+        return $esito;
     }
 
     /**
@@ -323,7 +335,7 @@ class PersistentManager {
      */
     public function loadCommByRic($id){
     	$del= new FCommento();
-    	$ret= $del->loadByIdRicetta($id);
+    	$ret = $del->loadByIdRicetta($id);
     	return $ret;
     }
 
@@ -369,6 +381,18 @@ class PersistentManager {
         return $ret;
     }
 
+    /**
+     * Metodo che verifica l'esistenza di un ingrediente (cibo e qta) nel db
+     * @param $qta
+     * @param $idcibo
+     * @return id dell'ingrediente se esiste, null altrimenti
+     */
+    public function esisteIngrediente($qta, $idcibo){
+        $fingr = new FIngrediente();
+        $res = $fingr->esisteIngrediente($qta,$idcibo);
+        return $res;
+    }
+
 
     /** Metodo che restituisce gli IDs ingrediente noti gli ID dei cibi
      * @param $ids array di ids cibo
@@ -394,16 +418,11 @@ class PersistentManager {
 
     /**
      * Metodo che permette di effettuare la ricerca tramite filtri
-     * @param $idcat id della categoria della ricetta da cercare
-     * @param $tprep tempo di preparazione (fino a 60 min l'intero rappresenta il numero di minuti, per tempi maggiori di un'ora il numero è >=61)
-     * @param $diff intero che rappresenta la difficoltà
+     * @param $filtri array associativo con chiavi 'cat', 'diff' e 'tprep' (NULL se tali valori non sono stati inseriti)
      * @return array di ERicetta recuperate con la ricerca
      *
      */
-    public function ricercaTramiteFiltri($idcat, $tprep, $diff){
-        $filtri['cat'] = $idcat;
-        $filtri['diff'] = $diff;
-        $filtri['tprep'] = $tprep;
+    public function ricercaTramiteFiltri($filtri){
         $fr = new FRicetta();
         $ret = $fr->ricercaPerFiltri($filtri);
         return $ret;
@@ -424,22 +443,23 @@ class PersistentManager {
         return $ret;
     }
 
-    
+
 
     /**
-     * Metodo che esegue la load di un utente in base all'username
+     * Metodo che esegue la load di un utente in base all'username e password (login)
      * @param $username dell'utente
-     * @return EUtente recuperato
+     * @param $password dell'utente
+     * @return EUtente recuperato| false se non è presente un utente con quell'username e password
      */
-    public function loadUtByUsername($username){
+    public function loadUtente($username,$password){
         $ut = new FUtente();
-        $ret = $ut->loadByUsername($username);
+        $ret = $ut->loadUtente($username,$password);
         return $ret;
     }
 
 
     /**
-     * Recupera tutti gli id delle ricette con un certo id utente
+     * Recupera tutti gli id delle ricette con un certo id utente (ricette preferite)
      * @param $id, id dell'utente
      * @return array di id di ricetta
      */
@@ -457,6 +477,20 @@ class PersistentManager {
 
         $cib = new FCibo();
         $ret = $cib->loadAll();
+        return $ret;
+    }
+
+
+    /**
+     * @param $ultimi numero di ultimi commenti da ricercare (NULL se numero non inserito)
+     * @param $parola parola da carcare all'interno del testo del commento (NULL se parola non inserita)
+     * @return array di ECommento che soddisfano i criteri
+     */
+    public function ricercaCommenti($ultimi, $parola) {
+        $filtri['ultimi'] = $ultimi;
+        $filtri['parola'] = $parola;
+        $fc = new FCommento();
+        $ret = $fc->ricercaCommenti($filtri);
         return $ret;
     }
 

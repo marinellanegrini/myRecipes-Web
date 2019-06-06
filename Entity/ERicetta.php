@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 
 
@@ -16,6 +16,8 @@ require_once 'Classes.php';
  * - _ingrediente: ingredienti necessari alla preparazione
  * - _commento: commenti relativi alla ricetta
  * - nsalvataggi: numero di volte che è stata salvata la ricetta
+ * - immagine: immagine principale della ricetta
+ * - imgpreparazione: array di immagini della preparazione (gallery)
  * @author Gruppo 7
  * @package Entity
 */
@@ -42,6 +44,10 @@ class ERicetta
 	private $_commenti = array();
 	/**numero di volte che la ricetta è stata salvata */
 	private $nsalvataggi;
+	/**immagine principale dell'immagine */
+	private $immagine;
+	/**gallery della preparazione*/
+	private $imgpreparazione;
 
 	/** costruttore */
 	public function  __construct($nom, $diff, $proc, $tpr, $ndos, $cat, $ns){
@@ -218,6 +224,41 @@ class ERicetta
     public function setIngredienti($i){
     	$this->_ingredienti=$i;
     }
+
+    /**
+     * @return longblob immagine
+     */
+    public function getImmagine()
+    {
+        return clone $this->immagine;
+    }
+
+    /**
+     * @param longblob $immagine
+     */
+    public function setImmagine($immagine): void
+    {
+        $this->immagine = $immagine;
+    }
+
+    /**
+     * @return array di Eimmagine (gallery)
+     */
+    public function getImgpreparazione()
+    {
+        $img = $this->imgpreparazione;
+        return $img;
+    }
+
+    /**
+     * @param array di EImmagine $imgpreparazione
+     */
+    public function setImgpreparazione($imgpreparazione): void
+    {
+        $this->imgpreparazione = $imgpreparazione;
+    }
+
+
 
     /**
      * @param int identificativo

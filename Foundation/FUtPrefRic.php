@@ -1,5 +1,4 @@
 <?php
-require_once 'Classes.php';
 
 /**
 * La classe FUtPrefRic gestisce la persistenza dell'associazione tra EUtente ed ERicetta
@@ -97,6 +96,34 @@ class FUtPrefRic
 		}
 
 	}
+
+    /**
+     * Metodo che verifica se la coppia id ricetta- id utente è presente nel db (cioè se l'utente preferrisce la ricetta)
+     * @param $idr idricetta
+     * @param $idu idutente
+     * @return bool|null esito
+     */
+	public function UtPrefRic($idr, $idu){
+        $query = "SELECT * FROM utprefric(id_ricetta,id_utente) WHERE id_ricetta= '".$idr."' AND id_utente='".$idu."';";
+        try{
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            if(($row != null) && (count($row)>0)){
+                return true;
+            }
+            else return false;
+
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+    }
 }
 
 

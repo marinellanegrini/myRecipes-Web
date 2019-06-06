@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+include 'autoload.inc.php';
 
 /*
 $primo= "Primo";
@@ -99,8 +99,32 @@ echo implode(" ", $p1->getCommenti());*/
 
 */
 
-$g = new GestioneRicette();
+/*$a1 = array();
+$a2 = array();
+$a3 = array();
 
-$g->rimuoviDaPreferiti(1, 1);
+$a1 = [
+    'idcibo' => 2,
+    'qta' => 100
+];
+$a2 = [
+    'idcibo' => 10,
+    'qta' => 500
+];
+$a3 = [
+    'idcibo' => 3,
+    'qta' => 5
+];
+$a = [$a1, $a2, $a3];
+$img = new EImmagine('abbb','sxs');
+$img2 = new EImmagine('abbb','sxs');
+$img3 = new EImmagine('abbb','sxs');
+$img4 = new EImmagine('abbb','sxs');
+$arrimg = [$img2, $img3,$img4];
+$g = new CGestioneAmministratore();
+$g->inserimentoDatiRicetta("abc",3,"ciao mondo",'00:10:00',4,4,$img,$arrimg,$a);*/
 
+$pm = FPersistentManager::getInstance();
+$u = $pm->loadUtente('Arianna98','ariaa');
+print_r($u);
 ?>

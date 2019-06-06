@@ -1,5 +1,4 @@
 <?php
-require_once 'Classes.php';
 
 
 /**
@@ -60,7 +59,7 @@ class FUtente extends FDatabase
         $arraycomm = $fcomm->loadByIdUtente($row['id']); 
         $row['commenti'] = $arraycomm;
 
-        //caricamento ricette dell'utente
+        //caricamento ricette preferite dell'utente
         $futprefric = new FUtPrefRic();
         $fric = new FRicetta();
         $idric = $futprefric->loadIdRicbyIdUt($row['id']); //$idric è un array di id ricetta
@@ -107,12 +106,13 @@ class FUtente extends FDatabase
     }
 
     /**
-    * Metodo che esegue la load di un utente in base all'username
+    * Metodo che esegue la load di un utente in base all'username e password (login)
     * @param $username dell'utente
-    * @return EUtente recuperato
+     * @param $password dell'utente
+    * @return EUtente recuperato| false se non è presente un utente con quell'username e password
     */
-    public function loadByUsername($username){
-        $query = "SELECT * FROM ".$this->table." WHERE username= '".$username."';";
+    public function loadUtente($username,$password){
+        $query = "SELECT * FROM ".$this->table." WHERE username= '".$username."' AND password='".$password."';";
         try{
             $this->db->beginTransaction();
             $stmt = $this->db->prepare($query);
@@ -121,11 +121,11 @@ class FUtente extends FDatabase
             $this->db->commit();
             if(($row != null) && (count($row)>0)){
                 $rowass=$row[0];
-                $rowcompleta = $this->buildRow($row);
+                $rowcompleta = $this->buildRow($rowass);
                 $ut = $this->getObjectFromRow($rowcompleta);
                 return $ut;
             }
-            else return null;
+            else return false;
             
         }
         catch (PDOException $e)

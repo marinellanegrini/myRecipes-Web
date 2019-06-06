@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes.php';
+
 
 /** 
 * La classe FCibo gestisce la persistenza di oggetti ECibo
