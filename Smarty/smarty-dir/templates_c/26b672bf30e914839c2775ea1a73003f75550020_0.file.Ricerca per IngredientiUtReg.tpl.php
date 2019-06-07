@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-07 14:17:17
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtReg.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfa55cd943280_98426387',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '26b672bf30e914839c2775ea1a73003f75550020' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtReg.tpl',
+      1 => 1559909834,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfa55cd943280_98426387 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -64,15 +87,28 @@
           <form action="#">
             <div class="form-check text-dark ml-5">
               <div class="container">
-                {section name=cibo loop=$cibi}
+                <?php
+$__section_cibo_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['cibi']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_cibo_0_total = $__section_cibo_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_cibo'] = new Smarty_Variable(array());
+if ($__section_cibo_0_total !== 0) {
+for ($__section_cibo_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] = 0; $__section_cibo_0_iteration <= $__section_cibo_0_total; $__section_cibo_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']++){
+?>
 
                   <div class="row">
                     <div class="mt-2" style="">
-                      <input class="form-check-input" type="checkbox" name="cibi[]" value="{$cibi[cibo]->getId()}" id="defaultCheck1">
-                      <img class="img-fluid d-block" src="data:{$cibi[cibo]->getImmagine()->getType()};base64,{$cibi[cibo]->getImmagine()->getData()}" style="	width: 70px;	height: 50px;"></div>
-                    <div class="col-md-4 mt-2" style="">{$cibi[cibo]->getNome()} </div>
+                      <input class="form-check-input" type="checkbox" name="cibi[]" value="<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getId();?>
+" id="defaultCheck1">
+                      <img class="img-fluid d-block" src="data:<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getImmagine()->getType();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getImmagine()->getData();?>
+" style="	width: 70px;	height: 50px;"></div>
+                    <div class="col-md-4 mt-2" style=""><?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getNome();?>
+ </div>
                   </div>
-                {/section}
+                <?php
+}
+}
+?>
 
                 <div class="row pull-right">
                   <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5 " style=""><b>Cerca</b></button>
@@ -84,10 +120,7 @@
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""></script>
-
 </body>
 
-</html>
+</html><?php }
+}
