@@ -56,10 +56,11 @@
                 <div class="row">
                   <div class="mt-2" style="">
                     <input class="form-check-input" type="checkbox" name="cibi[]" value="{$cibi[cibo]->getId()}" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="data:,{$cibi[cibo]->getImmagine()->getType()},;base64,{$cibi[cibo]->getImmagine()->getData()}" style="	width: 70px;	height: 50px;"></div>
+                    <img class="img-fluid d-block" src="data:{$cibi[cibo]->getImmagine()->getType()};base64,{$cibi[cibo]->getImmagine()->getData()}" style="	width: 70px;	height: 50px;"></div>
                   <div class="col-md-4 mt-2" style="">{$cibi[cibo]->getNome()} </div>
                 </div>
                 {/section}
+
                 <div class="row pull-right">
                   <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5 " style=""><b>Cerca</b></button>
                 </div>

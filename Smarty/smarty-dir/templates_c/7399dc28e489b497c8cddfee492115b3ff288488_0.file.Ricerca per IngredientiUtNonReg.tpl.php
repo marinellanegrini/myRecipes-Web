@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 12:09:32
+/* Smarty version 3.1.33, created on 2019-06-07 13:19:17
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtNonReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa37dcd89ed5_29453445',
+  'unifunc' => 'content_5cfa483562bfe7_18821730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7399dc28e489b497c8cddfee492115b3ff288488' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtNonReg.tpl',
-      1 => 1559902169,
+      1 => 1559906352,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa37dcd89ed5_29453445 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa483562bfe7_18821730 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -86,7 +86,9 @@ for ($__section_cibo_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_c
                   <div class="mt-2" style="">
                     <input class="form-check-input" type="checkbox" name="cibi[]" value="<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getId();?>
 " id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
+                    <img class="img-fluid d-block" src="data:<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getImmagine()->getType();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getImmagine()->getData();?>
+" style="	width: 70px;	height: 50px;"></div>
                   <div class="col-md-4 mt-2" style=""><?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getNome();?>
  </div>
                 </div>
@@ -94,6 +96,7 @@ for ($__section_cibo_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_c
 }
 }
 ?>
+
                 <div class="row pull-right">
                   <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5 " style=""><b>Cerca</b></button>
                 </div>
