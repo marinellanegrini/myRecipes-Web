@@ -25,11 +25,12 @@ class VRicerca
 
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
-
+            $this->smarty->assign('cibi', $cibi);
+            $this->smarty->display('Ricerca per IngredientiUtReg.tpl');
 
         } else {
-
-
+            $this->smarty->assign('cibi', $cibi);
+            $this->smarty->display('Ricerca per IngredientiUtNonReg.tpl');
         }
     }
 

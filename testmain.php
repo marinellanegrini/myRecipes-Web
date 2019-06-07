@@ -68,8 +68,9 @@ function upload()
         $tempname = $_FILES['file']['tmp_name']; //path temporaneo del file sul server
         $immagine = file_get_contents($tempname); //file_get_contents torna un file specificato come stringa
         $immagine = addslashes ($immagine);
-        $i = new EImmagine($immagine, $type, 3);
-        $fi = new FImgRicetta();
+        $i = new EImmagine($immagine, $type);
+        $i->setIdesterno(3);
+        $fi = new FImgCibo();
         $fi->store($i);
 
 
@@ -84,8 +85,8 @@ function upload()
 }
 
 if (isset($_FILES['file'])) {
-    //upload();
-    print_r($_FILES);
+    upload();
+
 }
 ?>
 
@@ -94,8 +95,8 @@ if (isset($_FILES['file'])) {
       action="testmain.php"
       method="post">
 
-    <input name="gallery[]" type="file" size="40" />
-    <input name="gallery[]" type="file" size="40" />
+    <input name="file" type="file" size="40" />
+
     <input type="submit" value="Invia" />
 </form>
 <br />

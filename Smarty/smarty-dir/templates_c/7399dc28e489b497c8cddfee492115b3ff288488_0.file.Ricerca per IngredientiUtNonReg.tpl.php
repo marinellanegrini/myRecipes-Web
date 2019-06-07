@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-07 12:09:32
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtNonReg.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfa37dcd89ed5_29453445',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '7399dc28e489b497c8cddfee492115b3ff288488' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Ricerca per IngredientiUtNonReg.tpl',
+      1 => 1559902169,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfa37dcd89ed5_29453445 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -19,23 +42,11 @@
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="col-md-12">
-          <ul class="nav pull-right" style="">
-            <li class="nav-item">
-              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
-                
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-              </div>
-            </li>
-          </ul>
+        <div class="topnav1 pull-right">
+          <a href="/myRecipes-Web">Home</a>
+          <a href="/myRecipes-Web/Utente/Login">Login</a>
+          <a href="/myRecipes-Web/Amministratore/Login">Login Amministratore</a>
+          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
         </div>
       </div>
     </div>
@@ -63,30 +74,26 @@
           <form action="#">
             <div class="form-check text-dark ml-5">
               <div class="container">
+                <?php
+$__section_cibo_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['cibi']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_cibo_0_total = $__section_cibo_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_cibo'] = new Smarty_Variable(array());
+if ($__section_cibo_0_total !== 0) {
+for ($__section_cibo_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] = 0; $__section_cibo_0_iteration <= $__section_cibo_0_total; $__section_cibo_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']++){
+?>
+
                 <div class="row">
                   <div class="mt-2" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <input class="form-check-input" type="checkbox" name="cibi[]" value="<?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getId();?>
+" id="defaultCheck1">
                     <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4 mt-2" style="">Ingredienti </div>
+                  <div class="col-md-4 mt-2" style=""><?php echo $_smarty_tpl->tpl_vars['cibi']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_cibo']->value['index'] : null)]->getNome();?>
+ </div>
                 </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
+                <?php
+}
+}
+?>
                 <div class="row pull-right">
                   <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5 " style=""><b>Cerca</b></button>
                 </div>
@@ -99,4 +106,5 @@
   </div>
 </body>
 
-</html>
+</html><?php }
+}
