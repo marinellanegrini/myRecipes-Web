@@ -25,12 +25,9 @@ class VRicerca
 
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
-            print("utente loggato ");
-            print_r($cibi);
+
 
         } else {
-            print("utente non loggato ");
-            print_r($cibi);
 
         }
     }
@@ -43,13 +40,9 @@ class VRicerca
         $session = Sessione::getInstance();
 
         if($session->isLoggedUtente()){
-            print("utente loggato ");
-            print_r("filtri");
-
+            $this->smarty->display('RicercaPerFiltriUtReg.tpl');
         } else {
-            print("utente non loggato ");
-            print_r("filtri");
-
+            $this->smarty->display('RicercaPerFiltriUtNonReg.tpl');
         }
     }
 

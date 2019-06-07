@@ -19,14 +19,6 @@ class VGestioneAmministratore
     }
 
     /**
-     * Metodo per recuperare il numero di ingredienti inserito dall'amministratore (numero di ingredienti che la ricetta ha)
-     */
-    public function recuperaNIngredienti(){
-        $n = $_POST['ningredienti'];
-        return $n;
-    }
-
-    /**
      * Metodo per recuperare il cibo inserito dall'amministratore
      * @return $cibo array associtivo
      */
@@ -42,17 +34,14 @@ class VGestioneAmministratore
             $cibo['img'] = $fotoobj;
         }
         return $cibo;
-
-
     }
 
     /**
      * Funzione per mostrare la form di inserimento di una ricetta
      */
-    public function mostraFormInserimento($ningredienti){
+    public function mostraFormInserimento(){
+        $this->smarty->display("NuovaRicetta.tpl");
         //assegnazione a smarty per mostrare i filtri dell'inserimento ricetta
-        //comunico a smarty quanti ingredienti vuole inserire l'admin, in modo da poter costruire la form
-
     }
 
     /**
