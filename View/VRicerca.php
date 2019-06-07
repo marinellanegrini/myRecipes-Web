@@ -25,12 +25,10 @@ class VRicerca
 
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
-            print("utente loggato ");
-            print_r($cibi);
+
 
         } else {
-            print("utente non loggato ");
-            print_r($cibi);
+
 
         }
     }
@@ -43,12 +41,10 @@ class VRicerca
         $session = Sessione::getInstance();
 
         if($session->isLoggedUtente()){
-            print("utente loggato ");
-            print_r("filtri");
+
 
         } else {
-            print("utente non loggato ");
-            print_r("filtri");
+
 
         }
     }
