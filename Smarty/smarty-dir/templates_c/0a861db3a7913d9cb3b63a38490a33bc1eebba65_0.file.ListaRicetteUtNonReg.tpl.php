@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 14:12:56
+/* Smarty version 3.1.33, created on 2019-06-07 15:23:42
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa54c832abf4_41695969',
+  'unifunc' => 'content_5cfa655eb1acd1_21380037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a861db3a7913d9cb3b63a38490a33bc1eebba65' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl',
-      1 => 1559899783,
+      1 => 1559913821,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa54c832abf4_41695969 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa655eb1acd1_21380037 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -68,8 +68,8 @@ function content_5cfa54c832abf4_41695969 (Smarty_Internal_Template $_smarty_tpl)
 
         <form class="form-inline" method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
-            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
-            <div class="input-group-append"><button class="btn btn-primary mt-2 mb-1" type="button"><i class="fa fa-search"></i></button></div>
+            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
+            <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
           </div>
         </form>
       </div>

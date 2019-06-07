@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 11:08:23
+/* Smarty version 3.1.33, created on 2019-06-07 15:37:10
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa298703ad34_11611920',
+  'unifunc' => 'content_5cfa6886b1dba4_87108455',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5350f4ec09665e75aa543980a9822a107df791ac' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl',
-      1 => 1559898500,
+      1 => 1559914579,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa298703ad34_11611920 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa6886b1dba4_87108455 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -69,10 +69,10 @@ function content_5cfa298703ad34_11611920 (Smarty_Internal_Template $_smarty_tpl)
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
         <a href="/" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a><a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-        <form class="form-inline">
+        <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
-            <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Search">
-            <div class="input-group-append my-0 mb-0"><button class="btn btn-primary pb-0 mt-2 mb-1" type="button"><i class="fa fa-search pb-1"></i></button></div>
+            <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
+            <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
           </div>
         </form>
       </div>
@@ -82,7 +82,7 @@ function content_5cfa298703ad34_11611920 (Smarty_Internal_Template $_smarty_tpl)
     <div class="row">
       <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1" style="">
         <h3 class="text-dark display-4 pl-3">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
-        <form action="#" method="post">
+        <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
               <div class="row" style="">

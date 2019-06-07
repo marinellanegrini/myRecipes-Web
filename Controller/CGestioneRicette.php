@@ -36,7 +36,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{
@@ -61,7 +61,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{
@@ -85,7 +85,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 14:40:02
+/* Smarty version 3.1.33, created on 2019-06-07 15:12:43
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa5b22aecc94_11894953',
+  'unifunc' => 'content_5cfa62cb3bc2a1_43686483',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3e98c1e6955584550fbe53d222fe1e7746a8faa6' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtNonReg.tpl',
-      1 => 1559911121,
+      1 => 1559913149,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa5b22aecc94_11894953 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa62cb3bc2a1_43686483 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -76,6 +76,10 @@ function content_5cfa5b22aecc94_11894953 (Smarty_Internal_Template $_smarty_tpl)
     </div>
   </div>
   <div class="border-0" style="">
+    <div class="alert text-dark " align="center" >
+      <?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+
+    </div>
     <?php
 $__section_ricetta_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['risultati']->value) ? count($_loop) : max(0, (int) $_loop));
 $__section_ricetta_0_total = $__section_ricetta_0_loop;
