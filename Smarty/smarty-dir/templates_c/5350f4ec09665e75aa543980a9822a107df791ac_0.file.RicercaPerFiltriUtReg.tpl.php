@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:37:10
+/* Smarty version 3.1.33, created on 2019-06-07 15:52:17
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6886b1dba4_87108455',
+  'unifunc' => 'content_5cfa6c117d2771_95625032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5350f4ec09665e75aa543980a9822a107df791ac' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl',
-      1 => 1559914579,
+      1 => 1559915414,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6886b1dba4_87108455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa6c117d2771_95625032 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -68,10 +68,11 @@ function content_5cfa6886b1dba4_87108455 (Smarty_Internal_Template $_smarty_tpl)
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
-        <a href="/" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a><a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+        <a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
         <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
-            <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
+            <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
             <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
           </div>
         </form>
@@ -220,6 +221,16 @@ function content_5cfa6886b1dba4_87108455 (Smarty_Internal_Template $_smarty_tpl)
       </div>
     </div>
   </div>
+
+  <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""><?php echo '</script'; ?>
+>
 
 </body>
 

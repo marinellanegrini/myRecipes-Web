@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:43:32
+/* Smarty version 3.1.33, created on 2019-06-07 15:52:21
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6a04ce92f5_78632295',
+  'unifunc' => 'content_5cfa6c15352651_22384267',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fa660af311f55f0e8c1301b2a896f5008eeac19' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl',
-      1 => 1559915006,
+      1 => 1559915414,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6a04ce92f5_78632295 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa6c15352651_22384267 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -69,7 +69,8 @@ function content_5cfa6a04ce92f5_78632295 (Smarty_Internal_Template $_smarty_tpl)
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
-        <a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a><a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+        <a href="/myRecipes-Web/Ricette/RicercaAvanzata"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
         <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
             <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">

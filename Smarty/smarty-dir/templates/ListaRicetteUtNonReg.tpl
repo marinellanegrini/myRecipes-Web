@@ -40,7 +40,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
 
-        <a href="/myRecipes-Web/Ricette/RicercaAvanzata"class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes-Web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
         <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
 
         <form class="form-inline" method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
