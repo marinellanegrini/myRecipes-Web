@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:23:42
+/* Smarty version 3.1.33, created on 2019-06-07 16:03:23
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa655eb1acd1_21380037',
+  'unifunc' => 'content_5cfa6eab266493_22679845',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a861db3a7913d9cb3b63a38490a33bc1eebba65' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl',
-      1 => 1559913821,
+      1 => 1559915414,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa655eb1acd1_21380037 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa6eab266493_22679845 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -63,7 +63,7 @@ function content_5cfa655eb1acd1_21380037 (Smarty_Internal_Template $_smarty_tpl)
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
 
-        <a href="/myRecipes-Web/Ricette/RicercaAvanzata"class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes-Web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
         <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
 
         <form class="form-inline" method="post" action="/myRecipes-Web/Ricette/cercaDaNome">

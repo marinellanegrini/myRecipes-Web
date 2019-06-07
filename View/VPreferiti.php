@@ -19,8 +19,20 @@ class VPreferiti
      * Funzione per mostrare i Preferiti dell'utente
      * @param array di ERicetta preferite
      */
-    public function mostraPreferiti($ricette){
+    public function mostraPreferiti($ricette, $msg){
         //comunica a smarty di mostrare i preferiti
+        if($ricette!=null){
+            foreach ($ricette as $ricetta)
+            {
+                $img=$ricetta->getImmagine();
+                $img->setData(base64_encode($img->getData()));
+                $ricetta->setImmagine($img);
+            }
+        }
+
+        $this->smarty->assign('ricette', $ricette);
+        $this->smarty->assign('msg', $msg);
+        $this->smarty->display('Preferiti.tpl');
     }
 
 }

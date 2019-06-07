@@ -69,8 +69,7 @@ class CGestioneAmministratore
             $view = new VGestioneAmministratore();
             $view->mostraFormInserimento();
         } else {
-            $view = new VLogin();
-            $view->mostraFormLogin("amministratore","");
+            header('Location: /myRecipes-Web/Amministratore/Login');
         }
     }
 
@@ -85,6 +84,7 @@ class CGestioneAmministratore
             $view->mostraFormCommenti();
         } else {
             //errore admin non loggato redirect form di login amministratore
+            header('Location: /myRecipes-Web/Amministratore/Login');
         }
 
     }
@@ -100,6 +100,7 @@ class CGestioneAmministratore
             $view->mostraFormCibo();
         } else {
             //errore admin non loggato redirect form di login amministratore
+            header('Location: /myRecipes-Web/Amministratore/Login');
         }
 
     }
@@ -235,6 +236,21 @@ class CGestioneAmministratore
             header('HTTP/1.1 405 Method Not Allowed');
             header('Allow: POST');
         }
+
+    }
+
+    /**
+     * Metodo per effettuare il logout dell'amministratore
+     * Se l'admin è loggato redirect alla homepage dell'utente
+     * Se l'admin non è loggato redirect alla homepage
+     */
+    public function Logout(){
+        $sessione = Sessione::getInstance();
+        if($sessione->isLoggedAdmin()){
+            $sessione->logout(); //cancello i dati di sessione
+        }
+        //redirect a login in entrambi i casi
+        header('Location: /myRecipes-Web');
 
     }
 

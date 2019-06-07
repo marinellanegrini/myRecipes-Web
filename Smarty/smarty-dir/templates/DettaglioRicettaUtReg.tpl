@@ -28,7 +28,7 @@
               <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+              <a class="nav-link active text-white" href="/myRecipes-Web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
@@ -39,7 +39,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
             </li>
           </ul>

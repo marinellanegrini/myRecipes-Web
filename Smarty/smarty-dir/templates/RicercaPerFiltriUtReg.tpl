@@ -25,14 +25,14 @@
               <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+              <a class="nav-link active text-white" href="/myRecipes-Web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
             </li>
           </ul>
@@ -73,7 +73,7 @@
           <div class="row mx-auto px-4" style="">
             <div class="py-3 px-0 mx-auto">
               <div class="form-check form-check-inline ">
-                <input name="diff" type="radio" id="diff1" value="#" class="form-check-input">
+                <input name="diff" type="radio" id="diff1" value="1" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
                   <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
@@ -82,7 +82,7 @@
                   <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="diff" type="radio" id="diff2" value="#" class="form-check-input">
+                <input name="diff" type="radio" id="diff2" value="2" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
@@ -91,7 +91,7 @@
                   <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="diff" type="radio" id="diff3" value="#" class="form-check-input">
+                <input name="diff" type="radio" id="diff3" value="3" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
@@ -100,7 +100,7 @@
                   <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="diff" type="radio" id="diff4" value="#" class="form-check-input">
+                <input name="diff" type="radio" id="diff4" value="4" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
@@ -109,7 +109,7 @@
                   <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="diff" type="radio" id="diff5" value="#" class="form-check-input">
+                <input name="diff" type="radio" id="diff5" value="5" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
@@ -129,31 +129,31 @@
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep1" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep1" value="10" class="form-check-input">
                 <label for="tprep1" class="form-check-label">10'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input type="radio" id="tprep2" value="#" class="form-check-input" name="tprep">
+                <input type="radio" id="tprep2" value="20" class="form-check-input" name="tprep">
                 <label for="tprep2" class="form-check-label">20'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep3" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep3" value="30" class="form-check-input">
                 <label for="tprep3" class="form-check-label">30'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep4" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep4" value="40" class="form-check-input">
                 <label for="tprep4" class="form-check-label">40'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep5" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep5" value="50" class="form-check-input">
                 <label for="tprep5" class="form-check-label">50'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep6" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep6" value="60" class="form-check-input">
                 <label for="tprep6" class="form-check-label">60'</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="tprep" type="radio" id="tprep7" value="#" class="form-check-input">
+                <input name="tprep" type="radio" id="tprep7" value="61" class="form-check-input">
                 <label for="tprep7" class="form-check-label">60'+</label>
               </div>
             </div>
@@ -168,27 +168,27 @@
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat1" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat1" value="3" class="form-check-input">
                 <label for="cat1" class="form-check-label">ANTIPASTI</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat2" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat2" value="1" class="form-check-input">
                 <label for="cat2" class="form-check-label">PRIMI</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat3" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat3" value="2" class="form-check-input">
                 <label for="cat3" class="form-check-label">SECONDI</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat4" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat4" value="4" class="form-check-input">
                 <label for="cat4" class="form-check-label">CONTORNI</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat5" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat5" value="5" class="form-check-input">
                 <label for="cat5" class="form-check-label">DOLCI</label>
               </div>
               <div class="form-check form-check-inline text-dark">
-                <input name="cat" type="radio" id="cat6" value="#" class="form-check-input">
+                <input name="cat" type="radio" id="cat6" value="6" class="form-check-input">
                 <label for="cat6" class="form-check-label">PIATTI UNICI</label>
               </div>
               <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>

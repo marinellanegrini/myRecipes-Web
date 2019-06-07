@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:52:21
+/* Smarty version 3.1.33, created on 2019-06-07 17:43:18
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6c15352651_22384267',
+  'unifunc' => 'content_5cfa8616ea3014_90325168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fa660af311f55f0e8c1301b2a896f5008eeac19' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl',
-      1 => 1559915414,
+      1 => 1559921289,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6c15352651_22384267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa8616ea3014_90325168 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -49,7 +49,7 @@ function content_5cfa6c15352651_22384267 (Smarty_Internal_Template $_smarty_tpl)
               <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+              <a class="nav-link active text-white" href="/myRecipes-Web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>

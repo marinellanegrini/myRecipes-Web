@@ -154,6 +154,21 @@ class CGestioneUtente
         }
     }
 
+    /**
+     * Metodo per effettuare il logout
+     * Se l'utente è loggato redirect alla homepage
+     * Se l'utente non è loggato redirect alla homepage
+     */
+    public function Logout(){
+        $sessione = Sessione::getInstance();
+        if($sessione->isLoggedUtente()){
+            $sessione->logout(); //cancello i dati di sessione
+        }
+        //redirect a login in entrambi i casi
+        header('Location: /myRecipes-Web');
+
+    }
+
 
 
 }
