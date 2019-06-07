@@ -31,7 +31,12 @@ class CGestioneRicette {
             $idCibi = $view->recuperaIngredienti();
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->ricercaTramiteIngrediente($idCibi);
-            $view->mostraRislutati($ricette);
+            if($ricette!=null){
+                $msg = "";
+            } else {
+                $msg = "Non ci sono ricette che soddisfano questi parametri";
+            }
+            $view->mostraRislutati($ricette, $msg);
 
         }
         else{
@@ -51,7 +56,12 @@ class CGestioneRicette {
             $filtri = $view->recuperaFiltri();
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->ricercaTramiteFiltri($filtri);
-            $view->mostraRisultati($ricette);
+            if($ricette!=null){
+                $msg = "";
+            } else {
+                $msg = "Non ci sono ricette che soddisfano questi parametri";
+            }
+            $view->mostraRislutati($ricette, $msg);
 
         }
         else{
@@ -70,7 +80,12 @@ class CGestioneRicette {
             $nome = $view->recuperaNome();
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->search("ricetta", $nome, "nome");
-            $view->mostraRisultati($ricette);
+            if($ricette!=null){
+                $msg = "";
+            } else {
+                $msg = "Non ci sono ricette che soddisfano questi parametri";
+            }
+            $view->mostraRislutati($ricette, $msg);
 
         }
         else{

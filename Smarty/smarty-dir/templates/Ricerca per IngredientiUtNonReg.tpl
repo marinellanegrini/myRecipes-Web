@@ -49,7 +49,7 @@
       <div class="row">
         <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1">
           <h3 class="display-4 text-dark pl-3" align=""><b>Ricerca per ingredienti </b><i class="fa fa-cutlery"></i></h3>
-          <form action="#">
+          <form method="post" action="/myRecipes-Web/Ricette/cercaPerIngredienti">
             <div class="form-check text-dark ml-5">
               <div class="container">
                 {section name=cibo loop=$cibi}
