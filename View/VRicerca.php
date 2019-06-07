@@ -21,14 +21,22 @@ class VRicerca
      */
     public function mostraIngredienti($cibi){
 
+        foreach ($cibi as $cibo)
+        {
+            $img=$cibo->getImmagine();
+            $img->setData(base64_encode($img->getData()));
+            $cibo->setImmagine($img);
+        }
         //assegnazione a smarty per mostrare i cibi selezionabili (if per utenti loggati e non)
 
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
-
+            $this->smarty->assign('cibi', $cibi);
+            $this->smarty->display('Ricerca per IngredientiUtReg.tpl');
 
         } else {
-
+            $this->smarty->assign('cibi', $cibi);
+            $this->smarty->display('Ricerca per IngredientiUtNonReg.tpl');
         }
     }
 
@@ -40,9 +48,11 @@ class VRicerca
         $session = Sessione::getInstance();
 
         if($session->isLoggedUtente()){
+
             $this->smarty->display('RicercaPerFiltriUtReg.tpl');
         } else {
             $this->smarty->display('RicercaPerFiltriUtNonReg.tpl');
+
         }
     }
 

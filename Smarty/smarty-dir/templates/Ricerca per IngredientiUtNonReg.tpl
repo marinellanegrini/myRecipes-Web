@@ -33,8 +33,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
-        <a href="#" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a><a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-        <form class="form-inline">
+        <a href="/myRecipes-Web/Ricette/RicercaAvanzata"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+        <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
             <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
             <div class="input-group-append my-0 mb-0"><button class="btn btn-primary pb-0 mt-2 mb-1" type="button"><i class="fa fa-search pb-1"></i></button></div>
@@ -48,33 +49,19 @@
       <div class="row">
         <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1">
           <h3 class="display-4 text-dark pl-3" align=""><b>Ricerca per ingredienti </b><i class="fa fa-cutlery"></i></h3>
-          <form action="#">
+          <form method="post" action="/myRecipes-Web/Ricette/cercaPerIngredienti">
             <div class="form-check text-dark ml-5">
               <div class="container">
+                {section name=cibo loop=$cibi}
+
                 <div class="row">
                   <div class="mt-2" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4 mt-2" style="">Ingredienti </div>
+                    <input class="form-check-input" type="checkbox" name="cibi[]" value="{$cibi[cibo]->getId()}" id="defaultCheck1">
+                    <img class="img-fluid d-block" src="data:{$cibi[cibo]->getImmagine()->getType()};base64,{$cibi[cibo]->getImmagine()->getData()}" style="	width: 70px;	height: 50px;"></div>
+                  <div class="col-md-4 mt-2" style="">{$cibi[cibo]->getNome()} </div>
                 </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
-                <div class="row mt-1">
-                  <div class="" style="">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <img class="img-fluid d-block" src="../img/carbonara.jpg" style="	width: 70px;	height: 50px;"></div>
-                  <div class="col-md-4" style="">Ingredienti </div>
-                </div>
+                {/section}
+
                 <div class="row pull-right">
                   <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5 " style=""><b>Cerca</b></button>
                 </div>
