@@ -8,6 +8,7 @@ class CFrontController
 {
     /**
      * Metodo che dalla URL recupera il controllore da istanziare e il relativo metodo con parametro
+     * /myRecipes-Web/controller/metodo/param
      */
     public function run(){
 

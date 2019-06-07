@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 /** class VPreferiti che gestisce l'input/output per mostrare le ricette preferite, aggiungere e rimuovere dai preferiti*/
 class VPreferiti
 {

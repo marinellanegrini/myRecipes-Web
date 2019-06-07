@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 
 /** class VErrore gestisce l'input/output per gli errori
  */

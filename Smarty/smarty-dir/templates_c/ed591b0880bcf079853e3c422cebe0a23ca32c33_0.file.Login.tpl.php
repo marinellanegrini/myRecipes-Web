@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-06 18:16:17
+/* Smarty version 3.1.33, created on 2019-06-07 09:48:51
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cf93c510c8b98_62499141',
+  'unifunc' => 'content_5cfa16e326e168_25244199',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ed591b0880bcf079853e3c422cebe0a23ca32c33' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Login.tpl',
-      1 => 1559837772,
+      1 => 1559893683,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cf93c510c8b98_62499141 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa16e326e168_25244199 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -34,6 +34,12 @@ function content_5cf93c510c8b98_62499141 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body style="	background-image: url(/myRecipes-Web/Smarty/smarty-dir/templates/img/carbonara.jpg);	background-position: top left;	background-size: cover;">
+
+<div class="alert">
+  <p><?php echo $_smarty_tpl->tpl_vars['errore']->value;?>
+</p>
+</div>
+
   <div class="text-center" style="">
     <div class="container">
       <div class="row mt-4">
@@ -54,7 +60,12 @@ function content_5cf93c510c8b98_62499141 (Smarty_Internal_Template $_smarty_tpl)
               <small class="form-text text-muted text-right">
                 <a href="#"> Recupera password</a>
               </small>
-              <small class="text-muted form-text mt-2 text-left"><a href="#">Non sei ancora registrato? Clicca qui!</a></small></div>
+              <?php if ($_smarty_tpl->tpl_vars['ruolo']->value == "utente") {?>
+                <small class="text-muted form-text mt-2 text-left">
+                  <a href="/myRecipes-Web/Utente/Registrazione">Non sei ancora registrato? Clicca qui!</a>
+                </small>
+              <?php }?>
+            </div>
              <div> <button type="submit" class="btn btn-primary btn-lg">Accedi</button>
              </div>
           </form>

@@ -449,11 +449,11 @@ class FPersistentManager {
      * Metodo che esegue la load di un utente in base all'username e password (login)
      * @param $username dell'utente
      * @param $password dell'utente
-     * @return EUtente recuperato| false se non è presente un utente con quell'username e password
+     * @return id utente se esiste| false se non è presente un utente con quell'username e password
      */
-    public function loadUtente($username,$password){
+    public function esisteUtente($username,$password){
         $ut = new FUtente();
-        $ret = $ut->loadUtente($username,$password);
+        $ret = $ut->esisteUtente($username,$password);
         return $ret;
     }
 

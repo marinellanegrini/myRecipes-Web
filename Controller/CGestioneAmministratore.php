@@ -16,14 +16,16 @@ class CGestioneAmministratore
 
             if($sessione->isLoggedAdmin()){
                 //redirect alla home page
+                header('Location: /myRecipes-Web');
             } else {
                 $view = new VLogin();
-                $view->mostraFormLogin("amministratore");
+                $view->mostraFormLogin("amministratore","");
             }
         }
         else if($_SERVER['REQUEST_METHOD']=="POST"){
             if($sessione->isLoggedAdmin()){
                 //redirect alla home page
+                header('Location: /myRecipes-Web');
             } else {
                 $this->Entra();
             }
@@ -49,8 +51,11 @@ class CGestioneAmministratore
             $sessione->setAdminLoggato();
 
             //login avvenuto con successo, mostrare la pagina principale dell'amministratore
+            header('Location: /myRecipes-Web');
         } else {
-            //username e/o password errati, mostrare errore o nuovamente login
+            //username e/o password errati, mostrare login con errore
+            $viewerr = new VLogin();
+            $viewerr->mostraFormLogin("amministratore","Username e/o password errati");
         }
     }
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 09:48:15
-  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl' */
+/* Smarty version 3.1.33, created on 2019-06-06 22:10:23
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa16bf4dd338_46738533',
+  'unifunc' => 'content_5cf9732f47d898_28897496',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '0a861db3a7913d9cb3b63a38490a33bc1eebba65' => 
+    '401f0b2844b6c10519eab28e8e67e0a714a83b35' => 
     array (
-      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl',
-      1 => 1559893683,
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl',
+      1 => 1559850240,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa16bf4dd338_46738533 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cf9732f47d898_28897496 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -48,11 +48,23 @@ function content_5cfa16bf4dd338_46738533 (Smarty_Internal_Template $_smarty_tpl)
         <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="topnav1 pull-right">
-          <a href="#home">Home</a>
-          <a href="/myRecipes-Web/Utente/Login">Login</a>
-          <a href="/myRecipes-Web/Amministratore/Login">Login amministratore</a>
-          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
+        <div class="col-md-12">
+          <ul class="nav pull-right" style="">
+            <li class="nav-item">
+              <a href="#" class="nav-link active text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+                
+                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -85,7 +97,7 @@ function content_5cfa16bf4dd338_46738533 (Smarty_Internal_Template $_smarty_tpl)
               <li data-target="#carouselExampleIndicators" data-slide-to="2"> </li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/carbonara.jpg">
+              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="../img/carbonara.jpg">
                 <div class="carousel-caption">
                   <p>Primi piatti</p>
                   <h1>Carbonara</h1>
@@ -116,7 +128,7 @@ function content_5cfa16bf4dd338_46738533 (Smarty_Internal_Template $_smarty_tpl)
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light text-dark">
-              <p class="card-text">Carbonara</p>
+              <p class="card-title">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
@@ -130,7 +142,7 @@ function content_5cfa16bf4dd338_46738533 (Smarty_Internal_Template $_smarty_tpl)
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light">
-              <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text text-dark">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>

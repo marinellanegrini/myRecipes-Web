@@ -22,7 +22,9 @@ class Sessione
      * @return bool
      */
     public function isLoggedUtente(){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
 
         if(isset($_SESSION['utente'])){
             return true;
@@ -36,7 +38,9 @@ class Sessione
      * @return bool
      */
     public function isLoggedAdmin(){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
 
         if(isset($_SESSION['amministratore'])){
             return true;
@@ -50,7 +54,9 @@ class Sessione
      * @return EUtente loggato
      */
     public function getUtente(){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
         $u = $_SESSION['utente']; //stringa
         $utente = unserialize($u);
         return $utente;
@@ -61,7 +67,9 @@ class Sessione
      * @param $utente da salvare in $_SESSION
      */
     public function setUtenteLoggato($utente){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
         $u = serialize($utente);
         $_SESSION['utente'] = $u;
     }
@@ -70,7 +78,9 @@ class Sessione
      * Metodo che salva nei dati di sessione che l'amministratore è loggato (quando il login amministratore ha successo
      */
     public function setAdminLoggato(){
-        session_start();
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
         $_SESSION['amministratore'] = true;
     }
 }

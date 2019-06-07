@@ -11,6 +11,11 @@
 </head>
 
 <body style="	background-image: url(/myRecipes-Web/Smarty/smarty-dir/templates/img/carbonara.jpg);	background-position: top left;	background-size: cover;">
+
+<div class="alert">
+  <p>{$errore}</p>
+</div>
+
   <div class="text-center" style="">
     <div class="container">
       <div class="row mt-4">
@@ -31,7 +36,12 @@
               <small class="form-text text-muted text-right">
                 <a href="#"> Recupera password</a>
               </small>
-              <small class="text-muted form-text mt-2 text-left"><a href="#">Non sei ancora registrato? Clicca qui!</a></small></div>
+              {if $ruolo eq "utente"}
+                <small class="text-muted form-text mt-2 text-left">
+                  <a href="/myRecipes-Web/Utente/Registrazione">Non sei ancora registrato? Clicca qui!</a>
+                </small>
+              {/if}
+            </div>
              <div> <button type="submit" class="btn btn-primary btn-lg">Accedi</button>
              </div>
           </form>

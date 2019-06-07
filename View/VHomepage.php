@@ -1,6 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
-
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 /** class VHomepage gestisce la prima pagina
  */
 class VHomepage
@@ -20,6 +19,8 @@ class VHomepage
         $sessione = Sessione::getInstance();
         if($sessione->isLoggedUtente()){
             $this->smarty->display('ListaRicetteUtReg.tpl');
+        } elseif($sessione->isLoggedAdmin()){
+            $this->smarty->display('HomepageAmministratore.tpl');
         } else {
             $this->smarty->display('ListaRicetteUtNonReg.tpl');
         }

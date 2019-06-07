@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 
 /** class VDettaglio che gestisce l'input/output per mostrare il dettaglio della ricetta e l'inserimento dei commenti*/
 class VDettaglio
