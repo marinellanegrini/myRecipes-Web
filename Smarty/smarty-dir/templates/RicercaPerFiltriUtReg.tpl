@@ -59,7 +59,7 @@
     <div class="row">
       <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1" style="">
         <h3 class="text-dark display-4 pl-3">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
-        <form action="#" method="post">
+        <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
               <div class="row" style="">

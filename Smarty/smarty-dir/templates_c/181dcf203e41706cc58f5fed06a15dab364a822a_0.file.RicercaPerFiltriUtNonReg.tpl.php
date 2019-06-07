@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-07 14:45:59
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtNonReg.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfa5c87104d96_26176227',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '181dcf203e41706cc58f5fed06a15dab364a822a' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtNonReg.tpl',
+      1 => 1559911552,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfa5c87104d96_26176227 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -188,4 +211,5 @@
 
 </body>
 
-</html>
+</html><?php }
+}
