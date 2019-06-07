@@ -108,7 +108,7 @@
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light text-dark">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-title">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
@@ -122,7 +122,7 @@
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light">
-              <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text text-dark">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>

@@ -51,28 +51,6 @@
   </nav>
   <!-- Intro -->
   <!-- Gallery -->
-  <div class="">
-    <div class="container-fluid border">
-      <div class="row">
-        <div class="p-0 col-md-6 col-4">
-        </div>
-        <div class="p-0 col-md-6 col-4">
-        </div>
-      </div>
-      <div class="row">
-        <div class="p-0 col-md-6 col-4">
-        </div>
-        <div class="p-0 col-md-6 col-4">
-        </div>
-      </div>
-      <div class="row">
-        <div class="p-0 col-md-6 col-4">
-        </div>
-        <div class="p-0 col-md-6 col-4">
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="border-primary py-3">
     <div class="container">
       <div class="row">
@@ -115,7 +93,7 @@
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light text-dark">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">Carbonara</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>

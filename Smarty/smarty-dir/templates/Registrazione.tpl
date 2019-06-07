@@ -23,7 +23,9 @@
   <div class="">
     <div class="container">
       <div class="row">
+
         <div class="mx-auto col-md-6 pt-3"><img class="img-fluid d-block w-25" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
+
       </div>
     </div>
   </div>
