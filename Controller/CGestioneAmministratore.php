@@ -70,6 +70,7 @@ class CGestioneAmministratore
             $view->mostraFormInserimento();
         } else {
             header('Location: /myRecipes-Web/Amministratore/Login');
+
         }
     }
 
@@ -83,8 +84,10 @@ class CGestioneAmministratore
             $view = new VGestioneAmministratore();
             $view->mostraFormCommenti();
         } else {
+
             //errore admin non loggato redirect form di login amministratore
             header('Location: /myRecipes-Web/Amministratore/Login');
+
         }
 
     }
@@ -166,8 +169,10 @@ class CGestioneAmministratore
             if($session->isLoggedAdmin()){
                 $view = new VCommenti();
                 $filtri = $view->recuperaFiltri();
+
                 $pm = FPersistentManager::getInstance();
                 $commenti = $pm->ricercaCommenti($filtri['last'], $filtri['parola']);
+
                 $view->mostraCommenti($commenti);
 
             } else {
@@ -197,11 +202,15 @@ class CGestioneAmministratore
                     $esito = $pm->update("commento", $idcommento, 'bannato', true);
                     if (!$esito) {
                         // messaggio errore se il ban va male
+                        $viewerr = new VErrore();
+                        $viewerr->mostraErrore("Il ban non è andato a buon fine");
                     }
                 }
+                header('Location: /myRecipes-Web');
                 //redirect alla home page amministratore
             } else {
                 //errore admin non loggato redirect form di login amministratore
+                header('Location: /myRecipes-Web/Amministratore/Login');
             }
         } else {
             header('HTTP/1.1 405 Method Not Allowed');

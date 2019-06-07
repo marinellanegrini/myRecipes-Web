@@ -49,6 +49,7 @@ class VGestioneAmministratore
      */
     public function mostraFormCommenti(){
         //assegnazione a smarty per mostrare i filtri per la ricerca commenti
+        $this->smarty->display("Monitoraggio.tpl");
 
     }
 

@@ -125,6 +125,6 @@ $g = new CGestioneAmministratore();
 $g->inserimentoDatiRicetta("abc",3,"ciao mondo",'00:10:00',4,4,$img,$arrimg,$a);*/
 
 $pm = FPersistentManager::getInstance();
-$u = $pm->loadUtente('Arianna98','ariaa');
+$u = $pm->recuperaUltimi5Commenti(1);
 print_r($u);
 ?>

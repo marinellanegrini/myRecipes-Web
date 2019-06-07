@@ -11,10 +11,12 @@
 <body style="">
   <div class="topnav">
     <a href="/myRecipes-Web" class="active">Home</a>
-    <a href="#news">Monitoraggio</a>
-    <a href="#contact">Nuova ricetta</a>
-    <a href="#contact">Nuovo ingrediente</a>
-    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
+
+    <a href="/myRecipes-Web/Amministratore/GestisciCommenti">Monitoraggio</a>
+    <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
+    <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
+    <a href="#contact">Logout</a>
+
   </div>
   <div class="py-5">
     <div class="container">
@@ -23,22 +25,25 @@
           <h1 class="">Ultimi commenti</h1>
         </div>
       </div>
+      {section name=commenti loop=$com}
       <div class="row">
         <div class="col-md-12">
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">List group </h5> <small class="text-muted">3 days ago</small>
+                <h5 class="mb-1">{$com[commenti]->getIdUtente()}</h5> <small class="text-muted">{$com[commenti]->getData()}</small>
               </div>
-              <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> <small class="text-muted">Donec id elit non mi porta.</small>
+              <p class="mb-1">{$com[commenti]->getTesto()}</p> <small class="text-muted">{$com[commenti]->getIdRicetta()}</small>
             </a>
           </div>
         </div>
       </div>
+      {/section}
       <div class="row">
         <div class="col-md-12"><a class="btn btn-primary mt-1" href="#Monitoraggio">Vedi altri</a></div>
       </div>
     </div>
+
   </div>
   <div class="py-5">
     <div class="container-fluid">

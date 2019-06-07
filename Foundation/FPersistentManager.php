@@ -506,4 +506,14 @@ class FPersistentManager {
         return $esito;
     }
 
+    public function recuperaUltimi5Commenti($ultimi){
+        $filtri['ultimi'] = $ultimi;
+        $filtri['parola'] = null;
+        $fc = new FCommento();
+        $ret = $fc->ricercaCommenti($filtri);
+        return $ret;
+
+
+    }
+
 }

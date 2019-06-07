@@ -8,12 +8,14 @@
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	box-shadow: 0px 0px 4px  black;">
+<body class="bg-light" style="">
   <nav class="navbar navbar-expand-md bg-primary navbar-primary ">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container">
@@ -78,7 +80,7 @@
           <div class="col-md-12">
             <div class="row border mb-3" style="">
               <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style="">
-                <img class="img-fluid d-block" src="data:{$risultati[ricetta]->getImmagine()->getType()};base64,{$risultati[ricetta]->getImmagine()->getData()}"></div>
+                <img class="img-fluid d-block" src="data:{$risultati[ricetta]->getImmagine()->getType()};base64,{$risultati[ricetta]->getImmagine()->getData()}" style="width: 270px;	height: 160px;"></div>
               <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
                 <div class="row w-100">
                   <div class="col-md-12"><a class="btn pull-right ml-1 text-primary"><i class="fa fa-heart-o" aria-hidden="true"></i> {$risultati[ricetta]->getNsalvataggi()}</a>

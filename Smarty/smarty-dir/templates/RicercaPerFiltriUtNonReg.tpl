@@ -8,12 +8,14 @@
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	background-image: linear-gradient(to bottom, rgba(196, 60, 0), rgba(255, 158, 64));	background-position: top left;	background-size: 100%;">
+<body class="bg-secondary">
   <nav class="navbar navbar-expand-md navbar-primary bg-primary">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
@@ -44,16 +46,17 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1" style="">
-        <h3 class="text-dark display-4 pl-3">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
+  <div class="py-1">
+    <div class="container" style="box-shadow: 0px 0px 4px  black;">
+      <div class="row">
+        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
+        <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
               <div class="row" style="">
                 <div class="py-0 text-dark col-md-12">
-                  <h5 class="text-dark mt-3 col-md-8" style="">DIFFICOLTÁ </h5>
+                  <h5 class="text-dark mt-3 col-md-8 pl-4" style="">DIFFICOLTÁ </h5>
                 </div>
               </div>
             </div>
@@ -110,7 +113,7 @@
           <div class="col-md-12" style="">
             <div class="row" style="">
               <div class="py-0 text-dark col-md-8">
-                <h5 class="text-dark px-10" style="" contenteditable="true">TEMPO DI PREPARAZIONE </h5>
+                <h5 class="text-dark px-10 pl-3" style="" contenteditable="true">TEMPO DI PREPARAZIONE </h5>
               </div>
             </div>
           </div>
@@ -149,7 +152,7 @@
           <div class="col-md-12" style="">
             <div class="row" style="">
               <div class="text-dark col-md-8">
-                <h5 class="text-dark px-10" style="">CATEGORIA </h5>
+                <h5 class="text-dark px-10 pl-3" style="">CATEGORIA </h5>
               </div>
             </div>
           </div>
@@ -179,12 +182,15 @@
                 <input name="cat" type="radio" id="cat6" value="6" class="form-check-input">
                 <label for="cat6" class="form-check-label">PIATTI UNICI</label>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
+              <div class="row pull-right">
+                <button type="submit" class="btn btn-primary btn-lg mt-5 mr-5 " style=""><b>Cerca</b></button>
+              </div>
             </div>
           </div>
         </form>
       </div>
     </div>
+  </div>
   </div>
 
 </body>

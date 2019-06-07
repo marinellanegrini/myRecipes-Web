@@ -8,12 +8,14 @@
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	background-image: linear-gradient(to bottom, rgba(196, 60, 0), rgba(255, 158, 64));	background-position: top left;	background-size: 100%;">
+<body class="bg-secondary" >
   <nav class="navbar navbar-expand-md navbar-primary bg-primary">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
@@ -56,10 +58,11 @@
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1" style="">
-        <h3 class="text-dark display-4 pl-3">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
+  <div class="py-1">
+    <div class="container" style="box-shadow: 0px 0px 4px  black;">
+      <div class="row">
+        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
+          <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
@@ -197,6 +200,7 @@
         </form>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

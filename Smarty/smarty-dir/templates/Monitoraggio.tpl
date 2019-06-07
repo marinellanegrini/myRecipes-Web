@@ -12,17 +12,21 @@
   <div class="topnav">
     <a href="/myRecipes-Web">Home</a>
     <a href="#news" class="active">Monitoraggio</a>
-    <a href="#contact">Nuova ricetta</a>
-    <a href="#contact">Nuovo ingrediente</a>
+
+    <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
+    <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
     <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
+
   </div>
   <div class="py-5 text-center align-items-center d-flex" style="">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-12 mx-auto">
           <h1 class="display-3 mb-4">Vuoi applicare dei filtri?</h1>
-          <form action="#" align="left" enctype="multipart/form-data" class="ml-3 pt-3"> Parola da ricercare nei commenti: <input type="text" name="#" value="" class="ml-3">
-            <br>Numero commenti: <input type="number" name="#" value="" class="ml-3 mt-2">
+          <form action="/myRecipes-Web/Amministratore/Commenti" align="left" method="post" class="ml-3 pt-3">
+            Parola da ricercare nei commenti:
+            <input type="text" name="parola" class="ml-3">
+            <br>Numero commenti: <input type="text" name="last" class="ml-3 mt-2">
             <br>
             <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" style=""><b>Applica filtri</b></button>
           </form>
