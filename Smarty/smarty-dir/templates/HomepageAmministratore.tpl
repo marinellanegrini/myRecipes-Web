@@ -10,7 +10,7 @@
 
 <body style="">
   <div class="topnav">
-    <a href="#home" class="active">Home</a>
+    <a href="/myRecipes-Web" class="active">Home</a>
     <a href="#news">Monitoraggio</a>
     <a href="#contact">Nuova ricetta</a>
     <a href="#contact">Nuovo ingrediente</a>

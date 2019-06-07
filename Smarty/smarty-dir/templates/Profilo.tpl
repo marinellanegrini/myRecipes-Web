@@ -22,7 +22,7 @@
         <div class="col-md-12">
           <ul class="nav pull-right" style="">
             <li class="nav-item">
-              <a href="#" class="nav-link active text-white">Home</a>
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>

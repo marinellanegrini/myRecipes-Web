@@ -23,10 +23,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="topnav1 pull-right">
-          <a href="#home">Home</a>
-          <a href="#news">Login</a>
-          <a href="#contact">Login amministratore</a>
-          <a href="#contact">Registrazione</a>
+          <a href="/myRecipes-Web">Home</a>
+          <a href="/myRecipes-Web/Utente/Login">Login</a>
+          <a href="/myRecipes-Web/Amministratore/Login">Login amministratore</a>
+          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
         </div>
       </div>
     </div>

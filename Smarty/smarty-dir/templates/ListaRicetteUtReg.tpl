@@ -28,13 +28,17 @@
         <div class="col-md-12">
           <ul class="nav pull-right" style="">
             <li class="nav-item">
-              <a href="#" class="nav-link active text-white">Home</a>
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                Account
+                <i class="fa fa-user-o fa-fw" aria-hidden="true"
+                </i>
+              </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
@@ -61,8 +65,7 @@
       </div>
     </div>
   </nav>
-  <!-- Intro -->
-  <!-- Gallery -->
+
   <div class="border-primary py-3">
     <div class="container">
       <div class="row">
@@ -74,7 +77,7 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"> </li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="../img/carbonara.jpg">
+              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/carbonara.jpg">
                 <div class="carousel-caption">
                   <p>Primi piatti</p>
                   <h1>Carbonara</h1>
