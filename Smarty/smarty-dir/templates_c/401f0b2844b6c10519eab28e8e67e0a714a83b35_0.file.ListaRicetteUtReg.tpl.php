@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:52:13
+/* Smarty version 3.1.33, created on 2019-06-07 17:33:04
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6c0d866210_00083637',
+  'unifunc' => 'content_5cfa83b0879d97_36159227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '401f0b2844b6c10519eab28e8e67e0a714a83b35' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl',
-      1 => 1559915414,
+      1 => 1559918628,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6c0d866210_00083637 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa83b0879d97_36159227 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -41,7 +41,9 @@ function content_5cfa6c0d866210_00083637 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container">

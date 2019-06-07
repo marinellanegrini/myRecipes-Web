@@ -23,33 +23,29 @@
           <h1 class="">Ultimi commenti</h1>
         </div>
       </div>
-      <form action="#" method="post">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="list-group">
-              <div class="form-check">
-                <input class="form-check-input" align="center" type="checkbox" value="" id="defaultCheck1">
-                <a href="#" class="list-group-item flex-column align-items-start">
+      <form action="/myRecipes/Amministratore/Banna" method="post">
+        {section name=commenti loop=$com}
+          <div class="row">
+            <div class="col-md-12">
+              <div class="list-group">
+                <div class="form-check">
+                  <input class="form-check-input" align="center" name="commenti[]" type="checkbox" value="{$com[commenti]->getId()}" id="defaultCheck1">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group </h5> <small class="text-muted">3 days ago</small>
+                    <h5 class="mb-1">{$com[commenti]->getIdUtente()}</h5>
+                    <small class="text-muted">{$com[commenti]->getData()}</small>
                   </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> <small class="text-muted">Donec id elit non mi porta.</small>
+                  <p class="mb-1">{$com[commenti]->getTesto()}</p>
+                  <small class="text-muted">{$com[commenti]->getIdRicetta()}</small>
                 </a>
-              </div>
-            </div>
-            <div class="list-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <a href="#" class="list-group-item flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group </h5> <small class="text-muted">3 days ago</small>
-                  </div>
-                  <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p> <small class="text-muted">Donec id elit non mi porta.</small>
-                </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        {/section}
+
+
+
         <button type="submit" class="btn btn-primary btn-lg mt-2 ml-3" style=""><b>Banna</b></button>
       </form>
     </div>

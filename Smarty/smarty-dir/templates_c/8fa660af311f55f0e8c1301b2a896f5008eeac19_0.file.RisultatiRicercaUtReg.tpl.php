@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:52:21
+/* Smarty version 3.1.33, created on 2019-06-07 17:37:13
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6c15352651_22384267',
+  'unifunc' => 'content_5cfa84a909c795_93976865',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fa660af311f55f0e8c1301b2a896f5008eeac19' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RisultatiRicercaUtReg.tpl',
-      1 => 1559915414,
+      1 => 1559921828,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6c15352651_22384267 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa84a909c795_93976865 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -31,12 +31,14 @@ function content_5cfa6c15352651_22384267 (Smarty_Internal_Template $_smarty_tpl)
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	box-shadow: 0px 0px 4px  black;">
+<body class="bg-light" style="">
   <nav class="navbar navbar-expand-md bg-primary navbar-primary ">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container">
@@ -110,7 +112,7 @@ for ($__section_ricetta_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_sectio
               <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style="">
                 <img class="img-fluid d-block" src="data:<?php echo $_smarty_tpl->tpl_vars['risultati']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getImmagine()->getType();?>
 ;base64,<?php echo $_smarty_tpl->tpl_vars['risultati']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getImmagine()->getData();?>
-"></div>
+" style="width: 270px;	height: 160px;"></div>
               <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
                 <div class="row w-100">
                   <div class="col-md-12"><a class="btn pull-right ml-1 text-primary"><i class="fa fa-heart-o" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['risultati']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getNsalvataggi();?>

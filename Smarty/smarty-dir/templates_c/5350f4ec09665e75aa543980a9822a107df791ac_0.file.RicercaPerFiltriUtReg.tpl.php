@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 15:52:17
+/* Smarty version 3.1.33, created on 2019-06-07 17:33:57
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa6c117d2771_95625032',
+  'unifunc' => 'content_5cfa83e5088241_38354576',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5350f4ec09665e75aa543980a9822a107df791ac' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl',
-      1 => 1559915414,
+      1 => 1559921636,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa6c117d2771_95625032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa83e5088241_38354576 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -31,12 +31,14 @@ function content_5cfa6c117d2771_95625032 (Smarty_Internal_Template $_smarty_tpl)
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	background-image: linear-gradient(to bottom, rgba(196, 60, 0), rgba(255, 158, 64));	background-position: top left;	background-size: 100%;">
+<body class="bg-secondary" >
   <nav class="navbar navbar-expand-md navbar-primary bg-primary">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
@@ -79,10 +81,11 @@ function content_5cfa6c117d2771_95625032 (Smarty_Internal_Template $_smarty_tpl)
       </div>
     </div>
   </nav>
-  <div class="container">
-    <div class="row">
-      <div class="bg-white col-12 py-4 pl-4 col-md-12 my-0 mx-0 mt-1" style="">
-        <h3 class="text-dark display-4 pl-3">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
+  <div class="py-1">
+    <div class="container" style="box-shadow: 0px 0px 4px  black;">
+      <div class="row">
+        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
+          <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
@@ -220,6 +223,7 @@ function content_5cfa6c117d2771_95625032 (Smarty_Internal_Template $_smarty_tpl)
         </form>
       </div>
     </div>
+  </div>
   </div>
 
   <?php echo '<script'; ?>
