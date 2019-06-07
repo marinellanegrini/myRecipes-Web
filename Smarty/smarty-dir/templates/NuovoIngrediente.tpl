@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body style="">
   <div class="topnav">
-    <a href="#home">Home</a>
+    <a href="/myRecipes-Web/">Home</a>
     <a href="#news">Monitoraggio</a>
     <a href="#contact">Nuova ricetta</a>
     <a href="#contact" class="active">Nuovo ingrediente</a>
