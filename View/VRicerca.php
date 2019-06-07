@@ -42,9 +42,9 @@ class VRicerca
 
         if($session->isLoggedUtente()){
 
-
+            $this->smarty->display('RicercaPerFiltriUtReg.tpl');
         } else {
-
+            $this->smarty->display('RicercaPerFiltriUtNonReg.tpl');
 
         }
     }

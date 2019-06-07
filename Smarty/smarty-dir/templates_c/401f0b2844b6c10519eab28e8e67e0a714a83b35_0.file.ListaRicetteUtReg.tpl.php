@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-07 11:08:21
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfa29859878b6_54982891',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '401f0b2844b6c10519eab28e8e67e0a714a83b35' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl',
+      1 => 1559898500,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfa29859878b6_54982891 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -25,11 +48,27 @@
         <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="topnav1 pull-right">
-          <a href="/myRecipes-Web">Home</a>
-          <a href="/myRecipes-Web/Utente/Login">Login</a>
-          <a href="/myRecipes-Web/Amministratore/Login">Login amministratore</a>
-          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
+        <div class="col-md-12">
+          <ul class="nav pull-right" style="">
+            <li class="nav-item">
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                Account
+                <i class="fa fa-user-o fa-fw" aria-hidden="true">
+                </i>
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+                
+                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -39,10 +78,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
-
-        <a href="/myRecipes-Web/Ricette/RicercaAvanzata"class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes-Web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
         <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-
         <form class="form-inline">
           <div class="input-group">
             <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Search">
@@ -52,8 +89,7 @@
       </div>
     </div>
   </nav>
-  <!-- Intro -->
-  <!-- Gallery -->
+
   <div class="border-primary py-3">
     <div class="container">
       <div class="row">
@@ -96,7 +132,7 @@
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light text-dark">
-              <p class="card-text">Carbonara</p>
+              <p class="card-title">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
@@ -110,7 +146,7 @@
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
             <div class="card-body bg-light">
-              <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text text-dark">Title</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
@@ -224,4 +260,5 @@
   
 </body>
 
-</html>
+</html><?php }
+}

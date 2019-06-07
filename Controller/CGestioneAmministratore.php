@@ -67,10 +67,10 @@ class CGestioneAmministratore
         $session = Sessione::getInstance();
         if($session->isLoggedAdmin()){
             $view = new VGestioneAmministratore();
-            $ningredienti = $view->recuperaNIngredienti(); //recupero il numero di ingredienti inserito dall'amministratore
-            $view->mostraFormInserimento($ningredienti);
+            $view->mostraFormInserimento();
         } else {
-            //errore admin non loggato redirect form di login amministratore
+            $view = new VLogin();
+            $view->mostraFormLogin("amministratore","");
         }
     }
 
