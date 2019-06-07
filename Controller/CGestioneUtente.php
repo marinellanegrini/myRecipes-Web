@@ -130,6 +130,7 @@ class CGestioneUtente
             $view->mostraProfilo($sessione->getUtente());
         } else {
             //redirect alla form di login
+            header('Location: /myRecipes-Web/Utente/Login');
         }
     }
 

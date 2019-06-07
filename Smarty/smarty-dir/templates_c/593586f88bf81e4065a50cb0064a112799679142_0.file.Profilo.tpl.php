@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-07 15:16:05
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfa6395be1b57_16360540',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '593586f88bf81e4065a50cb0064a112799679142' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl',
+      1 => 1559913360,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfa6395be1b57_16360540 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -73,12 +96,16 @@
   <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mt-3"><img class="img-fluid d-block rounded-circle w-75" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}"></div>
+        <div class="col-md-6 mt-3"><img class="img-fluid d-block rounded-circle w-75" src=""></div>
         <div class="col-md-6 py-5 pl-5">
-          <h1 class="text-dark">{$utente->getUsername()}</h1>
-          <h2 class="text-dark">{$utente->getEmail()}</h2>
-          <h2 class="text-dark">{$utente->getNome()}</h2>
-          <h2 class="pb-4 text-dark">{$utente->getCognome()}</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
+          <h1 class="text-dark"><?php echo $_smarty_tpl->tpl_vars['utente']->value->getUsername();?>
+</h1>
+          <h2 class="text-dark"><?php echo $_smarty_tpl->tpl_vars['utente']->value->getEmail();?>
+</h2>
+          <h2 class="text-dark"><?php echo $_smarty_tpl->tpl_vars['utente']->value->getNome();?>
+</h2>
+          <h2 class="pb-4 text-dark"><?php echo $_smarty_tpl->tpl_vars['utente']->value->getCognome();?>
+</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
         </div>
       </div>
     </div>
@@ -97,11 +124,6 @@
       <div class="row">
         <div class="col-md-12">
           <ul class="media-list">
-
-
-            {section name=commento loop= $utente->getCommenti()}
-
-
             <li class="media py-2">
               <a href="#" class="pull-left">
                 <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
@@ -116,11 +138,33 @@
                 <p>Testo commento 1</p>
               </div><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i>
             </li>
-
-
-            {/section}
-
-
+            <li class="media py-2">
+              <a href="#" class="pull-left">
+                <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
+              </a>
+              <div class="media-body px-2 text-dark">
+                <span class="text-muted pull-right">
+                  <small class="text-muted">data</small>
+                  <br>
+                  <small class="text-muted">ora</small>
+                </span><span class="text-muted pull-right">
+                </span>
+                <p>Testo commento 2</p>
+              </div><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i>
+            </li>
+            <li class="media py-2">
+              <a href="#" class="pull-left">
+                <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
+              </a>
+              <div class="media-body px-2">
+                <span class="text-muted pull-right">
+                  <small class="text-muted">data</small>
+                  <br>
+                  <small class="text-muted">ora</small>
+                </span>
+                <p class="text-dark">Testo commento 3</p>
+              </div> <i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i>
+            </li>
           </ul>
         </div>
       </div>
@@ -129,4 +173,5 @@
   <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
 </body>
 
-</html>
+</html><?php }
+}

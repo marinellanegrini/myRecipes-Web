@@ -20,7 +20,16 @@ class VProfilo
      * @param $utente da mostrare
      */
     public function mostraProfilo($utente){
-        //Assegnare a Smarty per mostrare il profilo
+
+        $img=$utente->getImmagine();
+        $img->setData(base64_encode($img->getData()));
+        $utente->setImmagine($img);
+
+
+        $this->smarty->assign('utente', $utente);
+        $this->smarty->display('Profilo.tpl');
+
+
     }
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-07 11:08:21
+/* Smarty version 3.1.33, created on 2019-06-07 14:57:40
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfa29859878b6_54982891',
+  'unifunc' => 'content_5cfa5f449cb646_24018604',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '401f0b2844b6c10519eab28e8e67e0a714a83b35' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtReg.tpl',
-      1 => 1559898500,
+      1 => 1559910498,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfa29859878b6_54982891 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfa5f449cb646_24018604 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -50,14 +50,15 @@ function content_5cfa29859878b6_54982891 (Smarty_Internal_Template $_smarty_tpl)
         </button>
         <div class="col-md-12">
           <ul class="nav pull-right" style="">
+
             <li class="nav-item">
               <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" href="#">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+              <a  class="nav-link active text-white" href="#" >Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+              <a href="/myRecipes-Web/Utente/Profilo" class="nav-link text-white" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Account
                 <i class="fa fa-user-o fa-fw" aria-hidden="true">
                 </i>
