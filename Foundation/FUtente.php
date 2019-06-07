@@ -44,6 +44,7 @@ class FUtente extends FDatabase
         $utObj->setCommenti($row['commenti']);
         $utObj->setPreferiti($row['preferiti']);
         $utObj->setStato($row['stato']);
+        $utObj->setImmagine($row['immagine']);
         return $utObj;
 
     }
@@ -65,7 +66,13 @@ class FUtente extends FDatabase
         $idric = $futprefric->loadIdRicbyIdUt($row['id']); //$idric è un array di id ricetta
         $arrayric = $fric->loadAllByIds($idric);
         $row['preferiti'] = $arrayric;
-        return $row;   
+
+        //caricamento foto profilo utente
+        $fimmu = new FImgUtente();
+        $img = $fimmu->loadByIdUtente($row['id']);
+        $row['immagine'] = $img;
+
+        return $row;
     }
 
     /**
@@ -106,12 +113,12 @@ class FUtente extends FDatabase
     }
 
     /**
-    * Metodo che esegue la load di un utente in base all'username e password (login)
+    * Metodo che verifica se un utente è presente
     * @param $username dell'utente
      * @param $password dell'utente
-    * @return EUtente recuperato| false se non è presente un utente con quell'username e password
+    * @return $id dell'utente se presente, false altrimenti
     */
-    public function loadUtente($username,$password){
+    public function esisteUtente($username,$password){
         $query = "SELECT * FROM ".$this->table." WHERE username= '".$username."' AND password='".$password."';";
         try{
             $this->db->beginTransaction();
@@ -121,9 +128,8 @@ class FUtente extends FDatabase
             $this->db->commit();
             if(($row != null) && (count($row)>0)){
                 $rowass=$row[0];
-                $rowcompleta = $this->buildRow($rowass);
-                $ut = $this->getObjectFromRow($rowcompleta);
-                return $ut;
+                $id = $rowass['id'];
+                return $id;
             }
             else return false;
             

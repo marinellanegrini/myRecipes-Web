@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 
 /** class VLogin gestisce l'input/output che permette all'utente di effettuare il login
  */
@@ -33,9 +33,10 @@ class VLogin
      * Funzione che comunica a Smarty di mostrare lo form di login, comunicando se è Login utente o amministratore
      * @param $ruolo dell'utilizzatore dell'app
      */
-    public function mostraFormLogin($ruolo){
+    public function mostraFormLogin($ruolo,$errore){
 
         $this->smarty->assign('ruolo', $ruolo);
+        $this->smarty->assign('errore', $errore);
         $this->smarty->display("Login.tpl");
 
     }

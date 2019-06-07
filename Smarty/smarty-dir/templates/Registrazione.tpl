@@ -17,7 +17,7 @@
 <body style="	background-image: url(/myRecipes-Web/Smarty/smarty-dir/templates/img/bacon-cheese-burger.jpg);	background-size: 120% 100%;	background-position: top left;">
 
   <div class="alert">
-
+    <p>{$errore}</p>
   </div>
 
   <div class="">
@@ -34,48 +34,40 @@
       <div class="row ml-auto mr-auto bg-light w-50" style="	box-shadow: 0px 0px 10px  black;">
         <div class="mx-auto col-10 col-lg-10" style="">
           <h1 class="my-3 mt-3 text-dark">Registrazione</h1>
-          <form class="text-left mb-4">
+          <form class="text-left mb-4" method="post" action="/myRecipes-Web/Utente/Registrazione">
             <div class="form-group"> <label for="form16" class="text-dark">Nome</label> 
-              <input type="text" 
-              class="form-control w-100 px-1" 
-              name="form16" 
-              pattern="([A-Za-z]{1,})" 
-              oninvalid="setCustomValidity('Inserire solo lettere minuscole o maiuscole')"
-              onchange="try{setCustomValidity('')}catch(e){}"> 
+              <input type="text"
+              class="form-control w-100 px-1"
+              name="nome"
+                     placeholder="nome" required>
             </div>
 
             <div class="form-group"> <label for="form17" class="text-dark">Cognome</label> 
               <input type="text" 
               class="form-control w-100 px-1" 
-              name="form17" 
-              pattern="([A-Za-z]{1,})" 
-              oninvalid="setCustomValidity('Inserire solo lettere minuscole o maiuscole')"
-              onchange="try{setCustomValidity('')}catch(e){}" >
+              name="cognome"
+                     placeholder="cognome" required>
             </div>
 
             <div class="form-group"> <label for="form18" class="text-dark">Email</label> 
               <input type="email" 
               class="form-control px-1" 
-              name="form18"  
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
-              oninvalid="setCustomValidity('Il formato inserito è errato')"
-              onchange="try{setCustomValidity('')}catch(e){}">
+              name="mail"
+                     placeholder="example@example.com" required>
             </div>
 
             <div class="form-group"> <label for="form17" class="text-dark">Username</label> 
-              <input type="text" class="form-control px-1" id="form17"> </div>
+              <input type="text" name="username"class="form-control px-1" id="form17" placeholder="username" required > </div>
             <div class="form-row">
               <div class="form-group col-md-6 mb-2"> <label for="form19" class="text-dark">Password</label>
-               <input type="password" 
+               <input type="password" name="password"
                class="form-control px-1" 
                id="form19" 
-               placeholder="••" 
-               pattern=".{6,}" 
-               oninvalid="setCustomValidity('Il formato inserito è errato')"
-               onchange="try{setCustomValidity('')}catch(e){}">
+               placeholder="••" required
+               >
             </div>
 
-              <div class="form-group col-md-6"> <label for="form20" class="text-dark">Conferma password</label> <input type="password" class="form-control" id="form20" placeholder="••••" pattern=".{6,}" > </div>
+              <div class="form-group col-md-6"> <label for="form20" class="text-dark">Conferma password</label> <input type="password" class="form-control" id="form20" placeholder="••••" required name="confpass" " > </div>
             </div>
             <button type="submit" class="btn btn-primary mx-auto mt-3 btn-lg px-3">Registrati</button>
           </form>

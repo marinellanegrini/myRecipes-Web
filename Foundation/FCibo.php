@@ -36,6 +36,11 @@ class FCibo extends FDatabase{
 	public function getObjectFromRow($row){
 		$ciboObj = new ECibo($row['nome']);
 		$ciboObj->setId($row['id']);
+
+        //caricamento foto cibo
+        $fimmc = new FImgCibo();
+        $img = $fimmc->loadByIdCibo($row['id']);
+        $ciboObj->setImmagine($img);
 		return $ciboObj;
 	}
 

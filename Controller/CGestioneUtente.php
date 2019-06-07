@@ -17,7 +17,7 @@ class CGestioneUtente
                 //redirect alla home page
             } else {
                 $view = new VLogin();
-                $view->mostraFormLogin("utente");
+                $view->mostraFormLogin("utente","");
             }
         }
         else if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -42,19 +42,18 @@ class CGestioneUtente
         $view = new VLogin();
         $credenziali = $view->recuperaCredenziali();
         $pm = FPersistentManager::getInstance();
-        $utente = $pm->loadUtente($credenziali['username'],$credenziali['password']);
-        if(! $utente){
+        $id = $pm->esisteUtente($credenziali['username'],$credenziali['password']);
+        if($id){
             //login utente avvenuto con successo, salvataggio nei dati di sessione
+            $utente = $pm->loadById("utente", $id);
             $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
             //login avvenuto con successo, mostrare l'homepage
-            $viewhome = new VHomepage();
-            $viewhome->mostraHomepage();
-
+            header('Location: /myRecipes-Web');
         }
         else {
-            $viewerr = new VErrore();
-            $viewerr->mostraErrore("Username e/o password errate");
+            $viewerr = new VLogin();
+            $viewerr->mostraFormLogin("utente","Username e/o password errati");
         }
     }
 
@@ -70,6 +69,7 @@ class CGestioneUtente
 
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
+                header('Location: /myRecipes-Web');
             } else {
                 $view = new VRegistrazione();
                 $errore = "";
@@ -79,6 +79,7 @@ class CGestioneUtente
         else if($_SERVER['REQUEST_METHOD']=="POST"){
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
+                header('Location: /myRecipes-Web');
             } else {
                 $this->Registrati();
             }
@@ -98,28 +99,25 @@ class CGestioneUtente
      */
     public function Registrati(){
         $view = new VRegistrazione();
-        $valpas = $view->validaPassword();
-        if(!$valpas){
-            $errore = "Le password non coincidono";
+        $errore = $view->validaInput();
+        if($errore){
             $view->mostraFormRegistrazione($errore);
-            //redirect alla form di registrazione (password non uguali)
+        } else {
+            $dati = $view->recuperaDati();
+            $u = new EUtente($dati['username'],$dati['password'],$dati['email'], $dati['nome'],$dati['cognome']);
+            $pm = FPersistentManager::getInstance();
+            $id = $pm->store($u);
+            if($id){
+                //redirect alla form di login
+                header('Location: /myRecipes-Web/Utente/Login');
+            }
+            else {
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Errore in fase di registrazione");
+            }
         }
-        $valus = $view->validaUsername();
-        if(!$valus){
-            $errore = "Esiste già un utente con questa username";
-            $view->mostraFormRegistrazione($errore);
-            //redirect alla form di registrazione (è gia presente un utente con quell'username)
-        }
-        $dati = $view->recuperaDati();
-        $u = new EUtente($dati['username'],$dati['password'],$dati['email'], $dati['nome'],$dati['cognome']);
-        $pm = FPersistentManager::getInstance();
-        $id = $pm->store($u);
-        if($id){
-            //redirect alla form di login
-        }
-        else {
-            //errore nella registrazione
-        }
+
+
     }
 
     /**

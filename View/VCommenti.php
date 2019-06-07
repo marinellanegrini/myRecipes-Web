@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 /** class VCommenti gestisce l'input/output per permettere all'amministratore di bannare commenti
  * URL del tipo index.php?view=VCommenti&action=cerca oppure index.php?view=VCommenti&action=banna
  */

@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 /** class VRisultati gestisce l'input/output che permette di mostrare all'utente i risultati della ricerca secondo le
  *modalità disponibili
  *

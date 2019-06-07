@@ -1,5 +1,5 @@
 <?php
-require('Smarty/smarty-libs/libs/Smarty.class.php');
+require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 /** class VGestioneAmministratore che gestisce l'input/output per mostrare le funzionalità dell'amministratore
  * implementate: banna commenti e inserimento ricetta
  */
