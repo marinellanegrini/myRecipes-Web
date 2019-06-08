@@ -58,5 +58,6 @@ class VGestioneAmministratore
      */
     public function mostraFormCibo(){
         //assegnazione a smarty per mostrare la form di inserimento di un nuovo cibo
+        $this->smarty->display("NuovoIngrediente.tpl");
     }
 }
