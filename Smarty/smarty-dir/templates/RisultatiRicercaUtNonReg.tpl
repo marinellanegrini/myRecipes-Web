@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:display="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8">
@@ -60,8 +60,10 @@
       {$msg}
     </div>
       <div class="">
+
     {section name=ricetta loop=$risultati}
       <div class="container">
+
         <div class="row">
           <div class="col-md-12">
             <div class="row border mb-3" style="">
@@ -74,7 +76,12 @@
                     </div>
                 </div>
                 <h6 class="text-dark">{$risultati[ricetta]->getCategoria()->getNome()}</h6>
-                <h1 class="text-dark">{$risultati[ricetta]->getNome()}</h1>
+
+                <a href="/myRecipes-Web/Ricette/Ricetta/{$risultati[ricetta]->getId()}">
+                    <h1 class="text-dark">
+                        {$risultati[ricetta]->getNome()}
+                    </h1>
+                </a>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="row">
@@ -124,6 +131,7 @@
           </div>
         </div>
       </div>
+
 
     {/section}
 

@@ -86,12 +86,19 @@
                   </div>
                 </div>
                 <h6 class="text-dark">{$ricette[ricetta]->getCategoria()->getNome()}</h6>
-                <h2 class="text-dark">
-                    <a class="btn pull-right ml-1 text-primary" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricette[ricetta]->getId()}">
-                        <i class="fa fa-heart fa-2x pull-right text-primary" aria-hidden="true"></i>
-                    </a>
-                    {$ricette[ricetta]->getNome()} &nbsp;&nbsp;
-                </h2>
+
+                <div class="row w-100">
+                    <div class="col-md-5">
+                        <h2 class="text-dark">
+                            {$ricette[ricetta]->getNome()}
+                        </h2>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn pull-right ml-1 text-primary" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricette[ricetta]->getId()}">
+                            <i class="fa fa-heart fa-2x pull-right text-primary" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="row">
                   <div class="col-md-12">

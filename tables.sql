@@ -6,6 +6,7 @@ USE myRecipes;
 CREATE TABLE cibo (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(60) NOT NULL,
+	unitamisura VARCHAR(10) NOT NULL,
 	PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -165,17 +166,17 @@ INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 /**
 * Inserimento dei dati nella tabella categoria
 */
-INSERT INTO cibo(nome) VALUES
-('Olio'),
-('Uova'),
-('Sale'),
-('Pasta'),
-('Pecorino'),
-('Pepe'),
-('Patate'),
-('Farina 00'),
-('Farina integrale'),
-('Olio di semi');
+INSERT INTO cibo(nome, unitamisura) VALUES
+('Olio','ml'),
+('Uova','pz'),
+('Sale','gr'),
+('Pasta','gr'),
+('Pecorino','gr'),
+('Pepe','gr'),
+('Patate','gr'),
+('Farina 00','gr'),
+('Farina integrale','gr'),
+('Olio di semi','ml');
 
 
 /**

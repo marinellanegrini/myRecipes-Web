@@ -13,11 +13,15 @@ class ECibo
 	private $id;
 	/**nome del cibo*/
 	private $nome;
+	/**unita di misura del cibo */
+	private $um;
+
 	/**immagine del cibo*/
 	private $immagine;
 
-	public function __construct(string $nome){
+	public function __construct(string $nome, string $um){
 		$this->nome = $nome;
+		$this->um = $um;
 	}
 
 	/**
@@ -72,12 +76,28 @@ class ECibo
 		$this->immagine = $immagine;
 	}
 
+	/**
+	 * @return mixed
+	 */
+	public function getUm()
+	{
+		return $this->um;
+	}
+
+	/**
+	 * @param mixed $um
+	 */
+	public function setUm($um): void
+	{
+		$this->um = $um;
+	}
+
 
     /**
      * Stampa le informazioni del cibo
      */
     public function __toString(){
-        $st="ID: ".$this->id." Nome: ".$this->nome;
+        $st="ID: ".$this->id." Nome: ".$this->nome." Unità di misura: ".$this->um;
         return $st;
     }
 	
