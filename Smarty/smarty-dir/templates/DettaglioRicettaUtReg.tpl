@@ -69,7 +69,23 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong></h1>
+
+          <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong>
+            {if $preferita eq true}
+            <a class="btn btn-outline-light" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricetta->getId()}">
+              <i class="fa fa-fw fa-heart text-dark my-2 fa-4x pull-right" style="">
+
+              </i>
+            </a>
+            {else}
+            <a class="btn btn-outline-light" href="/myRecipes-Web/Ricette/AggiungiaiPreferiti/{$ricetta->getId()}">
+              <i class="fa fa-fw fa-heart-o text-dark my-2 fa-4x pull-right" style="">
+
+              </i>
+            </a>
+            {/if}
+          </h1>
+
         </div>
       </div>
     </div>
@@ -184,7 +200,6 @@
                   </div>
                 </li>
               {/section}
-
 
             </ul>
           </div>

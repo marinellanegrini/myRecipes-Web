@@ -104,7 +104,7 @@ class FUtPrefRic
      * @return bool|null esito
      */
 	public function UtPrefRic($idr, $idu){
-        $query = "SELECT * FROM utprefric(id_ricetta,id_utente) WHERE id_ricetta= '".$idr."' AND id_utente='".$idu."';";
+        $query = "SELECT * FROM utprefric WHERE id_ricetta=".$idr." AND id_utente=".$idu.";";
         try{
             $this->db->beginTransaction();
             $stmt = $this->db->prepare($query);

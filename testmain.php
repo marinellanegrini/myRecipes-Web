@@ -69,7 +69,7 @@ function upload()
         $immagine = file_get_contents($tempname); //file_get_contents torna un file specificato come stringa
         $immagine = addslashes ($immagine);
         $i = new EImmagine($immagine, $type);
-        $i->setIdesterno(3);
+        $i->setIdesterno(1);
         $fi = new FImgRicetta();
         $fi->store($i);
 

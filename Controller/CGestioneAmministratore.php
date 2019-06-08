@@ -200,6 +200,7 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 foreach ($idcomm as $idcommento) {
                     $esito = $pm->update("commento", $idcommento, 'bannato', true);
+
                     if (!$esito) {
                         // messaggio errore se il ban va male
                         $viewerr = new VErrore();

@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-08 11:43:17
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfb8335319478_45157510',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '593586f88bf81e4065a50cb0064a112799679142' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl',
+      1 => 1559985420,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -79,13 +102,19 @@
 </div>
 <div class="container">
     <div class="row">
-      <div class="col-md-6 mt-3"><img class="accountutente" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}
+      <div class="col-md-6 mt-3"><img class="accountutente" src="data:<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getType();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getData();?>
+
 "></div>
       <div class="col-md-6 py-5 pl-5">
-        <h1 class="text-dark"><b>Username: </b>{$utente->getUsername()}</h1>
-        <h2 class="text-dark"><b>Email: </b>{$utente->getEmail()}</h2>
-        <h2 class="text-dark"><b>Nome: </b>{$utente->getNome()}</h2>
-        <h2 class="pb-4 text-dark"><b>Cognome: </b>{$utente->getCognome()}</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
+        <h1 class="text-dark"><b>Username: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getUsername();?>
+</h1>
+        <h2 class="text-dark"><b>Email: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getEmail();?>
+</h2>
+        <h2 class="text-dark"><b>Nome: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getNome();?>
+</h2>
+        <h2 class="pb-4 text-dark"><b>Cognome: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getCognome();?>
+</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
       </div>
     </div>
 </div>
@@ -104,36 +133,57 @@
       <div class="col-md-12">
         <ul class="media-list">
 
-          {$commenti=$utente->getCommenti()}
+          <?php $_smarty_tpl->_assignInScope('commenti', $_smarty_tpl->tpl_vars['utente']->value->getCommenti());?>
 
-          {section name=commento loop=$commenti}
+          <?php
+$__section_commento_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['commenti']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_commento_0_total = $__section_commento_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_commento'] = new Smarty_Variable(array());
+if ($__section_commento_0_total !== 0) {
+for ($__section_commento_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] = 0; $__section_commento_0_iteration <= $__section_commento_0_total; $__section_commento_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']++){
+?>
 
           <li class="media py-2">
             <a href="#" class="pull-left" >
-              <img class="cerchio" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}">
+              <img class="cerchio" src="data:<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getType();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getData();?>
+">
             </a>
             <div class="media-body px-2 text-dark">
                 <span class="text-muted pull-right">
-                  <small class="text-muted" style="">{$commenti[commento]->getData()}</small>
+                  <small class="text-muted" style=""><?php echo $_smarty_tpl->tpl_vars['commenti']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] : null)]->getData();?>
+</small>
                   <br>
-                  <small class="text-muted" style="">{$commenti[commento]->getOra()}</small>
+                  <small class="text-muted" style=""><?php echo $_smarty_tpl->tpl_vars['commenti']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] : null)]->getOra();?>
+</small>
                 </span><span class="text-muted pull-right"></span><span class="text-muted pull-right">
                 </span>
-              <p>{$commenti[commento]->getTesto()}</p>
+              <p><?php echo $_smarty_tpl->tpl_vars['commenti']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] : null)]->getTesto();?>
+</p>
             </div><a class="btn btn-outline-light" href="#"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
           </li>
 
-          {/section}
+          <?php
+}
+}
+?>
 
         </ul>
       </div>
     </div>
   </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""></script>
+<?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""><?php echo '</script'; ?>
+>
 
 </body>
 
-</html>
+</html><?php }
+}

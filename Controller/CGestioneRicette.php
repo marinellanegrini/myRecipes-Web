@@ -171,9 +171,12 @@ class CGestioneRicette {
             $session->setUtenteLoggato($utente);
             if($esito){
                 //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
+                header('Location: /myRecipes-Web/Ricette/Preferiti');
             }
             else {
-                //messaggio errore inserimento nei preferiti non corretto
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Inserimento nei preferiti non corretto");
+
             }
         } else { //utente non loggato
             //redirect alla form di login

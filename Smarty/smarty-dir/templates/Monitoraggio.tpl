@@ -11,7 +11,7 @@
 <body style="">
   <div class="topnav">
     <a href="/myRecipes-Web">Home</a>
-    <a href="#news" class="active">Monitoraggio</a>
+    <a class="active">Monitoraggio</a>
 
     <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
     <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>

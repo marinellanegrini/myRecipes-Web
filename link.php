@@ -3,7 +3,7 @@ require_once 'Classes.php';
 if (isset($_GET['id']))
 {
     $id = intval($_GET['id']); //recupero l'id inviato nella URL (metodo GET)
-    $fi = new FImgRicetta();
+    $fi = new FImgUtente();
     $img = $fi->loadById($id);
     $data = $img->getData();
     $data = stripslashes($data);

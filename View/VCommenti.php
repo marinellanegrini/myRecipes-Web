@@ -28,6 +28,7 @@ class VCommenti
         } else {
             $filtri['last'] = null;
         }
+
         if(isset($_POST['parola'])){
             $filtri['parola'] = $_POST['parola'];
         } else{
@@ -54,7 +55,7 @@ class VCommenti
      */
     public function mostraCommenti($com){
         //comunico a smarty di mostrare i commenti
-        $this->smarty->assign('$com',$com);
+        $this->smarty->assign('com',$com);
         $this->smarty->display('BannaCommento.tpl');
 
     }

@@ -6607,6 +6607,15 @@ body > * {
   justify-content: center;
 }
 
+.cerchio{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
 
-
+.accountutente{
+  height: 300px;
+  width: 300px;
+  border-radius: 400px;
+}
 

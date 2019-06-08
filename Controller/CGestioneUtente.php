@@ -117,7 +117,6 @@ class CGestioneUtente
             }
         }
 
-
     }
 
     /**
@@ -130,6 +129,7 @@ class CGestioneUtente
             $view->mostraProfilo($sessione->getUtente());
         } else {
             //redirect alla form di login
+            header('Location: /myRecipes-Web/Utente/Login');
         }
     }
 
@@ -168,6 +168,45 @@ class CGestioneUtente
         header('Location: /myRecipes-Web');
 
     }
+
+
+    /**
+     * Metodo per gestire la modifica profilo dell'utente
+     * 1) Se la richiesta è GET, mostriamo la form di ModificaProfilo (se l'utente non è loggato redirect alla form di login)
+     * 2) Se la richiesta è POST richiamiamo il metodo ModificaProfiloUtente
+     */
+    public function ModificaProfilo(){
+        $sessione = Sessione::getInstance();
+        if($_SERVER['REQUEST_METHOD']=="GET"){
+
+            if($sessione->isLoggedUtente()){
+                $view = new VModificaProfilo();
+                $view->mostraFormModificaProfilo("utente","");
+            } else {
+                //redirect alla form di login
+                header('Location: /myRecipes-Web/Utente/Login');
+            }
+        }
+        else if($_SERVER['REQUEST_METHOD']=="POST"){
+            if($sessione->isLoggedUtente()){
+
+                $this->ModificaProfiloUtente();
+
+            } else {
+
+                //redirect alla form di login
+                header('Location: /myRecipes-Web/Utente/Login');
+
+            }
+
+        }
+        else {
+            header('HTTP/1.1 405 Method Not Allowed');
+            header('Allow: GET, POST');
+        }
+
+    }
+
 
 
 
