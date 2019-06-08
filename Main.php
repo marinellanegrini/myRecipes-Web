@@ -124,7 +124,8 @@ $arrimg = [$img2, $img3,$img4];
 $g = new CGestioneAmministratore();
 $g->inserimentoDatiRicetta("abc",3,"ciao mondo",'00:10:00',4,4,$img,$arrimg,$a);*/
 
-$pm = FPersistentManager::getInstance();
-$u = $pm->recuperaUltimi5Commenti(1);
-print_r($u);
+$c=new ECibo("Zucchine", 'gr');
+$fcibo = new FCibo();
+$id=$fcibo->store($c);
+
 ?>

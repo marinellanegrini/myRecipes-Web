@@ -87,7 +87,11 @@
                   </div>
                 </div>
                 <h6 class="text-dark">{$risultati[ricetta]->getCategoria()->getNome()}</h6>
-                <h2 class="text-dark">{$risultati[ricetta]->getNome()}</h2>
+                <a href="/myRecipes-Web/Ricette/Ricetta/{$risultati[ricetta]->getId()}">
+                  <h1 class="text-dark">
+                    {$risultati[ricetta]->getNome()}
+                  </h1>
+                </a>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="row">

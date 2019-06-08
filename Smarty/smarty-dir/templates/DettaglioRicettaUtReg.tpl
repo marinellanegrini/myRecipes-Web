@@ -35,7 +35,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
                 Account
-                <i class="fa fa-user-o fa-fw" aria-hidden="true"
+                <i class="fa fa-user-o fa-fw" aria-hidden="true">
                 </i>
               </a>
               <div class="dropdown-menu">

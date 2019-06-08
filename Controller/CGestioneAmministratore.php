@@ -200,6 +200,7 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 foreach ($idcomm as $idcommento) {
                     $esito = $pm->update("commento", $idcommento, 'bannato', true);
+
                     if (!$esito) {
                         // messaggio errore se il ban va male
                         $viewerr = new VErrore();
@@ -227,7 +228,7 @@ class CGestioneAmministratore
             if ($session->isLoggedAdmin()) {
                 $view = new VGestioneAmministratore();
                 $cibo = $view->recuperaCibo();
-                $ciboobj = new ECibo($cibo['nome']);
+                $ciboobj = new ECibo($cibo['nome'],$cibo['um']);
                 $ciboobj->setImmagine($cibo['img']); //manca ancora l'id esterno (assegnato nella store di ECibo quando facciamo store dell'immagine)
                 $pm = FPersistentManager::getInstance();
                 $id = $pm->store($ciboobj);
