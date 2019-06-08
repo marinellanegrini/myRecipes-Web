@@ -27,6 +27,9 @@ class VGestioneAmministratore
         if(isset($_POST['nome'])){
             $cibo['nome'] = $_POST['nome'];
         }
+        if(isset($_POST['um'])){
+            $cibo['um'] = $_POST['um'];
+        }
         if(isset($_FILES['imgcibo'])){
             $fotocibo = $_FILES['imgcibo']['tmp_name'];
             $typefotoc = $_FILES['imgcibo']['type'];

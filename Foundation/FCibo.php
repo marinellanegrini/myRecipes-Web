@@ -15,7 +15,7 @@ class FCibo extends FDatabase{
 
 		$this->class = "FCibo";
 
-		$this->values = "(:id, :nome)";
+		$this->values = "(:id, :nome, :unitamisura)";
 	}
 
 	/**
@@ -26,6 +26,7 @@ class FCibo extends FDatabase{
 	public static function bind($stmt, ECibo $cibo){
 		$stmt->bindValue(':id', NULL, PDO::PARAM_INT); // id è NULL perchè AUTOINCREMENT
 		$stmt->bindValue(':nome', $cibo->getNome(), PDO::PARAM_STR);
+        $stmt->bindValue(':unitamisura', $cibo->getUm(), PDO::PARAM_STR);
 	}
 
 
@@ -34,7 +35,7 @@ class FCibo extends FDatabase{
 	* @return ECibo
 	*/
 	public function getObjectFromRow($row){
-		$ciboObj = new ECibo($row['nome']);
+		$ciboObj = new ECibo($row['nome'],$row['unitamisura']);
 		$ciboObj->setId($row['id']);
 
         //caricamento foto cibo

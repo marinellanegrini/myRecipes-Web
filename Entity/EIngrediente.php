@@ -52,7 +52,7 @@ class EIngrediente
 	*/
 
 	public function getCibo(): ECibo {
-		$c = new ECibo($this->_cibo->getNome());
+		$c = new ECibo($this->_cibo->getNome(),$this->_cibo->getUm());
 		$c->setId($this->_cibo->getId());
 		
 		return $c;
