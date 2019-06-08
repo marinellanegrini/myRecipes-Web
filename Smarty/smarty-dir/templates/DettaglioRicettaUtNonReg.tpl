@@ -155,7 +155,7 @@
             <br>
             <ul class="media-list">
 
-              {$commenti=$ricetta->getCommenti()}
+
               {section name=commento loop=$commenti}
               <li class="media py-2">
                 <a href="#" class="pull-left">
@@ -163,10 +163,10 @@
                 </a>
                 <div class="media-body px-2">
                   <span class="text-muted pull-right">
-                    <small class="text-muted">{$commenti[commento]->getData()}  {$commenti[commento]->getOra()}</small>
+                    <small class="text-muted">{$commenti[commento].commento->getData()}  {$commenti[commento].commento->getOra()}</small>
                   </span>
-                  <strong class="text-success">Martino Mont</strong>
-                  <p> {$commenti[commento]->getTesto()}  </p>
+                  <strong class="text-success">{$commenti[commento].utente}</strong>
+                  <p> {$commenti[commento].commento->getTesto()}  </p>
                 </div>
               </li>
               {/section}
@@ -182,7 +182,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3 class="py-2 text-dark">Insert comment:</h3>
-          <form>
+          <form method="post" action="/myRecipes-Web/Ricette/Commento/{$ricetta->getId()}">
             <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Your message"></textarea> </div> <button type="submit" class="btn btn-primary my-2">Submit</button>
           </form>
         </div>

@@ -24,7 +24,7 @@ class VDettaglio
      * @param bool $preferita informazione se la ricetta è preferita o no dall'utente
      *
      */
-    public function mostraRicetta($ricetta, $preferita){
+    public function mostraRicetta($ricetta, $preferita, $arrcommenti){
 
         //passaggio a smarty per mostrare la ricetta (if per utenti loggati e non)
         $img=$ricetta->getImmagine();
@@ -38,12 +38,14 @@ class VDettaglio
             //passaggio ricetta a smarty per utente loggato piu informazione se la ricetta è preferita o no
             $this->smarty->assign("preferita",$preferita);
             $this->smarty->assign("ricetta",$ricetta);
+            $this->smarty->assign("commenti",$arrcommenti);
             $this->smarty->display("DettaglioRicettaUtReg.tpl");
 
 
         } else {
             //passaggio ricetta a smarty per utenti non loggati
             $this->smarty->assign("ricetta",$ricetta);
+            $this->smarty->assign("commenti",$arrcommenti);
             $this->smarty->display("DettaglioRicettaUtNonReg.tpl");
 
 

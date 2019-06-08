@@ -109,9 +109,22 @@ class CGestioneRicette {
         } else {
             $preferita = false;
         }
+        $commenti = $ricetta->getCommenti();
+        $arrcommenti = array();
+        //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+        foreach ($commenti as $commento){
+            $id = $commento->getIdUtente();
+            $utente = $pm->loadById("utente",$id);
+            $tmp = array(
+                'utente'=>$utente->getUsername(),
+                'commento'=>$commento
+            );
+            $arrcommenti[]=$tmp;
+        }
+
 
         $view = new VDettaglio();
-        $view->mostraRicetta($ricetta, $preferita);
+        $view->mostraRicetta($ricetta, $preferita,$arrcommenti);
     }
 
     /**
@@ -189,8 +202,11 @@ class CGestioneRicette {
                 $session->setUtenteLoggato($utente);
                 if($id){
                     //inserimento corretto, redirect a dettaglio ricetta attuale (usiamo il metodo Ricetta di questo controller)
+                    header('Location: /myRecipes-Web/Ricette/Ricetta/'.$idricetta);
                 } else {
                     //messaggio errore inserimento non corretto
+                    $viewerr = new VErrore();
+                    $viewerr->mostraErrore("Inserimento commento non corretto");
                 }
 
             } else { //utente non loggato

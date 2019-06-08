@@ -69,7 +69,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4 text-dark"><strong><b>Nome Ricetta</b></strong></h1>
+          <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong></h1>
         </div>
       </div>
     </div>
@@ -77,14 +77,14 @@
   <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-md-8"><img class="img-fluid d-block w-100 h-100" src="../img/carbonara.jpg" style=""></div>
+        <div class="col-md-8"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style=""></div>
         <div class="col-md-4">
           <div class="p-4 col-lg-12 text-dark" style="">
             <ul class="">
-              <li>Difficoltà:</li>
-              <li>Tempo di preparazione: 30 min</li>
-              <li>Numero dosi: 3 persone</li>
-              <li>Categoria: Primi</li>
+              <li>Difficoltà: {$ricetta->getDifficolta()}</li>
+              <li>Tempo di preparazione: {$ricetta->getTprep()}</li>
+              <li>Numero dosi: {$ricetta->getNdosi()}</li>
+              <li>Categoria: {$ricetta->getCategoria()->getNome()}</li>
             </ul>
           </div>
         </div>
@@ -97,10 +97,10 @@
         <div class="p-4 col-lg-12 text-dark">
           <h4 class="mb-3 text-dark"><strong><b>Ingredienti</b></strong></h4>
           <ul class="">
-            <li class="my-1">Ingrediente 1</li>
-            <li class="my-1">Ingrediente 2</li>
-            <li class="my-1">Ingrediente 3</li>
-            <li class="my-1">Ingrediente 4</li>
+            {$ingredienti=$ricetta->getIngredienti()}
+            {section name=ingrediente loop=$ingredienti}
+              <li class="my-1">{$ingredienti[ingrediente]->getQta()} {$ingredienti[ingrediente]->getCibo()->getUm()} {$ingredienti[ingrediente]->getCibo()->getNome()} </li>
+            {/section}
           </ul>
         </div>
       </div>
@@ -128,7 +128,7 @@
             </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
           </div>
-          <p class="text-dark">Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+          <p class="text-dark">{$ricetta->getProcedimento()}</p>
         </div>
       </div>
     </div>
@@ -170,66 +170,22 @@
           <div class="panel-body text-dark">
             <br>
             <ul class="media-list">
-              <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
-                </a>
-                <div class="media-body px-2">
+              {section name=commento loop=$commenti}
+                <li class="media py-2">
+                  <a href="#" class="pull-left">
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
+                  </a>
+                  <div class="media-body px-2">
                   <span class="text-muted pull-right">
-                    <small class="text-muted">30 min ago</small>
+                    <small class="text-muted">{$commenti[commento].commento->getData()}  {$commenti[commento].commento->getOra()}</small>
                   </span>
-                  <strong class="text-success">Martino Mont</strong>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>. </p>
-                </div>
-              </li>
-              <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_2.jpg" class="img-fluid d-block rounded-circle w-75" alt="">
-                </a>
-                <div class="media-body px-2">
-                  <span class="text-muted pull-right">
-                    <small class="text-muted">30 min ago</small>
-                  </span>
-                  <strong class="text-success" style="">Laurence Correil</strong>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor <a href="#">#ipsumdolor </a>adipiscing elit. </p>
-                </div>
-              </li>
-              <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
-                </a>
-                <div class="media-body px-2">
-                  <span class="text-muted pull-right">
-                    <small class="text-muted">30 min ago</small>
-                  </span>
-                  <strong class="text-success">John Nida</strong>
-                  <p> Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit. </p>
-                </div>
-              </li>
-              <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
-                </a>
-                <div class="media-body px-2">
-                  <span class="text-muted pull-right">
-                    <small class="text-muted">30 min ago</small>
-                  </span>
-                  <strong class="text-success">John Nida</strong>
-                  <p> Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit. </p>
-                </div>
-              </li>
-              <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
-                </a>
-                <div class="media-body px-2">
-                  <span class="text-muted pull-right">
-                    <small class="text-muted">30 min ago</small>
-                  </span>
-                  <strong class="text-success">John Nida</strong>
-                  <p> Lorem ipsum dolor <a href="#">#sitamet</a> sit amet, consectetur adipiscing elit. </p>
-                </div>
-              </li>
+                    <strong class="text-success">{$commenti[commento].utente}</strong>
+                    <p> {$commenti[commento].commento->getTesto()}  </p>
+                  </div>
+                </li>
+              {/section}
+
+
             </ul>
           </div>
         </div>
@@ -241,8 +197,8 @@
       <div class="row">
         <div class="col-lg-12">
           <h3 class="py-2 text-dark">Insert comment:</h3>
-          <form>
-            <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Your message"></textarea> </div> <button type="submit" class="btn btn-primary my-2">Submit</button>
+          <form  method="post" action="/myRecipes-Web/Ricette/Commento/{$ricetta->getId()}">
+            <div class="form-group"> <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Your message"></textarea> </div> <button type="submit" class="btn btn-primary my-2">Submit</button>
           </form>
         </div>
       </div>
