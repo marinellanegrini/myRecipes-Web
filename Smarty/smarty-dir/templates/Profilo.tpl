@@ -21,30 +21,9 @@
           </a>
         </div>
       </div>
-      <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="col-md-12">
-          <ul class="nav pull-right" style="">
-            <li class="nav-item">
-              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="/myRecipes-Web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
 
-                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
 
-    </div>
+
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,21 +34,22 @@
             <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            <a href="/myRecipes-Web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
-              <a class="dropdown-item" href="#"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
               <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
-              <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
             </div>
           </li>
         </ul>
       </div>
     </div>
+
   </div>
 </nav>
 <nav class="navbar navbar-expand-md navbar-dark border-info bg-secondary p-0" style="">
