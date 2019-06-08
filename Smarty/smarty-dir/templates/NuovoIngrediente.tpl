@@ -14,7 +14,7 @@
     <a href="#news">Monitoraggio</a>
     <a href="#contact">Nuova ricetta</a>
     <a href="#contact" class="active">Nuovo ingrediente</a>
-    <a href="#contact">Logout</a>
+    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
   </div>
   <div class="py-5 text-center align-items-center d-flex" style="">
     <div class="container py-5">

@@ -11,14 +11,44 @@
 </head>
 
 <body class="bg-light" style="">
-<nav class="navbar navbar-expand-md bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10" style=""><img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
+
+  <nav class="navbar navbar-expand-md bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" style="">
+          <a href="/myRecipes-Web">
+          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
+        </div>
+      </div>
+      <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-md-12">
+          <ul class="nav pull-right" style="">
+            <li class="nav-item">
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/myRecipes-Web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="col-md-12">
         <ul class="nav pull-right" style="">
           <li class="nav-item">
@@ -34,6 +64,7 @@
               <a class="dropdown-item" href="#"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
               <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
               <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+
             </div>
           </li>
         </ul>
@@ -99,8 +130,7 @@
 
           <li class="media py-2">
             <a href="#" class="pull-left" >
-              <img class="cerchio" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}
-">
+              <img class="cerchio" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}">
             </a>
             <div class="media-body px-2 text-dark">
                 <span class="text-muted pull-right">

@@ -36,7 +36,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{
@@ -61,7 +61,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{
@@ -85,7 +85,7 @@ class CGestioneRicette {
             } else {
                 $msg = "Non ci sono ricette che soddisfano questi parametri";
             }
-            $view->mostraRislutati($ricette, $msg);
+            $view->mostraRisultati($ricette, $msg);
 
         }
         else{
@@ -125,11 +125,16 @@ class CGestioneRicette {
             $pm = FPersistentManager::getInstance();
             $ut = $pm->loadById("utente", $idutente);
             $ricette = $ut->getPreferiti();
+            if($ricette!=null){
+                $msg = "";
+            } else {
+                $msg = "Non hai ricette preferite";
+            }
             $view = new VPreferiti();
-            $view->mostraPreferiti($ricette);
+            $view->mostraPreferiti($ricette, $msg);
 
         } else {
-            //redirect alla form di login
+            header('Location: /myRecipes-Web/Utente/Login');
         }
     }
 
@@ -159,6 +164,7 @@ class CGestioneRicette {
             }
         } else { //utente non loggato
             //redirect alla form di login
+            header('Location: /myRecipes-Web/Utente/Login');
         }
 
     }
@@ -189,6 +195,7 @@ class CGestioneRicette {
 
             } else { //utente non loggato
                 //redirect alla form di login
+                header('Location: /myRecipes-Web/Utente/Login');
             }
 
         }
@@ -211,24 +218,36 @@ class CGestioneRicette {
      */
     public function RimuoviDaPreferiti($idricetta){
         $session = Sessione::getInstance();
-        $utente = $session->getUtente();
-        $idutente = $utente->getId();
-        $pm = FPersistentManager::getInstance();
-        $ret1 = $pm->loadById("ricetta",$idricetta);
-        $ret1->decrementaSalvataggi();
-        $n = $ret1->getNsalvataggi();
-        $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
-        $esito = $pm->deleteUtPrefRic($idricetta, $idutente);
-        //devo aggiornare l'oggetto utente nei dati di sessione
-        $utente = $pm->loadById("utente", $idutente);
-        $session->setUtenteLoggato($utente);
-        if($esito){
-            //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
+        if($session->isLoggedUtente()){
+            $utente = $session->getUtente();
+            $idutente = $utente->getId();
+            $pm = FPersistentManager::getInstance();
+            $ret1 = $pm->loadById("ricetta",$idricetta);
+            $ret1->decrementaSalvataggi();
+            $n = $ret1->getNsalvataggi();
+            $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
+            $esito = $pm->deleteUtPrefRic($idricetta, $idutente);
+            //devo aggiornare l'oggetto utente nei dati di sessione
+            $utente = $pm->loadById("utente", $idutente);
+            $session->setUtenteLoggato($utente);
+            if($esito){
+                //rimozione corretta, redirect alla pagina dei preferiti dell'utente
+                header('Location: /myRecipes-Web/Ricette/Preferiti');
+
+            }
+            else {
+                //messaggio errore rimozione dai preferiti non corretta
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Rimozione dai preferiti non corretta");
+            }
+        } else { //utente non loggato redirect a login
+            header('Location: /myRecipes-Web/Utente/Login');
         }
-        else {
-            //messaggio errore rimozione dai preferiti non corretta
-        }
+
     }
+
+
+
 
 
 

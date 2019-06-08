@@ -8,12 +8,14 @@
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	box-shadow: 0px 0px 4px  black;">
+<body class="bg-light" style="">
   <nav class="navbar navbar-expand-md bg-primary navbar-primary ">
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
+            <a href="/myRecipes-Web">
           <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+            </a>
         </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
@@ -37,8 +39,8 @@
         <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
         <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
-            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
-            <div class="input-group-append"><button class="btn btn-primary mt-2 mb-1" type="button"><i class="fa fa-search"></i></button></div>
+            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
+            <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
           </div>
         </form>
       </div>
@@ -54,23 +56,25 @@
     </div>
   </div>
   <div class="border-0" style="">
-    <div class="alert">
+    <div class="alert text-dark " align="center" >
       {$msg}
     </div>
+      <div class="">
     {section name=ricetta loop=$risultati}
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="row border mb-3" style="">
               <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style="">
-                <img class="img-fluid d-block" src="data:{$risultati[ricetta]->getImmagine()->getType()};base64,{$risultati[ricetta]->getImmagine()->getData()}"></div>
+                <img class="img-fluid d-block" src="data:{$risultati[ricetta]->getImmagine()->getType()};base64,{$risultati[ricetta]->getImmagine()->getData()}" style="width: 270px;	height: 160px;">
+              </div>
               <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
                 <div class="row w-100">
                   <div class="col-md-12"><a class="btn pull-right ml-1 text-primary"><i class="fa fa-heart-o" aria-hidden="true"></i> {$risultati[ricetta]->getNsalvataggi()}</a>
                     </div>
                 </div>
                 <h6 class="text-dark">{$risultati[ricetta]->getCategoria()->getNome()}</h6>
-                <h2 class="text-dark">{$risultati[ricetta]->getNome()}</h2>
+                <h1 class="text-dark">{$risultati[ricetta]->getNome()}</h1>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="row">
@@ -109,7 +113,9 @@
                           {/if}
                           </a>
                         <a class="btn btn-sm text-primary">
-                          <i class="fa fa-clock-o fa-lg text-primary" aria-hidden="true"></i> {$risultati[ricetta]->getTprep()}</a></div>
+                          <i class="fa fa-clock-o fa-lg text-primary" aria-hidden="true"></i> {$risultati[ricetta]->getTprep()}
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -119,19 +125,10 @@
         </div>
       </div>
 
-
     {/section}
 
   </div>
-  <div class="py-3">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p class="mb-0 mt-2">© 2019 All rights reserved</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
  
 </body>
 

@@ -36,10 +36,20 @@ class VRisultati
      */
     public function recuperaFiltri(){
         $filtri = array();
-        if(isset($_POST['tprep']) && isset($_POST['diff']) && isset($_POST['cat'])){
+        if(isset($_POST['tprep'])) {
             $filtri['tprep'] = $_POST['tprep'];
+        } else{
+            $filtri['tprep'] = null;
+        }
+        if(isset($_POST['diff'])) {
             $filtri['diff'] = $_POST['diff'];
+        } else{
+            $filtri['diff'] = null;
+        }
+        if(isset($_POST['cat'])) {
             $filtri['cat'] = $_POST['cat'];
+        } else{
+            $filtri['cat'] = null;
         }
         return $filtri;
     }

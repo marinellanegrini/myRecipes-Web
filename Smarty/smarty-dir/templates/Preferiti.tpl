@@ -11,8 +11,9 @@
 <body class="bg-light" style="">
   <nav class="navbar navbar-expand-md bg-primary">
     <div class="container">
-      <div class="row">
-        <div class="col-md-10" style=""><img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
+      <a class="row">
+        <div class="col-md-10" style="">
+          <a href="/myRecipes-Web"><img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></a></div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
@@ -30,7 +31,7 @@
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
-                <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
             </li>
           </ul>
@@ -47,8 +48,8 @@
         <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
         <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
           <div class="input-group">
-            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca">
-            <div class="input-group-append"><button class="btn btn-primary mt-2 mb-1" type="button"><i class="fa fa-search"></i></button></div>
+            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
+            <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
           </div>
         </form>
       </div>
@@ -64,25 +65,72 @@
     </div>
   </div>
   <div class="border-0" style="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row border mb-3" style="">
-            <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style=""><img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-1.svg"></div>
-            <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
-              <div class="row w-100">
-                <div class="col-md-12"><a class="btn pull-right ml-1 text-primary" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 5</a>
-                  <a class="btn pull-right text-primary" href="#">
-                    <i class="fa fa-comment-o" aria-hidden="true"></i> 15</a></div>
+
+    <div class="alert text-dark " align="center" >
+      {$msg}
+    </div>
+    {section name=ricetta loop=$ricette}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row border mb-3" style="">
+              <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style="">
+                  <img class="img-fluid d-block" src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}">
               </div>
-              <h6 class="text-dark">Secondi piatti</h6>
-              <h2 class="text-dark"><i class="fa fa-heart pull-right text-primary" aria-hidden="true"></i>Uova sode&nbsp;&nbsp;</h2>
-              <p class="mb-3 text-dark">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="row">
-                    <div class="col-md-12 my-0"><a class="btn mr-1 text-primary" href="#"><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle" aria-hidden="true"></i><i class="fa fa-circle-o" aria-hidden="true"></i><i class="fa fa-circle-o" aria-hidden="true"></i></a>
-                      <a class="btn btn-sm text-primary" href="#"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> 0-10</a></div>
+              <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
+                <div class="row w-100">
+                  <div class="col-md-12">
+                    <a class="btn pull-right ml-1 text-primary">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i> {$ricette[ricetta]->getNsalvataggi()}
+                    </a>
+                  </div>
+                </div>
+                <h6 class="text-dark">{$ricette[ricetta]->getCategoria()->getNome()}</h6>
+                <h2 class="text-dark">
+                    <a class="btn pull-right ml-1 text-primary" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricette[ricetta]->getId()}">
+                        <i class="fa fa-heart fa-2x pull-right text-primary" aria-hidden="true"></i>
+                    </a>
+                    {$ricette[ricetta]->getNome()} &nbsp;&nbsp;
+                </h2>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-md-12 my-0"><a class="btn mr-1 text-primary">
+                          {if $ricette[ricetta]->getDifficolta() eq 1}
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                          {elseif $ricette[ricetta]->getDifficolta() eq 2}
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                          {elseif $ricette[ricetta]->getDifficolta() eq 3}
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                          {elseif $ricette[ricetta]->getDifficolta() eq 4}
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                          {else}
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                          {/if}
+                        </a>
+                        <a class="btn btn-sm text-primary"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i> {$ricette[ricetta]->getTprep()}</a></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -90,7 +138,11 @@
           </div>
         </div>
       </div>
-    </div>
+
+
+
+    {/section}
+
   </div>
   <div class="py-3">
     <div class="container">

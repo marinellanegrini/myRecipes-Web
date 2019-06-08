@@ -74,6 +74,14 @@ class Sessione
         $_SESSION['utente'] = $u;
     }
 
+    public function logout(){
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
+        session_unset();
+        session_destroy();
+    }
+
     /**
      * Metodo che salva nei dati di sessione che l'amministratore è loggato (quando il login amministratore ha successo
      */

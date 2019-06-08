@@ -22,7 +22,7 @@
     <a href="#news">Monitoraggio</a>
     <a href="#contact" class="active">Nuova ricetta</a>
     <a href="#contact">Nuovo ingrediente</a>
-    <a href="#contact">Logout</a>
+    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
   </div>
   <form action="/action_page.php" align="left" enctype="multipart/form-data" class="ml-3 pt-3" style=""> Nome ricetta:<br>
     <input type="text" name="#" value="" class="my-1 ml-5"><br>

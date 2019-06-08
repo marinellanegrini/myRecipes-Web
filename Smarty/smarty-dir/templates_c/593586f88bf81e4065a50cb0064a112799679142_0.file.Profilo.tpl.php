@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-08 10:01:00
+/* Smarty version 3.1.33, created on 2019-06-08 10:41:27
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfb6b3c189348_38055712',
+  'unifunc' => 'content_5cfb74b7409b07_85648369',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '593586f88bf81e4065a50cb0064a112799679142' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl',
-      1 => 1559980216,
+      1 => 1559983285,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfb6b3c189348_38055712 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfb74b7409b07_85648369 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -34,14 +34,44 @@ function content_5cfb6b3c189348_38055712 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body class="bg-light" style="">
-<nav class="navbar navbar-expand-md bg-primary">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10" style=""><img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
+
+  <nav class="navbar navbar-expand-md bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" style="">
+          <a href="/myRecipes-Web">
+          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
+        </div>
+      </div>
+      <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-md-12">
+          <ul class="nav pull-right" style="">
+            <li class="nav-item">
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/myRecipes-Web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
     </div>
     <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="col-md-12">
         <ul class="nav pull-right" style="">
           <li class="nav-item">
@@ -57,6 +87,7 @@ function content_5cfb6b3c189348_38055712 (Smarty_Internal_Template $_smarty_tpl)
               <a class="dropdown-item" href="#"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
               <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
               <a class="dropdown-item" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+
             </div>
           </li>
         </ul>
@@ -136,7 +167,6 @@ for ($__section_commento_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_secti
             <a href="#" class="pull-left" >
               <img class="cerchio" src="data:<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getType();?>
 ;base64,<?php echo $_smarty_tpl->tpl_vars['utente']->value->getImmagine()->getData();?>
-
 ">
             </a>
             <div class="media-body px-2 text-dark">

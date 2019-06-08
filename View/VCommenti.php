@@ -23,9 +23,15 @@ class VCommenti
      */
     public function recuperaFiltri(){
         $filtri = array();
-        if(isset($_POST['last']) && isset($_POST['parola'])){
+        if(isset($_POST['last'])){
             $filtri['last'] = $_POST['last'];
+        } else {
+            $filtri['last'] = null;
+        }
+        if(isset($_POST['parola'])){
             $filtri['parola'] = $_POST['parola'];
+        } else{
+            $filtri['parola'] = null;
         }
         return $filtri;
     }
@@ -46,8 +52,10 @@ class VCommenti
      * Funzione per mostrare i commenti recuperati secondo i filtri
      * @param $commenti da mostrare
      */
-    public function mostraCommenti($commenti){
+    public function mostraCommenti($com){
         //comunico a smarty di mostrare i commenti
+        $this->smarty->assign('$com',$com);
+        $this->smarty->display('BannaCommento.tpl');
 
     }
 

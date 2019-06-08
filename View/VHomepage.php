@@ -6,6 +6,12 @@ class VHomepage
 {
     private $smarty;
 
+    private function mostraCommenti(){
+        $pm = FPersistentManager::getInstance();
+        $id = $pm->recuperaUltimi5Commenti(5);
+        return $id;
+    }
+
     public function __construct()
     {
         $this->smarty = new Smarty();
@@ -20,10 +26,14 @@ class VHomepage
         if($sessione->isLoggedUtente()){
             $this->smarty->display('ListaRicetteUtReg.tpl');
         } elseif($sessione->isLoggedAdmin()){
+            $com = $this->mostraCommenti();
+            $this->smarty->assign('com',$com);
             $this->smarty->display('HomepageAmministratore.tpl');
         } else {
             $this->smarty->display('ListaRicetteUtNonReg.tpl');
         }
     }
+
+
 
 }
