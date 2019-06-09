@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-08 11:04:20
+/* Smarty version 3.1.33, created on 2019-06-09 19:17:46
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfb7a14604270_97057266',
+  'unifunc' => 'content_5cfd3f3adbe351_57398652',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a861db3a7913d9cb3b63a38490a33bc1eebba65' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/ListaRicetteUtNonReg.tpl',
-      1 => 1559982383,
+      1 => 1560100666,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfb7a14604270_97057266 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfd3f3adbe351_57398652 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -117,20 +117,49 @@ function content_5cfb7a14604270_97057266 (Smarty_Internal_Template $_smarty_tpl)
   <div class="py-4 bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light text-dark">
-              <p class="card-text">Carbonara</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
+
+
+        <?php
+$__section_ricetta_0_loop = (is_array(@$_loop=$_smarty_tpl->tpl_vars['ricette']->value) ? count($_loop) : max(0, (int) $_loop));
+$__section_ricetta_0_total = $__section_ricetta_0_loop;
+$_smarty_tpl->tpl_vars['__smarty_section_ricetta'] = new Smarty_Variable(array());
+if ($__section_ricetta_0_total !== 0) {
+for ($__section_ricetta_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] = 0; $__section_ricetta_0_iteration <= $__section_ricetta_0_total; $__section_ricetta_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']++){
+?>
+
+          <div class="col-md-4 p-3 border">
+            <img src="data:<?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getImmagine()->getType();?>
+;base64,<?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getImmagine()->getData();?>
+" class="d-block img-fluid w-100">
+            <div class="card box-shadow">
+              <div class="card-body bg-light text-dark">
+                <div class="col-md-15">
+                  <a href="/myRecipes-Web/Ricette/Ricetta/<?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getId();?>
+">
+                    <h1 class="card-title text-dark"><?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getNome();?>
+</h1>
+                  </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i><?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getNsalvataggi();?>
+</button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i><?php echo $_smarty_tpl->tpl_vars['ricette']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_ricetta']->value['index'] : null)]->getTprep();?>
+</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+        <?php
+}
+}
+?>
+
+        <!--
         <div class="col-md-4 p-3 border">
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
@@ -243,6 +272,8 @@ function content_5cfb7a14604270_97057266 (Smarty_Internal_Template $_smarty_tpl)
             </div>
           </div>
         </div>
+
+        -->
       </div>
     </div>
   </div>

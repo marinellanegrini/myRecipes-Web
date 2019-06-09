@@ -114,20 +114,34 @@
   <div class="py-4 bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light text-dark">
-              <p class="card-title">Title</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
+
+        {section name=ricetta loop=$ricette}
+
+          <div class="col-md-4 p-3 border">
+            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid w-100">
+            <div class="card box-shadow">
+              <div class="card-body bg-light text-dark">
+                <div class="col-md-15">
+                  <a href="/myRecipes-Web/Ricette/Ricetta/{$ricette[ricetta]->getId()}">
+                    <h1 class="card-title text-dark">{$ricette[ricetta]->getNome()}</h1>
+                  </a>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i>{$ricette[ricetta]->getNsalvataggi()}</button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i>{$ricette[ricetta]->getTprep()}</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+        {/section}
+
+        <!--
+
         <div class="col-md-4 p-3 border">
           <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
           <div class="card box-shadow">
@@ -240,6 +254,8 @@
             </div>
           </div>
         </div>
+
+        -->
       </div>
     </div>
   </div>

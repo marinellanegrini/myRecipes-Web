@@ -39,8 +39,8 @@ class CFrontController
             }
 
         } else {
-            $view = new VHomepage();
-            $view->mostraHomepage();
+            $controller = new CHomepage();
+            $controller->impostaPagina();
 
         }
 
