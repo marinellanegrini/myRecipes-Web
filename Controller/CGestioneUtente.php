@@ -44,12 +44,23 @@ class CGestioneUtente
         $pm = FPersistentManager::getInstance();
         $id = $pm->esisteUtente($credenziali['username'],$credenziali['password']);
         if($id){
+            //login avvenuto con successo, mostrare la pagina che stava vedendo l'utente o la homepage se non stava vedendo pagine particolari
+            //il cookie risulta impostato solo se l'utente non stava vedendo una pagina in particolare (dettaglio ricetta)
+
+            if(isset($_COOKIE["path"])){
+                $uri = $_COOKIE["path"];
+                $uri = str_replace("%2F","/",$uri);
+                header('Location: '.$uri);
+                setcookie("path", $uri, time()-3600); //elimino il cookie
+            } else{
+                header('Location: /myRecipes-Web');
+            }
+
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $utente = $pm->loadById("utente", $id);
             $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
-            //login avvenuto con successo, mostrare l'homepage
-            header('Location: /myRecipes-Web');
+
         }
         else {
             $viewerr = new VLogin();
