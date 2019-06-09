@@ -40,7 +40,7 @@ class FCategoria extends FDatabase
         return $catObj;
     }
 
-    /** Load di una categoria sul DB in base al suo db.
+    /** Load di una categoria sul DB in base al suo id.
     * @param $id della categoria da caricare
     * @return ECategoria recuperata
     */

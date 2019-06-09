@@ -13,7 +13,7 @@
     <a href="/myRecipes-Web/">Home</a>
     <a href="/myRecipes-Web/Amministratore/GestisciCommenti">Monitoraggio</a>
     <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
-    <a href= class="active">Nuovo ingrediente</a>
+    <a class="active">Nuovo ingrediente</a>
     <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
   </div>
   <div class="py-5 text-center align-items-center d-flex" style="">
@@ -21,15 +21,15 @@
       <div class="row">
         <div class="col-md-12 mx-auto h-50">
           <h1 class="display-3 mb-4">Vuoi inserire un nuovo ingrediente?</h1>
-          <form action="/myRecipes-Web/Amministratore/Cibo" method="post" align="left" class="ml-3 pt-3">
+          <form action="/myRecipes-Web/Amministratore/Cibo" method="post"  enctype="multipart/form-data" align="left" class="ml-3 pt-3">
             <div class="container">
-              <div class="row"> Nome nuovo ingrediente: <input type="text" name="nome" value="" class="ml-3">
+              <div class="row"> Nome nuovo ingrediente: <input type="text" name="nome" class="ml-3">
               </div>
               <br>
-              <div class="row"> Unità di misura: <input type="text" name="um" value="" class="ml-2">
+              <div class="row"> Unità di misura: <input type="text" name="um" class="ml-2">
               </div>
               <br>
-              <div class="row"> Foto relativa all'ingrediente: <input type="file" name="imgcibo" class=" ml-3">
+              <div class="row"> Foto relativa all'ingrediente: <input type="file"  name="imgcibo" class=" ml-3">
               </div>
               <div class="row pull-right">
                 <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" align="" style=""><b>Inserisci</b></button>

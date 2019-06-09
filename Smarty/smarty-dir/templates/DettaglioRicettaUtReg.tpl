@@ -39,6 +39,7 @@
                 </i>
               </a>
               <div class="dropdown-menu">
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
                 <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
@@ -73,13 +74,13 @@
           <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong>
             {if $preferita eq true}
             <a class="btn btn-outline-light" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricetta->getId()}">
-              <i class="fa fa-fw fa-heart text-dark my-2 fa-4x pull-right" style="">
+              <i class="fa fa-fw fa-heart text-primary my-2 fa-2x pull-right" style="">
 
               </i>
             </a>
             {else}
             <a class="btn btn-outline-light" href="/myRecipes-Web/Ricette/AggiungiaiPreferiti/{$ricetta->getId()}">
-              <i class="fa fa-fw fa-heart-o text-dark my-2 fa-4x pull-right" style="">
+              <i class="fa fa-fw fa-heart-o text-primary my-2 fa-2x pull-right" style="">
 
               </i>
             </a>
@@ -93,7 +94,7 @@
   <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-md-8"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style=""></div>
+        <div class="col-md-8"><img class="img-fluid d-block" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style="width: 600px;	height: 400px;"></div>
         <div class="col-md-4">
           <div class="p-4 col-lg-12 text-dark" style="">
             <ul class="">
@@ -174,7 +175,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-dark">
-          <h3 class="text-dark">Comments:</h3>
+          <h3 class="text-dark">Commenti:</h3>
         </div>
       </div>
     </div>
@@ -211,9 +212,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3 class="py-2 text-dark">Insert comment:</h3>
+          <h3 class="py-2 text-dark">Inserisci commento:</h3>
           <form  method="post" action="/myRecipes-Web/Ricette/Commento/{$ricetta->getId()}">
-            <div class="form-group"> <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Your message"></textarea> </div> <button type="submit" class="btn btn-primary my-2">Submit</button>
+            <div class="form-group"> <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Scrivi qui.."></textarea> </div>
+            <button type="submit" class="btn btn-primary my-2">Invia</button>
           </form>
         </div>
       </div>

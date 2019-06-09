@@ -184,6 +184,8 @@ class FCommento extends FDatabase
         } elseif ($last != null && $parola == null){
             $query = "SELECT * FROM commento ORDER BY data DESC, ora DESC LIMIT ".$last.";";
 
+        } elseif ($last == null && $parola == null){
+            $query = "SELECT * FROM commento ORDER BY data DESC, ora DESC;";
         }
 
 

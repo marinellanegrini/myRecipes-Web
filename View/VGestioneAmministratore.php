@@ -31,18 +31,22 @@ class VGestioneAmministratore
             $cibo['um'] = $_POST['um'];
         }
         if(isset($_FILES['imgcibo'])){
+
             $fotocibo = $_FILES['imgcibo']['tmp_name'];
             $typefotoc = $_FILES['imgcibo']['type'];
             $fotoobj = new EImmagine($fotocibo, $typefotoc);
             $cibo['img'] = $fotoobj;
+
         }
+
         return $cibo;
     }
 
     /**
      * Funzione per mostrare la form di inserimento di una ricetta
      */
-    public function mostraFormInserimento(){
+    public function mostraFormInserimento($cibi){
+        $this->smarty->assign('cibi',$cibi);
         $this->smarty->display("NuovaRicetta.tpl");
         //assegnazione a smarty per mostrare i filtri dell'inserimento ricetta
     }
