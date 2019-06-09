@@ -15,7 +15,7 @@
     <a href="/myRecipes-Web/Amministratore/GestisciCommenti">Monitoraggio</a>
     <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
     <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
-    <a href="#contact">Logout</a>
+    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
 
   </div>
   <div class="py-5">

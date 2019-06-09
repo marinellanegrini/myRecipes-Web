@@ -53,9 +53,11 @@ class VCommenti
      * Funzione per mostrare i commenti recuperati secondo i filtri
      * @param $commenti da mostrare
      */
-    public function mostraCommenti($com){
+    public function mostraCommenti($com, $arrcommenti){
         //comunico a smarty di mostrare i commenti
+
         $this->smarty->assign('com',$com);
+        $this->smarty->assign('commenti',$arrcommenti);
         $this->smarty->display('BannaCommento.tpl');
 
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-08 11:43:17
+/* Smarty version 3.1.33, created on 2019-06-08 18:05:05
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfb8335319478_45157510',
+  'unifunc' => 'content_5cfbdcb14ed407_94378226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '593586f88bf81e4065a50cb0064a112799679142' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl',
-      1 => 1559985420,
+      1 => 1560009450,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfbdcb14ed407_94378226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -63,7 +63,7 @@ function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl)
             <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
-              <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
+              <a class="dropdown-item" href="#"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
               <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
               <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 

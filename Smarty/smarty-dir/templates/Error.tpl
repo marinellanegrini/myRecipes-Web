@@ -17,7 +17,7 @@
         <div class="px-5 col-md-8 text-center mx-auto">
           <h3 class="text-primary display-1"> <b>ERRORE!</b></h3>
           <h3 class="text-primary display-5">{$messaggio}<br></h3>
-          <h3 class="text-primary display-5">RIPROVARE PIU' TARDI<br></h3>
+          <h3 class="text-primary display-5">RIPROVARE<br></h3>
         </div>
       </div>
     </div>
