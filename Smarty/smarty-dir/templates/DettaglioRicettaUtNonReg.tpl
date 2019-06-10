@@ -158,8 +158,8 @@
 
               {section name=commento loop=$commenti}
               <li class="media py-2">
-                <a href="#" class="pull-left">
-                  <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-fluid d-block rounded-circle w-75">
+                <a href=class="pull-left">
+                  <img src="data:{$commenti[commento].img->getType()};base64,{$commenti[commento].img->getData()}" alt="" class="cerchio">
                 </a>
                 <div class="media-body px-2">
                   <span class="text-muted pull-right">

@@ -75,6 +75,23 @@ class FUtente extends FDatabase
         return $row;
     }
 
+    public function store($utente){
+       $id = parent::store($utente);
+        if($id){
+
+            //salvataggio immagine di default per l'utente
+            $immagine = file_get_contents('./images/profile64.txt');
+            $immagine = addslashes ($immagine);
+            $imgobj = new EImmagine($immagine,'image/png');
+            $imgobj->setIdesterno($id);
+            $fimut = new FUtente();
+            $fimut->store($imgobj);
+            return $id;
+
+        }
+        else return false;
+    }
+
     /**
     * Metodo che esegue la load dell'utente in base all'id
     * @param int $id dell'user
@@ -189,6 +206,37 @@ class FUtente extends FDatabase
             return null;
         }
     }
+
+
+
+    /**Metodo che trova l'immagine relativa a un utente
+     * @param oggetto EUtente
+     * @return boolean
+     **/
+    public function updateUtente($utente){
+        try {
+
+            $this->update($utente->getId(),'nome',$utente->getNome());
+            $this->update($utente->getId(),'cognome',$utente->getCognome());
+            $this->update($utente->getId(),'username',$utente->getUsername());
+            $this->update($utente->getId(),'password',$utente->getPassword());
+            $this->update($utente->getId(),'email',$utente->getEmail());
+            $this->update($utente->getId(),'stato',$utente->getStato());
+            $fut=new FImgUtente();
+            $idimm=$utente->getImmagine()->getId();
+            $fut->update($idimm, "data", $utente->getimmagine()->getData());
+            $fut->update($idimm, "type", $utente->getimmagine()->getType());
+
+        }
+
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+    }
+
 
 
 

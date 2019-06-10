@@ -6619,4 +6619,7 @@ body > * {
   border-radius: 400px;
 }
 
-
+.fotoricetta{
+  height: 500px;
+  width: 500px;
+}
