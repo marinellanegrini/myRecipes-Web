@@ -126,6 +126,8 @@ class VModificaProfilo
      * @return $dati array associativo
      */
     public function recuperaDati(){
+        $session = Sessione::getInstance();
+        $ut=$session->getUtente();
         $dati= array();
         if(isset($_POST['username'])){
             $dati['username'] = $_POST['username'];
@@ -148,10 +150,10 @@ class VModificaProfilo
             $typefotop = $_FILES['immagine']['type'];
             $fotoobj = new EImmagine($foto, $typefotop);
             $dati['immagine'] = $fotoobj;
+
         } else{
-            $session = Sessione::getInstance();
-            $ut=$session->getUtente();
             $dati['immagine']=$ut->getImmagine();
+
         }
         return $dati;
 

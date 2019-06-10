@@ -199,16 +199,20 @@ class FUtente extends FDatabase
     public function updateUtente($utente){
         try {
 
-            $this->update($utente->getId(),'nome',$utente->getNome());
-            $this->update($utente->getId(),'cognome',$utente->getCognome());
-            $this->update($utente->getId(),'username',$utente->getUsername());
-            $this->update($utente->getId(),'password',$utente->getPassword());
-            $this->update($utente->getId(),'email',$utente->getEmail());
-            $this->update($utente->getId(),'stato',$utente->getStato());
+            $e1=$this->update($utente->getId(),'nome',$utente->getNome());
+            $e2=$this->update($utente->getId(),'cognome',$utente->getCognome());
+            $e3=$this->update($utente->getId(),'username',$utente->getUsername());
+            $e3=$this->update($utente->getId(),'password',$utente->getPassword());
+            $e4=$this->update($utente->getId(),'email',$utente->getEmail());
             $fut=new FImgUtente();
-            $idimm=$utente->getImmagine()->getId();
-            $fut->update($idimm, "data", $utente->getimmagine()->getData());
-            $fut->update($idimm, "type", $utente->getimmagine()->getType());
+            $imm=$utente->getImmagine();
+            $idut=$imm->getIdesterno();
+            $imm = $fut->loadByIdUtente($idut);
+            $idimm = $imm->getId();
+
+            $er=$fut->update($idimm, "data", $utente->getImmagine()->getData());
+            $esito = $fut->update($idimm, "type", $utente->getImmagine()->getType());
+
 
         }
 

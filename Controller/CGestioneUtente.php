@@ -226,6 +226,7 @@ class CGestioneUtente
     {
         $sessione = Sessione::getInstance();
         $utente=$sessione->getUtente();
+
         $view = new VModificaProfilo();
         $errore = $view->validaInputModifica();
         if($errore){
@@ -241,8 +242,10 @@ class CGestioneUtente
             $utente->setUsername($dati['username']);
             $utente->setEmail($dati['email']);
             $utente->setPassword($dati['password']);
-            $utente->setImmagine($dati['immagine']);
-            $pm->updateDiUtente($utente);
+            $fotoobj = $dati['immagine'];
+            $fotoobj->setIdesterno($utente->getId());
+            $utente->setImmagine($fotoobj);
+            $r=$pm->updateDiUtente($utente);
 
 
             $ut = $pm->loadById("utente", $utente->getId());
