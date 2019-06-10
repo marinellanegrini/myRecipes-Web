@@ -69,8 +69,10 @@ function upload()
         $immagine = file_get_contents($tempname); //file_get_contents torna un file specificato come stringa
         $immagine = addslashes ($immagine);
         $i = new EImmagine($immagine, $type);
-        $i->setIdesterno(1);
+
+        $i->setIdesterno(7);
         $fi = new FImgUtente();
+
         $fi->store($i);
 
 

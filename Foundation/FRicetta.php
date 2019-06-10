@@ -166,11 +166,19 @@ class FRicetta extends FDatabase
 	* @return array di ERicetta 
 	*/
 	public function ricercaPerIngrediente($ids){
-		$query = "SELECT id_ricetta FROM rictoingr JOIN (ingrediente, cibo) ON (rictoingr.id_ingrediente=ingrediente.id AND ingrediente.id_cibo=cibo.id) WHERE cibo.id=".$ids[0];
+	    if(count($ids)!=0){
+            $query = "SELECT id_ricetta FROM rictoingr JOIN (ingrediente, cibo) ON (rictoingr.id_ingrediente=ingrediente.id AND ingrediente.id_cibo=cibo.id) WHERE cibo.id=".$ids[0];
+            for ($i=1; $i<count($ids); $i++){
+                $query = "SELECT id_ricetta FROM rictoingr JOIN (ingrediente, cibo) ON (rictoingr.id_ingrediente=ingrediente.id AND ingrediente.id_cibo=cibo.id) WHERE cibo.id=".$ids[$i]." AND id_ricetta IN (".$query.")";
+            }
 
-		for ($i=1; $i<count($ids); $i++){
-			$query = "SELECT id_ricetta FROM rictoingr JOIN (ingrediente, cibo) ON (rictoingr.id_ingrediente=ingrediente.id AND ingrediente.id_cibo=cibo.id) WHERE cibo.id=".$ids[$i]." AND id_ricetta IN (".$query.")";
-		}
+        }
+	    else
+        {
+            $query = "SELECT * FROM rictoingr";
+        }
+
+
 
 		$query = $query.";";
 		

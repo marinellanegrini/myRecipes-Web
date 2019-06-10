@@ -75,6 +75,23 @@ class FUtente extends FDatabase
         return $row;
     }
 
+    public function store($utente){
+       $id = parent::store($utente);
+        if($id){
+
+            //salvataggio immagine di default per l'utente
+            $immagine = file_get_contents('./images/profile64.txt');
+            $immagine = addslashes ($immagine);
+            $imgobj = new EImmagine($immagine,'image/png');
+            $imgobj->setIdesterno($id);
+            $fimut = new FUtente();
+            $fimut->store($imgobj);
+            return $id;
+
+        }
+        else return false;
+    }
+
     /**
     * Metodo che esegue la load dell'utente in base all'id
     * @param int $id dell'user

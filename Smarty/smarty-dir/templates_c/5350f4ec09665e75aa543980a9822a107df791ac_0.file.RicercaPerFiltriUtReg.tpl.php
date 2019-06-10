@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-06-10 10:04:51
+  from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5cfe0f2344baa0_91709303',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5350f4ec09665e75aa543980a9822a107df791ac' => 
+    array (
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl',
+      1 => 1560153890,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5cfe0f2344baa0_91709303 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html>
 
 <head>
@@ -8,7 +31,7 @@
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-secondary">
+<body class="bg-secondary" >
   <nav class="navbar navbar-expand-md navbar-primary bg-primary">
     <div class="container">
       <div class="row">
@@ -21,11 +44,24 @@
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="topnav1 pull-right">
-          <a href="/myRecipes-Web">Home</a>
-          <a href="/myRecipes-Web/Utente/Login">Login</a>
-          <a href="/myRecipes-Web/Amministratore/Login">Login amministratore</a>
-          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
+        <div class="col-md-12">
+          <ul class="nav pull-right" style="">
+            <li class="nav-item">
+              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" href="/myRecipes-Web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Profilo</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+                
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -49,14 +85,14 @@
   <div class="py-1">
     <div class="container" style="box-shadow: 0px 0px 4px  black;">
       <div class="row">
-        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
-        <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
+        <div class="bg-white col-12 pt-5 col-md-12 pb-5 mx-0 ">
+          <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
               <div class="row" style="">
                 <div class="py-0 text-dark col-md-12">
-                  <h5 class="text-dark mt-3 col-md-8 pl-4" style="">DIFFICOLTÁ </h5>
+                  <h5 class="text-dark mt-3 col-md-8" style="">DIFFICOLTÁ </h5>
                 </div>
               </div>
             </div>
@@ -72,14 +108,14 @@
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
                   <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff2" value="2" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary pl-1 " aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary " aria-hidden="true"></i>
                   <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
                   <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
@@ -107,7 +143,7 @@
                 <input name="diff" type="radio" id="diff5" value="5" class="form-check-input">
                 <label for="#" class="form-check-label">
                   <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary " aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary" aria-hidden="true"></i>
                   <i class="fa fa-circle text-primary" aria-hidden="true"></i></label>
@@ -117,7 +153,7 @@
           <div class="col-md-12" style="">
             <div class="row" style="">
               <div class="py-0 text-dark col-md-8">
-                <h5 class="text-dark px-10 pl-3" style="" contenteditable="true">TEMPO DI PREPARAZIONE </h5>
+                <h5 class="text-dark px-10" style="" contenteditable="true">TEMPO DI PREPARAZIONE </h5>
               </div>
             </div>
           </div>
@@ -160,7 +196,7 @@
           <div class="col-md-12" style="">
             <div class="row" style="">
               <div class="text-dark col-md-8">
-                <h5 class="text-dark px-10 pl-3" style="">CATEGORIA </h5>
+                <h5 class="text-dark px-10" style="">CATEGORIA </h5>
               </div>
             </div>
           </div>
@@ -194,9 +230,7 @@
                 <input name="cat" type="radio" id="cat6" value="6" class="form-check-input">
                 <label for="cat6" class="form-check-label">PIATTI UNICI</label>
               </div>
-              <div class="row pull-right">
-                <button type="submit" class="btn btn-primary btn-lg mt-5 mr-5 " style=""><b>Cerca</b></button>
-              </div>
+              <button type="submit" class="btn btn-primary btn-lg mr-5 mt-3" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
             </div>
           </div>
         </form>
@@ -205,6 +239,17 @@
   </div>
   </div>
 
+  <?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" crossorigin="anonymous" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"><?php echo '</script'; ?>
+>
+  <?php echo '<script'; ?>
+ src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" style=""><?php echo '</script'; ?>
+>
+
 </body>
 
-</html>
+</html><?php }
+}

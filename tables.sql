@@ -8,7 +8,7 @@ CREATE TABLE cibo (
 	nome VARCHAR(60) NOT NULL,
 	unitamisura VARCHAR(10) NOT NULL,
 	PRIMARY KEY (id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE utente (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -19,14 +19,14 @@ CREATE TABLE utente (
 	email VARCHAR(50) NOT NULL,
 	stato BOOLEAN NOT NULL,
 	PRIMARY KEY (id)
-	)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE categoria(
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(60) NOT NULL,
 	PRIMARY KEY(id)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE ricetta(
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -39,7 +39,7 @@ CREATE TABLE ricetta(
 	nsalvataggi SMALLINT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_categoria) REFERENCES categoria(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE ingrediente (
 	id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -47,7 +47,7 @@ CREATE TABLE ingrediente (
 	id_cibo SMALLINT UNSIGNED NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_cibo) REFERENCES cibo(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE rictoingr (
 	id_ricetta SMALLINT UNSIGNED NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE rictoingr (
 	PRIMARY KEY(id_ricetta,id_ingrediente),
 	FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (id_ingrediente) REFERENCES ingrediente(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE utprefric (
 	id_ricetta SMALLINT UNSIGNED NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE utprefric (
 	PRIMARY KEY(id_ricetta,id_utente),
 	FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE commento(
@@ -77,43 +77,43 @@ CREATE TABLE commento(
 	PRIMARY KEY (id),
 	FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
-	)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE imgutente(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data BLOB NOT NULL,
+    data LONGBLOB NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_utente SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE imgcibo(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data BLOB NOT NULL,
+    data LONGBLOB NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_cibo SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_cibo) REFERENCES cibo(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE imgricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data BLOB NOT NULL,
+    data LONGBLOB NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE galleryricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data BLOB NOT NULL,
+    data LONGBLOB NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_ricetta) REFERENCES ricetta(id) ON DELETE CASCADE ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /**
 * Inserimento dei dati nella tabella utente
 */
@@ -210,3 +210,36 @@ INSERT INTO rictoingr(id_ricetta,id_ingrediente) VALUES
 (3,4),
 (3,5),
 (3,6);
+
+INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
+(1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/olio-doliva.jpg'),'image/jpg',1),
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/uovap.jpg'),'image/jpg',2),
+(3,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/sale.jpg'),'image/jpg',3),
+(4,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/pasta.jpg'),'image/jpg',4),
+(5,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/pecorino.jpg'),'image/jpg',5),
+(6,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/pepe.jpeg'),'image/jpeg',6),
+(7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/patate.jpg'),'image/jpg',7),
+(8,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/farina-00.jpg'),'image/jpg',8),
+(9,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/farina_integrale.jpg'),'image/jpg',9),
+(10,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/oliosemi.jpg'),'image/jpg',10);
+
+INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
+(1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Ricetta/uova-sode.jpg'),'image/jpg',1),
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Ricetta/patate-al-forno.jpg'),'image/jpg',2),
+(3,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Ricetta/patate-fritte.jpg'),'image/jpg',3);
+
+INSERT INTO imgutente(id,data,type,id_utente) VALUES
+(1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/arianna.jpg'),'image/jpg',1),
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/marinella.jpg'),'image/jpg',2),
+(3,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/valepa.jpg'),'image/jpg',3),
+(4,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/lorenzo.jpg'),'image/jpg',4),
+(5,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/oscar.jpg'),'image/jpg',5),
+(6,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/valeio.jpg'),'image/jpg',6),
+(7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Utente/claudia.jpg'),'image/jpg',7);
+
+INSERT INTO galleryricetta(id,data,type,id_ricetta) VALUES
+(1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/GalleryRicetta/uovaacqua.jpg'),'image/jpg',1),
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/GalleryRicetta/togliuova.jpg'),'image/jpg',1),
+(3,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/GalleryRicetta/uovasuode.jpg'),'image/jpg',1),
+(4,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/GalleryRicetta/fineuova.jpg'),'image/jpg',1);
+

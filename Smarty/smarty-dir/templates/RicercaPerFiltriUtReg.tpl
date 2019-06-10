@@ -62,7 +62,7 @@
   <div class="py-1">
     <div class="container" style="box-shadow: 0px 0px 4px  black;">
       <div class="row">
-        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
+        <div class="bg-white col-12 pt-5 col-md-12 pb-5 mx-0 ">
           <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
@@ -77,49 +77,53 @@
           <div class="row mx-auto px-4" style="">
             <div class="py-3 px-0 mx-auto">
               <div class="form-check form-check-inline ">
+                <input name="diff" type="radio" id="diff6" value="" class="form-check-input">
+                <label for="diff6" class="form-check-label text-dark">Tutte le difficoltà</label>
+              </div>
+              <div class="form-check form-check-inline ">
                 <input name="diff" type="radio" id="diff1" value="1" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff2" value="2" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1 " aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff3" value="3" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff4" value="4" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff5" value="5" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i></label>
               </div>
             </div>
           </div>
@@ -132,6 +136,10 @@
           </div>
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
+              <div class="form-check form-check-inline text-dark">
+                <input name="tprep" type="radio" id="tprep8" value="" class="form-check-input">
+                <label for="tprep8" class="form-check-label">Tutti i tempi</label>
+              </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="tprep" type="radio" id="tprep1" value="10" class="form-check-input">
                 <label for="tprep1" class="form-check-label">10'</label>
@@ -172,6 +180,10 @@
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
               <div class="form-check form-check-inline text-dark">
+                <input name="cat" type="radio" id="cat7" value="" class="form-check-input">
+                <label for="cat7" class="form-check-label">Tutte le categorie</label>
+              </div>
+              <div class="form-check form-check-inline text-dark">
                 <input name="cat" type="radio" id="cat1" value="3" class="form-check-input">
                 <label for="cat1" class="form-check-label">ANTIPASTI</label>
               </div>
@@ -195,7 +207,7 @@
                 <input name="cat" type="radio" id="cat6" value="6" class="form-check-input">
                 <label for="cat6" class="form-check-label">PIATTI UNICI</label>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
+              <button type="submit" class="btn btn-primary btn-lg mr-5 mt-3" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
             </div>
           </div>
         </form>
