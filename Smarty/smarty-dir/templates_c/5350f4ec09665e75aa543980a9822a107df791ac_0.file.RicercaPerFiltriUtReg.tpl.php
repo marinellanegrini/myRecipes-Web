@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-08 17:57:45
+/* Smarty version 3.1.33, created on 2019-06-10 10:04:51
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfbdaf928a076_54291128',
+  'unifunc' => 'content_5cfe0f2344baa0_91709303',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5350f4ec09665e75aa543980a9822a107df791ac' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/RicercaPerFiltriUtReg.tpl',
-      1 => 1560009450,
+      1 => 1560153890,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfe0f2344baa0_91709303 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -85,7 +85,7 @@ function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl)
   <div class="py-1">
     <div class="container" style="box-shadow: 0px 0px 4px  black;">
       <div class="row">
-        <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
+        <div class="bg-white col-12 pt-5 col-md-12 pb-5 mx-0 ">
           <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
         <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
           <div class="row">
@@ -100,49 +100,53 @@ function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl)
           <div class="row mx-auto px-4" style="">
             <div class="py-3 px-0 mx-auto">
               <div class="form-check form-check-inline ">
+                <input name="diff" type="radio" id="diff6" value="" class="form-check-input">
+                <label for="diff6" class="form-check-label text-dark">Tutte le difficoltà</label>
+              </div>
+              <div class="form-check form-check-inline ">
                 <input name="diff" type="radio" id="diff1" value="1" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary " aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff2" value="2" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1 " aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff3" value="3" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff4" value="4" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle-o text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle-o text-primary" aria-hidden="true"></i></label>
               </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="diff" type="radio" id="diff5" value="5" class="form-check-input">
                 <label for="#" class="form-check-label">
-                  <i class="fa fa-circle text-primary pl-1 fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i>
-                  <i class="fa fa-circle text-primary fa-lg" aria-hidden="true"></i></label>
+                  <i class="fa fa-circle text-primary pl-1" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary " aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i>
+                  <i class="fa fa-circle text-primary" aria-hidden="true"></i></label>
               </div>
             </div>
           </div>
@@ -155,6 +159,10 @@ function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl)
           </div>
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
+              <div class="form-check form-check-inline text-dark">
+                <input name="tprep" type="radio" id="tprep8" value="" class="form-check-input">
+                <label for="tprep8" class="form-check-label">Tutti i tempi</label>
+              </div>
               <div class="form-check form-check-inline text-dark">
                 <input name="tprep" type="radio" id="tprep1" value="10" class="form-check-input">
                 <label for="tprep1" class="form-check-label">10'</label>
@@ -195,6 +203,10 @@ function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl)
           <div class="row px-3">
             <div class="py-3 px-3 mx-auto">
               <div class="form-check form-check-inline text-dark">
+                <input name="cat" type="radio" id="cat7" value="" class="form-check-input">
+                <label for="cat7" class="form-check-label">Tutte le categorie</label>
+              </div>
+              <div class="form-check form-check-inline text-dark">
                 <input name="cat" type="radio" id="cat1" value="3" class="form-check-input">
                 <label for="cat1" class="form-check-label">ANTIPASTI</label>
               </div>
@@ -218,7 +230,7 @@ function content_5cfbdaf928a076_54291128 (Smarty_Internal_Template $_smarty_tpl)
                 <input name="cat" type="radio" id="cat6" value="6" class="form-check-input">
                 <label for="cat6" class="form-check-label">PIATTI UNICI</label>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
+              <button type="submit" class="btn btn-primary btn-lg mr-5 mt-3" style=" position: absolute; right: 0;"><b>Inizia ricerca</b></button>
             </div>
           </div>
         </form>

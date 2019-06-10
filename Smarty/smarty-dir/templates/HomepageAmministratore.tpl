@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
@@ -25,17 +26,18 @@
           <h1 class="">Ultimi commenti</h1>
         </div>
       </div>
-      {section name=commenti loop=$com}
+      {section name=commento loop=$commenti}
       <div class="row">
         <div class="col-md-12">
 
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{$com[commenti]->getIdUtente()}</h5>
-                <small class="text-muted">{$com[commenti]->getData()} {$com[commenti]->getOra()}</small>
+                <h5 class="mb-1">{$commenti[commento].utente}</h5>
+                <small class="text-muted">{$commenti[commento].commento->getData()} {$commenti[commento].commento->getOra()}</small>
               </div>
-              <p class="mb-1">{$com[commenti]->getTesto()}</p> <small class="text-muted">{$com[commenti]->getIdRicetta()}</small>
+              <p class="mb-1">{$commenti[commento].commento->getTesto()}</p>
+              <small class="text-muted">{$commenti[commento].ricetta}</small>
             </a>
           </div>
         </div>

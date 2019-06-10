@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
   <script language="JavaScript"> function myFunction() {
-        $("#nuovingredienti").append('<br/><div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()}</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="#" value="" style="width: 50px;"></div></div>');
+        $("#nuovingredienti").append('<br/><div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="#" value="" style="width: 50px;"></div></div>');
     }
   </script>
 
@@ -101,36 +101,13 @@
         <input name="idcategoria" type="radio" id="cat6" value="6" class="form-check-input">
         <label for="cat6" class="form-check-label">PIATTI UNICI </label>
       </div>
-    </div> Tempo di preparazione <br>
+    </div>
+    Tempo di preparazione
     <div class="ml-5 py-2">
       <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep1" value="#" class="form-check-input">
-        <label for="tprep1" class="form-check-label">10'</label>
+        <input type="time" name="tprep">
       </div>
-      <div class="form-check form-check-inline text-white">
-        <input type="radio" id="tprep2" value="#" class="form-check-input" name="tprep">
-        <label for="tprep2" class="form-check-label">20'</label>
-      </div>
-      <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep3" value="#" class="form-check-input">
-        <label for="tprep3" class="form-check-label">30'</label>
-      </div>
-      <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep4" value="#" class="form-check-input">
-        <label for="tprep4" class="form-check-label">40'</label>
-      </div>
-      <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep5" value="#" class="form-check-input">
-        <label for="tprep5" class="form-check-label">50'</label>
-      </div>
-      <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep6" value="#" class="form-check-input">
-        <label for="tprep6" class="form-check-label">60'</label>
-      </div>
-      <div class="form-check form-check-inline text-white">
-        <input name="tprep" type="radio" id="tprep7" value="#" class="form-check-input">
-        <label for="tprep7" class="form-check-label">60'+</label>
-      </div>
+
     </div> Ingredienti:<br>
     <div class="container pull-left col-md-12 py-1 mt-1">
       <div class="row">
@@ -138,7 +115,7 @@
 
           <select>
             {section name=cibo loop=$cibi}
-              <option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()}( {$cibi[cibo]->getUm()} )</option>
+              <option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>
             {/section}
 
           </select>

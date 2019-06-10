@@ -15,7 +15,27 @@ class CHomepage
         $view = new VHomepage();
         if($sessione->isLoggedAdmin()){
             $commenti = $pm->recuperaUltimi5Commenti();
-            $view->mostraHomepageAdmin($commenti);
+
+            $arrcommenti = array();
+            //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+            foreach ($commenti as $commento){
+
+                $id = $commento->getIdUtente();
+                $idric = $commento->getIdRicetta();
+
+                $utente = $pm->loadById("utente",$id);
+                $ricetta = $pm->loadById("ricetta",$idric);
+                $tmp = array(
+                    'utente'=>$utente->getUsername(),
+                    'commento'=>$commento,
+                    'ricetta'=>$ricetta->getNome()
+                );
+                $arrcommenti[]=$tmp;
+            }
+
+            $view->mostraHomepageAdmin($commenti, $arrcommenti);
+
+
         } else {
             $ids = [1,2,3,1,2,3,1,2,3];
             $ricette = $pm->loadAllByIds("ricetta",$ids);
