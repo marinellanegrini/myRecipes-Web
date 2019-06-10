@@ -115,8 +115,11 @@ class CGestioneRicette {
         foreach ($commenti as $commento){
             $id = $commento->getIdUtente();
             $utente = $pm->loadById("utente",$id);
+            $img = $utente->getImmagine();
+            $img->setData(base64_encode($img->getData()));
             $tmp = array(
                 'utente'=>$utente->getUsername(),
+                'img'=>$img,
                 'commento'=>$commento
             );
             $arrcommenti[]=$tmp;
