@@ -202,6 +202,10 @@ class FPersistentManager {
                 $fupr = new FUtPrefRic();
                 $ret = $fupr->update($id,$attr,$val);
                 break;
+            case "imgutente":
+                $fiu = new FImgUtente();
+                $ret = $fiu->update($id,$attr,$val);
+                break;
             default:
                 $ret = false;
         }
@@ -515,5 +519,14 @@ class FPersistentManager {
 
 
     }
+
+
+    public function updateDiUtente($utente){
+        $fu = new FUtente();
+        $up = $fu->updateUtente($utente);
+        return $up;
+
+    }
+
 
 }

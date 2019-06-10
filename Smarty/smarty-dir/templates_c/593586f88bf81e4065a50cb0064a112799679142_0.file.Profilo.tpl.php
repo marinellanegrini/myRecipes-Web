@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-06-08 11:43:17
+/* Smarty version 3.1.33, created on 2019-06-10 05:19:50
   from '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5cfb8335319478_45157510',
+  'unifunc' => 'content_5cfdcc56dc4247_93883960',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '593586f88bf81e4065a50cb0064a112799679142' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/myRecipes-Web/Smarty/smarty-dir/templates/Profilo.tpl',
-      1 => 1559985420,
+      1 => 1560136681,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5cfdcc56dc4247_93883960 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -63,8 +63,8 @@ function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl)
             <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
-              <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
-              <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
               <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
             </div>
@@ -114,7 +114,7 @@ function content_5cfb8335319478_45157510 (Smarty_Internal_Template $_smarty_tpl)
         <h2 class="text-dark"><b>Nome: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getNome();?>
 </h2>
         <h2 class="pb-4 text-dark"><b>Cognome: </b><?php echo $_smarty_tpl->tpl_vars['utente']->value->getCognome();?>
-</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
+</h2><a class="btn btn-primary" href="/myRecipes-Web/Utente/ModificaProfilo" style="">Modifica Profilo</a>
       </div>
     </div>
 </div>
@@ -160,7 +160,8 @@ for ($__section_commento_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_secti
                 </span>
               <p><?php echo $_smarty_tpl->tpl_vars['commenti']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] : null)]->getTesto();?>
 </p>
-            </div><a class="btn btn-outline-light" href="#"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
+            </div><a class="btn btn-outline-light" href="/myRecipes-Web/Utente/cancellaCommento/<?php echo $_smarty_tpl->tpl_vars['commenti']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_commento']->value['index'] : null)]->getId();?>
+"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
           </li>
 
           <?php
