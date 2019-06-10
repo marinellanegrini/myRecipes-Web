@@ -192,7 +192,7 @@ class CGestioneUtente
 
             if($sessione->isLoggedUtente()){
                 $view = new VModificaProfilo();
-                $view->mostraFormModificaProfilo("utente","");
+                $view->mostraModificaProfilo($sessione->getUtente(),"");
             } else {
                 //redirect alla form di login
                 header('Location: /myRecipes-Web/Utente/Login');
@@ -218,6 +218,84 @@ class CGestioneUtente
 
     }
 
+
+    /**
+     * Metodo che gestisce il login dell'utente
+     */
+    public function ModificaProfiloUtente()
+    {
+        $sessione = Sessione::getInstance();
+        $utente=$sessione->getUtente();
+        $view = new VModificaProfilo();
+        $errore = $view->validaInputModifica();
+        if($errore){
+
+            $view->mostraModificaProfilo($utente,$errore);
+
+        } else {
+
+            $dati = $view->recuperaDati();
+            $pm = FPersistentManager::getInstance();
+            $utente->setNome($dati['nome']);
+            $utente->setCognome($dati['cognome']);
+            $utente->setUsername($dati['username']);
+            $utente->setEmail($dati['email']);
+            $utente->setPassword($dati['password']);
+            $utente->setImmagine($dati['immagine']);
+            $pm->updateDiUtente($utente);
+
+
+            $ut = $pm->loadById("utente", $utente->getId());
+            $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
+
+            if($ut!=null){
+
+                //redirect alla form di login
+                header('Location: /myRecipes-Web/Utente/Profilo');
+            }
+            else {
+
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Errore in fase di modifica");
+            }
+        }
+    }
+
+
+
+
+
+    public function cancellaCommento($idcommento){
+        $session = Sessione::getInstance();
+
+        if($session->isLoggedUtente()){
+
+            $utente = $session->getUtente();
+            $idutente = $utente->getId();
+            $pm = FPersistentManager::getInstance();
+            $ret1 = $pm->loadById("commento",$idcommento);
+            $final=$pm->delete("commento", $idcommento);
+
+            //devo aggiornare l'oggetto utente nei dati di sessione
+            $utente = $pm->loadById("utente", $idutente);
+            $session->setUtenteLoggato($utente);
+
+            if($final){
+                //rimozione corretta, redirect alla pagina profilo
+                header('Location: /myRecipes-Web/Utente/Profilo');
+
+            }
+            else {
+                //messaggio errore rimozione dai preferiti non corretta
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Rimozione commento non riuscita");
+            }
+        } else { //utente non loggato redirect a login
+            header('Location: /myRecipes-Web/Utente/Login');
+
+        }
+
+    }
 
 
 

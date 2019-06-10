@@ -91,4 +91,7 @@ class Sessione
         }
         $_SESSION['amministratore'] = true;
     }
+
+
+
 }

@@ -154,7 +154,8 @@ INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalva
 INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 ('Ricetta molto buona. Consigliatissima','2018-02-28','12:10:30',false,3,3),
 ('Ho provato a replicare la ricetta, non ho ottenuto il risultato desiderato','2019-01-30','20:25:59',false,2,1),
-('Posso sostituire il burro con l\'olio?','2019-04-18','15:45:01',false,1,1),
+('Posso sostituire il burro con l\'olio?','2019-04-18','15:45:01',false,1,2),
+('Sono riuscita a replicare perfettamente la ricetta!','2019-03-18','10:45:01',false,1,1),
 ('Uno schifo, meglio il Mc Flurry del mc','2018-09-01','08:15:22',false,5,2),
 ('Un piatto veramente delicato','2019-03-13','17:59:48',false,4,1),
 ('Consiglio di mettere meno zucchero, uscirà più soffice','2019-04-15','09:58:32',false,6,1),

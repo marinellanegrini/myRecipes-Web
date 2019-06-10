@@ -209,5 +209,36 @@ class FUtente extends FDatabase
 
 
 
+    /**Metodo che trova l'immagine relativa a un utente
+     * @param oggetto EUtente
+     * @return boolean
+     **/
+    public function updateUtente($utente){
+        try {
+
+            $this->update($utente->getId(),'nome',$utente->getNome());
+            $this->update($utente->getId(),'cognome',$utente->getCognome());
+            $this->update($utente->getId(),'username',$utente->getUsername());
+            $this->update($utente->getId(),'password',$utente->getPassword());
+            $this->update($utente->getId(),'email',$utente->getEmail());
+            $this->update($utente->getId(),'stato',$utente->getStato());
+            $fut=new FImgUtente();
+            $idimm=$utente->getImmagine()->getId();
+            $fut->update($idimm, "data", $utente->getimmagine()->getData());
+            $fut->update($idimm, "type", $utente->getimmagine()->getType());
+
+        }
+
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+    }
+
+
+
+
 }
 ?>

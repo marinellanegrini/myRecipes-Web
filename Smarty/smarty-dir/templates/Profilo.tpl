@@ -40,8 +40,13 @@
             <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
+<<<<<<< HEAD
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
+              <a class="dropdown-item" href="/myRecipes-Web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+=======
               <a class="dropdown-item" href="#"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
               <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+>>>>>>> cdffb68253335fb74a8e6632dfa9cf2f6dec137e
               <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
             </div>
@@ -85,7 +90,7 @@
         <h1 class="text-dark"><b>Username: </b>{$utente->getUsername()}</h1>
         <h2 class="text-dark"><b>Email: </b>{$utente->getEmail()}</h2>
         <h2 class="text-dark"><b>Nome: </b>{$utente->getNome()}</h2>
-        <h2 class="pb-4 text-dark"><b>Cognome: </b>{$utente->getCognome()}</h2><a class="btn btn-primary" href="#" style="">Modifica Profilo</a>
+        <h2 class="pb-4 text-dark"><b>Cognome: </b>{$utente->getCognome()}</h2><a class="btn btn-primary" href="/myRecipes-Web/Utente/ModificaProfilo" style="">Modifica Profilo</a>
       </div>
     </div>
 </div>
@@ -120,7 +125,7 @@
                 </span><span class="text-muted pull-right"></span><span class="text-muted pull-right">
                 </span>
               <p>{$commenti[commento]->getTesto()}</p>
-            </div><a class="btn btn-outline-light" href="#"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
+            </div><a class="btn btn-outline-light" href="/myRecipes-Web/Utente/cancellaCommento/{$commenti[commento]->getId()}"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
           </li>
 
           {/section}
