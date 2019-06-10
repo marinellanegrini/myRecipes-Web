@@ -121,6 +121,9 @@ class CGestioneRicette {
             );
             $arrcommenti[]=$tmp;
         }
+        $uri = $_SERVER['REQUEST_URI']; //recupero la parte path
+        //imposto un cookie permanente di durata un'ora che contiene le informazioni sulla pagina che stiamo visualizzando
+        setcookie("path", $uri, time()+3600);
 
 
         $view = new VDettaglio();
@@ -180,6 +183,7 @@ class CGestioneRicette {
             }
         } else { //utente non loggato
             //redirect alla form di login
+
             header('Location: /myRecipes-Web/Utente/Login');
         }
 

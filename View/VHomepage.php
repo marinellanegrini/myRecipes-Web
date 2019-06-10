@@ -6,11 +6,6 @@ class VHomepage
 {
     private $smarty;
 
-    private function mostraCommenti(){
-        $pm = FPersistentManager::getInstance();
-        $id = $pm->recuperaUltimi5Commenti(5);
-        return $id;
-    }
 
     public function __construct()
     {
@@ -21,17 +16,36 @@ class VHomepage
         $this->smarty->setConfigDir('Smarty/smarty-dir/configs');
     }
 
-    public function mostraHomepage(){
+    /**
+     * Comunica a smarty di mostrare il template di homepage utente passando 9 ricette da mostrare nella griglia
+     * @param $ricette da mostrare
+     *
+     */
+    public function mostraHomepageUtente($ricette){
+        foreach ($ricette as $ricetta)
+        {
+            $img=$ricetta->getImmagine();
+            $img->setData(base64_encode($img->getData()));
+            $ricetta->setImmagine($img);
+        }
         $sessione = Sessione::getInstance();
         if($sessione->isLoggedUtente()){
+            $this->smarty->assign('ricette',$ricette);
             $this->smarty->display('ListaRicetteUtReg.tpl');
-        } elseif($sessione->isLoggedAdmin()){
-            $com = $this->mostraCommenti();
-            $this->smarty->assign('com',$com);
-            $this->smarty->display('HomepageAmministratore.tpl');
         } else {
+            $this->smarty->assign('ricette',$ricette);
             $this->smarty->display('ListaRicetteUtNonReg.tpl');
         }
+    }
+
+    /**
+     * Comunica a smarty di mostrare il template di homepage admin passando gli ultimi 5 commenti
+     * @param $com da mostrare
+     *
+     */
+    public function mostraHomepageAdmin($com){
+        $this->smarty->assign('com',$com);
+        $this->smarty->display('HomepageAmministratore.tpl');
     }
 
 

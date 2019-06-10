@@ -59,6 +59,8 @@ class CGestioneAmministratore
         }
     }
 
+
+
     /**
      * Funzione per avviare l'inserimento di una ricetta (mostrare form inserimento)
      * solo se l'admin è loggato, altrimenti redirect form di login amministratore
@@ -66,8 +68,10 @@ class CGestioneAmministratore
     public function InserisciRicetta(){
         $session = Sessione::getInstance();
         if($session->isLoggedAdmin()){
+            $pm = FPersistentManager::getInstance();
+            $cibi =$pm->loadAllObjects();
             $view = new VGestioneAmministratore();
-            $view->mostraFormInserimento();
+            $view->mostraFormInserimento($cibi);
         } else {
             header('Location: /myRecipes-Web/Amministratore/Login');
 
@@ -143,14 +147,18 @@ class CGestioneAmministratore
                 $id = $pm->store($ricetta);
                 if($id){
                     // reindirizzamento alla home principale
+                    header('Location: /myRecipes-Web');
                 }
                 else {
                     //messaggio di errore inserimento non corretto
+                    $viewerr = new VErrore();
+                    $viewerr->mostraErrore("Inserimento nuova ricetta non riuscito");
                 }
 
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
+                header('Location: /myRecipes-Web/Amministratore/Login');
             }
         }
         else{
@@ -173,7 +181,24 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 $commenti = $pm->ricercaCommenti($filtri['last'], $filtri['parola']);
 
-                $view->mostraCommenti($commenti);
+                $arrcommenti = array();
+                //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+                foreach ($commenti as $commento){
+
+                    $id = $commento->getIdUtente();
+                    $idric = $commento->getIdRicetta();
+
+                    $utente = $pm->loadById("utente",$id);
+                    $ricetta = $pm->loadById("ricetta",$idric);
+                    $tmp = array(
+                        'utente'=>$utente->getUsername(),
+                        'commento'=>$commento,
+                        'ricetta'=>$ricetta->getNome()
+                    );
+                    $arrcommenti[]=$tmp;
+                }
+
+                $view->mostraCommenti($commenti, $arrcommenti);
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
@@ -187,6 +212,7 @@ class CGestioneAmministratore
 
     }
 
+
     /**
      * Ban di un commento
      */
@@ -197,18 +223,26 @@ class CGestioneAmministratore
             if ($session->isLoggedAdmin()) {
                 $view = new VCommenti();
                 $idcomm = $view->recuperaCommenti();
-                $pm = FPersistentManager::getInstance();
-                foreach ($idcomm as $idcommento) {
-                    $esito = $pm->update("commento", $idcommento, 'bannato', true);
+                if(!$idcomm){
+                    $viewerr = new VErrore();
+                    $viewerr->mostraErrore("Non è stato selezionato nessun commento");
 
-                    if (!$esito) {
-                        // messaggio errore se il ban va male
-                        $viewerr = new VErrore();
-                        $viewerr->mostraErrore("Il ban non è andato a buon fine");
-                    }
                 }
-                header('Location: /myRecipes-Web');
-                //redirect alla home page amministratore
+                else{
+
+                    $pm = FPersistentManager::getInstance();
+                    foreach ($idcomm as $idcommento) {
+                         $esito = $pm->update("commento", $idcommento, 'bannato', true);
+
+                         if (!$esito) {
+                            // messaggio errore se il ban va male
+                            $viewerr = new VErrore();
+                            $viewerr->mostraErrore("Il ban non è andato a buon fine");
+                         }
+                    }
+                    header('Location: /myRecipes-Web');
+                }
+                    //redirect alla home page amministratore
             } else {
                 //errore admin non loggato redirect form di login amministratore
                 header('Location: /myRecipes-Web/Amministratore/Login');
@@ -229,18 +263,23 @@ class CGestioneAmministratore
                 $view = new VGestioneAmministratore();
                 $cibo = $view->recuperaCibo();
                 $ciboobj = new ECibo($cibo['nome'],$cibo['um']);
-                $ciboobj->setImmagine($cibo['img']); //manca ancora l'id esterno (assegnato nella store di ECibo quando facciamo store dell'immagine)
+                $ciboobj->setImmagine($cibo['img']);
+                //manca ancora l'id esterno (assegnato nella store di ECibo quando facciamo store dell'immagine)
                 $pm = FPersistentManager::getInstance();
                 $id = $pm->store($ciboobj);
                 if($id){
                     //inserimento corretto redirect alla home page amministratore
+                    header('Location: /myRecipes-Web');
                 }
                 else {
                     //errore inserimento cibo errata
+                    $viewerr = new VErrore();
+                    $viewerr->mostraErrore("Inserimento ingrediente sbagliato");
                 }
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
+                header('Location: /myRecipes-Web/Amministratore/Login');
             }
         } else {
             header('HTTP/1.1 405 Method Not Allowed');

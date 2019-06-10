@@ -11,9 +11,12 @@
 <body class="bg-light" style="">
   <nav class="navbar navbar-expand-md bg-primary">
     <div class="container">
-      <a class="row">
-        <div class="col-md-10" style="">
-          <a href="/myRecipes-Web"><img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png"></a></div>
+      <div class="row">
+          <div class="col-md-10 bg-primary" style="">
+              <a href="/myRecipes-Web">
+                  <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+              </a>
+          </div>
       </div>
       <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
@@ -29,10 +32,17 @@
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
               <div class="dropdown-menu">
+<<<<<<< HEAD
 
                   <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
                   <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                   <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+=======
+                  <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Profilo</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+                
+                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+>>>>>>> cdffb68253335fb74a8e6632dfa9cf2f6dec137e
               </div>
             </li>
           </ul>
@@ -76,7 +86,7 @@
           <div class="col-md-12">
             <div class="row border mb-3" style="">
               <div class="col-md-6 col-lg-3 order-2 order-md-1 p-0" style="">
-                  <img class="img-fluid d-block" src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}">
+                  <img class="img-fluid d-block" src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" style="width: 270px;	height: 160px;">
               </div>
               <div class="d-flex flex-column justify-content-center col-md-8 offset-lg-1 align-items-start order-1 order-md-2 p-2 border-0" style="">
                 <div class="row w-100">
@@ -90,9 +100,12 @@
 
                 <div class="row w-100">
                     <div class="col-md-5">
-                        <h2 class="text-dark">
-                            {$ricette[ricetta]->getNome()}
-                        </h2>
+                        <a href="/myRecipes-Web/Ricette/Ricetta/{$ricette[ricetta]->getId()}">
+                            <h2 class="text-dark">
+                                {$ricette[ricetta]->getNome()}
+                            </h2>
+                        </a>
+
                     </div>
                     <div class="col-md-3">
                         <a class="btn pull-right ml-1 text-primary" href="/myRecipes-Web/Ricette/RimuoviDaPreferiti/{$ricette[ricetta]->getId()}">

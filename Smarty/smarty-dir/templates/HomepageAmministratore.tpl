@@ -15,7 +15,7 @@
     <a href="/myRecipes-Web/Amministratore/GestisciCommenti">Monitoraggio</a>
     <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
     <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
-    <a href="#contact">Logout</a>
+    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
 
   </div>
   <div class="py-5">
@@ -33,7 +33,7 @@
             <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{$com[commenti]->getIdUtente()}</h5>
-                <small class="text-muted">{$com[commenti]->getData()}</small>
+                <small class="text-muted">{$com[commenti]->getData()} {$com[commenti]->getOra()}</small>
               </div>
               <p class="mb-1">{$com[commenti]->getTesto()}</p> <small class="text-muted">{$com[commenti]->getIdRicetta()}</small>
             </a>

@@ -510,8 +510,13 @@ class FPersistentManager {
         return $esito;
     }
 
-    public function recuperaUltimi5Commenti($ultimi){
-        $filtri['ultimi'] = $ultimi;
+    /**
+     * Recupera gli ultimi 5 commenti inseriti nel sito
+     * @param
+     * @return array di ECommento
+     */
+    public function recuperaUltimi5Commenti(){
+        $filtri['ultimi'] = 5;
         $filtri['parola'] = null;
         $fc = new FCommento();
         $ret = $fc->ricercaCommenti($filtri);
