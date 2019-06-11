@@ -116,7 +116,7 @@
           <ul class="">
             {$ingredienti=$ricetta->getIngredienti()}
             {section name=ingrediente loop=$ingredienti}
-              <li class="my-1">{$ingredienti[ingrediente]->getQta()} {$ingredienti[ingrediente]->getCibo()->getUm()} {$ingredienti[ingrediente]->getCibo()->getNome()} </li>
+              <li class="my-1">{$ingredienti[ingrediente]->getQta()}{$ingredienti[ingrediente]->getCibo()->getUm()} {$ingredienti[ingrediente]->getCibo()->getNome()} </li>
             {/section}
           </ul>
         </div>
@@ -194,9 +194,9 @@
                   </a>
                   <div class="media-body px-2">
                   <span class="text-muted pull-right">
-                    <small class="text-muted">{$commenti[commento].commento->getData()}  {$commenti[commento].commento->getOra()}</small>
+                    <small class="text-muted">{$commenti[commento].commento->getData()}  <br>  {$commenti[commento].commento->getOra()}</small>
                   </span>
-                    <strong class="text-success">{$commenti[commento].utente}</strong>
+                    <strong class="text-secondary">{$commenti[commento].utente}</strong>
                     <p> {$commenti[commento].commento->getTesto()}  </p>
                   </div>
                 </li>

@@ -247,7 +247,6 @@ class CGestioneUtente
             $utente->setImmagine($fotoobj);
             $r=$pm->updateDiUtente($utente);
 
-
             $ut = $pm->loadById("utente", $utente->getId());
             $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
 
