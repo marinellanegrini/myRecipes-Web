@@ -48,18 +48,20 @@ class VInserimentoRicetta
             $dati['ingredienti'] = $ingredienti;
         }
         if(isset($_FILES['immprincipale'])){
-            $fotop = $_FILES['immprincipale']['tmp_name'];
+            $tempname = $_FILES['immprincipale']['tmp_name'];
+            $fotop = file_get_contents($tempname);
             $fotop = addslashes($fotop);
             $typefotop = $_FILES['immprincipale']['type'];
             $fotoobj = new EImmagine($fotop, $typefotop);
             $dati['imgprinc'] = $fotoobj;
         }
         if(isset($_FILES['gallery'])){
-            $fotog = $_FILES['gallery']['tmp_name']; //array di data img
+            $tempnames = $_FILES['gallery']['tmp_name']; //array di tempname img
             $types = $_FILES['gallery']['type']; //array di types
             $gallery = array();
-            for ($i = 0; $i<count($fotog); $i++){
-                $fotogalleryobj = new EImmagine(addslashes($fotog[$i]), $types[$i]);
+            for ($i = 0; $i<count($tempnames); $i++){
+                $fotog = file_get_contents($tempnames[$i]);
+                $fotogalleryobj = new EImmagine(addslashes($fotog), $types[$i]);
                 array_push($gallery,$fotogalleryobj); //costruzione dell'array di EImmagine gallery
             }
             $dati['gallery'] = $gallery;

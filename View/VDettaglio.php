@@ -31,6 +31,12 @@ class VDettaglio
         $img->setData(base64_encode($img->getData()));
         $ricetta->setImmagine($img);
 
+        $gallery = $ricetta->getImgpreparazione();
+        foreach ($gallery as $g){
+            $g->setData(base64_encode($g->getData()));
+        }
+        $ricetta->setImgpreparazione($gallery);
+
         $session = Sessione::getInstance();
         if($session->isLoggedUtente()){
             // la ricetta mostrata avrà il cuore pieno o vuoto a seconda se la ricetta che stiamo mostrando è preferita

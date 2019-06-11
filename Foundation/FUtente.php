@@ -80,11 +80,11 @@ class FUtente extends FDatabase
         if($id){
 
             //salvataggio immagine di default per l'utente
-            $immagine = file_get_contents('./images/profile64.txt');
+            $immagine = file_get_contents('./images/profile.png');
             $immagine = addslashes ($immagine);
             $imgobj = new EImmagine($immagine,'image/png');
             $imgobj->setIdesterno($id);
-            $fimut = new FUtente();
+            $fimut = new FImgUtente();
             $fimut->store($imgobj);
             return $id;
 
@@ -214,13 +214,12 @@ class FUtente extends FDatabase
      * @return boolean
      **/
     public function updateUtente($utente){
-        try {
 
             $e1=$this->update($utente->getId(),'nome',$utente->getNome());
             $e2=$this->update($utente->getId(),'cognome',$utente->getCognome());
             $e3=$this->update($utente->getId(),'username',$utente->getUsername());
-            $e3=$this->update($utente->getId(),'password',$utente->getPassword());
-            $e4=$this->update($utente->getId(),'email',$utente->getEmail());
+            $e4=$this->update($utente->getId(),'password',$utente->getPassword());
+            $e5=$this->update($utente->getId(),'email',$utente->getEmail());
             $fut=new FImgUtente();
             $imm=$utente->getImmagine();
             $idut=$imm->getIdesterno();
@@ -230,15 +229,11 @@ class FUtente extends FDatabase
             $er=$fut->update($idimm, "data", $utente->getImmagine()->getData());
             $esito = $fut->update($idimm, "type", $utente->getImmagine()->getType());
 
-
-        }
-
-        catch (PDOException $e)
-        {
-            $this->db->rollBack();
-            echo "Attenzione, errore: " . $e->getMessage();
-            return null;
-        }
+            if($e1 && $e2 && $e3 && $e4 && $e5 && $er && $esito){
+                return true;
+            } else {
+                return false;
+            }
     }
 
 

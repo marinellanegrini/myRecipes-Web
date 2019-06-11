@@ -126,14 +126,10 @@
       </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"></div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"> </div>
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-3.svg"></div>
+          {$gallery=$ricetta->getImgpreparazione()}
+          {section name=foto loop=$gallery}
+          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}"> </div>
+          {/section}
         </div>
       </div>
     </div>

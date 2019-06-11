@@ -47,19 +47,20 @@ class CGestioneUtente
             //login avvenuto con successo, mostrare la pagina che stava vedendo l'utente o la homepage se non stava vedendo pagine particolari
             //il cookie risulta impostato solo se l'utente non stava vedendo una pagina in particolare (dettaglio ricetta)
 
-            if(isset($_COOKIE["path"])){
+            /*if(isset($_COOKIE["path"])){
                 $uri = $_COOKIE["path"];
                 $uri = str_replace("%2F","/",$uri);
                 header('Location: '.$uri);
                 setcookie("path", $uri, time()-3600); //elimino il cookie
             } else{
                 header('Location: /myRecipes-Web');
-            }
+            }*/
 
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $utente = $pm->loadById("utente", $id);
             $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
+            header('Location: /myRecipes-Web');
 
         }
         else {
@@ -220,7 +221,7 @@ class CGestioneUtente
 
 
     /**
-     * Metodo che gestisce il login dell'utente
+     * Metodo che gestisce la modifica profilo dell'utente
      */
     public function ModificaProfiloUtente()
     {
@@ -245,19 +246,13 @@ class CGestioneUtente
             $fotoobj = $dati['immagine'];
             $fotoobj->setIdesterno($utente->getId());
             $utente->setImmagine($fotoobj);
-            $r=$pm->updateDiUtente($utente);
+            $esito = $pm->updateDiUtente($utente);
 
-
-            $ut = $pm->loadById("utente", $utente->getId());
-            $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
-
-            if($ut!=null){
-
-                //redirect alla form di login
+            if($esito){
+                $ut = $pm->loadById("utente", $utente->getId());
+                $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
                 header('Location: /myRecipes-Web/Utente/Profilo');
-            }
-            else {
-
+            } else {
                 $viewerr = new VErrore();
                 $viewerr->mostraErrore("Errore in fase di modifica");
             }

@@ -70,8 +70,8 @@ function upload()
         $immagine = addslashes ($immagine);
         $i = new EImmagine($immagine, $type);
 
-        $i->setIdesterno(7);
-        $fi = new FImgUtente();
+        $i->setIdesterno(2);
+        $fi = new FGalleryRicetta();
 
         $fi->store($i);
 
