@@ -246,6 +246,7 @@ class CGestioneUtente
             $fotoobj = $dati['immagine'];
             $fotoobj->setIdesterno($utente->getId());
             $utente->setImmagine($fotoobj);
+
             $esito = $pm->updateDiUtente($utente);
 
             if($esito){

@@ -159,9 +159,9 @@
                 </a>
                 <div class="media-body px-2">
                   <span class="text-muted pull-right">
-                    <small class="text-muted">{$commenti[commento].commento->getData()}  {$commenti[commento].commento->getOra()}</small>
+                    <small class="text-muted">{$commenti[commento].commento->getData()} <br> {$commenti[commento].commento->getOra()}</small>
                   </span>
-                  <strong class="text-success">{$commenti[commento].utente}</strong>
+                  <strong class="text-secondary">{$commenti[commento].utente}</strong>
                   <p> {$commenti[commento].commento->getTesto()}  </p>
                 </div>
               </li>
