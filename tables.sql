@@ -144,8 +144,8 @@ INSERT INTO categoria (nome) VALUES
 INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalvataggi) VALUES
 ('Uova sode',1,'Porre le uova in una pentola e versarci l\'acqua fredda fino a ricoprire. \n Porre il pentolino sul fuoco e fate arrivare a bollore. \n Dal bollore calcolate 9 minuti di cottura','00:09:00',4,2,3 ),
 ('Patate al forno',2,'Lavare le patate e tagliarle. \n Porre le patate in una teglia e aggiungete olio e il sale. \n Porre in forno preriscaldato a 200°C per 1 ora.','01:20:00',4,4,0),
-('Patate fritte',2,'Lavare le patate e tagliarle. \n Friggere le patate nell\'olio bollente a 170°C. \n Trasferirle in un vassoio e aggiungere il sale.','00:25:00',4,4,0);
-
+('Patate fritte',2,'Lavare le patate e tagliarle. \n Friggere le patate nell\'olio bollente a 170°C. \n Trasferirle in un vassoio e aggiungere il sale.','00:25:00',4,4,0),
+('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0);
 
 /**
 * Inserimento dei dati nella tabella commento
@@ -177,7 +177,12 @@ INSERT INTO cibo(nome, unitamisura) VALUES
 ('Patate','gr'),
 ('Farina 00','gr'),
 ('Farina integrale','gr'),
-('Olio di semi','ml');
+('Olio di semi','ml'),
+('Cioccolato fondente','gr'),
+('Lievito per dolci','gr'),
+('Cacao','gr'),
+('Zucchero','gr'),
+('Burro','gr');
 
 
 /**
@@ -189,7 +194,14 @@ INSERT INTO ingrediente(qta,id_cibo) VALUES
 (30,1),
 (5,3),
 (800,7),
-(700,10);
+(700,10),
+(150,17),
+(8,18),
+(50,19),
+(180,20),
+(200,21),
+(180,8),
+(6,2);
 
 /**
 * Inserimento dei dati nella tabella utprefric
@@ -209,7 +221,11 @@ INSERT INTO rictoingr(id_ricetta,id_ingrediente) VALUES
 (2,4),
 (3,4),
 (3,5),
-(3,6);
+(3,6),
+(6,),
+(6,),
+(6,),
+(6),;
 
 INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
 (1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes_img/Cibo/olio-doliva.jpg'),'image/jpg',1),
