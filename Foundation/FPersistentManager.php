@@ -533,5 +533,11 @@ class FPersistentManager {
 
     }
 
+    public function contaricetta()
+    {
+        $ricetta= new FRicetta();
+        $r= $ricetta->contaRicette();
+        return $r;
+    }
 
 }
