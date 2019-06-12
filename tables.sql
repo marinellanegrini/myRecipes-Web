@@ -149,7 +149,8 @@ INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalva
 ('Insalata di riso',2,'Per realizzare l’insalata di riso ponete sul fuoco una pentola colma di acqua salata e una volta che avrà raggiunto il bollore versate il riso. Lavate e tagliate a metà i pomodori e tagliateli a cubetti. Tagliate a cubetti anche il prosciutto cotto e a rondelle le olive nere. Quando mancheranno circa 2-3 minuti dalla cottura, scolate il riso e lasciatelo raffreddare così. Incorporare nel riso i filetti di tonno sbriciolati, il prosciutto cotto, le olive nere e i pomodorini. Aggiustate di sale e mescolate con un cucchiaio. Porla in frigorifero fino al momento di servirla così sarà ben fredda e i sapori si saranno amalgamati.','00:35:00',4,6,0),
 ('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0),
 ('Pomodorini confit',1,'Per preparare i pomodorini confit, iniziate lavando i pomodorini sotto acqua corrente. Asciugateli con un canovaccio o carta da cucina e poneteli su un tagliere, quindi dividete tutti i pomodorini a metà. Ora disponete i pomodorini tagliati su una leccarda ricoperta di carta forno con la parte del taglio rivolta verso l’alto. Dopodichè salate e pepate a piacere. A questo punto preparate il trito di aglio: sbucciate uno spicchio d’aglio e tritatelo finemente. Infine versatelo su ogni pomodorino e aggiungete anche lo zucchero. Distribuite l’origano secco e infine versate un filo d’olio su ogni pomodorino. Infornate il tutto a in forno statico preriscaldato a 140° per circa 2 ore, fino a quando l’acqua di vegetazione dei pomodorini non sarà evaporata e questi non risulteranno leggermente abbrustoliti ma non secchi','01:10:00',4,1,0),
-('Barrette cocco e cioccolato',2,'Versate il cocco rapè in una ciotola, aggiungete il latte condensato e il sale e mescolate con una spatola. \n Trasferite il tutto su un foglio di carta forno e con le mani pressate il composto in modo da ricavare un rettangolo. \n Trasferite in frigorifero a raffreddare per circa 1 ora. Dividete il composto, posto in frigorifero, con il coltello in modo da ricavare 12 barrette. \n Nel frattempo tritate il cioccolato e fondetelo a bagnomaria. \n  Mescolate con una spatola il cioccolato, portandolo a raggiungere i 31-30°. \n Immergete all''interno del cioccolato fuso una delle barrette aiutandovi con una forchetta. \n Sistematele man mano sulla gratella e proseguite a ricoprire tutte le altre con il cioccolato. Decorate con un po'' di cocco rapè la superficie e lasciate cristallizzare a temperatura ambiente. \n Non appena il cioccolato sarà completamente asciutto potrete servire le barrette al cocco e cioccolato. ','00:01:00',12,5,0);
+('Barrette cocco e cioccolato',2,'Versate il cocco rapè in una ciotola, aggiungete il latte condensato e il sale e mescolate con una spatola. \n Trasferite il tutto su un foglio di carta forno e con le mani pressate il composto in modo da ricavare un rettangolo. \n Trasferite in frigorifero a raffreddare per circa 1 ora. Dividete il composto, posto in frigorifero, con il coltello in modo da ricavare 12 barrette. \n Nel frattempo tritate il cioccolato e fondetelo a bagnomaria. \n  Mescolate con una spatola il cioccolato, portandolo a raggiungere i 31-30°. \n Immergete all''interno del cioccolato fuso una delle barrette aiutandovi con una forchetta. \n Sistematele man mano sulla gratella e proseguite a ricoprire tutte le altre con il cioccolato. Decorate con un po'' di cocco rapè la superficie e lasciate cristallizzare a temperatura ambiente. \n Non appena il cioccolato sarà completamente asciutto potrete servire le barrette al cocco e cioccolato. ','00:01:00',12,5,0),
+('Crocchette di patate',2,'Lavate le patate, ponetele a lessare in un tegame versando acqua fino a coprirle e senza sbucciarle per circa 40 min. \n Lasciatele intiepidire e poi sbucciatele, passatele in uno schiacciapatate per ottenere una purea. \n In una ciotolina sbattete i tuorli con pepe e sale e poi aggiungeteli alla purea di patate e aggiungete la noce moscata grattugiata e insaporite con il formaggio grattugiato, amalgamare gli ingredienti fino ad ottenere un composto morbido e asciutto. \n Prendete una porzione di impasto e formate le crocchette dando una forma a cilindo. \n  Una volta ultimato l’impasto impanate le crocchette: preparate due ciotole rispettivamente con le due uova sbattute e l''altra con il pangrattato. Passate le crocchette prima nell’uovo e poi nel pangrattato. \n Adagiate le crocchette su un vassoio rivestito con carta da forno. \n Scaldate abbondante olio di arachidi in un tegame fino a raggiungere i 180-190° e poi tuffate all’interno 3-4 crocchette alla volta. \n Scolatele e mettetele a scolare dell’olio in eccesso su di un piatto foderato con carta assorbente. \n Servite le crocchette di patate ancora calde!','01:15:00',10,3,0);
 
 /**
 * Inserimento dei dati nella tabella commento
@@ -164,9 +165,9 @@ INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 ('Un piatto veramente delicato','2019-03-13','17:59:48',false,4,1),
 ('Consiglio di mettere meno zucchero, uscirà più soffice','2019-04-15','09:58:32',false,6,1),
 ('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','19:59:48',false,7,1),
-('Ho preparato questa torta per un compleanno! E''uscita molto bene!','2018-02-15','18:58:32',false,3,8),
+('Ho preparato questa torta per un compleanno! E''uscita molto bene!','2018-02-15','18:58:32',false,3,6),
 ('Posso sostituire il guanciale con la pancetta?','2019-04-15','12:58:32',false,5,4),
-('Consiglio di mettere meno burro, uscirà più soffice','2019-04-15','09:58:32',false,4,6);
+('Consiglio di mettere meno burro, uscirà più soffice','2019-04-15','09:58:32',false,5,6);
 
 
 
@@ -200,7 +201,11 @@ INSERT INTO cibo(nome, unitamisura) VALUES
 ('Aglio','spicchi'),
 ('Origano','gr'),
 ('Cocco rapè','gr'),
-('Latte condensato','gr');
+('Latte condensato','gr'),
+('Patate Rosse','gr'),
+('Noce moscata','gr'),
+('Parmigiano','gr'),
+('Pangrattato','gr');
 
 
 /**
@@ -236,7 +241,14 @@ INSERT INTO ingrediente(qta,id_cibo) VALUES
 (5,25),
 (200,26),
 (150,27),
-(250,18);
+(250,18),
+(900,28),
+(5,29),
+(100,30),
+(20,31),
+(30,12),
+(2,2),
+(500,10);
 
 
 /**
@@ -289,7 +301,16 @@ INSERT INTO rictoingr(id_ricetta,id_ingrediente) VALUES
 (8,28),
 (8,29),
 (8,30),
-(8,4);
+(8,4),
+(9,31),
+(9,32),
+(9,33),
+(9,34),
+(9,35),
+(9,36),
+(9,37),
+(9,4),
+(9,10);
 
 
 INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
@@ -302,17 +323,28 @@ INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
 (7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/patate.jpg'),'image/jpg',7),
 (8,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/farina-00.jpg'),'image/jpg',8),
 (9,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/farina_integrale.jpg'),'image/jpg',9),
-(10,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/farina_integrale.jpg'),'image/jpg',10),
+(10,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/oliosemi.jpg'),'image/jpg',10),
 (11,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/guanciale.jpg'),'image/jpg',11),
 (12,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/Tuorli.png'),'image/png',12),
-(13,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cioccolatofondente.jpg'),'image/jpg',18),
-(14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/lievitoperdolci.jpg'),'image/jpg',19),
-(15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cacao.jpg'),'image/jpg',20),
-(16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/zucchero.jpg'),'image/jpg',21),
-(17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22),
-(18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodorini.jpg'),'image/jpg',23),
-(19,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/Aglio.jpg'),'image/jpg',24),
-(20,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/origano.jpg'),'image/jpg',25);
+(13,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/riso.jpg'),'image/jpg',13),
+(14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodori.jpg'),'image/jpg',14),
+(15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/prosciuttocotto.jpg'),'image/jpg',15),
+(16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/olivenere.jpg'),'image/jpg',16),
+(17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/tonno.jpg'),'image/jpg',17),
+(18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cioccolatofondente.jpg'),'image/jpg',18),
+(19,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/lievitoperdolci.jpg'),'image/jpg',19),
+(20,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cacao.jpg'),'image/jpg',20),
+(21,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/zucchero.jpg'),'image/jpg',21),
+(22,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22),
+(23,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodorini.jpg'),'image/jpg',23),
+(24,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/Aglio.jpg'),'image/jpg',24),
+(25,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/origano.jpg'),'image/jpg',25),
+(26,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/coccorape.jpg'),'image/jpg',26),
+(27,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/lattecondensato.jpg'),'image/jpg',27),
+(28,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pataterosse.jpg'),'image/jpg',28),
+(29,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/nocemoscata.jpg'),'image/jpg',29),
+(30,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/parmigiano.jpg'),'image/jpg',30),
+(31,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pangrattato.jpg'),'image/jpg',31);
 
 INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
 (1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/uova-sode.jpg'),'image/jpg',1),
@@ -321,7 +353,10 @@ INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
 (4,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/carbonara.jpg'),'image/jpg',4),
 (5,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/insalatadiriso.jpg'),'image/jpg',5),
 (6,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/tortacioccolato.jpg'),'image/jpg',6),
-(7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/pomodoriniconfit.jpg'),'image/jpg',7);
+(7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/pomodoriconfit.jpg'),'image/jpg',7),
+(8,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/bounty.jpg'),'image/jpg',8),
+(9,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/crocchettepatate.jpg'),'image/jpg',9);
+
 
 INSERT INTO imgutente(id,data,type,id_utente) VALUES
 (1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Utente/arianna.jpg'),'image/jpg',1),
@@ -350,4 +385,14 @@ INSERT INTO galleryricetta(id,data,type,id_ricetta) VALUES
 (15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/lavapomodorini.jpg'),'image/jpg',7),
 (16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/tagliarepomodorini.jpg'),'image/jpg',7),
 (17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/pomodorinisuleccarda.jpg'),'image/jpg',7),
-(18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/pomodorinifiniti.jpg'),'image/jpg',7);
+(18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/pomodorinifiniti.jpg'),'image/jpg',7),
+(19,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/torta.jpg'),'image/jpg',6),
+(20,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/teglia.jpg'),'image/jpg',6),
+(21,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/farinaecacao.jpg'),'image/jpg',6),
+(22,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/torta.jpg'),'image/jpg',6),
+(23,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/bounty.jpg'),'image/jpg',8),
+(24,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/cioccolato.jpg'),'image/jpg',8),
+(25,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/mmyRecipes/images/GalleryRicetta/lattecondensato.jpg'),'image/jpg',8),
+(26,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/coccorape.jpg'),'image/jpg',8),
+(27,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/bollirepatate.jpg'),'image/jpg',9),
+(28,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/schiaccpatate.jpg'),'image/jpg',9);

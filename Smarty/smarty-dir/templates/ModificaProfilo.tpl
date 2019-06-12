@@ -18,7 +18,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="mx-auto col-md-6 pt-2"><img class="img-fluid d-block w-25" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
+      <div class="mx-auto col-md-6 pt-3"><img class="img-fluid d-block w-25" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png"></div>
 
     </div>
   </div>
@@ -28,7 +28,7 @@
 <div class="py-0" style="" >
   <div class="container">
     <div class="row">
-      <div class="mx-auto col-md-12 col-10 bg-white p-5 bg-light" style="">
+      <div class="mx-auto col-md-10 col-10 bg-white p-4 bg-light" style="">
         <div class="mx-auto col-lg-12 col-10">
           <h1 class="text-dark" align="center">Modifica Profilo</h1>
           <form class="text-left" method="post" enctype="multipart/form-data" action="/myRecipes/web/Utente/ModificaProfilo">
@@ -41,7 +41,7 @@
               <div class="form-group col-md-6"> <label for="form20" class="text-dark">Confirm Password</label> <input type="password" name="confpass" value="{$utente->getPassword()}" class="form-control" id="form20" placeholder="••••"> </div>
             </div>
             <br>
-            <div class="row"><label class="text-dark">Inserire foto profilo:  </label><input class="text-dark" type="file" name="immagine" class=" ml-3"></div>
+            <div class="row"><label class="text-dark">Inserire foto profilo :  </label><input class="text-dark" type="file" name="immagine" class=" ml-3"></div>
 
             <button type="submit" class="btn btn-primary mt-4">Modifica</button>
           </form>
