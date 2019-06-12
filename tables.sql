@@ -165,7 +165,7 @@ INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 ('Consiglio di mettere meno zucchero, uscirà più soffice','2019-04-15','09:58:32',false,6,1),
 ('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','19:59:48',false,7,1),
 ('Ho preparato questa torta per un compleanno! E''uscita molto bene!','2018-02-15','18:58:32',false,3,8),
-('Posso sostituire il guanciale con la pancetta?','12:58:32',false,5,4),
+('Posso sostituire il guanciale con la pancetta?','2019-04-15','12:58:32',false,5,4),
 ('Consiglio di mettere meno burro, uscirà più soffice','2019-04-15','09:58:32',false,4,6);
 
 
@@ -309,14 +309,10 @@ INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
 (14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/lievitoperdolci.jpg'),'image/jpg',19),
 (15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cacao.jpg'),'image/jpg',20),
 (16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/zucchero.jpg'),'image/jpg',21),
-<<<<<<< HEAD
-(17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22);
-=======
 (17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22),
 (18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodorini.jpg'),'image/jpg',23),
 (19,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/Aglio.jpg'),'image/jpg',24),
 (20,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/origano.jpg'),'image/jpg',25);
->>>>>>> ae9f372092930ba8099b7dc5cd830c1265c18947
 
 INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
 (1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/uova-sode.jpg'),'image/jpg',1),
