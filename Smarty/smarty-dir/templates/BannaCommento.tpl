@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body style="">
   <div class="topnav">
-    <a href="/myRecipes-Web">Home</a>
+    <a href="/myRecipes/web">Home</a>
     <a class="active">Monitoraggio</a>
-    <a href="/myRecipes-Web/Amministratore/InserisciRicetta">Nuova ricetta</a>
-    <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
-    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
+    <a href="/myRecipes/web/Amministratore/InserisciRicetta">Nuova ricetta</a>
+    <a href="/myRecipes/web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
+    <a href="/myRecipes/web/Amministratore/Logout">Logout</a>
   </div>
 
   <div class="py-5">
@@ -28,7 +28,7 @@
 
 
 
-      <form action="/myRecipes-Web/Amministratore/Banna" method="post">
+      <form action="/myRecipes/web/Amministratore/Banna" method="post">
 
 
         {section name=commento loop=$commenti}

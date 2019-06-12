@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
   <script language="JavaScript"> function myFunction() {
         $("#nuovingredienti").append('<br/><div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="#" value="" style="width: 50px;"></div></div>');
     }
@@ -15,13 +15,13 @@
 
 <body style="">
   <div class="topnav">
-    <a href="/myRecipes-Web/">Home</a>
-    <a href="/myRecipes-Web/Amministratore/GestisciCommenti">Monitoraggio</a>
+    <a href="/myRecipes/web/">Home</a>
+    <a href="/myRecipes/web/Amministratore/GestisciCommenti">Monitoraggio</a>
     <a class="active">Nuova ricetta</a>
-    <a href="/myRecipes-Web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
-    <a href="/myRecipes-Web/Amministratore/Logout">Logout</a>
+    <a href="/myRecipes/web/Amministratore/InserisciCibo">Nuovo ingrediente</a>
+    <a href="/myRecipes/web/Amministratore/Logout">Logout</a>
   </div>
-  <form action="/myRecipes-Web/Amministratore/Ricetta" method="post" align="left" enctype="multipart/form-data" class="ml-3 pt-3" style="">
+  <form action="/myRecipes/web/Amministratore/Ricetta" method="post" align="left" enctype="multipart/form-data" class="ml-3 pt-3" style="">
     Nome ricetta:<br>
     <input type="text" name="nome" value="" class="my-1 ml-5"><br>
     <br>Procedimento:<br>
@@ -127,7 +127,7 @@
           </button>
         </div>
         <div class="ml-5">
-          <a href="/myRecipes-Web/Amministratore/InserisciCibo">L'ingredienti che cerchi non è presente nella lista? Inseriscilo qui!</a>
+          <a href="/myRecipes/web/Amministratore/InserisciCibo">L'ingredienti che cerchi non è presente nella lista? Inseriscilo qui!</a>
         </div>
       </div>
       <div class="row">

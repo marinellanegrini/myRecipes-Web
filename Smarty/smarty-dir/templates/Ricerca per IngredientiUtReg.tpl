@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-secondary">
@@ -13,8 +13,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <a href="/myRecipes-Web">
-          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          <a href="/myRecipes/web">
+          <img class="img-fluid d-block w-75" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png">
           </a>
         </div>
       </div>
@@ -24,18 +24,18 @@
         <div class="col-md-12">
           <ul class="nav pull-right" style="">
             <li class="nav-item">
-              <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+              <a href="/myRecipes/web" class="nav-link active text-white">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-white" href="/myRecipes-Web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+              <a class="nav-link active text-white" href="/myRecipes/web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Profilo</a>
+                <a class="dropdown-item" href="/myRecipes/web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>Profilo</a>
                 <a class="dropdown-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
                 
-                <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                <a class="dropdown-item" href="/myRecipes/web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
             </li>
           </ul>
@@ -48,9 +48,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
-        <a href="/myRecipes-Web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes/web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
         <a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-        <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
+        <form class="form-inline"  method="post" action="/myRecipes/web/Ricette/cercaDaNome">
           <div class="input-group">
             <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
             <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
@@ -64,7 +64,7 @@
       <div class="row">
         <div class="bg-white col-12 py-5 pl-4 col-md-12  mx-0 ">
           <h3 class="display-4 text-dark pl-3" align=""><b>Ricerca per ingredienti </b><i class="fa fa-cutlery"></i></h3>
-          <form method="post" action="/myRecipes-Web/Ricette/cercaPerIngredienti">
+          <form method="post" action="/myRecipes/web/Ricette/cercaPerIngredienti">
             <div class="form-check text-dark ml-5">
               <div class="container">
                 {section name=cibo loop=$cibi}

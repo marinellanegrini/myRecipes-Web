@@ -7,7 +7,7 @@
   <!-- PAGE settings -->
   <title>Profilo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
+  <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-light" style="">
@@ -16,8 +16,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10" style="">
-          <a href="/myRecipes-Web">
-          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          <a href="/myRecipes/web">
+          <img class="img-fluid d-block w-75" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png">
           </a>
         </div>
       </div>
@@ -31,20 +31,20 @@
       <div class="col-md-12">
         <ul class="nav pull-right" style="">
           <li class="nav-item">
-            <a href="/myRecipes-Web" class="nav-link active text-white">Home</a>
+            <a href="/myRecipes/web" class="nav-link active text-white">Home</a>
           </li>
           <li class="nav-item">
-            <a href="/myRecipes-Web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
+            <a href="/myRecipes/web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
 
-              <a class="dropdown-item" href="/myRecipes-Web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
-              <a class="dropdown-item" href="/myRecipes-Web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+              <a class="dropdown-item" href="/myRecipes/web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
+              <a class="dropdown-item" href="/myRecipes/web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
 
-              <a class="dropdown-item" href="/myRecipes-Web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+              <a class="dropdown-item" href="/myRecipes/web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
             </div>
           </li>
@@ -59,9 +59,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar12">
-      <a href="/myRecipes-Web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
-      <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-      <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
+      <a href="/myRecipes/web/Ricette/RicercaAvanzata" class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+      <a href="/myRecipes/web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+      <form class="form-inline"  method="post" action="/myRecipes/web/Ricette/cercaDaNome">
         <div class="input-group">
           <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
           <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
@@ -87,7 +87,7 @@
         <h1 class="text-dark"><b>Username: </b>{$utente->getUsername()}</h1>
         <h2 class="text-dark"><b>Email: </b>{$utente->getEmail()}</h2>
         <h2 class="text-dark"><b>Nome: </b>{$utente->getNome()}</h2>
-        <h2 class="pb-4 text-dark"><b>Cognome: </b>{$utente->getCognome()}</h2><a class="btn btn-primary" href="/myRecipes-Web/Utente/ModificaProfilo" style="">Modifica Profilo</a>
+        <h2 class="pb-4 text-dark"><b>Cognome: </b>{$utente->getCognome()}</h2><a class="btn btn-primary" href="/myRecipes/web/Utente/ModificaProfilo" style="">Modifica Profilo</a>
       </div>
     </div>
 </div>
@@ -122,7 +122,7 @@
                 </span><span class="text-muted pull-right"></span><span class="text-muted pull-right">
                 </span>
               <p>{$commenti[commento]->getTesto()}</p>
-            </div><a class="btn btn-outline-light" href="/myRecipes-Web/Utente/cancellaCommento/{$commenti[commento]->getId()}"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
+            </div><a class="btn btn-outline-light" href="/myRecipes/web/Utente/cancellaCommento/{$commenti[commento]->getId()}"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
           </li>
 
           {/section}

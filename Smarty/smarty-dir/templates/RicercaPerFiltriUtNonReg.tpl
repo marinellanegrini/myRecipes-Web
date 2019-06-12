@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/myRecipes-Web/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
 <body class="bg-secondary">
@@ -13,8 +12,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 bg-primary" style="">
-          <a href="/myRecipes-Web">
-          <img class="img-fluid d-block w-75" src="/myRecipes-Web/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          <a href="/myRecipes/web">
+          <img class="img-fluid d-block w-75" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png">
           </a>
         </div>
       </div>
@@ -22,10 +21,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="topnav1 pull-right">
-          <a href="/myRecipes-Web">Home</a>
-          <a href="/myRecipes-Web/Utente/Login">Login</a>
-          <a href="/myRecipes-Web/Amministratore/Login">Login amministratore</a>
-          <a href="/myRecipes-Web/Utente/Registrazione">Registrazione</a>
+          <a href="/myRecipes/web">Home</a>
+          <a href="/myRecipes/web/Utente/Login">Login</a>
+          <a href="/myRecipes/web/Amministratore/Login">Login amministratore</a>
+          <a href="/myRecipes/web/Utente/Registrazione">Registrazione</a>
         </div>
       </div>
     </div>
@@ -36,8 +35,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar12">
         <a class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
-        <a href="/myRecipes-Web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
-        <form class="form-inline"  method="post" action="/myRecipes-Web/Ricette/cercaDaNome">
+        <a href="/myRecipes/web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+        <form class="form-inline"  method="post" action="/myRecipes/web/Ricette/cercaDaNome">
           <div class="input-group">
             <input type="text" class="form-control ml-1 mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
             <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
@@ -51,7 +50,7 @@
       <div class="row">
         <div class="bg-white col-12 py-3 pt-5 col-md-12 pb-3 mx-0 ">
         <h3 class="text-dark display-4 pl-5">Ricerca per filtri  <i class="fa fa-filter"></i></h3>
-        <form method="post" action="/myRecipes-Web/Ricette/cercaAvanzata">
+        <form method="post" action="/myRecipes/web/Ricette/cercaAvanzata">
           <div class="row">
             <div class="col-md-12">
               <div class="row" style="">
