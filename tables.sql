@@ -147,7 +147,8 @@ INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalva
 ('Patate fritte',2,'Lavare le patate e tagliarle. \n Friggere le patate nell\'olio bollente a 170°C. \n Trasferirle in un vassoio e aggiungere il sale.','00:25:00',4,4,0),
 ('Carbonara',3,'Porre sul fuoco una pentolo con l\'acqua salata. Eliminare la cotenna dal guanciale, tagliarlo a striscioline spesse di un centimento, metterli in una padella antiaderente e rosolare per 15 min a fiamma media. Nel frattempo tuffate gli spaghetti nell\'acqua bollente. Versare i tuorli in una ciotola, aggiugendo il pecorino, insaporire con il pepe e amalgamare il tutto con una frusta.Intanto il guanciale sarà giunto a cottura, spegnete il fuoco e tenetelo da parte. Scolate la pasta nel tegame con il guanciale. Tohlietela dal fuoco e versate il composto di uova e pecorino nel tegame. Infine saltate la pasta per amalgamare e servitela ','00:25:00',4,1,2),
 ('Insalata di riso',2,'Per realizzare l’insalata di riso ponete sul fuoco una pentola colma di acqua salata e una volta che avrà raggiunto il bollore versate il riso. Lavate e tagliate a metà i pomodori e tagliateli a cubetti. Tagliate a cubetti anche il prosciutto cotto e a rondelle le olive nere. Quando mancheranno circa 2-3 minuti dalla cottura, scolate il riso e lasciatelo raffreddare così. Incorporare nel riso i filetti di tonno sbriciolati, il prosciutto cotto, le olive nere e i pomodorini. Aggiustate di sale e mescolate con un cucchiaio. Porla in frigorifero fino al momento di servirla così sarà ben fredda e i sapori si saranno amalgamati.','00:35:00',4,6,0),
-('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0);
+('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0),
+('Barrette cocco e cioccolato',2,'Versate il cocco rapè in una ciotola, aggiungete il latte condensato e il sale e mescolate con una spatola. \n Trasferite il tutto su un foglio di carta forno e con le mani pressate il composto in modo da ricavare un rettangolo. \n Trasferite in frigorifero a raffreddare per circa 1 ora. Dividete il composto, posto in frigorifero, con il coltello in modo da ricavare 12 barrette. \n Nel frattempo tritate il cioccolato e fondetelo a bagnomaria. \n  Mescolate con una spatola il cioccolato, portandolo a raggiungere i 31-30°. \n Immergete all''interno del cioccolato fuso una delle barrette aiutandovi con una forchetta. \n Sistematele man mano sulla gratella e proseguite a ricoprire tutte le altre con il cioccolato. Decorate con un po'' di cocco rapè la superficie e lasciate cristallizzare a temperatura ambiente. \n Non appena il cioccolato sarà completamente asciutto potrete servire le barrette al cocco e cioccolato. ','00:01:00',12,5,0);
 
 /**
 * Inserimento dei dati nella tabella commento
@@ -161,8 +162,10 @@ INSERT INTO commento (testo, data, ora, bannato, id_utente, id_ricetta) VALUES
 ('Uno schifo, meglio il Mc Flurry del mc','2018-09-01','08:15:22',false,5,2),
 ('Un piatto veramente delicato','2019-03-13','17:59:48',false,4,1),
 ('Consiglio di mettere meno zucchero, uscirà più soffice','2019-04-15','09:58:32',false,6,1),
-('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','19:59:48',false,7,1);
-
+('Fatta ieri sera per festeggiare un Compleanno: è venuta buonissima è molto apprezzata dai mie ospiti: grazie ragazzi !!!!!!','2019-03-13','19:59:48',false,7,1),
+('Ho preparato questa torta per un compleanno! E''uscita molto bene!','2018-02-15','18:58:32',false,3,8),
+('Posso sostituire il guanciale con la pancetta?','12:58:32',false,5,4),
+('Consiglio di mettere meno burro, uscirà più soffice','2019-04-15','09:58:32',false,4,6);
 
 
 
@@ -191,7 +194,9 @@ INSERT INTO cibo(nome, unitamisura) VALUES
 ('Lievito per dolci','gr'),
 ('Cacao','gr'),
 ('Zucchero','gr'),
-('Burro','gr');
+('Burro','gr'),
+('Cocco rapè','gr'),
+('Latte condensato','gr');
 
 /**
 * Inserimento dei dati nella tabella ingrediente
@@ -280,7 +285,7 @@ INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
 (14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/lievitoperdolci.jpg'),'image/jpg',19),
 (15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/cacao.jpg'),'image/jpg',20),
 (16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/zucchero.jpg'),'image/jpg',21),
-(12,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22);
+(17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/burro.jpg'),'image/jpg',22);
 
 INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
 (1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ricetta/uova-sode.jpg'),'image/jpg',1),
