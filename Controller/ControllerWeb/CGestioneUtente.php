@@ -53,14 +53,14 @@ class CGestioneUtente
                 header('Location: '.$uri);
                 setcookie("path", $uri, time()-3600); //elimino il cookie
             } else{
-                header('Location: /myRecipes-Web');
+                header('Location: /myRecipes/web');
             }*/
 
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $utente = $pm->loadById("utente", $id);
             $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
-            header('Location: /myRecipes-Web');
+            header('Location: /myRecipes/web');
 
         }
         else {
@@ -81,7 +81,7 @@ class CGestioneUtente
 
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
-                header('Location: /myRecipes-Web');
+                header('Location: /myRecipes/web');
             } else {
                 $view = new VRegistrazione();
                 $errore = "";
@@ -91,7 +91,7 @@ class CGestioneUtente
         else if($_SERVER['REQUEST_METHOD']=="POST"){
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
-                header('Location: /myRecipes-Web');
+                header('Location: /myRecipes/web');
             } else {
                 $this->Registrati();
             }
@@ -121,7 +121,7 @@ class CGestioneUtente
             $id = $pm->store($u);
             if($id){
                 //redirect alla form di login
-                header('Location: /myRecipes-Web/Utente/Login');
+                header('Location: /myRecipes/web/Utente/Login');
             }
             else {
                 $viewerr = new VErrore();
@@ -141,7 +141,7 @@ class CGestioneUtente
             $view->mostraProfilo($sessione->getUtente());
         } else {
             //redirect alla form di login
-            header('Location: /myRecipes-Web/Utente/Login');
+            header('Location: /myRecipes/web/Utente/Login');
         }
     }
 
@@ -177,7 +177,7 @@ class CGestioneUtente
             $sessione->logout(); //cancello i dati di sessione
         }
         //redirect a login in entrambi i casi
-        header('Location: /myRecipes-Web');
+        header('Location: /myRecipes/web');
 
     }
 
@@ -196,7 +196,7 @@ class CGestioneUtente
                 $view->mostraModificaProfilo($sessione->getUtente(),"");
             } else {
                 //redirect alla form di login
-                header('Location: /myRecipes-Web/Utente/Login');
+                header('Location: /myRecipes/web/Utente/Login');
             }
         }
         else if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -207,7 +207,7 @@ class CGestioneUtente
             } else {
 
                 //redirect alla form di login
-                header('Location: /myRecipes-Web/Utente/Login');
+                header('Location: /myRecipes/web/Utente/Login');
 
             }
 
@@ -252,7 +252,7 @@ class CGestioneUtente
             if($esito){
                 $ut = $pm->loadById("utente", $utente->getId());
                 $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
-                header('Location: /myRecipes-Web/Utente/Profilo');
+                header('Location: /myRecipes/web/Utente/Profilo');
             } else {
                 $viewerr = new VErrore();
                 $viewerr->mostraErrore("Errore in fase di modifica");
@@ -281,7 +281,7 @@ class CGestioneUtente
 
             if($final){
                 //rimozione corretta, redirect alla pagina profilo
-                header('Location: /myRecipes-Web/Utente/Profilo');
+                header('Location: /myRecipes/web/Utente/Profilo');
 
             }
             else {
@@ -290,7 +290,7 @@ class CGestioneUtente
                 $viewerr->mostraErrore("Rimozione commento non riuscita");
             }
         } else { //utente non loggato redirect a login
-            header('Location: /myRecipes-Web/Utente/Login');
+            header('Location: /myRecipes/web/Utente/Login');
 
         }
 

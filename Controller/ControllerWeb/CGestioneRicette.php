@@ -153,7 +153,7 @@ class CGestioneRicette {
             $view->mostraPreferiti($ricette, $msg);
 
         } else {
-            header('Location: /myRecipes-Web/Utente/Login');
+            header('Location: /myRecipes/web/Utente/Login');
         }
     }
 
@@ -177,7 +177,7 @@ class CGestioneRicette {
             $session->setUtenteLoggato($utente);
             if($esito){
                 //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
-                header('Location: /myRecipes-Web/Ricette/Preferiti');
+                header('Location: /myRecipes/web/Ricette/Preferiti');
             }
             else {
                 $viewerr = new VErrore();
@@ -187,7 +187,7 @@ class CGestioneRicette {
         } else { //utente non loggato
             //redirect alla form di login
 
-            header('Location: /myRecipes-Web/Utente/Login');
+            header('Location: /myRecipes/web/Utente/Login');
         }
 
     }
@@ -212,7 +212,7 @@ class CGestioneRicette {
                 $session->setUtenteLoggato($utente);
                 if($id){
                     //inserimento corretto, redirect a dettaglio ricetta attuale (usiamo il metodo Ricetta di questo controller)
-                    header('Location: /myRecipes-Web/Ricette/Ricetta/'.$idricetta);
+                    header('Location: /myRecipes/web/Ricette/Ricetta/'.$idricetta);
                 } else {
                     //messaggio errore inserimento non corretto
                     $viewerr = new VErrore();
@@ -221,7 +221,7 @@ class CGestioneRicette {
 
             } else { //utente non loggato
                 //redirect alla form di login
-                header('Location: /myRecipes-Web/Utente/Login');
+                header('Location: /myRecipes/web/Utente/Login');
             }
 
         }
@@ -258,7 +258,7 @@ class CGestioneRicette {
             $session->setUtenteLoggato($utente);
             if($esito){
                 //rimozione corretta, redirect alla pagina dei preferiti dell'utente
-                header('Location: /myRecipes-Web/Ricette/Preferiti');
+                header('Location: /myRecipes/web/Ricette/Preferiti');
 
             }
             else {
@@ -267,7 +267,7 @@ class CGestioneRicette {
                 $viewerr->mostraErrore("Rimozione dai preferiti non corretta");
             }
         } else { //utente non loggato redirect a login
-            header('Location: /myRecipes-Web/Utente/Login');
+            header('Location: /myRecipes/web/Utente/Login');
         }
 
     }

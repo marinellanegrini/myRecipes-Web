@@ -16,7 +16,7 @@ class CGestioneAmministratore
 
             if($sessione->isLoggedAdmin()){
                 //redirect alla home page
-                header('Location: /myRecipes-Web');
+                header('Location: /myRecipes/web');
             } else {
                 $view = new VLogin();
                 $view->mostraFormLogin("amministratore","");
@@ -25,7 +25,7 @@ class CGestioneAmministratore
         else if($_SERVER['REQUEST_METHOD']=="POST"){
             if($sessione->isLoggedAdmin()){
                 //redirect alla home page
-                header('Location: /myRecipes-Web');
+                header('Location: /myRecipes/web');
             } else {
                 $this->Entra();
             }
@@ -51,7 +51,7 @@ class CGestioneAmministratore
             $sessione->setAdminLoggato();
 
             //login avvenuto con successo, mostrare la pagina principale dell'amministratore
-            header('Location: /myRecipes-Web');
+            header('Location: /myRecipes/web');
         } else {
             //username e/o password errati, mostrare login con errore
             $viewerr = new VLogin();
@@ -73,7 +73,7 @@ class CGestioneAmministratore
             $view = new VGestioneAmministratore();
             $view->mostraFormInserimento($cibi);
         } else {
-            header('Location: /myRecipes-Web/Amministratore/Login');
+            header('Location: /myRecipes/web/Amministratore/Login');
 
         }
     }
@@ -90,7 +90,7 @@ class CGestioneAmministratore
         } else {
 
             //errore admin non loggato redirect form di login amministratore
-            header('Location: /myRecipes-Web/Amministratore/Login');
+            header('Location: /myRecipes/web/Amministratore/Login');
 
         }
 
@@ -107,7 +107,7 @@ class CGestioneAmministratore
             $view->mostraFormCibo();
         } else {
             //errore admin non loggato redirect form di login amministratore
-            header('Location: /myRecipes-Web/Amministratore/Login');
+            header('Location: /myRecipes/web/Amministratore/Login');
         }
 
     }
@@ -147,7 +147,7 @@ class CGestioneAmministratore
                 $id = $pm->store($ricetta);
                 if($id){
                     // reindirizzamento alla home principale
-                    header('Location: /myRecipes-Web');
+                    header('Location: /myRecipes/web');
                 }
                 else {
                     //messaggio di errore inserimento non corretto
@@ -158,7 +158,7 @@ class CGestioneAmministratore
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
-                header('Location: /myRecipes-Web/Amministratore/Login');
+                header('Location: /myRecipes/web/Amministratore/Login');
             }
         }
         else{
@@ -240,12 +240,12 @@ class CGestioneAmministratore
                             $viewerr->mostraErrore("Il ban non è andato a buon fine");
                          }
                     }
-                    header('Location: /myRecipes-Web');
+                    header('Location: /myRecipes/web');
                 }
                     //redirect alla home page amministratore
             } else {
                 //errore admin non loggato redirect form di login amministratore
-                header('Location: /myRecipes-Web/Amministratore/Login');
+                header('Location: /myRecipes/web/Amministratore/Login');
             }
         } else {
             header('HTTP/1.1 405 Method Not Allowed');
@@ -269,7 +269,7 @@ class CGestioneAmministratore
                 $id = $pm->store($ciboobj);
                 if($id){
                     //inserimento corretto redirect alla home page amministratore
-                    header('Location: /myRecipes-Web');
+                    header('Location: /myRecipes/web');
                 }
                 else {
                     //errore inserimento cibo errata
@@ -279,7 +279,7 @@ class CGestioneAmministratore
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
-                header('Location: /myRecipes-Web/Amministratore/Login');
+                header('Location: /myRecipes/web/Amministratore/Login');
             }
         } else {
             header('HTTP/1.1 405 Method Not Allowed');
@@ -299,7 +299,7 @@ class CGestioneAmministratore
             $sessione->logout(); //cancello i dati di sessione
         }
         //redirect a login in entrambi i casi
-        header('Location: /myRecipes-Web');
+        header('Location: /myRecipes/web');
 
     }
 
