@@ -55,6 +55,7 @@
     </div>
   </nav>
   <!-- Intro -->
+
   <!-- Gallery -->
   <div class="border-primary py-3">
     <div class="container">
@@ -67,13 +68,13 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="2"> </li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block w-100 img-fluid mx-auto" src="/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg">
+              <div class="carousel-item active"> <img class="d-block w-100 img-fluid" src="/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg">
                 <div class="carousel-caption">
                   <p>Primi piatti</p>
                   <h1>Carbonara</h1>
                 </div>
               </div>
-              <div class="carousel-item "> <img class="d-block img-fluid w-100" src="https://static.pingendo.com/cover-bubble-dark.svg">
+              <div class="carousel-item"> <img class="d-block img-fluid w-100" src="https://static.pingendo.com/cover-bubble-dark.svg">
                 <div class="carousel-caption">
                   <h5 class="m-0">Carousel</h5>
                   <p>with indicators</p>
@@ -86,7 +87,6 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
         {section name=ricetta loop=$ricette}
 
           <div class="col-md-4 p-3 border">
-            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid w-100">
+            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid " style="width: 270px;	height: 160px;">
             <div class="card box-shadow">
               <div class="card-body bg-light text-dark">
                 <div class="col-md-15">
@@ -109,10 +109,10 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i>{$ricette[ricetta]->getNsalvataggi()}</button>
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i> {$ricette[ricetta]->getNsalvataggi()}</button>
                   </div>
                   <div class="btn-group">
-                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i>{$ricette[ricetta]->getTprep()}</button>
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i> {$ricette[ricetta]->getTprep()}</button>
                   </div>
                 </div>
               </div>
@@ -120,122 +120,6 @@
           </div>
 
         {/section}
-
-        <!--
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light">
-              <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light">
-              <p class="card-text text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light">
-              <p class="card-text bg-light text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light">
-              <p class="card-text bg-light text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light">
-              <p class="card-text bg-light text-dark">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light text-dark">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light text-dark">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3 border">
-          <img src="foto usate/Finti-Piatti-tipici-italiani.png" class="d-block img-fluid w-100">
-          <div class="card box-shadow">
-            <div class="card-body bg-light text-dark">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-comments"></i>Comments</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fa fa-fw fa-heart"></i>Love</button>
-                </div> <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        -->
       </div>
     </div>
   </div>
