@@ -4,7 +4,7 @@
  * @author gruppo 7
  * @package Entity
  * **/
-class EImmagine
+class EImmagine implements JsonSerializable
 {
     /**id dell'immagine*/
     private $id;
@@ -98,6 +98,17 @@ class EImmagine
     public function __toString(){
         $st = "ID: ".$this->id."content-type: ".$this->type." Data: ".$this->data."Id esterno ".$this->idesterno;
         return $st;
+    }
+
+    public function jsonSerialize()
+    {
+        return
+            [
+                'id'   => $this->getId(),
+                'data' => $this->getData(),
+                'type' => $this->getType(),
+                'idesterno'  => $this->getIdesterno()
+            ];
     }
 
 

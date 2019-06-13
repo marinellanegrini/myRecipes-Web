@@ -8,7 +8,7 @@
 * @package Entity
 */
 
-class ECategoria
+class ECategoria implements JsonSerializable
 {
 	/** id relativo alla categoria */
 	private $id;
@@ -55,5 +55,16 @@ class ECategoria
 		$st="ID: ".$this->id." Nome: ".$this->nome;
 		return $st;
 	}
+
+    public function jsonSerialize()
+    {
+        return
+            [
+                'id'   => $this->getId(),
+                'nome' => $this->getNome()
+            ];
+    }
+
+
 }
 ?>

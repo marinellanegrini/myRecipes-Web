@@ -4,6 +4,8 @@
 function my_autoloader($class_name) {
     if($class_name == "CFrontController") {
         include_once ('Controller/'.$class_name.'.php');
+    } elseif($class_name == "CGestioneRicetteMobile") {
+        include_once ('Controller/ControllerMobile/'.$class_name.'.php');
     } else {
         switch ($class_name[0]) {
             case 'V':
@@ -22,6 +24,8 @@ function my_autoloader($class_name) {
     }
 
 }
+
+
 
 function autoloader_session($class_name){
     if($class_name=="Sessione"){
