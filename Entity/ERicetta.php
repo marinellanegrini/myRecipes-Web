@@ -22,12 +22,12 @@
  * @package Entity
 */
 
-class ERicetta
+class ERicetta implements JsonSerializable
 {
     /**identificativo ricetta */
-    public $id;
+    private $id;
 	/**nome relativo alla ricetta */
-	public $nome;
+	private $nome;
 	/**difficoltà ricetta */
 	private $difficolta;
 	/**procedimento per realizzare la ricetta */
@@ -314,6 +314,25 @@ class ERicetta
         $comm=implode(",", $this->_commenti);
         $stringa="id: ".$this->id."\n"."nome: ".$this->nome."\n"."difficoltà: ".$this->difficolta."\n"."procedimento: ".$this->procedimento."\n"."tprep: ".$this->tprep."\n"."ndosi: ".$this->ndosi."\n"."categoria: ".$this->_categoria."\n"."ingredienti: ".$ingr."\n"."commenti: ".$comm."\n"."nsalvataggi: ".$this->nsalvataggi."\n";
         return $stringa;
+    }
+
+    public function jsonSerialize()
+    {
+        return
+            [
+                'id'   => $this->getId(),
+                'nome' => $this->getName(),
+                'difficolta'   => $this->getDifficolta(),
+                'procedimento' => $this->getProcedimento(),
+                'tprep'   => $this->getTprep(),
+                'ndosi' => $this->getNdosi(),
+                'categoria'   => json_encode($this->getCategoria()),
+                'ingredienti' => json_encode($this->getIngredienti()),
+                'commenti'   => json_encode($this->getCommenti()),
+                'nsalvataggi' => $this->getNsalvataggi(),
+                'immagine'   => json_encode($this->getImmagine()),
+                'imgpreparazione' => json_encode($this->getImgpreparazione()),
+            ];
     }
 
 }
