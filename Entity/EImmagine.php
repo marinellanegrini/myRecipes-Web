@@ -29,7 +29,7 @@ class EImmagine implements JsonSerializable
     /**
      * @return int id dell'immagine
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }

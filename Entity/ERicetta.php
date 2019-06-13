@@ -228,7 +228,7 @@ class ERicetta implements JsonSerializable
     /**
      * @return longblob immagine
      */
-    public function getImmagine()
+    public function getImmagine(): EImmagine
     {
         return clone $this->immagine;
     }
@@ -321,7 +321,7 @@ class ERicetta implements JsonSerializable
         return
             [
                 'id'   => $this->getId(),
-                'nome' => $this->getName(),
+                'nome' => $this->getNome(),
                 'difficolta'   => $this->getDifficolta(),
                 'procedimento' => $this->getProcedimento(),
                 'tprep'   => $this->getTprep(),

@@ -92,7 +92,7 @@ class ECommento implements JsonSerializable
     /**
      * @return id dell'utente
      */
-    public function getIdUtente(){
+    public function getIdUtente(): int{
         return $this->idutente;
     }
     /**
@@ -105,7 +105,7 @@ class ECommento implements JsonSerializable
     /**
      * @return id della ricetta
      */
-    public function getIdRicetta(){
+    public function getIdRicetta(): int{
         return $this->idricetta;
     }
     /**

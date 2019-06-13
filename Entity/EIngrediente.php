@@ -89,8 +89,8 @@ class EIngrediente implements JsonSerializable
     {
         return
             [
-                'id'   => $this->getQta(),
-                'qta' => $this->getNome(),
+                'id'   => $this->getId(),
+                'qta' => $this->getQta(),
                 'cibo' => json_encode($this->getCibo())
             ];
     }

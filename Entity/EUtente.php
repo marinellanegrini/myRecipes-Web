@@ -17,7 +17,7 @@
  *  @package Entity
  */ 
 
-class EUtente
+class EUtente implements JsonSerializable
 {
     /**id utente */
     private $id;
@@ -64,7 +64,7 @@ class EUtente
     /**
      * @return int id utente
      */
-    public function getId(){
+    public function getId(): int{
         return $this->id;
     }
 
@@ -201,7 +201,7 @@ class EUtente
 	/**
 	 * @return EImmagine dell'utente
 	 */
-	public function getImmagine()
+	public function getImmagine(): EImmagine
 	{
 		return clone $this->immagine;
 	}
@@ -214,87 +214,6 @@ class EUtente
 		$this->immagine = $immagine;
 	}
 
-	 /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function valNome($val):bool{
-        $replace=array(" ","'");
-        if(!preg_match("/^([a-zA-Z]{3,30})$/",str_replace($replace,'',$val))){
-            return false;
-        }
-        else return true;
-    }
-
-     /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function valCognome($val):bool{
-        $replace=array(" ","'");
-        if(!preg_match("/^([a-zA-Z]{3,30})$/",str_replace($replace,'',$val))){
-            return false;
-        }
-        else return true;
-    }
-
-    /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function valUsername($val):bool{
-        if(!preg_match("/^([a-zA-Z0-9_]{3,30})$/",$val)){
-            return false;
-           }
-        return true;
-    }
-
-    /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function valPassword($val):bool{
-        if(!preg_match("/^([a-zA-Z0-9_]{8,30})$/",$val)){
-            return false;
-           }
-        return true;
-    }
-
-     /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function valEmail($val):bool{
-        if(filter_var($val, FILTER_VALIDATE_EMAIL)) return true;
-        else return false;
-    }
-
-    /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function UsernameExist($val):bool{
-        $db=FDatabase::getInstance();
-        if($db->exist('Utente','username',$val)) return true;
-        else return false;
-    }
-
-    /**
-     * Verificano la corrispondenza con il valore in input con i requisiti richiesti
-     * @param $val valore inserito
-     * @return bool
-     
-    static function MailExist($val):bool{
-        $db=FDatabase::getInstance();
-        if($db->exist('Utente','email',$val)) return true;
-        else return false;
-    }
 
 	/**
      * Aggiunge un nuovo commento all'array contenente tutti i commenti
