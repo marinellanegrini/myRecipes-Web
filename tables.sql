@@ -81,7 +81,7 @@ CREATE TABLE commento(
 
 CREATE TABLE imgutente(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data LONGBLOB NOT NULL,
+    data longblob NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_utente SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -90,7 +90,7 @@ CREATE TABLE imgutente(
 
 CREATE TABLE imgcibo(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data LONGBLOB NOT NULL,
+    data longblob NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_cibo SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -99,7 +99,7 @@ CREATE TABLE imgcibo(
 
 CREATE TABLE imgricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data LONGBLOB NOT NULL,
+    data longblob NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -108,7 +108,7 @@ CREATE TABLE imgricetta(
 
 CREATE TABLE galleryricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data LONGBLOB NOT NULL,
+    data longblob NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -148,7 +148,7 @@ INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalva
 ('Carbonara',3,'Porre sul fuoco una pentolo con l\'acqua salata. Eliminare la cotenna dal guanciale, tagliarlo a striscioline spesse di un centimento, metterli in una padella antiaderente e rosolare per 15 min a fiamma media. Nel frattempo tuffate gli spaghetti nell\'acqua bollente. Versare i tuorli in una ciotola, aggiugendo il pecorino, insaporire con il pepe e amalgamare il tutto con una frusta.Intanto il guanciale sarà giunto a cottura, spegnete il fuoco e tenetelo da parte. Scolate la pasta nel tegame con il guanciale. Tohlietela dal fuoco e versate il composto di uova e pecorino nel tegame. Infine saltate la pasta per amalgamare e servitela ','00:25:00',4,1,2),
 ('Insalata di riso',2,'Per realizzare l’insalata di riso ponete sul fuoco una pentola colma di acqua salata e una volta che avrà raggiunto il bollore versate il riso. Lavate e tagliate a metà i pomodori e tagliateli a cubetti. Tagliate a cubetti anche il prosciutto cotto e a rondelle le olive nere. Quando mancheranno circa 2-3 minuti dalla cottura, scolate il riso e lasciatelo raffreddare così. Incorporare nel riso i filetti di tonno sbriciolati, il prosciutto cotto, le olive nere e i pomodorini. Aggiustate di sale e mescolate con un cucchiaio. Porla in frigorifero fino al momento di servirla così sarà ben fredda e i sapori si saranno amalgamati.','00:35:00',4,6,0),
 ('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0),
-('Pomodorini confit',1,'Per preparare i pomodorini confit, iniziate lavando i pomodorini sotto acqua corrente. Asciugateli con un canovaccio o carta da cucina e poneteli su un tagliere, quindi dividete tutti i pomodorini a metà. Ora disponete i pomodorini tagliati su una leccarda ricoperta di carta forno con la parte del taglio rivolta verso l’alto. Dopodichè salate e pepate a piacere. A questo punto preparate il trito di aglio: sbucciate uno spicchio d’aglio e tritatelo finemente. Infine versatelo su ogni pomodorino e aggiungete anche lo zucchero. Distribuite l’origano secco e infine versate un filo d’olio su ogni pomodorino. Infornate il tutto a in forno statico preriscaldato a 140° per circa 2 ore, fino a quando l’acqua di vegetazione dei pomodorini non sarà evaporata e questi non risulteranno leggermente abbrustoliti ma non secchi','01:10:00',4,1,0),
+('Pomodorini confit',1,'Per preparare i pomodorini confit, iniziate lavando i pomodorini sotto acqua corrente. Asciugateli con un canovaccio o carta da cucina e poneteli su un tagliere, quindi dividete tutti i pomodorini a metà. Ora disponete i pomodorini tagliati su una leccarda ricoperta di carta forno con la parte del taglio rivolta verso l’alto. Dopodichè salate e pepate a piacere. A questo punto preparate il trito di aglio: sbucciate uno spicchio d’aglio e tritatelo finemente. Infine versatelo su ogni pomodorino e aggiungete anche lo zucchero. Distribuite l’origano secco e infine versate un filo d’olio su ogni pomodorino. Infornate il tutto a in forno statico preriscaldato a 140° per circa 2 ore, fino a quando l’acqua di vegetazione dei pomodorini non sarà evaporata e questi non risulteranno leggermente abbrustoliti ma non secchi','01:10:00',4,3,0),
 ('Barrette cocco e cioccolato',2,'Versate il cocco rapè in una ciotola, aggiungete il latte condensato e il sale e mescolate con una spatola. \n Trasferite il tutto su un foglio di carta forno e con le mani pressate il composto in modo da ricavare un rettangolo. \n Trasferite in frigorifero a raffreddare per circa 1 ora. Dividete il composto, posto in frigorifero, con il coltello in modo da ricavare 12 barrette. \n Nel frattempo tritate il cioccolato e fondetelo a bagnomaria. \n  Mescolate con una spatola il cioccolato, portandolo a raggiungere i 31-30°. \n Immergete all''interno del cioccolato fuso una delle barrette aiutandovi con una forchetta. \n Sistematele man mano sulla gratella e proseguite a ricoprire tutte le altre con il cioccolato. Decorate con un po'' di cocco rapè la superficie e lasciate cristallizzare a temperatura ambiente. \n Non appena il cioccolato sarà completamente asciutto potrete servire le barrette al cocco e cioccolato. ','00:01:00',12,5,0),
 ('Crocchette di patate',2,'Lavate le patate, ponetele a lessare in un tegame versando acqua fino a coprirle e senza sbucciarle per circa 40 min. \n Lasciatele intiepidire e poi sbucciatele, passatele in uno schiacciapatate per ottenere una purea. \n In una ciotolina sbattete i tuorli con pepe e sale e poi aggiungeteli alla purea di patate e aggiungete la noce moscata grattugiata e insaporite con il formaggio grattugiato, amalgamare gli ingredienti fino ad ottenere un composto morbido e asciutto. \n Prendete una porzione di impasto e formate le crocchette dando una forma a cilindo. \n  Una volta ultimato l’impasto impanate le crocchette: preparate due ciotole rispettivamente con le due uova sbattute e l''altra con il pangrattato. Passate le crocchette prima nell’uovo e poi nel pangrattato. \n Adagiate le crocchette su un vassoio rivestito con carta da forno. \n Scaldate abbondante olio di arachidi in un tegame fino a raggiungere i 180-190° e poi tuffate all’interno 3-4 crocchette alla volta. \n Scolatele e mettetele a scolare dell’olio in eccesso su di un piatto foderato con carta assorbente. \n Servite le crocchette di patate ancora calde!','01:15:00',10,3,0);
 

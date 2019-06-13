@@ -17,7 +17,7 @@
  *  @package Entity
  */ 
 
-class EUtente
+class EUtente implements JsonSerializable
 {
     /**id utente */
     private $id;
