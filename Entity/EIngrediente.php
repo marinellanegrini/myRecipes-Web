@@ -9,7 +9,7 @@
 * @package Entity
 */
 
-class EIngrediente
+class EIngrediente implements JsonSerializable
 {
 	/**id dell'ingrediente*/
 	private $id;
@@ -84,6 +84,17 @@ class EIngrediente
         $st="Qta: ".$this->qta." Cibo: ".$this->_cibo;
         return $st;
     }
+
+    public function jsonSerialize()
+    {
+        return
+            [
+                'id'   => $this->getQta(),
+                'qta' => $this->getNome(),
+                'cibo' => json_encode($this->getCibo())
+            ];
+    }
+
 }
 
 ?>
