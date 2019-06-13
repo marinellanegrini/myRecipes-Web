@@ -37,9 +37,23 @@ class CHomepage
 
 
         } else {
-            $ids = [1,2,3,1,2,3,1,2,3];
-            $ricette = $pm->loadAllByIds("ricetta",$ids);
-            $view->mostraHomepageUtente($ricette);
+            //ritorna il numero di ricette contenute nel db
+
+            $max= $pm->contaricetta();
+            $a=array();
+            for ($i=1; $i<=$max; $i++){
+
+                array_push($a,$i);
+            }
+            $b= array_combine(array_values($a),array_values($a));
+            $id= array_rand($b,6);
+            $ids= array_rand($b,2);
+
+
+
+            $ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
+            $ricette = $pm->loadAllByIds("ricetta",$id);
+            $view->mostraHomepageUtente($ricette, $ricettePrinc);
         }
     }
 }

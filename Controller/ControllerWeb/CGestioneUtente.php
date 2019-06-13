@@ -261,8 +261,11 @@ class CGestioneUtente
     }
 
 
-
-
+    /**
+     * Metodo per gestire l'eliminazione di un commento dell'utente (l'eliminazione è possbile solo dal profilo e l'aggiunta solo dal dettaglio ricetta)
+     * (solo utente loggato)
+     * @param $idcommento da eliminare
+     */
 
     public function cancellaCommento($idcommento){
         $session = Sessione::getInstance();
@@ -273,7 +276,7 @@ class CGestioneUtente
             $idutente = $utente->getId();
             $pm = FPersistentManager::getInstance();
             $ret1 = $pm->loadById("commento",$idcommento);
-            $final=$pm->delete("commento", $idcommento);
+            $final = $pm->delete("commento", $idcommento);
 
             //devo aggiornare l'oggetto utente nei dati di sessione
             $utente = $pm->loadById("utente", $idutente);
@@ -295,6 +298,43 @@ class CGestioneUtente
         }
 
     }
+
+
+    /**
+     * Metodo per gestire l'eliminazione dell'utente
+     * (solo utente loggato)
+     * @param $idutente da eliminare
+     */
+
+    public function CancellaUtente(){
+        $session = Sessione::getInstance();
+
+        if($session->isLoggedUtente()){
+
+            $utente = $session->getUtente();
+            $idutente = $utente->getId();
+            $pm = FPersistentManager::getInstance();
+
+            $final = $pm->delete("utente",$idutente);
+
+
+            if($final){
+                //rimozione corretta, redirect alla pagina home
+                $this->Logout();
+
+            }
+            else {
+                //messaggio errore rimozione dai preferiti non corretta
+                $viewerr = new VErrore();
+                $viewerr->mostraErrore("Rimozione utente non riuscita");
+            }
+        } else { //utente non loggato redirect a login
+            header('Location: /myRecipes/web/Utente/Login');
+
+        }
+
+    }
+
 
 
 

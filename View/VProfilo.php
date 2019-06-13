@@ -32,7 +32,6 @@ class VProfilo
         $this->smarty->assign('utente', $utente);
         $this->smarty->display('Profilo.tpl');
 
-
     }
 
 }

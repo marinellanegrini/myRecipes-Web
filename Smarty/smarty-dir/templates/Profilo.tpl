@@ -74,7 +74,10 @@
   <div class="container">
     <div class="row">
       <div class=" mx-auto col-lg-12 col-10">
-        <h3 class="text-dark display-4"><strong><b>Profilo </b></strong></h3>
+        <h3 class="text-dark display-4"><strong><b>Profilo </b></strong><div class="row pull-right ">
+            <a class="btn btn-dark" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
+          </div></h3>
+
       </div>
     </div>
   </div>
