@@ -11,7 +11,7 @@
  * @package Entity
 */
 
-class ECommento
+class ECommento implements JsonSerializable
 {
 	/**id relativo al commento */
 	private $id;
@@ -140,6 +140,21 @@ class ECommento
     	return $stringa;
     }
 
+
+    public function jsonSerialize()
+    {
+        return
+            [
+                'id' => $this->getId(),
+                'testo' => $this->getTesto(),
+                'data' => $this->getData(),
+                'ora' => $this->getOra(),
+                'bannato' => $this->isBannato(),
+                'idutente' => $this->getIdUtente(),
+                'idricetta' => $this->getIdRicetta()
+
+        ];
+    }
 
 }
 ?>
