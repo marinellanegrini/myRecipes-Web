@@ -5,6 +5,8 @@ class VMobile
 {
 
     public function mandaDati($dati){
+       // header("Content-Type: application/json");
+        echo (json_encode($dati));
 
     }
 
@@ -12,3 +14,5 @@ class VMobile
         // recupero dati dal pacchetto HTTP in entrata (es filtri, commento ecc)
     }
 }
+
+?>
