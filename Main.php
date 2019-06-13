@@ -124,8 +124,10 @@ $arrimg = [$img2, $img3,$img4];
 $g = new CGestioneAmministratore();
 $g->inserimentoDatiRicetta("abc",3,"ciao mondo",'00:10:00',4,4,$img,$arrimg,$a);*/
 
-$c=new ECibo("Zucchine", 'gr');
-$fcibo = new FCibo();
-$id=$fcibo->store($c);
+$c=new FRicetta();
+
+$id=$c->contaRicette();
+print($id);
+
 
 ?>

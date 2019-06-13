@@ -128,7 +128,9 @@
         <div class="row">
           {$gallery=$ricetta->getImgpreparazione()}
           {section name=foto loop=$gallery}
-          <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}"> </div>
+          <div class="col-lg-4 p-3 col-md-2">
+            <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}">
+          </div>
           {/section}
         </div>
       </div>
@@ -138,7 +140,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-dark">
-          <h3 class="text-dark">Comments:</h3>
+          <h3 class="text-dark">Commenti:</h3>
         </div>
       </div>
     </div>
@@ -177,9 +179,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3 class="py-2 text-dark">Insert comment:</h3>
+          <h3 class="py-2 text-dark">Inserisci commento:</h3>
           <form method="post" action="/myRecipes/web/Ricette/Commento/{$ricetta->getId()}">
-            <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Your message"></textarea> </div> <button type="submit" class="btn btn-primary my-2">Submit</button>
+            <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Scrivi qui.. "></textarea> </div> <button type="submit" class="btn btn-primary my-2">Invia</button>
           </form>
         </div>
       </div>

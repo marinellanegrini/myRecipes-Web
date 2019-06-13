@@ -53,7 +53,12 @@ class VHomepage
      * @param $com da mostrare
      *
      */
-    public function mostraHomepageAdmin($com, $arrcommenti){
+    public function mostraHomepageAdmin($com, $arrcommenti, $a, $b, $c, $d){
+
+        $this->smarty->assign('contrice',$d);
+        $this->smarty->assign('numcomm',$c);
+        $this->smarty->assign('numute',$b);
+        $this->smarty->assign('numero',$a);
         $this->smarty->assign('com',$com);
         $this->smarty->assign('commenti',$arrcommenti);
         $this->smarty->display('HomepageAmministratore.tpl');

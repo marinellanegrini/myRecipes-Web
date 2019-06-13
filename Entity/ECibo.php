@@ -7,7 +7,7 @@
  * @package Entity
  */
 
-class ECibo
+class ECibo implements JsonSerializable
 {
 	/**id relativo al cibo */
 	private $id;
@@ -100,6 +100,16 @@ class ECibo
         $st="ID: ".$this->id." Nome: ".$this->nome." Unità di misura: ".$this->um;
         return $st;
     }
+
+	public function jsonSerialize()
+	{
+		return
+			[
+				'id'   => $this->getId(),
+				'nome' => $this->getNome(),
+				'um' => $this->getUm()
+			];
+	}
 	
 }
 

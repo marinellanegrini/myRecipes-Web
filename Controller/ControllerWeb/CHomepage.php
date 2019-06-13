@@ -33,7 +33,14 @@ class CHomepage
                 $arrcommenti[]=$tmp;
             }
 
-            $view->mostraHomepageAdmin($commenti, $arrcommenti);
+            $a= $pm->contaricetteSalvate();
+            $b= $pm->contautentiRegistrati();
+            $c= $pm->contacommenti();
+            $d= $pm->contaricetta();
+
+
+
+            $view->mostraHomepageAdmin($commenti, $arrcommenti, $a, $b,$c,$d);
 
 
         } else {

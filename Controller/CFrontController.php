@@ -10,26 +10,27 @@ class CFrontController
      * Metodo che dalla URL recupera il controllore da istanziare e il relativo metodo con parametro
      * /myRecipes/web/controller/metodo/param
      */
-    public function run(){
+    public function run()
+    {
 
         $path = $_SERVER['REQUEST_URI'];
         $array = explode('/', $path);
         array_shift($array);
         $client = $array[1];
 
-        if($client == 'web'){
+        if ($client == 'web') {
             $count = count($array);
-            if($array[$count-1]==null){
-                unset($array[$count-1]);
+            if ($array[$count - 1] == null) {
+                unset($array[$count - 1]);
             }
-            if(count($array)!=2){
+            if (count($array) != 2) {
                 $controller = $array[2];
-                $controller = "CGestione".$controller;
-                if(class_exists($controller)){
+                $controller = "CGestione" . $controller;
+                if (class_exists($controller)) {
                     $metodo = $array[3];
-                    if(method_exists($controller,$metodo)){
+                    if (method_exists($controller, $metodo)) {
                         $c = new $controller();
-                        if(isset($array[4])){
+                        if (isset($array[4])) {
                             $parametro = $array[4];
                             $c->$metodo($parametro);
                         } else {
@@ -47,10 +48,31 @@ class CFrontController
             }
 
         } else {
+            $count = count($array);
+            if ($array[$count - 1] == null) {
+                unset($array[$count - 1]);
+            }
+            if (count($array) != 2) {
+                $controller = $array[2];
+                $controller = "CGestione" . $controller . "Mobile";
+                if (class_exists($controller)) {
+                    $metodo = $array[3];
+                    if (method_exists($controller, $metodo)) {
+                        $c = new $controller();
+                        if (isset($array[4])) {
+                            $parametro = $array[4];
+                            $c->$metodo($parametro);
+                        } else {
+                            $c->$metodo();
+                        }
+                    }
 
+                }
+
+
+            }
         }
-
-
-        }
+    }
 
 }
+?>

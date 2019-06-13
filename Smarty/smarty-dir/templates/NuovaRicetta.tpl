@@ -147,8 +147,6 @@
     <br>
     <input type="file" name="gallery[]" class="ml-5 pb-2">
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2">
-    <br>
     <input type="file" name="gallery[]" class="ml-5">
 
 

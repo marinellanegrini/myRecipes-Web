@@ -25,9 +25,9 @@
 class ERicetta
 {
     /**identificativo ricetta */
-    private $id;
+    public $id;
 	/**nome relativo alla ricetta */
-	private $nome;
+	public $nome;
 	/**difficoltà ricetta */
 	private $difficolta;
 	/**procedimento per realizzare la ricetta */
