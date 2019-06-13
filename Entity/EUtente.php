@@ -357,6 +357,25 @@ class EUtente
         }
         return $st;
     }
+
+	public function jsonSerialize()
+	{
+		return
+			[
+				'id' => $this->getId(),
+				'username' => $this->getUsername(),
+				'password' => $this->getPassword(),
+				'email' => $this->getEmail(),
+				'stato' => $this->getStato(),
+				'commento' => json_encode($this->getCommenti()),
+				'preferito' => json_encode($this->getPreferiti()),
+				'nome' => $this->getNome(),
+				'cognome' => $this->getCognome(),
+				'immagine' => json_encode($this->getImmagine())
+
+
+			];
+	}
  }
 
 ?>
