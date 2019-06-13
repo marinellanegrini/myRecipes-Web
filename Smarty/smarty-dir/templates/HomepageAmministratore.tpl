@@ -31,7 +31,7 @@
         <div class="col-md-12">
 
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a class="list-group-item list-group-item-action flex-column align-items-start">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">{$commenti[commento].utente}</h5>
                 <small class="text-muted">{$commenti[commento].commento->getData()} {$commenti[commento].commento->getOra()}</small>
@@ -54,9 +54,9 @@
       <div class="row">
         <div class="col-md-3">
           <div class="card text-dark bg-primary mb-3" style="	height: 150px;">
-            <div class="card-header" align="center"><i class="fa fa-eye fa-lg" aria-hidden="true"></i><strong><b> Visite settimanali </b></strong></div>
+            <div class="card-header" align="center"><i class="fa fa-eye fa-lg" aria-hidden="true"></i><strong><b> Numero ricette</b></strong></div>
             <div class="card-body" style="	border-top-left-radius: 10px;	border-top-right-radius: 10px;	border-bottom-left-radius: 10px;	border-bottom-right-radius: 10px;">
-              <h3 class="display-4 text-dark" align="center">5</h3>
+              <h3 class="display-4 text-dark" align="center">{$contrice}</h3>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="card text-dark bg-secondary mb-3" style="	height: 150px;">
             <div class="card-header" align="center"><i class="fa fa-floppy-o" aria-hidden="true"></i><strong><b> Ricette salvate</b></strong></div>
             <div class="card-body">
-              <h3 class="display-4 text-dark" align="center">5</h3>
+              <h3 class="display-4 text-dark" align="center">{$numero}</h3>
             </div>
           </div>
         </div>
@@ -72,15 +72,15 @@
           <div class="card text-dark bg-info mb-3" style="	height: 150px;">
             <div class="card-header" align="center"><i class="fa fa-user fa-fw"></i><strong><b> Utenti Registrati</b> </strong></div>
             <div class="card-body">
-              <h3 class="display-4 text-dark" align="center">5</h3>
+              <h3 class="display-4 text-dark" align="center">{$numute}</h3>
             </div>
           </div>
         </div>
         <div class="col-md-3" style="">
           <div class="card text-dark bg-white mb-3" style="	height: 150px;">
-            <div class="card-header" align="center"><i class="fa fa-book" aria-hidden="true"></i><strong><b> Ricette più visitate</b></strong></div>
+            <div class="card-header" align="center"><i class="fa fa-book" aria-hidden="true"></i><strong><b> Numero commenti</b></strong></div>
             <div class="card-body">
-              <h3 class="display-4 text-dark" align="center">5</h3>
+              <h3 class="display-4 text-dark" align="center">{$numcomm}</h3>
             </div>
           </div>
         </div>
