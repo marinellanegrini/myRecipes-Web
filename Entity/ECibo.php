@@ -62,7 +62,7 @@ class ECibo implements JsonSerializable
 	/**
 	 * @return EImmagine del cibo
 	 */
-	public function getImmagine()
+	public function getImmagine(): EImmagine
 	{
 		return clone $this->immagine;
 	}

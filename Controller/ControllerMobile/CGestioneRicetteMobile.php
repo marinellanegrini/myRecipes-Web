@@ -32,6 +32,16 @@ class CGestioneRicetteMobile{
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
+        //base 64 immagine
+        $img = $ricetta->getImmagine();
+        $img->setData(base64_encode($img->getData()));
+        $ricetta->setImmagine($img);
+        //base 64 gallery
+        $gallery = $ricetta->getImgpreparazione();
+        foreach ($gallery as $g){
+            $g->setData(base64_encode($g->getData()));
+        }
+        $ricetta->setImgpreparazione($gallery);
         $view->mandaDati($ricetta);
     }
 
