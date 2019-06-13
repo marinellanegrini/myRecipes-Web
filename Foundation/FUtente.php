@@ -236,6 +236,28 @@ class FUtente extends FDatabase
             }
     }
 
+    public function contaUtentiRegistrati()
+    {
+        $query ="SELECT COUNT(id) AS n FROM ".$this->table.";";
+        try{
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            return $row[0]['n'];
+
+
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+
+    }
+
 
 
 

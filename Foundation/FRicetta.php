@@ -293,14 +293,34 @@ class FRicetta extends FDatabase
 			return $arrayRic;
 		}
 		else return null;
-
-
     }
 
     public function contaRicette()
     {
         $rows= parent::loadAll();
         return count($rows);
+    }
+
+    public function contaRicetteSalvate()
+    {
+        $query ="SELECT SUM(nsalvataggi) AS n FROM ".$this->table.";";
+        try{
+            $this->db->beginTransaction();
+            $stmt = $this->db->prepare($query);
+            $stmt->execute();
+            $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->db->commit();
+            return $row[0]['n'];
+
+
+        }
+        catch (PDOException $e)
+        {
+            $this->db->rollBack();
+            echo "Attenzione, errore: " . $e->getMessage();
+            return null;
+        }
+
     }
 
 	

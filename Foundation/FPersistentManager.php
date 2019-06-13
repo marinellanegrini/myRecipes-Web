@@ -540,4 +540,23 @@ class FPersistentManager {
         return $r;
     }
 
+    public function contaricetteSalvate()
+    {
+        $ricetta= new FRicetta();
+        $r= $ricetta->contaRicetteSalvate();
+        return $r;
+    }
+
+    public function contautentiRegistrati(){
+        $utente = new FUtente();
+        $r = $utente->contaUtentiRegistrati();
+        return $r;
+    }
+
+    public function contacommenti(){
+        $commento = new FCommento();
+        $r = $commento->contaCommenti();
+        return $r;
+    }
+
 }

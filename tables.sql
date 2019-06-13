@@ -327,7 +327,7 @@ INSERT INTO imgcibo(id,data,type,id_cibo) VALUES
 (11,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/guanciale.jpg'),'image/jpg',11),
 (12,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/Tuorli.png'),'image/png',12),
 (13,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/riso.jpg'),'image/jpg',13),
-(14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodori.jpg'),'image/jpg',14),
+(14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/pomodori.png'),'image/png',14),
 (15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/prosciuttocotto.jpg'),'image/jpg',15),
 (16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/olivenere.jpg'),'image/jpg',16),
 (17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Cibo/tonno.jpg'),'image/jpg',17),
