@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
+</head>
+
+<body class="bg-light" style="">
+  <nav class="navbar navbar-expand-md bg-primary navbar-primary ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 bg-primary" style="">
+          <a href="/myRecipes/web">
+          <img class="img-fluid d-block w-75" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png">
+          </a>
+        </div>
+      </div>
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="topnav1 pull-right">
+          <a href="/myRecipes/web">Home</a>
+          <a href="/myRecipes/web/Utente/Login">Login</a>
+          <a href="/myRecipes/web/Amministratore/Login">Login amministratore</a>
+          <a href="/myRecipes/web/Utente/Registrazione">Registrazione</a>
+          <a href="/myRecipes/Smarty/smarty-dir/templates/MeetTheThemeUtNonReg.html" class="active">Chi siamo</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-md navbar-dark border-info bg-secondary p-0" style="">
+    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar12">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar12">
+        <a href="/myRecipes/web/Ricette/RicercaAvanzata"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-filter"></i>Filtri</a>
+        <a href="/myRecipes/web/Ricette/RicercaPerIngredienti"  class="btn btn-default navbar-btn text-white"><i class="fa fa-fw fa-cutlery"></i>Ingredienti</a>
+        <form class="form-inline"  method="post" action="/myRecipes/web/Ricette/cercaDaNome">
+          <div class="input-group">
+            <input type="text" class="form-control mt-2 mb-1" id="inlineFormInputGroup" placeholder="Cerca" name="nomericetta">
+              <div class="input-group-append"><button type="submit" class="btn btn-primary mr-2 mb-1 mt-2"><i class="fa fa-search"></i></button></div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <section class=" text-center my-4" >
+
+    <h1 class="h1-responsive font-weight-bold my-4 text-primary">Chi siamo</h1>
+
+    <p class="text-dark w-responsive mx-auto mb-5">myRecipes nasce da Arianna, Marinella e Valeria, tre studentesse dell'Università degli Studi dell'Aquila.</p>
+
+    <!-- Grid row -->
+    <div class="row mx-auto" >
+
+      <!-- Grid column -->
+      <div class="mx-auto" >
+        <div class="avatar mx-auto">
+          <img src="/myRecipes/images/utente/arianna.jpg" class="rounded-circle z-depth-1" style="width: 300px;	height: 300px;"
+               alt="Sample avatar">
+        </div>
+        <h3 class="font-weight-bold mt-4 mb-3 text-dark">Arianna Tusi</h3>
+        <p class="text-dark">arianna.tusi@gmail.com <br> +39 3332076142</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="mx-auto">
+        <div class="avatar mx-auto">
+          <img src="/myRecipes/images/utente/marinella.jpg" class="rounded-circle z-depth-1" style="width: 300px;	height: 300px;"
+               alt="Sample avatar">
+        </div>
+        <h3 class="font-weight-bold mt-4 mb-3 text-dark">Marinella Negrini</h3>
+        <p class="text-dark">marinellanegrini1@gmail.com <br> +39 3342537343</p>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="mx-auto">
+        <div class="avatar mx-auto">
+          <img src="/myRecipes/images/utente/valepa.jpg" class="rounded-circle z-depth-1" style="width: 300px;	height: 300px;"
+               alt="Sample avatar">
+        </div>
+        <h3 class="font-weight-bold mt-4 mb-3 text-dark">Valeria Parascandolo</h3>
+        <p class="text-dark">valeparascandolo97@gmail.com <br> +39 3389389608</p>
+      </div>
+
+
+    </div>
+
+  </section>
+
+</body>
+
+  </html>

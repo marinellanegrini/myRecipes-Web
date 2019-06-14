@@ -63,4 +63,10 @@ class CHomepage
             $view->mostraHomepageUtente($ricette, $ricettePrinc);
         }
     }
+
+    public function MostraTeam(){
+        $view = new VHomepage();
+        $view->mostraTeamMember();
+
+    }
 }

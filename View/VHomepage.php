@@ -64,6 +64,11 @@ class VHomepage
         $this->smarty->display('HomepageAmministratore.tpl');
     }
 
+    public function mostraTeamMember(){
+        $this->smarty->display('MeetTheThemeUtNonReg.html');
+
+    }
+
 
 
 }

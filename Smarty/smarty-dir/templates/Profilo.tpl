@@ -34,6 +34,11 @@
             <a href="/myRecipes/web" class="nav-link active text-white">Home</a>
           </li>
           <li class="nav-item">
+
+            <a class="nav-link active text-white" href="/myRecipes/Smarty/smarty-dir/templates/MeetTheThemeUtReg.html">Chi siamo <i class="fa fa-creative-commons" aria-hidden="true"></i></a>
+
+          </li>
+          <li class="nav-item">
             <a href="/myRecipes/web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
           </li>
           <li class="nav-item dropdown">

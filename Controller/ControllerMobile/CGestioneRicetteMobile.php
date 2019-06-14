@@ -28,6 +28,27 @@ class CGestioneRicetteMobile{
         $view->mandaDati($ricette);
     }
 
+    public function Homepage(){
+        $view = new VMobile();
+
+        $pm = FPersistentManager::getInstance();
+        $max= $pm->contaricetta();
+        $a=array();
+        for ($i=1; $i<=$max; $i++){
+            array_push($a,$i);
+        }
+        $b= array_combine(array_values($a),array_values($a));
+        $id= array_rand($b,9);
+        $ids= array_rand($b,3);
+
+        $ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
+
+        $ricette = $pm->loadAllByIds("ricetta",$id);
+
+        $view->mandaDati($ricette,$ricettePrinc);
+
+    }
+
     public function Ricetta($id) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();

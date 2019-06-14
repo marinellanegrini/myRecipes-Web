@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
-<body class="bg-light" style="	background-image: linear-gradient(to bottom, rgba(196, 60, 0), rgba(255, 158, 64));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+<body class="bg-secondary">
 
 <div class="alert">
   <p>{$errore}</p>

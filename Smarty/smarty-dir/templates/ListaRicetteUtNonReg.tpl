@@ -26,16 +26,18 @@
           <img class="img-fluid d-block w-75" src="/myRecipes/Smarty/smarty-dir/templates/img/logobiancopieno.png">
           </a>
         </div>
+
       </div>
       <div class="container">
         <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar10" style="">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="topnav1 pull-right">
-          <a href="/myRecipes/web">Home</a>
+          <a href="/myRecipes/web" class="active">Home</a>
           <a href="/myRecipes/web/Utente/Login">Login</a>
           <a href="/myRecipes/web/Amministratore/Login">Login amministratore</a>
           <a href="/myRecipes/web/Utente/Registrazione">Registrazione</a>
+          <a href="/myRecipes/Smarty/smarty-dir/templates/MeetTheThemeUtNonReg.html">Chi siamo</a>
         </div>
       </div>
     </div>
