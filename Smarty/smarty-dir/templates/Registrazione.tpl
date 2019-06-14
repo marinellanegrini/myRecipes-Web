@@ -36,10 +36,7 @@
           <h1 class="my-3 mt-3 text-dark">Registrazione</h1>
           <form class="text-left mb-4" method="post" action="/myRecipes/web/Utente/Registrazione">
             <div class="form-group"> <label for="form16" class="text-dark">Nome</label> 
-              <input type="text"
-              class="form-control w-100 px-1"
-              name="nome"
-                     placeholder="nome" required>
+              <input type="text" class="form-control w-100 px-1" name="nome" placeholder="nome" required>
             </div>
 
             <div class="form-group"> <label for="form17" class="text-dark">Cognome</label> 

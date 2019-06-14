@@ -15,7 +15,6 @@ class ECibo implements JsonSerializable
 	private $nome;
 	/**unita di misura del cibo */
 	private $um;
-
 	/**immagine del cibo*/
 	private $immagine;
 

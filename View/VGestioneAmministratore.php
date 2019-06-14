@@ -33,10 +33,11 @@ class VGestioneAmministratore
         if(isset($_FILES['imgcibo'])){
 
             $tempname = $_FILES['imgcibo']['tmp_name'];
-            $fotocibo = file_get_contents($tempname);
-            $fotocibo = addslashes($fotocibo);
+
+            $immagine = file_get_contents($tempname); //file_get_contents torna un file specificato come stringa
+
             $typefotoc = $_FILES['imgcibo']['type'];
-            $fotoobj = new EImmagine($fotocibo, $typefotoc);
+            $fotoobj = new EImmagine($immagine, $typefotoc);
             $cibo['img'] = $fotoobj;
 
         }
