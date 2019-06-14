@@ -4,8 +4,6 @@
 function my_autoloader($class_name) {
     if($class_name == "CFrontController") {
         include_once ('Controller/'.$class_name.'.php');
-    } elseif($class_name == "CGestioneRicetteMobile") {
-        include_once ('Controller/ControllerMobile/'.$class_name.'.php');
     } else {
         switch ($class_name[0]) {
             case 'V':
@@ -20,6 +18,9 @@ function my_autoloader($class_name) {
             case 'C':
                 include_once ('Controller/ControllerWeb/'.$class_name.'.php');
                 break;
+            case 'M':
+                include_once ('Controller/ControllerMobile/'.$class_name.'.php');
+                break;
         }
     }
 
@@ -32,7 +33,13 @@ function autoloader_session($class_name){
         include_once ($class_name.'.php');
     }
 }
+function autoloader_token($class_name){
+    if($class_name=="Token"){
+        include_once ($class_name.'.php');
+    }
+}
 spl_autoload_register('autoloader_session');
+spl_autoload_register('autoloader_token');
 spl_autoload_register('my_autoloader');
 
 

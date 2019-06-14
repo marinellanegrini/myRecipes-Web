@@ -1,6 +1,6 @@
 <?php
 
-class CGestioneRicetteMobile{
+class MCGestioneRicetteMobile{
 
     public function RicercaPerIngredienti(){
         $pm = FPersistentManager::getInstance();
@@ -45,12 +45,12 @@ class CGestioneRicetteMobile{
     }
 
     public function Preferiti() {
-        //dal token recupero i preferiti dell'utente
-        $pm = FPersistentManager::getInstance();
-        // $ut = $pm->loadById("utente", $idutente);
-       // $ricette = $ut->getPreferiti();
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+
+        $ricette = $utente->getPreferiti();
         $view = new VMobile();
-       // $view->mandaDati($ricette);
+        $view->mandaDati($ricette);
     }
 
     public function AggiungiaiPreferiti($idricetta){
