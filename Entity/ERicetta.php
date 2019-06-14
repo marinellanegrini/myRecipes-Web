@@ -326,12 +326,12 @@ class ERicetta implements JsonSerializable
                 'procedimento' => $this->getProcedimento(),
                 'tprep'   => $this->getTprep(),
                 'ndosi' => $this->getNdosi(),
-                'categoria'   => json_encode($this->getCategoria()),
-                'ingredienti' => json_encode($this->getIngredienti()),
-                'commenti'   => json_encode($this->getCommenti()),
+                'categoria'   => $this->getCategoria(),
+                'ingredienti' => $this->getIngredienti(),
+                'commenti'   => $this->getCommenti(),
                 'nsalvataggi' => $this->getNsalvataggi(),
-                'immagine'   => json_encode($this->getImmagine()),
-                'imgpreparazione' => json_encode($this->getImgpreparazione()),
+                'immagine'   => $this->getImmagine(),
+                'imgpreparazione' => $this->getImgpreparazione(),
             ];
     }
 

@@ -70,14 +70,6 @@ class VRisultati
      * Metodo per mostrare i risultati di una ricerca
      */
     public function mostraRisultati($risultati, $msg){
-        if($risultati!=null){
-            foreach ($risultati as $ricetta)
-            {
-                $img=$ricetta->getImmagine();
-                $img->setData(base64_encode($img->getData()));
-                $ricetta->setImmagine($img);
-            }
-        }
 
         //passaggio dei risultati a smarty per mostrare i risultati della ricerca (if utenti loggati e non)
         $session = Sessione::getInstance();

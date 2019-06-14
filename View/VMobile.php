@@ -11,7 +11,8 @@ class VMobile
     }
 
     public function recuperaDati(){
-        // recupero dati dal pacchetto HTTP in entrata (es filtri, commento ecc)
+        $dati = json_decode( trim(file_get_contents('php://input'),true),true);
+        return $dati;
     }
 
 }

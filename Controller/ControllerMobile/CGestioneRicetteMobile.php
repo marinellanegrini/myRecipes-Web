@@ -19,12 +19,21 @@ class CGestioneRicetteMobile{
         $view->mandaDati($ricette);
     }
 
-    public function cercaAvanzata(){
+    public function Avanzata(){
         $view = new VMobile();
-        $json = $view->recuperaDati();
-        // convertire da json a array associativo filtri
+        $filtri = $view->recuperaDati();
+        $s = $filtri['tprep'];
+        if(strlen($s)>3){
+            $a = explode("-",$s);
+            $filtri['tprep'] = (int)$a[1];
+        } else {
+            $a = substr($s, 0, 2);
+            $filtri['tprep'] = (int)$a+1;
+        }
+        $filtri['diff'] = (int) $filtri['diff'];
+
         $pm = FPersistentManager::getInstance();
-        $ricette = $pm->ricercaTramiteFiltri(/* filtri*/);
+        $ricette = $pm->ricercaTramiteFiltri($filtri);
         $view->mandaDati($ricette);
     }
 
@@ -32,16 +41,6 @@ class CGestioneRicetteMobile{
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
-        //base 64 immagine
-        $img = $ricetta->getImmagine();
-        $img->setData(base64_encode($img->getData()));
-        $ricetta->setImmagine($img);
-        //base 64 gallery
-        $gallery = $ricetta->getImgpreparazione();
-        foreach ($gallery as $g){
-            $g->setData(base64_encode($g->getData()));
-        }
-        $ricetta->setImgpreparazione($gallery);
         $view->mandaDati($ricetta);
     }
 
@@ -90,6 +89,13 @@ class CGestioneRicetteMobile{
         // $utente = $pm->loadById("utente", $idutente);
         // $view->mandaDati($utente aggiornato);
 
+    }
+
+    public function Categorie() {
+        $pm = FPersistentManager::getInstance();
+        $cat = $pm->loadAllCategory();
+        $view = new VMobile();
+        $view->mandaDati($cat);
     }
 
 

@@ -21,13 +21,6 @@ class VProfilo
      */
     public function mostraProfilo($utente){
 
-        if($utente!=null){
-
-                $img=$utente->getImmagine();
-                $img->setData(base64_encode($img->getData()));
-                $utente->setImmagine($img);
-
-        }
 
         $this->smarty->assign('utente', $utente);
         $this->smarty->display('Profilo.tpl');

@@ -88,6 +88,20 @@ class FCategoria extends FDatabase
 
     }
 
+    public function loadAll()
+    {
+        $array = parent::loadAll();
+        $a=array();
+        if(($array!=null) && (count($array)>0)){
+            foreach($array as $i){
+                $comm=$this->getObjectFromRow($i);
+                array_push($a, $comm);
+            }
+            return $a;
+        }
+        else return null;
+    }
+
     
 }
 ?>
