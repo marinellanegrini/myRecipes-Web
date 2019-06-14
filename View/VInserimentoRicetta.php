@@ -50,7 +50,7 @@ class VInserimentoRicetta
         if(isset($_FILES['immprincipale'])){
             $tempname = $_FILES['immprincipale']['tmp_name'];
             $fotop = file_get_contents($tempname);
-            $fotop = addslashes($fotop);
+
             $typefotop = $_FILES['immprincipale']['type'];
             $fotoobj = new EImmagine($fotop, $typefotop);
             $dati['imgprinc'] = $fotoobj;
@@ -61,7 +61,7 @@ class VInserimentoRicetta
             $gallery = array();
             for ($i = 0; $i<count($tempnames); $i++){
                 $fotog = file_get_contents($tempnames[$i]);
-                $fotogalleryobj = new EImmagine(addslashes($fotog), $types[$i]);
+                $fotogalleryobj = new EImmagine($fotog, $types[$i]);
                 array_push($gallery,$fotogalleryobj); //costruzione dell'array di EImmagine gallery
             }
             $dati['gallery'] = $gallery;

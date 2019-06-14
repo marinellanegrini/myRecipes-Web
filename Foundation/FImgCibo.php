@@ -36,7 +36,7 @@ class FImgCibo extends FDatabase
      * @return un oggetto di tipo EImmagine
      */
     public function getObjectFromRow($row){
-        $img = new EImmagine(stripslashes($row['data']), $row['type']);
+        $img = new EImmagine($row['data'], $row['type']);
         $img->setIdesterno($row['id_cibo']);
         $img->setId($row['id']);
         return $img;
