@@ -559,4 +559,10 @@ class FPersistentManager {
         return $r;
     }
 
+    public function loadAllCategory() {
+        $fc = new FCategoria();
+        $categorie = $fc->loadAll();
+        return $categorie;
+    }
+
 }

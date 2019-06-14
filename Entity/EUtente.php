@@ -286,11 +286,11 @@ class EUtente implements JsonSerializable
 				'password' => $this->getPassword(),
 				'email' => $this->getEmail(),
 				'stato' => $this->getStato(),
-				'commento' => json_encode($this->getCommenti()),
-				'preferito' => json_encode($this->getPreferiti()),
+				'commento' => $this->getCommenti(),
+				'preferito' => $this->getPreferiti(),
 				'nome' => $this->getNome(),
 				'cognome' => $this->getCognome(),
-				'immagine' => json_encode($this->getImmagine())
+				'immagine' => $this->getImmagine()
 
 
 			];

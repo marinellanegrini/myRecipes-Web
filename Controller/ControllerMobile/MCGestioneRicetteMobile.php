@@ -1,6 +1,6 @@
 <?php
 
-class CGestioneRicetteMobile{
+class MCGestioneRicetteMobile{
 
     public function RicercaPerIngredienti(){
         $pm = FPersistentManager::getInstance();
@@ -19,12 +19,21 @@ class CGestioneRicetteMobile{
         $view->mandaDati($ricette);
     }
 
-    public function cercaAvanzata(){
+    public function Avanzata(){
         $view = new VMobile();
-        $json = $view->recuperaDati();
-        // convertire da json a array associativo filtri
+        $filtri = $view->recuperaDati();
+        $s = $filtri['tprep'];
+        if(strlen($s)>3){
+            $a = explode("-",$s);
+            $filtri['tprep'] = (int)$a[1];
+        } else {
+            $a = substr($s, 0, 2);
+            $filtri['tprep'] = (int)$a+1;
+        }
+        $filtri['diff'] = (int) $filtri['diff'];
+
         $pm = FPersistentManager::getInstance();
-        $ricette = $pm->ricercaTramiteFiltri(/* filtri*/);
+        $ricette = $pm->ricercaTramiteFiltri($filtri);
         $view->mandaDati($ricette);
     }
 
@@ -53,26 +62,16 @@ class CGestioneRicetteMobile{
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
-        //base 64 immagine
-        $img = $ricetta->getImmagine();
-        $img->setData(base64_encode($img->getData()));
-        $ricetta->setImmagine($img);
-        //base 64 gallery
-        $gallery = $ricetta->getImgpreparazione();
-        foreach ($gallery as $g){
-            $g->setData(base64_encode($g->getData()));
-        }
-        $ricetta->setImgpreparazione($gallery);
         $view->mandaDati($ricetta);
     }
 
     public function Preferiti() {
-        //dal token recupero i preferiti dell'utente
-        $pm = FPersistentManager::getInstance();
-        // $ut = $pm->loadById("utente", $idutente);
-       // $ricette = $ut->getPreferiti();
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+
+        $ricette = $utente->getPreferiti();
         $view = new VMobile();
-       // $view->mandaDati($ricette);
+        $view->mandaDati($ricette);
     }
 
     public function AggiungiaiPreferiti($idricetta){
@@ -112,6 +111,38 @@ class CGestioneRicetteMobile{
         // $view->mandaDati($utente aggiornato);
 
     }
+
+    public function Categorie() {
+        $pm = FPersistentManager::getInstance();
+        $cat = $pm->loadAllCategory();
+        $view = new VMobile();
+        $view->mandaDati($cat);
+    }
+
+    public function HomePage(){
+        $view = new VMobile();
+
+        $pm = FPersistentManager::getInstance();
+        $max= $pm->contaricetta();
+        $a=array();
+        for ($i=1; $i<=$max; $i++){
+
+            array_push($a,$i);
+        }
+        $b= array_combine(array_values($a),array_values($a));
+        $id= array_rand($b,8);
+        //$ids= array_rand($b,3);
+
+
+
+        //$ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
+        $ricette = $pm->loadAllByIds("ricetta",$id);
+        $view->mandaDati($ricette);
+
+    }
+
+
+
 
 
 }

@@ -54,7 +54,7 @@ class CFrontController
             }
             if (count($array) != 2) {
                 $controller = $array[2];
-                $controller = "CGestione" . $controller . "Mobile";
+                $controller = "MCGestione" . $controller . "Mobile";
                 if (class_exists($controller)) {
                     $metodo = $array[3];
                     if (method_exists($controller, $metodo)) {
