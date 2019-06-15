@@ -108,7 +108,7 @@ CREATE TABLE imgricetta(
 
 CREATE TABLE galleryricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data longblob NOT NULL,
+    data longblob,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -367,6 +367,7 @@ INSERT INTO imgutente(id,data,type,id_utente) VALUES
 (6,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Utente/valeio.jpg'),'image/jpg',6),
 (7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Utente/claudia.jpg'),'image/jpg',7);
 
-INSERT INTO galleryricetta(id,data,type,id_ricetta) VALUES
-(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/togliuova.jpeg'),'image/jpeg',1);
+
+INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/bounty.jpg'),'image/jpg',1);
 
