@@ -54,7 +54,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong><a class="btn btn-outline-light" href="/myRecipes/web/Ricette/AggiungiaiPreferiti/{$ricetta->getId()}"><i class="fa fa-fw fa-heart text-dark my-2 fa-heart-o fa-4x pull-right" style=""></i></a></h1>
+          <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong><a class="btn btn-outline-light" href="/myRecipes/web/Ricette/AggiungiaiPreferiti/{$ricetta->getId()}"><i class="fa fa-fw fa-heart text-primary my-2 fa-heart-o fa-4x pull-right" style=""></i></a></h1>
         </div>
       </div>
     </div>

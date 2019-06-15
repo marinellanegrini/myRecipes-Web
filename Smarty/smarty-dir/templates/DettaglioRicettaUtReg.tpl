@@ -79,13 +79,13 @@
           <h1 class="display-4 text-dark"><strong><b>{$ricetta->getNome()}</b></strong>
             {if $preferita eq true}
             <a class="btn btn-outline-light" href="/myRecipes/web/Ricette/RimuoviDaPreferiti/{$ricetta->getId()}">
-              <i class="fa fa-fw fa-heart text-primary my-2 fa-2x pull-right" style="">
+              <i class="fa fa-fw fa-heart text-primary my-2 fa-4x pull-right" style="">
 
               </i>
             </a>
             {else}
             <a class="btn btn-outline-light" href="/myRecipes/web/Ricette/AggiungiaiPreferiti/{$ricetta->getId()}">
-              <i class="fa fa-fw fa-heart-o text-primary my-2 fa-2x pull-right" style="">
+              <i class="fa fa-fw fa-heart-o text-primary my-2 fa-4x pull-right" style="">
 
               </i>
             </a>
