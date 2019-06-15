@@ -1,7 +1,9 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTPS}  !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /myRecipes/index.php [L]
