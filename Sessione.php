@@ -92,6 +92,27 @@ class Sessione
         $_SESSION['amministratore'] = true;
     }
 
+    public function setPath($path){
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
+        $_SESSION['path'] = $path;
+    }
+
+    public function getPath(){
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
+        $path = $_SESSION['path']; //stringa
+        return $path;
+    }
+
+    public function removePath() {
+        if(session_status()==PHP_SESSION_NONE){
+            session_start();
+        }
+        unset($_SESSION['path']);
+    }
 
 
 }

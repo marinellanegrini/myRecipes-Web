@@ -16,6 +16,10 @@ class CGestioneUtente
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
             } else {
+                $header = getallheaders();
+                $referer = $header['Referer']; //infirizzo che stavo visitando
+                $loc = substr($referer, strpos($referer, "/myRecipes")); //estrapolo la parte path della pagina che stavo visitando
+                $sessione->setPath($loc); //salvo nei dati di sessione il path
                 $view = new VLogin();
                 $view->mostraFormLogin("utente","");
             }
@@ -42,26 +46,18 @@ class CGestioneUtente
         $view = new VLogin();
         $credenziali = $view->recuperaCredenziali();
         $pm = FPersistentManager::getInstance();
+        $sessione = Sessione::getInstance();
         $id = $pm->esisteUtente($credenziali['username'],$credenziali['password']);
         if($id){
             //login avvenuto con successo, mostrare la pagina che stava vedendo l'utente o la homepage se non stava vedendo pagine particolari
-            //il cookie risulta impostato solo se l'utente non stava vedendo una pagina in particolare (dettaglio ricetta)
-
-            /*if(isset($_COOKIE["path"])){
-                $uri = $_COOKIE["path"];
-                $uri = str_replace("%2F","/",$uri);
-                header('Location: '.$uri);
-                setcookie("path", $uri, time()-3600); //elimino il cookie
-            } else{
-                header('Location: /myRecipes/web');
-            }*/
 
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $utente = $pm->loadById("utente", $id);
-            $sessione = Sessione::getInstance();
             $sessione->setUtenteLoggato($utente);
-            header('Location: /myRecipes/web');
 
+            $location = $sessione->getPath();
+            $sessione->removePath(); //cancello il path dai dati di sessione
+            header('Location: '.$location); //redirect
         }
         else {
             $viewerr = new VLogin();

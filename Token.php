@@ -31,6 +31,11 @@ class Token{
         return $decoded;
     }
 
+    /**
+     * Metodo che verifica se l'utente è autenticato vedendo se nell'header c'è il token
+     * @return bool
+     *
+     */
     public function isAuth(){
         $header = getallheaders();
         if(isset($header['x-auth'])){
@@ -40,6 +45,10 @@ class Token{
         }
     }
 
+    /**
+     * Metodo che ritorna l'utente autenticato decodificando il token ricevuto
+     * @return mixed EUtente
+     */
     public function getAuthUtente(){
         $header = getallheaders();
         $token = $header['x-auth'];
