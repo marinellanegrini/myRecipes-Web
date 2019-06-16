@@ -62,14 +62,56 @@
   <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-md-8"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style=""></div>
-        <div class="col-md-4">
+        <div class="col-md-7"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style=""></div>
+        <div class="col-md-5">
           <div class="p-4 col-lg-12 text-dark" style="">
             <ul class="">
-              <li>Difficoltà: {$ricetta->getDifficolta()}</li>
-              <li>Tempo di preparazione: {$ricetta->getTprep()}</li>
-              <li>Numero dosi: {$ricetta->getNdosi()}</li>
-              <li>Categoria: {$ricetta->getCategoria()->getNome()}</li>
+              <li><i class="fa fa-fire" aria-hidden="true"></i> Difficoltà:
+                {if $ricetta->getDifficolta() eq 1}
+                  <label class="form-check-label">
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                  </label>
+                {elseif $ricetta->getDifficolta() eq 2}
+                  <label class="form-check-label">
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                  </label>
+                {elseif $ricetta->getDifficolta() eq 3}
+                  <label class="form-check-label">
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                  </label>
+                {elseif $ricetta->getDifficolta() eq 4}
+                  <label class="form-check-label">
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle-o text-dark" aria-hidden="true"></i>
+                  </label>
+                {else}
+                  <label class="form-check-label">
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                    <i class="fa fa-circle text-dark" aria-hidden="true"></i>
+                  </label>
+                {/if}
+              </li>
+              <li><i class="fa fa-clock-o" aria-hidden="true"></i> Preparazione: {$ricetta->getTprep()}</li>
+              <li><i class="fa fa-cutlery" aria-hidden="true"></i> Numero dosi: {$ricetta->getNdosi()}</li>
+              <li><i class="fa fa-list-ol" aria-hidden="true"></i> Categoria: {$ricetta->getCategoria()->getNome()}</li>
             </ul>
           </div>
         </div>

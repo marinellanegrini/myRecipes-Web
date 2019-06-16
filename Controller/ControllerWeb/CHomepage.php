@@ -53,7 +53,7 @@ class CHomepage
                 array_push($a,$i);
             }
             $b= array_combine(array_values($a),array_values($a));
-            $id= array_rand($b,6);
+            $id= array_rand($b,9);
             $ids= array_rand($b,2);
 
 

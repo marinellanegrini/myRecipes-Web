@@ -31,7 +31,7 @@
       <div class="col-md-12">
         <ul class="nav pull-right" style="">
           <li class="nav-item">
-            <a href="/myRecipes/web" class="nav-link active text-white">Home</a>
+            <a href="/myRecipes/web" class="nav-link active text-white">Home<i class="fa fa-home fa-fw fa-lg " aria-hidden="true"></i></a>
           </li>
           <li class="nav-item">
 
