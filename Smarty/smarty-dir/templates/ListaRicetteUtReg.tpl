@@ -98,7 +98,7 @@
               <div class="carousel-item active">
                 <a href="/myRecipes/web/Ricette/Ricetta/4">
                   <div class="view">
-                    <img class="d-block w-100" src='/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg' alt="First slide">
+                    <img class="d-block w-100" src='/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg' alt="First slide" >
                     <div class="mask rgba-black-light"></div>
                   </div>
                   <div class="carousel-caption">
@@ -116,7 +116,7 @@
                   <a href="/myRecipes/web/Ricette/Ricetta/{$princimm[princ]->getId()}">
                     <div class="view">
                       <img class="d-block w-100" src="data:{$princimm[princ]->getImmagine()->getType()};base64,{$princimm[princ]->getImmagine()->getData()}"
-                           alt="Second slide">
+                           alt="Second slide" >
                       <div class="mask rgba-black-strong"></div>
                     </div>
                     <div class="carousel-caption">
@@ -151,7 +151,7 @@
         {section name=ricetta loop=$ricette}
 
           <div class="col-md-4 p-3 border">
-            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid w-100">
+            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid w-100" style="width: 300px;	height: 200px;">
             <div class="card box-shadow">
               <div class="card-body bg-light text-dark">
                 <div class="col-md-15">
@@ -161,10 +161,10 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i>{$ricette[ricetta]->getNsalvataggi()}</button>
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-fw fa-heart text-primary"></i> {$ricette[ricetta]->getNsalvataggi()}</button>
                   </div>
                   <div class="btn-group">
-                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i>{$ricette[ricetta]->getTprep()}</button>
+                    <button type="button" disabled class="btn btn-sm btn-outline-secondary text-primary"><i class="fa fa-clock-o text-primary"></i> {$ricette[ricetta]->getTprep()}</button>
                   </div>
                 </div>
               </div>

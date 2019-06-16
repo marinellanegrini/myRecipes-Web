@@ -62,7 +62,7 @@
   <div class="">
     <div class="container">
       <div class="row">
-        <div class="col-md-7"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style=""></div>
+        <div class="col-md-7"><img class="img-fluid d-block w-100 h-100" src="data:{$ricetta->getImmagine()->getType()};base64,{$ricetta->getImmagine()->getData()}" style="width: 600px;	height: 400px;"></div>
         <div class="col-md-5">
           <div class="p-4 col-lg-12 text-dark" style="">
             <ul class="">
@@ -140,19 +140,6 @@
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
           <div class="carousel slide" data-ride="carousel">
             <div class="carousel-inner bg-light" role="listbox">
-              <div class="carousel-item p-5">
-                <div class="blockquote text-muted mb-0 px-">
-                  <p class="mb-0">#2 Blockquoute - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="blockquote-footer">Someone famous in My memories</div>
-                </div>
-              </div>
-              <div class="carousel-item p-5">
-                <div class="blockquote text-muted mb-0 px-">
-                  <p class="mb-0">#3 Blockquoute - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="blockquote-footer">Someone famous in My memories</div>
-                </div>
-              </div>
-            </div>
             <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
           </div>
           <p class="text-dark">{$ricetta->getProcedimento()}</p>
@@ -172,7 +159,7 @@
           {$gallery=$ricetta->getImgpreparazione()}
           {section name=foto loop=$gallery}
           <div class="col-lg-4 p-3 col-md-2">
-            <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}">
+            <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}" style="width: 300px;	height: 200px;">
           </div>
           {/section}
         </div>

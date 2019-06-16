@@ -206,7 +206,7 @@
         <div class="row">
           {$gallery=$ricetta->getImgpreparazione()}
           {section name=foto loop=$gallery}
-            <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}"> </div>
+            <div class="col-lg-4 p-3 col-md-2"> <img class="img-fluid d-block" src="data:{$gallery[foto]->getType()};base64,{$gallery[foto]->getData()}" style="width: 300px;	height: 180px;"> </div>
           {/section}
         </div>
       </div>

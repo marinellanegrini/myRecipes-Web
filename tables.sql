@@ -108,7 +108,7 @@ CREATE TABLE imgricetta(
 
 CREATE TABLE galleryricetta(
     id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    data longblob,
+    data longblob NOT NULL,
     type VARCHAR(20) NOT NULL,
     id_ricetta SMALLINT UNSIGNED NOT NULL,
     PRIMARY KEY (id),
@@ -146,7 +146,7 @@ INSERT INTO ricetta(nome,difficolta,procedimento,tprep,ndosi,id_categoria,nsalva
 ('Patate al forno',2,'Lavare le patate e tagliarle. \n Porre le patate in una teglia e aggiungete olio e il sale. \n Porre in forno preriscaldato a 200°C per 1 ora.','01:20:00',4,4,0),
 ('Patate fritte',2,'Lavare le patate e tagliarle. \n Friggere le patate nell\'olio bollente a 170°C. \n Trasferirle in un vassoio e aggiungere il sale.','00:25:00',4,4,0),
 ('Carbonara',3,'Porre sul fuoco una pentolo con l\'acqua salata. Eliminare la cotenna dal guanciale, tagliarlo a striscioline spesse di un centimento, metterli in una padella antiaderente e rosolare per 15 min a fiamma media. Nel frattempo tuffate gli spaghetti nell\'acqua bollente. Versare i tuorli in una ciotola, aggiugendo il pecorino, insaporire con il pepe e amalgamare il tutto con una frusta.Intanto il guanciale sarà giunto a cottura, spegnete il fuoco e tenetelo da parte. Scolate la pasta nel tegame con il guanciale. Tohlietela dal fuoco e versate il composto di uova e pecorino nel tegame. Infine saltate la pasta per amalgamare e servitela ','00:25:00',4,1,2),
-('Insalata di riso',2,'Per realizzare l’insalata di riso ponete sul fuoco una pentola colma di acqua salata e una volta che avrà raggiunto il bollore versate il riso. Lavate e tagliate a metà i pomodori e tagliateli a cubetti. Tagliate a cubetti anche il prosciutto cotto e a rondelle le olive nere. Quando mancheranno circa 2-3 minuti dalla cottura, scolate il riso e lasciatelo raffreddare così. Incorporare nel riso i filetti di tonno sbriciolati, il prosciutto cotto, le olive nere e i pomodorini. Aggiustate di sale e mescolate con un cucchiaio. Porla in frigorifero fino al momento di servirla così sarà ben fredda e i sapori si saranno amalgamati.','00:35:00',4,6,0),
+('Insalata di riso',2,'Per realizzare l’insalata di riso ponete sul fuoco una pentola colma di acqua salata e una volta che avrà raggiunto il bollore versate il riso. Lavate e tagliate a metà i pomodori e tagliateli a cubetti. Tagliate a cubetti anche il prosciutto cotto e a rondelle le olive nere. Quando mancheranno circa 2-3 minuti dalla cottura, scolate il riso e lasciatelo raffreddare così. Incorporare nel riso i filetti di tonno sbriciolati, il prosciutto cotto, le olive nere e i pomodorini. Aggiustate di sale e mescolate con un cucchiaio. Porla in frigorifero fino al momento di servirla così sarà ben fredda.','00:35:00',4,6,0),
 ('Torta al cioccolato',3,'Tritate il cioccolato fondente, quindi scioglietelo al microonde o a bagnomaria e lasciatelo intiepidire. \n Tagliate il burro a cubetti e versatelo nella ciotola, insieme allo zucchero . \n Azionate la macchina a velocità media con la frusta montata e lavorate il burro fino a ridurlo in crema . \n A questo punto rompete le uova in una ciotola. Continuate in questo modo fino ad ottenere una crema soffice ed omogenea . Incorporate il cioccolato, versandolo direttamente nella ciotola e continuate a sbattere fino ad amalgamarlo. \n Aggiungete il sale all’impasto e mescolate in una ciotolina la farina con il cacao e il lievito, quindi setacciatele direttamente nel composto al cioccolato e aiutandovi con una spatola incorporatele delicatamente nell’impasto. \n Foderate con la carta forno una tortiera da 22-24 cm e versate l’impasto al suo interno 15. \n Infornate in forno statico preriscaldato a 180° per circa 40-45 minuti. \n Una volta cotta sfornate la torta al cioccolato e lasciatela intiepidire.','01:30:00',8,5,0),
 ('Pomodorini confit',1,'Per preparare i pomodorini confit, iniziate lavando i pomodorini sotto acqua corrente. Asciugateli con un canovaccio o carta da cucina e poneteli su un tagliere, quindi dividete tutti i pomodorini a metà. Ora disponete i pomodorini tagliati su una leccarda ricoperta di carta forno con la parte del taglio rivolta verso l’alto. Dopodichè salate e pepate a piacere. A questo punto preparate il trito di aglio: sbucciate uno spicchio d’aglio e tritatelo finemente. Infine versatelo su ogni pomodorino e aggiungete anche lo zucchero. Distribuite l’origano secco e infine versate un filo d’olio su ogni pomodorino. Infornate il tutto a in forno statico preriscaldato a 140° per circa 2 ore, fino a quando l’acqua di vegetazione dei pomodorini non sarà evaporata e questi non risulteranno leggermente abbrustoliti ma non secchi','01:10:00',4,3,0),
 ('Barrette cocco e cioccolato',2,'Versate il cocco rapè in una ciotola, aggiungete il latte condensato e il sale e mescolate con una spatola. \n Trasferite il tutto su un foglio di carta forno e con le mani pressate il composto in modo da ricavare un rettangolo. \n Trasferite in frigorifero a raffreddare per circa 1 ora. Dividete il composto, posto in frigorifero, con il coltello in modo da ricavare 12 barrette. \n Nel frattempo tritate il cioccolato e fondetelo a bagnomaria. \n  Mescolate con una spatola il cioccolato, portandolo a raggiungere i 31-30°. \n Immergete all''interno del cioccolato fuso una delle barrette aiutandovi con una forchetta. \n Sistematele man mano sulla gratella e proseguite a ricoprire tutte le altre con il cioccolato. Decorate con un po'' di cocco rapè la superficie e lasciate cristallizzare a temperatura ambiente. \n Non appena il cioccolato sarà completamente asciutto potrete servire le barrette al cocco e cioccolato. ','00:01:00',12,5,0),
@@ -368,6 +368,39 @@ INSERT INTO imgutente(id,data,type,id_utente) VALUES
 (7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Utente/claudia.jpg'),'image/jpg',7);
 
 
-INSERT INTO imgricetta(id,data,type,id_ricetta) VALUES
-(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/GalleryRicetta/bounty.jpg'),'image/jpg',1);
+INSERT INTO galleryricetta(id,data,type,id_ricetta) VALUES
+(1,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric1/uovaacqua.jpg'),'image/jpg',1),
+(2,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric1/togliuova.jpeg'),'image/jpeg',1),
 
+(4,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric1/fineuova.jpg'),'image/jpg',1),
+(5,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric2/pentola.jpg'),'image/jpg',4),
+(6,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric2/guanciale.jpg'),'image/jpg',4),
+(7,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric2/tuorliepecorino.jpg'),'image/jpg',4),
+(8,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric2/guancialerosolato.jpg'),'image/jpg',4),
+(9,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric2/padella.jpg'),'image/jpg',4),
+(10,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric3/pentola.jpg'),'image/jpg',5),
+(11,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric3/pomodorini.jpg'),'image/jpg',5),
+(12,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric3/prosciuttocotto.jpg'),'image/jpg',5),
+(13,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric3/olivenere.jpg'),'image/jpg',5),
+(14,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric3/insalatadiriso.jpg'),'image/jpg',5),
+(15,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric4/lavapomodorini.jpg'),'image/jpg',7),
+(16,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric4/tagliarepomodorini.jpg'),'image/jpg',7),
+(17,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric4/pomodorinisuleccarda.jpg'),'image/jpg',7),
+(18,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric4/pomodorinifiniti.jpg'),'image/jpg',7),
+(19,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric5/aggiungocacao.jpg'),'image/jpg',6),
+(20,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric5/teglia.jpg'),'image/jpg',6),
+(21,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric5/farinaecacao.jpg'),'image/jpg',6),
+(22,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric5/torta.jpg'),'image/jpg',6),
+(23,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric6/cioccolato.jpg'),'image/jpg',8),
+(24,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric6/lattecondensato.jpg'),'image/jpg',8),
+(25,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric6/coccorape.jpg'),'image/jpg',8),
+(26,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/Ric6/bounty.jpg'),'image/jpg',8),
+(27,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/bollirepatate.jpg'),'image/jpg',9),
+(28,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/schiaccpatate.jpg'),'image/jpg',9),
+(29,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/lavarepatate.jpg'),'image/jpg',2),
+(30,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/patatecubetti.jpg'),'image/jpg',2),
+(31,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/patatefinali.jpg'),'image/jpg',2),
+(32,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/lavarepatate.jpg'),'image/jpg',3),
+(33,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/patateabastoncino.jpg'),'image/jpg',3),
+(34,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/patatefrittura.jpg'),'image/jpg',3),
+(35,LOAD_FILE('/Applications/XAMPP/xamppfiles/htdocs/myRecipes/images/RicPatat/patatefrittefinali.jpg'),'image/jpg',3);
