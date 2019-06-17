@@ -20,4 +20,11 @@ class MCGestioneUtenteMobile
 
     }
 
+    public function username($username){
+        $pm = FPersistentManager::getInstance();
+        $esito = $pm->esisteUsername($username);
+        $view = new VMobile();
+        $view->mandaDati($esito);
+    }
+
 }
