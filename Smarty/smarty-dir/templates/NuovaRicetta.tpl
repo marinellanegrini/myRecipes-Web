@@ -9,7 +9,7 @@
 
   <script language="JavaScript"> function myFunction()
     {
-        $("#nuovoingrediente").append('<div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} {$cibi[cibo]->getUm()}</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="#" value="" style="width: 50px;"></div></div>');
+        $("#nuovoingrediente").append('<div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} {$cibi[cibo]->getUm()}</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" style="width: 50px;"></div></div>');
     }
   </script>
 
@@ -125,21 +125,15 @@
         <div class="ml-3"> Quantità: <input type="number" name="qta" value="" style="width: 50px;">
         </div>
 
-        <div class="ml-3">
-          <button class="btn bg-primary ml-5" type="button" onclick="myFunction()" style="	border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;">
-            <i class="fa fa-plus text-white" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div class="ml-5">
-          <a href="/myRecipes/web/Amministratore/InserisciCibo">L'ingredienti che cerchi non è presente nella lista? Inseriscilo qui!</a>
-        </div>
+        <button class="btn bg-primary ml-5" type="button" onclick="myFunction()" style="border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;">
+          <i class="fa fa-plus text-white" aria-hidden="true"></i>
+        </button>
       </div>
-
-
-        <div class="col-md-12" >
-          <div id="nuovoingrediente" style="" class="my-1"></div>
-        </div>
+    <div class="row">
+      <div class="ml-5">
+        <div id="nuovingredienti" style="" class="my-1"></div>
+      </div>
+    </div>
 
 
     </div> Inserisci foto principale:<br><br>
