@@ -116,7 +116,6 @@ class CGestioneRicette {
             $id = $commento->getIdUtente();
             $utente = $pm->loadById("utente",$id);
             $img = $utente->getImmagine();
-            $img->setData(base64_encode($img->getData()));
             $tmp = array(
                 'utente'=>$utente->getUsername(),
                 'img'=>$img,
@@ -124,9 +123,6 @@ class CGestioneRicette {
             );
             $arrcommenti[]=$tmp;
         }
-        /*$uri = $_SERVER['REQUEST_URI']; //recupero la parte path
-        //imposto un cookie permanente di durata un'ora che contiene le informazioni sulla pagina che stiamo visualizzando
-        setcookie("path", $uri, time()+3600);*/
 
 
         $view = new VDettaglio();
