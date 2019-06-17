@@ -33,9 +33,7 @@
             </div>
             <div class="form-group mb-3">
               <input type="password" name="password" class="form-control" placeholder="Password" id="form10">
-              <small class="form-text text-muted text-right">
-                <a href="#"> Recupera password</a>
-              </small>
+
               {if $ruolo eq "utente"}
                 <small class="text-muted form-text mt-2 text-left">
                   <a href="/myRecipes/web/Utente/Registrazione">Non sei ancora registrato? Clicca qui!</a>

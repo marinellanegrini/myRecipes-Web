@@ -134,7 +134,7 @@
         {section name=ricetta loop=$ricette}
 
           <div class="col-md-4 p-3 border">
-            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid " style="width: 270px;	height: 160px;">
+            <img src="data:{$ricette[ricetta]->getImmagine()->getType()};base64,{$ricette[ricetta]->getImmagine()->getData()}" class="d-block img-fluid " style="width: 270px;	height: 190px;" >
             <div class="card box-shadow">
               <div class="card-body bg-light text-dark">
                 <div class="col-md-15">
