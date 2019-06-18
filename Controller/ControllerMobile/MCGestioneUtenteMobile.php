@@ -3,6 +3,9 @@
 
 class MCGestioneUtenteMobile
 {
+    /**
+     * Gestione del login, se username e password sono verificati genera e restituisce un token
+     */
     public function login(){
         $view = new VMobile();
         $credenziali = $view->recuperaDati();
@@ -20,11 +23,29 @@ class MCGestioneUtenteMobile
 
     }
 
+    /**
+     * Verifica se un Username è gia presente
+     * @param $username
+     */
     public function username($username){
         $pm = FPersistentManager::getInstance();
         $esito = $pm->esisteUsername($username);
         $view = new VMobile();
         $view->mandaDati($esito);
+    }
+
+    /**
+     * Metodo per laq registrazione dell'utente
+     */
+    public function registrazione(){
+        $view = new VMobile();
+        $u = $view->recuperaDati();
+        $utente = new EUtente($u['username'],$u['password'],$u['email'],$u['nome'],$u['cognome']);
+        $pm = FPersistentManager::getInstance();
+        $id = $pm->store($utente);
+        if(!$id) {
+            header("HTTP/1.1 500 Internal Server Error");
+        }
     }
 
 }

@@ -56,44 +56,48 @@ class MCGestioneRicetteMobile{
 
     public function AggiungiaiPreferiti($idricetta){
         //dal token recupero i dati dell'utente
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
         $pm = FPersistentManager::getInstance();
         $ric = $pm->loadById("ricetta",$idricetta);
         $ric->incrementasalvataggi();
         $n = $ric->getNsalvataggi();
         $pm->update("ricetta",$idricetta,'nsalvataggi',$n); //aggiornamento ricetta db
-       // $esito =  $pm->storeUtPrefRic($idricetta, $idutente);
-       // $utente = $pm->loadById("utente", $idutente);
+        $esito =  $pm->storeUtPrefRic($idricetta,  $utente->getId());
+        $utente = $pm->loadById("utente",  $utente->getId());
         $view = new VMobile();
-        // $view->mandaDati($utente aggiornato);
+        $view->mandaDati($utente);
     }
 
-    public function rimuoviDaPreferiti($idricetta){
+    public function RimuoviDaPreferiti($idricetta){
         //dal token recupero i dati dell'utente
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
         $pm = FPersistentManager::getInstance();
         $ret1 = $pm->loadById("ricetta",$idricetta);
         $ret1->decrementaSalvataggi();
         $n = $ret1->getNsalvataggi();
         $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
-        // $esito = $pm->deleteUtPrefRic($idricetta, $idutente);
-        // $utente = $pm->loadById("utente", $idutente);
+        $esito = $pm->deleteUtPrefRic($idricetta, $utente->getId());
+        $utente = $pm->loadById("utente", $utente->getId());
         $view = new VMobile();
-        // $view->mandaDati($utente aggiornato);
+        $view->mandaDati($utente); // utente aggiornato
     }
 
     public function Commento() {
-
+        //dal token recupero i dati dell'utente
         $t = Token::getInstance();
         $utente = $t->getAuthUtente();
-        $id=  $utente->getId();
-        //dal token recupero i dati dell'utente
         $view = new VMobile();
         $json = $view->recuperaDati();
-        print_r($json);
-        // convertire da json a ECommento
-        //$pm = FPersistentManager::getInstance();
-        //$id = $pm->store($json['testo']);
-        //$utente = $pm->loadById("utente", $id);
-        //$view->mandaDati($utente);
+        $com = new ECommento($json['testo'], $json['data'], $json['ora'],$utente->getId(), $json['idricetta']);
+        $pm = FPersistentManager::getInstance();
+        $id = $pm->store($com);
+        if (!$id) {
+            header("HTTP/1.1 500 Internal Server Error");
+        }
+        $utente = $pm->loadById("utente", $utente->getId());
+        $view->mandaDati($utente);
 
     }
 
