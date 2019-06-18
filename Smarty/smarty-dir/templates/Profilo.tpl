@@ -80,7 +80,7 @@
     <div class="row">
       <div class=" mx-auto col-lg-12 col-10">
         <h3 class="text-dark display-4"><strong><b>Profilo </b></strong><div class="row pull-right ">
-            <a class="btn btn-dark" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
+            <a class="btn btn-primary" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
           </div></h3>
 
       </div>
@@ -91,11 +91,6 @@
     <div class="row">
       <div class="col-md-6 mt-3"><img class="accountutente" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}
 "></div>
-      <form method="post" enctype="multipart/form-data" action="/myRecipes/web/Utente/ModificaFoto">
-        <div class="row"><label class="text-dark">Inserire foto profilo :  </label><input class="text-dark" type="file" name="immagine" class=" ml-3"></div>
-        <button type="submit" class="btn btn-primary mt-4">Modifica</button>
-      </form>
-
 
       <div class="col-md-6 py-5 pl-5">
         <h1 class="text-dark"><b>Username: </b>{$utente->getUsername()}</h1>
@@ -105,16 +100,37 @@
       </div>
     </div>
 </div>
+
+  <div class="container">
+    <form method="post" enctype="multipart/form-data" action="/myRecipes/web/Utente/ModificaFoto">
+      <div class="row">
+        <div class="col-md-5 mt-3">
+          <h4 class="text-dark"><b>Inserire foto profilo :  </b></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input class="text-dark" type="file" name="immagine" ><button type="submit" class="btn btn-primary mt-2 mb-3">Modifica foto</button>
+        </div>
+
+        <div class="col-md-6 mt-3">
+
+        </div>
+
+      </div>
+    </form>
+  </div>
+
 <div class="py-3">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3 class="text-dark">I tuoi commenti:</h3>
+        <h3 class="text-dark"><b>I tuoi commenti:</b></h3>
       </div>
     </div>
   </div>
 </div>
-<div class="py-2">
+<div class="">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
