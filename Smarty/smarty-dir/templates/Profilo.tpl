@@ -91,6 +91,12 @@
     <div class="row">
       <div class="col-md-6 mt-3"><img class="accountutente" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}
 "></div>
+      <form method="post" enctype="multipart/form-data" action="/myRecipes/web/Utente/ModificaFoto">
+        <div class="row"><label class="text-dark">Inserire foto profilo :  </label><input class="text-dark" type="file" name="immagine" class=" ml-3"></div>
+        <button type="submit" class="btn btn-primary mt-4">Modifica</button>
+      </form>
+
+
       <div class="col-md-6 py-5 pl-5">
         <h1 class="text-dark"><b>Username: </b>{$utente->getUsername()}</h1>
         <h2 class="text-dark"><b>Email: </b>{$utente->getEmail()}</h2>

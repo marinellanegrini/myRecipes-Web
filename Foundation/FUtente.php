@@ -220,16 +220,8 @@ class FUtente extends FDatabase
             $e3=$this->update($utente->getId(),'username',$utente->getUsername());
             $e4=$this->update($utente->getId(),'password',$utente->getPassword());
             $e5=$this->update($utente->getId(),'email',$utente->getEmail());
-            $fut=new FImgUtente();
-            $imm=$utente->getImmagine();
-            $idut=$imm->getIdesterno();
-            $imm = $fut->loadByIdUtente($idut);
-            $idimm = $imm->getId();
 
-            $er=$fut->update($idimm, "data", $utente->getImmagine()->getData());
-            $esito = $fut->update($idimm, "type", $utente->getImmagine()->getType());
-
-            if($e1 && $e2 && $e3 && $e4 && $e5 && $er && $esito){
+            if($e1 && $e2 && $e3 && $e4 && $e5){
                 return true;
             } else {
                 return false;

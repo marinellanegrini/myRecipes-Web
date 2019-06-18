@@ -1,5 +1,7 @@
 <?php
+
 require '/Users/valeria/vendor/autoload.php';
+
 use \Firebase\JWT\JWT;
 
 class Token{
@@ -49,7 +51,7 @@ class Token{
      * Metodo che ritorna l'utente autenticato decodificando il token ricevuto
      * @return mixed EUtente
      */
-    public function getAuthUtente(){
+    public function getAuthUtente(): EUtente {
         $header = getallheaders();
         $token = $header['x-auth'];
         $token = str_replace("Bearer ","",$token);

@@ -21,6 +21,14 @@ class VPreferiti
      */
     public function mostraPreferiti($ricette, $msg){
         //comunica a smarty di mostrare i preferiti
+        if($ricette!=null){
+            foreach ($ricette as $ricetta)
+            {
+                $img=$ricetta->getImmagine();
+                $img->setData(base64_encode($img->getData()));
+                $ricetta->setImmagine($img);
+            }
+        }
 
         $this->smarty->assign('ricette', $ricette);
         $this->smarty->assign('msg', $msg);
