@@ -81,7 +81,6 @@ class FUtente extends FDatabase
 
             //salvataggio immagine di default per l'utente
             $immagine = file_get_contents('./images/profile.png');
-            $immagine = addslashes ($immagine);
             $imgobj = new EImmagine($immagine,'image/png');
             $imgobj->setIdesterno($id);
             $fimut = new FImgUtente();
