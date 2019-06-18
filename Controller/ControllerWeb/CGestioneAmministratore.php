@@ -124,6 +124,7 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 $view = new VInserimentoRicetta();
                 $dati = $view->recuperaDatiRicetta();
+                print_r($dati);
                 $cat = $pm->loadById("categoria", $dati['idcategoria']);
                 $ricetta = new ERicetta($dati['nome'], $dati['difficolta'], $dati['procedimento'], $dati['tprep'], $dati['ndosi'], $cat, 0);
                 $ricetta->setImmagine($dati['imgprinc']); //manca ancora l'id esterno (assegnato nella store di ERicetta quando facciamo store dell'immagine)
@@ -213,6 +214,8 @@ class CGestioneAmministratore
     }
 
 
+
+
     /**
      * Ban di un commento
      */
@@ -262,6 +265,7 @@ class CGestioneAmministratore
             if ($session->isLoggedAdmin()) {
                 $view = new VGestioneAmministratore();
                 $cibo = $view->recuperaCibo();
+
                 $ciboobj = new ECibo($cibo['nome'],$cibo['um']);
                 $ciboobj->setImmagine($cibo['img']);
                 //manca ancora l'id esterno (assegnato nella store di ECibo quando facciamo store dell'immagine)

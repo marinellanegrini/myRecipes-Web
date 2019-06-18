@@ -10,7 +10,7 @@ class MCGestioneRicetteMobile{
 
     }
 
-    public function cercaPerIngredienti(){
+    public function PerIngredienti(){
         $view = new VMobile();
         $json = $view->recuperaDati();
         // convertire da json a array di id cibo

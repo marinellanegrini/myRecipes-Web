@@ -21,7 +21,6 @@ class VProfilo
      */
     public function mostraProfilo($utente){
 
-
         $this->smarty->assign('utente', $utente);
         $this->smarty->display('Profilo.tpl');
 

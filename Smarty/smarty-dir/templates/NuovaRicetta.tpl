@@ -9,7 +9,7 @@
 
   <script language="JavaScript"> function ingrediente()
     {
-      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getId()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta" value="" style="width: 50px;"></div></div>');
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}" name="idcibi">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" value="" style="width: 50px;"></div></div>');
     }
   </script>
 
@@ -115,16 +115,15 @@
     <div class="container pull-left col-md-12 py-1 mt-1">
       <div class="row">
         <div class="ml-5">
-          <select>
+          <select name="idcibi[]">
 
             {section name=cibo loop=$cibi}
-              <option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>
-            <div class="ml-5">{$cibi[cibo]->getNome()}</div>
+              <option value="{$cibi[cibo]->getId()}" >{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>
             {/section}
 
           </select>
         </div>
-        <div class="ml-3"> Quantità: <input type="number" name="qta" value="" style="width: 50px;">
+        <div class="ml-3"> Quantità: <input type="number" name="qta[]" value="" style="width: 50px;">
         </div>
 
 
@@ -143,7 +142,7 @@
 
       <div class="row">
         <div class="ml-5">
-          <div id="ingrediente" style="" class="my-1"></div>
+          <div id="ingrediente" class="my-1"></div>
         </div>
       </div>
 
@@ -157,9 +156,9 @@
     <br>
     <input type="file" name="gallery[]" class="ml-5 pb-2" required>
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2"required>
+    <input type="file" name="gallery[]" class="ml-5 pb-2">
     <br>
-    <input type="file" name="gallery[]" class="ml-5" required>
+    <input type="file" name="gallery[]" class="ml-5 pb-2">
 
 
     <br>

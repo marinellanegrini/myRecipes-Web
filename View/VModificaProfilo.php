@@ -145,6 +145,7 @@ class VModificaProfilo
             $dati['cognome'] = $_POST['cognome'];
         }
         if(isset($_FILES['immagine'])){
+
             $tempname = $_FILES['immagine']['tmp_name'];
             $foto = file_get_contents($tempname);
             $foto = addslashes($foto);
@@ -152,10 +153,9 @@ class VModificaProfilo
             $fotoobj = new EImmagine($foto, $typefotop);
             $dati['immagine'] = $fotoobj;
 
-        } else{
-            $dati['immagine']=$ut->getImmagine();
-
         }
+
+
         return $dati;
 
     }

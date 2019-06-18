@@ -204,9 +204,7 @@ class CGestioneUtente
 
                 //redirect alla form di login
                 header('Location: /myRecipes/web/Utente/Login');
-
             }
-
         }
         else {
             header('HTTP/1.1 405 Method Not Allowed');
@@ -233,12 +231,14 @@ class CGestioneUtente
         } else {
 
             $dati = $view->recuperaDati();
+
             $pm = FPersistentManager::getInstance();
             $utente->setNome($dati['nome']);
             $utente->setCognome($dati['cognome']);
             $utente->setUsername($dati['username']);
             $utente->setEmail($dati['email']);
             $utente->setPassword($dati['password']);
+
             $fotoobj = $dati['immagine'];
             $fotoobj->setIdesterno($utente->getId());
             $utente->setImmagine($fotoobj);
