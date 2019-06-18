@@ -1,5 +1,5 @@
 <?php
-
+if(file_exists('config.inc.php')) require_once 'config.inc.php';
 /**
 * La classe FUtPrefRic gestisce la persistenza dell'associazione tra EUtente ed ERicetta
 * @author Gruppo 7
@@ -13,12 +13,13 @@ class FUtPrefRic
 
 	/** costruttore */
 	public function __construct() {
-	try {
-   
-    	$this->db = new PDO ("mysql:dbname=myRecipes;host=127.0.0.1", "root", "pippo");
+        global $host,$database,$username,$password;
+        try {
 
-	} 
-	catch (PDOException $e) {
+            $this->db = new PDO ("mysql:dbname=$database;host=127.0.0.1", $username, $password);
+
+        }
+        catch (PDOException $e) {
     	echo "Errore: " . $e->getMessage();
     	die();
 		}

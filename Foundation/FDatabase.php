@@ -1,5 +1,5 @@
 <?php
-
+if(file_exists('config.inc.php')) require_once 'config.inc.php';
 
 /** Lo scopo di questa classe è gestire la connessione con il DBMS e contiene i metodi utili 
 * per effettuare le query al Database
@@ -24,9 +24,10 @@ class FDatabase
 
 	/** costruttore */
 	public function __construct() {
+        global $host,$database,$username,$password;
 	try {
    
-    	$this->db = new PDO ("mysql:dbname=myRecipes;host=127.0.0.1", "root", "pippo");
+    	$this->db = new PDO ("mysql:dbname=$database;host=127.0.0.1", $username, $password);
 
 	} 
 	catch (PDOException $e) {
