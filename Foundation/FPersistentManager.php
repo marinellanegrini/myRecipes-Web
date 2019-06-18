@@ -565,4 +565,10 @@ class FPersistentManager {
         return $categorie;
     }
 
+    public function updateFoto($foto) {
+        $fu = new FImgUtente();
+       $esito= $fu->updateFoto($foto);
+       return $esito;
+    }
+
 }

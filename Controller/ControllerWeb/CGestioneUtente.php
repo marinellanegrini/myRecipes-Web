@@ -233,15 +233,14 @@ class CGestioneUtente
         } else {
 
             $dati = $view->recuperaDati();
+
             $pm = FPersistentManager::getInstance();
             $utente->setNome($dati['nome']);
             $utente->setCognome($dati['cognome']);
             $utente->setUsername($dati['username']);
             $utente->setEmail($dati['email']);
             $utente->setPassword($dati['password']);
-            $fotoobj = $dati['immagine'];
-            $fotoobj->setIdesterno($utente->getId());
-            $utente->setImmagine($fotoobj);
+
 
             $esito = $pm->updateDiUtente($utente);
 
@@ -253,6 +252,24 @@ class CGestioneUtente
                 $viewerr = new VErrore();
                 $viewerr->mostraErrore("Errore in fase di modifica");
             }
+        }
+    }
+
+    public function ModificaFoto() {
+        $sessione = Sessione::getInstance();
+        $pm = FPersistentManager::getInstance();
+        $utente=$sessione->getUtente();
+        $view = new VModificaProfilo();
+        $fotoobj = $view->recuperaFoto();
+        $fotoobj->setIdesterno($utente->getId());
+        $esito = $pm->updateFoto($fotoobj);
+        if($esito){
+            $ut = $pm->loadById("utente", $utente->getId());
+            $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
+            header('Location: /myRecipes/web/Utente/Profilo');
+        } else {
+            $viewerr = new VErrore();
+            $viewerr->mostraErrore("Errore in fase di modifica");
         }
     }
 

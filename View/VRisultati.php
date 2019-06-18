@@ -73,6 +73,14 @@ class VRisultati
 
         //passaggio dei risultati a smarty per mostrare i risultati della ricerca (if utenti loggati e non)
         $session = Sessione::getInstance();
+        if($risultati!=null){
+            foreach ($risultati as $ricetta)
+            {
+                $img=$ricetta->getImmagine();
+                $img->setData(base64_encode($img->getData()));
+                $ricetta->setImmagine($img);
+            }
+        }
         if($session->isLoggedUtente()){
             $this->smarty->assign('risultati', $risultati);
             $this->smarty->assign('msg', $msg);

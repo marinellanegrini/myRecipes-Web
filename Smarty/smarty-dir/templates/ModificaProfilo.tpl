@@ -41,7 +41,6 @@
               <div class="form-group col-md-6"> <label for="form20" class="text-dark">Confirm Password</label> <input type="password" name="confpass" value="{$utente->getPassword()}" class="form-control" id="form20" placeholder="••••"> </div>
             </div>
             <br>
-            <div class="row"><label class="text-dark">Inserire foto profilo :  </label><input class="text-dark" type="file" name="immagine" class=" ml-3"></div>
 
             <button type="submit" class="btn btn-primary mt-4">Modifica</button>
           </form>
