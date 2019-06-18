@@ -26,7 +26,6 @@ class VProfilo
             $utente->setImmagine($img);
         }
 
-
         $this->smarty->assign('utente', $utente);
         $this->smarty->display('Profilo.tpl');
 

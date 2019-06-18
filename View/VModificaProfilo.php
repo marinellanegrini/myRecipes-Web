@@ -145,7 +145,6 @@ class VModificaProfilo
             $dati['cognome'] = $_POST['cognome'];
         }
 
-
         return $dati;
 
     }

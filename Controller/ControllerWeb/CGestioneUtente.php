@@ -209,9 +209,7 @@ class CGestioneUtente
 
                 //redirect alla form di login
                 header('Location: /myRecipes/web/Utente/Login');
-
             }
-
         }
         else {
             header('HTTP/1.1 405 Method Not Allowed');
@@ -245,6 +243,7 @@ class CGestioneUtente
             $utente->setUsername($dati['username']);
             $utente->setEmail($dati['email']);
             $utente->setPassword($dati['password']);
+
 
 
             $esito = $pm->updateDiUtente($utente);
