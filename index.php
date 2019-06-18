@@ -1,5 +1,6 @@
 <?php
 include 'autoload.inc.php';
+include_once 'Installation.php';
 
 
 if(Installation::VerifyInstallation()){ //si verifica se l'installazione è stata già fatta
