@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 
-  <script language="JavaScript"> function myFunction()
+  <script language="JavaScript"> function ingrediente()
     {
-        $("#nuovoingrediente").append('<div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} {$cibi[cibo]->getUm()}</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" style="width: 50px;"></div></div>');
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select>{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getId()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta" value="" style="width: 50px;"></div></div>');
     }
   </script>
+
 
 </head>
 
@@ -118,6 +119,7 @@
 
             {section name=cibo loop=$cibi}
               <option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>
+            <div class="ml-5">{$cibi[cibo]->getNome()}</div>
             {/section}
 
           </select>
@@ -125,16 +127,25 @@
         <div class="ml-3"> Quantità: <input type="number" name="qta" value="" style="width: 50px;">
         </div>
 
-        <button class="btn bg-primary ml-5" type="button" onclick="myFunction()" style="border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;">
+
+
+        <button class="btn bg-primary ml-5" type="button" onclick="ingrediente()" style="border-top-left-radius: 30px;	border-bottom-left-radius: 30px;	border-top-right-radius: 30px;	border-bottom-right-radius: 30px;">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           <i class="fa fa-plus text-white" aria-hidden="true"></i>
         </button>
-      </div>
-    <div class="row">
-      <div class="ml-5">
-        <div id="nuovingredienti" style="" class="my-1"></div>
-      </div>
-    </div>
 
+        <div class="ml-5">
+          <a href="/myRecipes/web/Amministratore/InserisciCibo">L'ingrediente che cerchi non è presente? Clicca qui!
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="ml-5">
+          <div id="ingrediente" style="" class="my-1"></div>
+        </div>
+      </div>
 
     </div> Inserisci foto principale:<br><br>
     <input type="file" id="files"  name="immprincipale" class="ml-5 py-2" style="" required>
@@ -156,8 +167,7 @@
     <button type="submit" class="btn btn-primary btn-lg mb-3 mt-2 mr-5" style=""><b>Inserisci ricetta</b></button>
   </div>
   </form>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

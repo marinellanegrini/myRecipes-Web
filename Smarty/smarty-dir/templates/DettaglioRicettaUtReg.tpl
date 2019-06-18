@@ -173,23 +173,7 @@
       <div class="row">
         <div class="p-md-4 col-lg-12">
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
-          <div class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner bg-light" role="listbox">
-              <div class="carousel-item p-5">
-                <div class="blockquote text-muted mb-0 px-">
-                  <p class="mb-0">#2 Blockquoute - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="blockquote-footer">Someone famous in My memories</div>
-                </div>
-              </div>
-              <div class="carousel-item p-5">
-                <div class="blockquote text-muted mb-0 px-">
-                  <p class="mb-0">#3 Blockquoute - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                  <div class="blockquote-footer">Someone famous in My memories</div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-          </div>
+
           <p class="text-dark">{$ricetta->getProcedimento()}</p>
         </div>
       </div>
@@ -255,7 +239,8 @@
         <div class="col-lg-12">
           <h3 class="py-2 text-dark">Inserisci commento:</h3>
           <form  method="post" action="/myRecipes/web/Ricette/Commento/{$ricetta->getId()}">
-            <div class="form-group"> <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Scrivi qui.."></textarea> </div>
+            <div class="form-group">
+              <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Scrivi qui.."></textarea> </div>
             <button type="submit" class="btn btn-primary my-2">Invia</button>
           </form>
         </div>

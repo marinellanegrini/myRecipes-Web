@@ -139,9 +139,7 @@
         <div class="p-md-4 col-lg-12">
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
           <div class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner bg-light" role="listbox">
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a>
-          </div>
+
           <p class="text-dark">{$ricetta->getProcedimento()}</p>
         </div>
       </div>
