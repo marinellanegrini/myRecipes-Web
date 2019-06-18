@@ -1,5 +1,5 @@
 <?php
-require '/Users/marinellanegrini/vendor/autoload.php';
+require '/Users/valeria/vendor/autoload.php';
 use \Firebase\JWT\JWT;
 
 class Token{
