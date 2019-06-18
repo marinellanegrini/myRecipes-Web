@@ -258,7 +258,7 @@ class CGestioneUtente
         $sessione = Sessione::getInstance();
         $pm = FPersistentManager::getInstance();
         $utente=$sessione->getUtente();
-        $view = new VModificaProfilo();
+        $view = new VProfilo();
         $fotoobj = $view->recuperaFoto();
         $fotoobj->setIdesterno($utente->getId());
         $esito = $pm->updateFoto($fotoobj);
