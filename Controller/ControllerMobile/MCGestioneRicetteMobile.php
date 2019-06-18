@@ -80,15 +80,20 @@ class MCGestioneRicetteMobile{
         // $view->mandaDati($utente aggiornato);
     }
 
-    public function Commento($idricetta) {
+    public function Commento() {
+
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+        $id=  $utente->getId();
         //dal token recupero i dati dell'utente
         $view = new VMobile();
         $json = $view->recuperaDati();
+        print_r($json);
         // convertire da json a ECommento
-        $pm = FPersistentManager::getInstance();
-       // $id = $pm->store($com);
-        // $utente = $pm->loadById("utente", $idutente);
-        // $view->mandaDati($utente aggiornato);
+        //$pm = FPersistentManager::getInstance();
+        //$id = $pm->store($json['testo']);
+        //$utente = $pm->loadById("utente", $id);
+        //$view->mandaDati($utente);
 
     }
 
@@ -99,7 +104,7 @@ class MCGestioneRicetteMobile{
         $view->mandaDati($cat);
     }
 
-    public function Homepage(){
+    public function Homepage($n){
         $view = new VMobile();
 
         $pm = FPersistentManager::getInstance();
@@ -110,12 +115,7 @@ class MCGestioneRicetteMobile{
             array_push($a,$i);
         }
         $b= array_combine(array_values($a),array_values($a));
-        $id= array_rand($b,8);
-        //$ids= array_rand($b,3);
-
-
-
-        //$ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
+        $id= array_rand($b,$n);
         $ricette = $pm->loadAllByIds("ricetta",$id);
         $view->mandaDati($ricette);
 
