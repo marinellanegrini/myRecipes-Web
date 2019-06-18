@@ -36,7 +36,7 @@ class FImgUtente extends FDatabase
      */
     public function getObjectFromRow($row){
 
-        $img = new EImmagine(base64_encode($row['data']), $row['type']);
+        $img = new EImmagine($row['data'], $row['type']);
         $img->setIdesterno($row['id_utente']);
         $img->setId($row['id']);
         return $img;
@@ -104,6 +104,19 @@ class FImgUtente extends FDatabase
             $this->db->rollBack();
             echo "Attenzione, errore: " . $e->getMessage();
             return null;
+        }
+    }
+
+    public function updateFoto($foto){
+        $idut=$foto->getIdesterno();
+        $imm = $this->loadByIdUtente($idut);
+        $idimm = $imm->getId();
+        $er=$this->update($idimm, "data", $foto->getData());
+        $esito = $this->update($idimm, "type", $foto->getType());
+        if($er && $esito){
+            return true;
+        } else {
+            return false;
         }
     }
 

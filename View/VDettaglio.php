@@ -29,6 +29,14 @@ class VDettaglio
         //passaggio a smarty per mostrare la ricetta (if per utenti loggati e non)
 
         $session = Sessione::getInstance();
+        $img=$ricetta->getImmagine();
+        $img->setData(base64_encode($img->getData()));
+        $ricetta->setImmagine($img);
+        $gallery = $ricetta->getImgpreparazione();
+        foreach ($gallery as $g){
+            $g->setData(base64_encode($g->getData()));
+        }
+        $ricetta->setImgpreparazione($gallery);
         if($session->isLoggedUtente()){
             // la ricetta mostrata avrà il cuore pieno o vuoto a seconda se la ricetta che stiamo mostrando è preferita
             // o no dall'utente (passiamo l'informazione a smarty che fa la if)

@@ -23,6 +23,18 @@ class VHomepage
      */
     public function mostraHomepageUtente($ricette, $ricettePrinc){
         $sessione = Sessione::getInstance();
+        foreach ($ricette as $ricetta)
+        {
+            $img=$ricetta->getImmagine();
+            $img->setData(base64_encode($img->getData()));
+            $ricetta->setImmagine($img);
+        }
+        foreach ($ricettePrinc as $princ)
+        {
+            $img=$princ->getImmagine();
+            $img->setData(base64_encode($img->getData()));
+            $princ->setImmagine($img);
+        }
         if($sessione->isLoggedUtente()){
             $this->smarty->assign('princimm',$ricettePrinc);
             $this->smarty->assign('ricette',$ricette);

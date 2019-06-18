@@ -144,20 +144,18 @@ class VModificaProfilo
         if(isset($_POST['cognome'])){
             $dati['cognome'] = $_POST['cognome'];
         }
-        if(isset($_FILES['immagine'])){
-
-            $tempname = $_FILES['immagine']['tmp_name'];
-            $foto = file_get_contents($tempname);
-            $foto = addslashes($foto);
-            $typefotop = $_FILES['immagine']['type'];
-            $fotoobj = new EImmagine($foto, $typefotop);
-            $dati['immagine'] = $fotoobj;
-
-        }
-
 
         return $dati;
 
+    }
+
+    public function recuperaFoto(){
+           $tempname = $_FILES['immagine']['tmp_name'];
+           $foto = file_get_contents($tempname);
+           $foto = addslashes($foto);
+           $typefotop = $_FILES['immagine']['type'];
+           $fotoobj = new EImmagine($foto, $typefotop);
+           return $fotoobj;
     }
 
 

@@ -24,6 +24,12 @@ class VRicerca
         //assegnazione a smarty per mostrare i cibi selezionabili (if per utenti loggati e non)
 
         $session = Sessione::getInstance();
+        foreach ($cibi as $cibo)
+        {
+            $img=$cibo->getImmagine();
+            $img->setData(base64_encode($img->getData()));
+            $cibo->setImmagine($img);
+        }
         if($session->isLoggedUtente()){
             $this->smarty->assign('cibi', $cibi);
             $this->smarty->display('Ricerca per IngredientiUtReg.tpl');
