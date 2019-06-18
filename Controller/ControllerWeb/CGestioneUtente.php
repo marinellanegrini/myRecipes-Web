@@ -15,11 +15,12 @@ class CGestioneUtente
 
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
+                header('Location: /myRecipes/web');
             } else {
                 $header = getallheaders();
-                $referer = $header['Referer']; //infirizzo che stavo visitando
+                $referer = $header['Referer']; //indirizzo che stavo visitando
                 $loc = substr($referer, strpos($referer, "/myRecipes")); //estrapolo la parte path della pagina che stavo visitando
-                $sessione->setPath($loc); //salvo nei dati di sessione il path
+                $sessione->setPath($loc); //salvo nei dati di sessione il path che stavo visitando
                 $view = new VLogin();
                 $view->mostraFormLogin("utente","");
             }
@@ -27,6 +28,7 @@ class CGestioneUtente
         else if($_SERVER['REQUEST_METHOD']=="POST"){
             if($sessione->isLoggedUtente()){
                 //redirect alla home page
+                header('Location: /myRecipes/web');
             } else {
                 $this->Entra();
             }
@@ -49,15 +51,16 @@ class CGestioneUtente
         $sessione = Sessione::getInstance();
         $id = $pm->esisteUtente($credenziali['username'],$credenziali['password']);
         if($id){
-            //login avvenuto con successo, mostrare la pagina che stava vedendo l'utente o la homepage se non stava vedendo pagine particolari
+            //login avvenuto con successo, mostrare la pagina che stava vedendo l'utente
+            // o la homepage se non stava vedendo pagine particolari
 
             //login utente avvenuto con successo, salvataggio nei dati di sessione
             $utente = $pm->loadById("utente", $id);
             $sessione->setUtenteLoggato($utente);
 
-            $location = $sessione->getPath();
+            $location = $sessione->getPath(); //recupero il path salvato precedentemente
             $sessione->removePath(); //cancello il path dai dati di sessione
-            header('Location: '.$location); //redirect
+            header('Location: '.$location); //redirect alla location precedente
         }
         else {
             $viewerr = new VLogin();
@@ -156,9 +159,11 @@ class CGestioneUtente
             $sessione->setUtenteLoggato($utente);
             if($esito){
                 //redirect a profilo utente aggiornato
+                header('Location: /myRecipes/web/Utente/Profilo');
             }
         } else {
             //redirect alla form di login
+            header('Location: /myRecipes/web/Utente/Login');
         }
     }
 
@@ -254,6 +259,9 @@ class CGestioneUtente
         }
     }
 
+    /**
+     * Modifica della foto profilo dell'utente
+     */
     public function ModificaFoto() {
         $sessione = Sessione::getInstance();
         $pm = FPersistentManager::getInstance();

@@ -1,6 +1,3 @@
-DROP DATABASE IF EXISTS myRecipes;
-CREATE DATABASE myRecipes CHARACTER SET ='utf8' COLLATE = 'utf8_general_ci';
-USE myRecipes;
 
 
 CREATE TABLE cibo (

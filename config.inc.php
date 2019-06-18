@@ -1,0 +1,1 @@
+<?php $database= 'ciao'; $username= 'root'; $password= 'pippo';?>

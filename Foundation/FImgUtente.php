@@ -107,6 +107,11 @@ class FImgUtente extends FDatabase
         }
     }
 
+    /**
+     * Aggiornamento della foto profilo dell'utente
+     * @param $foto
+     * @return bool
+     */
     public function updateFoto($foto){
         $idut=$foto->getIdesterno();
         $imm = $this->loadByIdUtente($idut);
