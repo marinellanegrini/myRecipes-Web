@@ -140,11 +140,13 @@
 
       </div>
 
-      <div class="row">
-        <div class="ml-5">
-          <div id="ingrediente" class="my-1"></div>
+
+        <div class="row">
+          <div class="ml-5">
+            <div id="ingrediente" class="my-1"></div>
+          </div>
         </div>
-      </div>
+
 
     </div> Inserisci foto principale:<br><br>
     <input type="file" id="files"  name="immprincipale" class="ml-5 py-2" style="" required>
