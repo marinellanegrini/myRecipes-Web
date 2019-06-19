@@ -27,13 +27,8 @@ class Installation
                 $errore = $errore." Cookie non abilitati";
                 $cookie = false;} //cookie non abilitati
             if(!$php || !$cookie){ // se uno dei requisiti non è verificato
-<<<<<<< HEAD:Installation.php
-                print_r("ciao");
-                $smarty->assign("errore", $errore);
-=======
-
                 $smarty->assign('errore', $errore);
->>>>>>> 9d8180e60b98896f101daa7723431b0413f7a80c:utility/Installation.php
+
                 $smarty->display('Installation.tpl'); // si mostra nuovamente il form di installazione con gli errori
             } else{ // ... ovvero requisti verificati
                 ////si eliminano i cookie
@@ -58,11 +53,9 @@ class Installation
             $db->exec($query);
             $db->commit();
             $file = fopen('config.inc.php', 'c+');
-<<<<<<< HEAD:Installation.php
-            $script = '<?php $host= \'127.0.0.1\'; $database= \'' . $_POST['nomedb'] . '\'; $username= \'' . $_POST['nomeutente'] . '\'; $password= \'' . $_POST['password'] . '\';?>';
-=======
+
             $script = '<?php $GLOBALS[\'database\']= \'' . $_POST['nomedb'] . '\'; $GLOBALS[\'username\']=  \'' . $_POST['nomeutente'] . '\'; $GLOBALS[\'password\']= \'' . $_POST['password'] . '\';?>';
->>>>>>> 9d8180e60b98896f101daa7723431b0413f7a80c:utility/Installation.php
+
             fwrite($file, $script);
             fclose($file);
             $db=null;
