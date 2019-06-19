@@ -31,6 +31,17 @@ class VProfilo
 
     }
 
+
+    public function recuperaFoto(){
+        $tempname = $_FILES['immagine']['tmp_name'];
+        $foto = file_get_contents($tempname);
+        $foto = addslashes($foto);
+        $typefotop = $_FILES['immagine']['type'];
+        $fotoobj = new EImmagine($foto, $typefotop);
+        return $fotoobj;
+    }
+
+
 }
 
 

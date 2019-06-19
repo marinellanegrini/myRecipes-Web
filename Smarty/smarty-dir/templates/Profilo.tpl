@@ -80,7 +80,7 @@
     <div class="row">
       <div class=" mx-auto col-lg-12 col-10">
         <h3 class="text-dark display-4"><strong><b>Profilo </b></strong><div class="row pull-right ">
-            <a class="btn btn-primary" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
+            <a class="btn btn-outline-dark" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
           </div></h3>
 
       </div>
@@ -110,7 +110,10 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <input class="text-dark" type="file" name="immagine" ><button type="submit" class="btn btn-primary mt-2 mb-3">Modifica foto</button>
+          <input class="text-dark" type="file" name="immagine" required>
+          <div class="mx-auto">
+            <button type="submit" class="btn btn-secondary mt-2 mb-3" >Modifica foto</button>
+          </div>
         </div>
 
         <div class="col-md-6 mt-3">

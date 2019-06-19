@@ -59,6 +59,10 @@ class FPersistentManager {
                 $fupr = new FUtPrefRic();
                 $ret = $fupr->loadById($id);
                 break;
+            case "imgutente":
+                $fiu = new FImgUtente();
+                $ret = $fiu->loadById($id);
+                break;
             default:
                 $ret = null;
         }
