@@ -13,10 +13,9 @@ class FRictoIngr
 
 	/** costruttore */
 	public function __construct() {
-        global $host,$database,$username,$password;
         try {
 
-            $this->db = new PDO ("mysql:dbname=$database;host=127.0.0.1", $username, $password);
+            $this->db = new PDO ("mysql:dbname=".$GLOBALS['database'].";host=127.0.0.1", $GLOBALS['username'], $GLOBALS['password']);
 
         }
         catch (PDOException $e) {

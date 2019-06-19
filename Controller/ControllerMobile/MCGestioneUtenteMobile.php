@@ -17,7 +17,9 @@ class MCGestioneUtenteMobile
             $t = Token::getInstance();
             $token = $t->generaToken($esito);
             header('X-Auth: '.$token);
+            $utente->codifica64();
             $view->mandaDati($utente);
+
         } else {
             header("HTTP/1.1 401 Unauthorized");
         }
@@ -47,7 +49,10 @@ class MCGestioneUtenteMobile
         if(!$id) {
             header("HTTP/1.1 500 Internal Server Error");
         } else {
-            $view->mandaDati($pm->loadById("utente", $id));
+            $utente = $pm->loadById("utente", $id);
+            $utente->codifica64();
+
+            $view->mandaDati($utente);
         }
     }
 
@@ -66,8 +71,8 @@ class MCGestioneUtenteMobile
 
         if($esito){
             $ut = $pm->loadById("utente", $utente->getId());
-            print_r($ut);
-           // $view->mandaDati($ut);
+            $ut->codifica64();
+            $view->mandaDati($ut);
         } else {
             header("HTTP/1.1 500 Internal Server Error");
         }

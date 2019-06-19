@@ -1,8 +1,8 @@
 <?php
 
-require '/Users/valeria/vendor/autoload.php';
-
+require './vendor/autoload.php';
 use \Firebase\JWT\JWT;
+
 
 class Token{
 

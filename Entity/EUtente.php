@@ -265,6 +265,19 @@ class EUtente implements JsonSerializable
         $this->_commento = array_values($this->_commento);
  	}}
 
+ 	public function codifica64() {
+		//foto profilo
+		$img=$this->getImmagine();
+		$img->setData(base64_encode($img->getData()));
+		$this->setImmagine($img);
+		//foto ricetta preferite
+		if($this->_preferito != null){
+			foreach ($this->_preferito as $ricetta) {
+				$ricetta->codifica64();
+			}
+		}
+
+	}
  	public function __toString(){
         $st="Id: ".$this->id." Nome: ".$this->nome." Cognome: ".$this->cognome." Username: ".$this->username." Email: ".$this->email." Stato: ".$this->stato."\nCommenti: \n";
         foreach($this->_commento as $comm){

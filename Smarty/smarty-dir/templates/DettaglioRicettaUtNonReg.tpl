@@ -29,7 +29,7 @@
           <a href="/myRecipes/web/Utente/Login">Login</a>
           <a href="/myRecipes/web/Amministratore/Login">Login amministratore</a>
           <a href="/myRecipes/web/Utente/Registrazione">Registrazione</a>
-          <a href="/myRecipes/Smarty/smarty-dir/templates/MeetTheThemeUtNonReg.html">Chi siamo</a>
+          <a href="/myRecipes/utility/MeetTheThemeUtNonReg.html">Chi siamo</a>
         </div>
       </div>
     </div>

@@ -306,6 +306,20 @@ class ERicetta implements JsonSerializable
         $this->nsalvataggi = $nsalvataggi;
     }
 
+
+    public function codifica64() {
+        //img principale
+        $img=$this->getImmagine();
+        $img->setData(base64_encode($img->getData()));
+        $this->setImmagine($img);
+        //gallery
+        $gallery = $this->getImgpreparazione();
+        foreach ($gallery as $g){
+            $g->setData(base64_encode($g->getData()));
+        }
+        $this->setImgpreparazione($gallery);
+    }
+
     public function __toString (){
         $ingr = "";
         foreach ($this->getIngredienti() as  $i) {
