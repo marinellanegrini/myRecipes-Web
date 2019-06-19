@@ -5,6 +5,10 @@ class MCGestioneRicetteMobile{
     public function RicercaPerIngredienti(){
         $pm = FPersistentManager::getInstance();
         $cibi = $pm->loadAllObjects();
+        foreach ($cibi as $cibo)
+        {
+            $cibo->codifica64();
+        }
         $view = new VMobile();
         $view->mandaDati($cibi);
 
@@ -22,18 +26,32 @@ class MCGestioneRicetteMobile{
     public function Avanzata(){
         $view = new VMobile();
         $filtri = $view->recuperaDati();
+
         $s = $filtri['tprep'];
-        if(strlen($s)>3){
+        if ($s == "Qualsiasi") {
+            $filtri['tprep'] = null;
+        } elseif (strlen($s)>3) {
             $a = explode("-",$s);
             $filtri['tprep'] = (int)$a[1];
         } else {
             $a = substr($s, 0, 2);
             $filtri['tprep'] = (int)$a+1;
         }
-        $filtri['diff'] = (int) $filtri['diff'];
-
+        if ($filtri['diff'] == "Qualsiasi") {
+            $filtri['diff'] = null;
+        } else {
+            $filtri['diff'] = (int) $filtri['diff'];
+        }
+        if ($filtri['cat'] == "Qualsiasi") {
+            $filtri['cat'] = null;
+        }
         $pm = FPersistentManager::getInstance();
         $ricette = $pm->ricercaTramiteFiltri($filtri);
+        if($ricette!=null){
+            foreach ($ricette as $ricetta){
+                $ricetta->codifica64();
+            }
+        }
         $view->mandaDati($ricette);
     }
 
@@ -42,6 +60,7 @@ class MCGestioneRicetteMobile{
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
+        $ricetta->codifica64();
         $view->mandaDati($ricetta);
     }
 
@@ -65,6 +84,7 @@ class MCGestioneRicetteMobile{
         $pm->update("ricetta",$idricetta,'nsalvataggi',$n); //aggiornamento ricetta db
         $esito =  $pm->storeUtPrefRic($idricetta,  $utente->getId());
         $utente = $pm->loadById("utente",  $utente->getId());
+        $utente->codifica64();
         $view = new VMobile();
         $view->mandaDati($utente);
     }
@@ -80,6 +100,7 @@ class MCGestioneRicetteMobile{
         $pm->update("ricetta", $idricetta, "nsalvataggi", $n);
         $esito = $pm->deleteUtPrefRic($idricetta, $utente->getId());
         $utente = $pm->loadById("utente", $utente->getId());
+        $utente->codifica64();
         $view = new VMobile();
         $view->mandaDati($utente); // utente aggiornato
     }
@@ -97,6 +118,7 @@ class MCGestioneRicetteMobile{
             header("HTTP/1.1 500 Internal Server Error");
         }
         $utente = $pm->loadById("utente", $utente->getId());
+        $utente->codifica64();
         $view->mandaDati($utente);
 
     }
@@ -121,6 +143,9 @@ class MCGestioneRicetteMobile{
         $b= array_combine(array_values($a),array_values($a));
         $id= array_rand($b,$n);
         $ricette = $pm->loadAllByIds("ricetta",$id);
+        foreach ($ricette as $ricetta){
+            $ricetta->codifica64();
+        }
         $view->mandaDati($ricette);
 
     }

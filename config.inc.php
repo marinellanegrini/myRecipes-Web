@@ -1,1 +1,0 @@
-<?php $host= '127.0.0.1'; $database= 'ciao'; $username= 'root'; $password= 'pippo';?>

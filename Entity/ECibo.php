@@ -93,6 +93,13 @@ class ECibo implements JsonSerializable
 	}
 
 
+	public function codifica64() {
+
+		$img=$this->getImmagine();
+		$img->setData(base64_encode($img->getData()));
+		$this->setImmagine($img);
+	}
+
     /**
      * Stampa le informazioni del cibo
      */
