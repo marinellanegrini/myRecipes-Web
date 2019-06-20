@@ -9,7 +9,7 @@
 
   <script language="JavaScript"> function ingrediente()
     {
-      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getId()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
     }
   </script>
 
@@ -123,8 +123,7 @@
 
           </select>
         </div>
-        <div class="ml-3"> Quantità: <input type="number" name="qta[]" value="" style="width: 50px;">
-        </div>
+        <div class="ml-3"> Quantità: <input type="number" name="qta[]" value="" style="width: 50px;"></div>
 
 
 
@@ -140,14 +139,14 @@
       </div>
 
 
-          <div class="container pull-left col-md-12 py-1 mt-1">
 
-            <div class="row">
-              <div class="ml-5">
-                <div id="ingrediente" class="my-1"></div>
-              </div>
-            </div>
-          </div>
+
+      <div class="row">
+        <div class="ml-5">
+          <div id="ingrediente" class="my-1"></div>
+        </div>
+      </div>
+
 
 
 
