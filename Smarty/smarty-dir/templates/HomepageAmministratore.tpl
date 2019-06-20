@@ -36,7 +36,13 @@
                 <h5 class="mb-1">{$commenti[commento].utente}</h5>
                 <small class="text-muted">{$commenti[commento].commento->getData()} {$commenti[commento].commento->getOra()}</small>
               </div>
-              <p class="mb-1">{$commenti[commento].commento->getTesto()}</p>
+              {if $commenti[commento].commento->isBannato() eq true}
+                <div class="text-secondary">
+                  <p> Questo commento è stato bannato</p>
+                </div>
+              {else}
+                <p> {$commenti[commento].commento->getTesto()}  </p>
+              {/if}
               <small class="text-muted">{$commenti[commento].ricetta}</small>
             </a>
           </div>

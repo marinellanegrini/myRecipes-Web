@@ -198,8 +198,15 @@
                   <span class="text-muted pull-right">
                     <small class="text-muted">{$commenti[commento].commento->getData()} <br> {$commenti[commento].commento->getOra()}</small>
                   </span>
-                      <strong class="text-secondary">{$commenti[commento].utente}</strong>
-                      <p> {$commenti[commento].commento->getTesto()}  </p>
+                      <strong class="text-secondary"><b>{$commenti[commento].utente}</b></strong>
+                      {if $commenti[commento].commento->isBannato() eq true}
+                        <div class="text-secondary">
+                          <p> Questo commento è stato bannato</p>
+                        </div>
+                        {else}
+                          <p> {$commenti[commento].commento->getTesto()}  </p>
+                      {/if}
+
                     </div>
                   </li>
                 {/section}
@@ -217,7 +224,7 @@
         <div class="col-lg-12">
           <h3 class="py-2 text-dark">Inserisci commento:</h3>
           <form method="post" action="/myRecipes/web/Ricette/Commento/{$ricetta->getId()}">
-            <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Scrivi qui.. "></textarea> </div> <button type="submit" class="btn btn-primary my-2">Invia</button>
+            <div class="form-group"> <textarea class="form-control" id="form30" rows="3" placeholder="Scrivi qui.. " required></textarea> </div> <button type="submit" class="btn btn-primary my-2">Invia</button>
           </form>
         </div>
       </div>

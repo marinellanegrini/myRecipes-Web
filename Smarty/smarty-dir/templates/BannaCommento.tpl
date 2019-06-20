@@ -32,17 +32,20 @@
 
 
         {section name=commento loop=$commenti}
-          <div class="form-check form-check-group pt-3 ">
-            <input id="checkbox10" type="checkbox" aria-labelledby="checkbox10-help" name="commenti[]" value="{$commenti[commento].commento->getId()}">
+          {if $commenti[commento].commento->isBannato() eq false}
+            <div class="form-check form-check-group pt-3 ">
+              <input id="checkbox10" type="checkbox" aria-labelledby="checkbox10-help" name="commenti[]" value="{$commenti[commento].commento->getId()}">
 
-            <label for="checkbox10" class="pl-2">{$commenti[commento].utente}</label>
-            <span class="text-muted pull-right">
+              <label for="checkbox10" class="pl-2">{$commenti[commento].utente}</label>
+              <span class="text-muted pull-right">
                     <small class="text-muted">{$commenti[commento].commento->getData()}  {$commenti[commento].commento->getOra()}</small>
                   </span>
-            <small id="checkbox10-help" class="form-text pl-4">{$commenti[commento].commento->getTesto()}</small>
+              <small id="checkbox10-help" class="form-text pl-4">{$commenti[commento].commento->getTesto()}</small>
 
-            <small class="text-muted pl-4">{$commenti[commento].ricetta}</small>
-          </div>
+              <small class="text-muted pl-4">{$commenti[commento].ricetta}</small>
+            </div>
+          {/if}
+
         {/section}
 
 

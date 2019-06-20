@@ -38,14 +38,12 @@
               <a class="nav-link active text-white" href="/myRecipes/web/Ricette/Preferiti">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link text-white" href="" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
-                Account
-                <i class="fa fa-user-o fa-fw" aria-hidden="true">
+              <a class="nav-link text-white" href="" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Profilo <i class="fa fa-user-o fa-fw" aria-hidden="true">
                 </i>
               </a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="/myRecipes/web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
-                <a class="dropdown-item" href="/myRecipes/web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+                <a class="dropdown-item" href="/myRecipes/web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica profilo</a>
                 
                 <a class="dropdown-item" href="/myRecipes/web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
               </div>
@@ -229,8 +227,15 @@
                   <span class="text-muted pull-right">
                     <small class="text-muted">{$commenti[commento].commento->getData()}  <br>  {$commenti[commento].commento->getOra()}</small>
                   </span>
-                    <strong class="text-secondary">{$commenti[commento].utente}</strong>
-                    <p> {$commenti[commento].commento->getTesto()}  </p>
+                    <strong class="text-secondary"><b>{$commenti[commento].utente}</b></strong>
+                    {if $commenti[commento].commento->isBannato() eq true}
+                      <div class="text-secondary">
+                       <p> Questo commento è stato bannato</p>
+                      </div>
+
+                    {else}
+                      <p> {$commenti[commento].commento->getTesto()}  </p>
+                    {/if}
                   </div>
                 </li>
               {/section}
@@ -248,7 +253,7 @@
           <h3 class="py-2 text-dark">Inserisci commento:</h3>
           <form  method="post" action="/myRecipes/web/Ricette/Commento/{$ricetta->getId()}">
             <div class="form-group">
-              <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Scrivi qui.."></textarea> </div>
+              <textarea name="testo" class="form-control" id="form30" rows="3" placeholder="Scrivi qui.." required></textarea> </div>
             <button type="submit" class="btn btn-primary my-2">Invia</button>
           </form>
         </div>
