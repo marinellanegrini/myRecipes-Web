@@ -174,7 +174,9 @@
         <div class="p-md-4 col-lg-12">
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
 
-          <p class="text-dark">{$ricetta->getProcedimento()}</p>
+          <div style="width:100%; height:140px; overflow-y: scroll;">
+            <p class="text-dark">{$ricetta->getProcedimento()}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -212,6 +214,9 @@
           <div class="panel-body text-dark">
             <br>
             <ul class="media-list">
+              <div align="center">
+                {$errore}
+              </div>
               {section name=commento loop=$commenti}
                 <li class="media py-2">
                   <a href=class="pull-left">

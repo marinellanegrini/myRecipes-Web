@@ -20,7 +20,7 @@
           <form action="/myRecipes/web/" align="left" method="post" enctype="multipart/form-data" class="ml-3 pt-3">
             <br>Nome del database: <input type="text" name="nomedb" class="ml-3 mt-2">
             <br> Nome utente: <input type="text" name="nomeutente" class="ml-3 mt-2">
-            <br> Password: <input type="text" name="password" class="ml-3 mt-2">
+            <br> Password: <input type="password" name="password" class="ml-3 mt-2">
             <br>
             <br>
             <button type="submit" style="" class="btn btn-primary btn-lg mr-2 mt-2"><b>Installa</b></button>

@@ -24,7 +24,7 @@ class VDettaglio
      * @param bool $preferita informazione se la ricetta è preferita o no dall'utente
      *
      */
-    public function mostraRicetta($ricetta, $preferita, $arrcommenti){
+    public function mostraRicetta($ricetta, $preferita, $arrcommenti,$errore){
 
         //passaggio a smarty per mostrare la ricetta (if per utenti loggati e non)
 
@@ -33,6 +33,8 @@ class VDettaglio
         $img->setData(base64_encode($img->getData()));
         $ricetta->setImmagine($img);
         $gallery = $ricetta->getImgpreparazione();
+
+
         foreach ($gallery as $g){
             $g->setData(base64_encode($g->getData()));
         }
@@ -41,6 +43,7 @@ class VDettaglio
             // la ricetta mostrata avrà il cuore pieno o vuoto a seconda se la ricetta che stiamo mostrando è preferita
             // o no dall'utente (passiamo l'informazione a smarty che fa la if)
             //passaggio ricetta a smarty per utente loggato piu informazione se la ricetta è preferita o no
+            $this->smarty->assign("errore",$errore);
             $this->smarty->assign("preferita",$preferita);
             $this->smarty->assign("ricetta",$ricetta);
             $this->smarty->assign("commenti",$arrcommenti);
@@ -49,6 +52,7 @@ class VDettaglio
 
         } else {
             //passaggio ricetta a smarty per utenti non loggati
+            $this->smarty->assign("errore",$errore);
             $this->smarty->assign("ricetta",$ricetta);
             $this->smarty->assign("commenti",$arrcommenti);
             $this->smarty->display("DettaglioRicettaUtNonReg.tpl");

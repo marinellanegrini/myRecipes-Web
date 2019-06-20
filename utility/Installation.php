@@ -16,6 +16,7 @@ class Installation
             setcookie('verificacookie', 'verifica', time() + 3600);
             $smarty->assign('errore', $errore);
             $smarty->display('Installation.tpl');
+
         } else{ //Metodo POST dopo la compilazione della form
             $php = true;
             $cookie=true;

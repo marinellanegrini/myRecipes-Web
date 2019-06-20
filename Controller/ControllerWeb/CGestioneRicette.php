@@ -123,11 +123,20 @@ class CGestioneRicette {
                 'commento'=>$commento
             );
             $arrcommenti[]=$tmp;
+
+        }
+
+        $errore="";
+        if($arrcommenti==null){
+            $errore="Non ci sono commenti per questa ricetta";
+        }
+        else{
+            $errore="";
         }
 
 
         $view = new VDettaglio();
-        $view->mostraRicetta($ricetta, $preferita,$arrcommenti);
+        $view->mostraRicetta($ricetta, $preferita,$arrcommenti,$errore);
     }
 
     /**
