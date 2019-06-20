@@ -214,8 +214,9 @@ class FDatabase
      * @return tuple recuperate
      *
      */
-	public function loadAll(){
-	    $query = "SELECT * FROM ".$this->table.";";
+	public function loadAll($attr){
+	    $orderby = " ORDER BY ".$attr;
+	    $query = "SELECT * FROM ".$this->table.$orderby.";";
         try {
             $this->db->beginTransaction();
             $stmt = $this->db->prepare($query);

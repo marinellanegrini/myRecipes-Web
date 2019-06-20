@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <title>Dettaglio Ricetta</title>
+  <title>{$ricetta->getNome()}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
@@ -140,8 +140,12 @@
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
 
             <div style="width:100%; height:140px; overflow-y: auto;">
+
           <p class="text-dark">{$ricetta->getProcedimento()}</p>
             </div>
+
+            </div>
+        </div>
 
       </div>
     </div>

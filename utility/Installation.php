@@ -20,6 +20,7 @@ class Installation
         } else{ //Metodo POST dopo la compilazione della form
             $php = true;
             $cookie=true;
+            $js = true;
             if(version_compare(PHP_VERSION, '7.0.0', '<')){
                 $errore = $errore." Versione di PHP inferiore a 7.0.0"; //versione minore di 7.0.0
                 $php = false;
@@ -27,13 +28,19 @@ class Installation
             if(!isset($_COOKIE['verificacookie'])){
                 $errore = $errore." Cookie non abilitati";
                 $cookie = false;} //cookie non abilitati
-            if(!$php || !$cookie){ // se uno dei requisiti non è verificato
+            if(!isset($_COOKIE['javascript'])){
+                $errore = $errore." Javascript non abilitato";
+                $js= false;
+            }
+            if(!$php || !$cookie || !$js){ // se uno dei requisiti non è verificato
+
                 $smarty->assign('errore', $errore);
 
                 $smarty->display('Installation.tpl'); // si mostra nuovamente il form di installazione con gli errori
             } else{ // ... ovvero requisti verificati
                 ////si eliminano i cookie
                 setcookie('verificacookie','',time()-3600);
+                setcookie('javascript','',time()-3600);
                 static::install();
 
                 header('Location: /myRecipes/web/');

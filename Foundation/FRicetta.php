@@ -297,7 +297,7 @@ class FRicetta extends FDatabase
 
     public function contaRicette()
     {
-        $rows= parent::loadAll();
+        $rows= parent::loadAll("id");
         return count($rows);
     }
 

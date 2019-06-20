@@ -484,7 +484,7 @@ class FPersistentManager {
     public function loadAllObjects(){
 
         $cib = new FCibo();
-        $ret = $cib->loadAll();
+        $ret = $cib->loadAll("nome");
         return $ret;
     }
 
@@ -565,7 +565,7 @@ class FPersistentManager {
 
     public function loadAllCategory() {
         $fc = new FCategoria();
-        $categorie = $fc->loadAll();
+        $categorie = $fc->loadAll("nome");
         return $categorie;
     }
 
