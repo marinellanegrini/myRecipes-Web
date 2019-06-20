@@ -34,6 +34,7 @@ class Installation
             if(!$php || !$cookie || !$js){ // se uno dei requisiti non è verificato
 
                 $smarty->assign('errore', $errore);
+
                 $smarty->display('Installation.tpl'); // si mostra nuovamente il form di installazione con gli errori
             } else{ // ... ovvero requisti verificati
                 ////si eliminano i cookie
@@ -41,7 +42,7 @@ class Installation
                 setcookie('javascript','',time()-3600);
                 static::install();
 
-                header('Location: /myRecipes/web');
+                header('Location: /myRecipes/web/');
             }
         }
     }
@@ -59,7 +60,9 @@ class Installation
             $db->exec($query);
             $db->commit();
             $file = fopen('config.inc.php', 'c+');
+
             $script = '<?php $GLOBALS[\'database\']= \'' . $_POST['nomedb'] . '\'; $GLOBALS[\'username\']=  \'' . $_POST['nomeutente'] . '\'; $GLOBALS[\'password\']= \'' . $_POST['password'] . '\';?>';
+
             fwrite($file, $script);
             fclose($file);
             $db=null;
