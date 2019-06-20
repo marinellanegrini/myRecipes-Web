@@ -9,7 +9,8 @@
 
   <script language="JavaScript"> function ingrediente()
     {
-      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} {$cibi[cibo]->getUm()}</option> {/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
+
     }
   </script>
 
@@ -31,6 +32,8 @@
     <textarea cols="100" name="procedimento" rows="5" class="ml-5 my-1" required></textarea>
     <br>Numero dosi:<br>
     <input type="number" name="ndosi" value="" class="ml-5 mt-1 " required><br>
+
+
     <br>Difficoltà: <br>
     <div class="py-2 ml-5 mt-1">
       <div class="form-check form-check-inline ">
