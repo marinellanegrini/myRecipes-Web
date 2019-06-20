@@ -124,7 +124,6 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 $view = new VInserimentoRicetta();
                 $dati = $view->recuperaDatiRicetta();
-                print_r($dati);
                 $cat = $pm->loadById("categoria", $dati['idcategoria']);
                 $ricetta = new ERicetta($dati['nome'], $dati['difficolta'], $dati['procedimento'], $dati['tprep'], $dati['ndosi'], $cat, 0);
                 $ricetta->setImmagine($dati['imgprinc']); //manca ancora l'id esterno (assegnato nella store di ERicetta quando facciamo store dell'immagine)
@@ -275,7 +274,7 @@ class CGestioneAmministratore
                 $id = $pm->store($ciboobj);
                 if($id){
                     //inserimento corretto redirect alla pagina di inserimento della ricetta
-                    header('Location: /myRecipes/web/Amministratore/InserisciRicetta');
+                    header('Location: /myRecipes/web');
                 }
                 else {
                     //errore inserimento cibo errata
