@@ -17,6 +17,7 @@ class Installation
             $smarty->assign('errore', $errore);
             $smarty->display('Installation.tpl');
 
+
         } else{ //Metodo POST dopo la compilazione della form
             $php = true;
             $cookie=true;
@@ -33,7 +34,6 @@ class Installation
                 $js= false;
             }
             if(!$php || !$cookie || !$js){ // se uno dei requisiti non è verificato
-
                 $smarty->assign('errore', $errore);
 
                 $smarty->display('Installation.tpl'); // si mostra nuovamente il form di installazione con gli errori
@@ -56,14 +56,25 @@ class Installation
         {
             $db = new PDO("mysql:host=127.0.0.1;", $_POST['nomeutente'], $_POST['password']);
             $db->beginTransaction();
-            $query = 'DROP DATABASE IF EXISTS ' .$_POST['nomedb']. '; CREATE DATABASE ' . $_POST['nomedb'] . " CHARACTER SET ='utf8' COLLATE = 'utf8_general_ci'" .' ; USE ' . $_POST['nomedb'] . ';';
-            $query = $query . file_get_contents('tables.sql');
+            $query = 'DROP DATABASE IF EXISTS ' .$_POST['nomedb']. '; CREATE DATABASE ' . $_POST['nomedb'] . '; USE ' . $_POST['nomedb'] . ';' . ' SET GLOBAL max_allowed_packet=13000000;';
+
+            $query = $query . file_get_contents('tables/tablespt1.sql');
             $db->exec($query);
             $db->commit();
+            $db->beginTransaction();
+            $query2 = file_get_contents('tables/tablespt2.sql');
+            $db->exec($query2);
+            $db->commit();
+            $db->beginTransaction();
+            $query3 = file_get_contents('tables/tablespt3.sql');
+            $db->exec($query3);
+            $db->commit();
+            $db->beginTransaction();
+            $query4 = file_get_contents('tables/tablespt4.sql');
+            $db->exec($query4);
+            $db->commit();
             $file = fopen('config.inc.php', 'c+');
-
             $script = '<?php $GLOBALS[\'database\']= \'' . $_POST['nomedb'] . '\'; $GLOBALS[\'username\']=  \'' . $_POST['nomeutente'] . '\'; $GLOBALS[\'password\']= \'' . $_POST['password'] . '\';?>';
-
             fwrite($file, $script);
             fclose($file);
             $db=null;

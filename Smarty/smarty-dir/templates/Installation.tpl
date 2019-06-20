@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
   <script language="JavaScript">
     function setcookie() {
-      console.log("ciao");
       var d = new Date();
       d.setTime(d.getTime() + 3600);
       document.cookie = "javascript=true; expires="+d.toUTCString()+";";

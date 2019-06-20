@@ -31,7 +31,7 @@ class FDatabase
 
 	    }
 	    catch (PDOException $e) {
-    	    echo "Errore: " . $e->getMessage();
+    	    echo "Erroreeee: " . $e->getMessage();
     	    die();
 		}
 	}
