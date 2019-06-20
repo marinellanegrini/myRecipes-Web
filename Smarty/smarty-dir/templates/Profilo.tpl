@@ -170,8 +170,16 @@
                   <small class="text-muted" style="">{$commenti[commento]->getOra()}</small>
                 </span><span class="text-muted pull-right"></span><span class="text-muted pull-right">
                 </span>
-              <p>{$commenti[commento]->getTesto()}</p>
-            </div><a class="btn btn-outline-light" href="/myRecipes/web/Utente/cancellaCommento/{$commenti[commento]->getId()}"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
+              {if $commenti[commento]->isBannato() eq true}
+                <div class="text-secondary">
+                  <p> Questo commento è stato bannato</p>
+                </div>
+              {else}
+                <p> {$commenti[commento]->getTesto()}  </p>
+              {/if}
+
+            </div>
+            <a class="btn btn-outline-light" href="/myRecipes/web/Utente/cancellaCommento/{$commenti[commento]->getId()}"><i class="fa fa-fw fa-trash text-dark fa-lg my-2" style=""></i></a>
           </li>
 
           {/section}
