@@ -135,8 +135,19 @@ class CGestioneUtente
     public function Profilo(){
         $sessione = Sessione::getInstance();
         if($sessione->isLoggedUtente()){
+            $utente = $sessione->getUtente();
+            $idutente = $utente->getId();
+            $pm = FPersistentManager::getInstance();
+            $ut = $pm->loadById("utente", $idutente);
+            $commenti = $ut->getCommenti();
+            if($commenti!=null){
+                $msg = "";
+            } else {
+                $msg = "Non hai inserito commenti.";
+            }
+
             $view = new VProfilo();
-            $view->mostraProfilo($sessione->getUtente());
+            $view->mostraProfilo($sessione->getUtente(), $msg);
         } else {
             //redirect alla form di login
             header('Location: /myRecipes/web/Utente/Login');

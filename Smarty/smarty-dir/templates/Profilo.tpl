@@ -58,12 +58,12 @@
             <a href="/myRecipes/web/Ricette/Preferiti" class="nav-link active text-white">Preferiti <i class="fa fa-heart-o fa-fw " aria-hidden="true"></i></a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Account <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
+            <a class="nav-link text-white" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Profilo <i class="fa fa-user-o fa-fw" aria-hidden="true"></i></a>
             <div class="dropdown-menu">
 
 
               <a class="dropdown-item" href="/myRecipes/web/Utente/Profilo"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i> Profilo </a>
-              <a class="dropdown-item" href="/myRecipes/web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica account</a>
+              <a class="dropdown-item" href="/myRecipes/web/Utente/ModificaProfilo"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> Modifica profilo</a>
 
               <a class="dropdown-item" href="/myRecipes/web/Utente/Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
 
@@ -132,15 +132,11 @@
           </div>
         </div>
 
-        <div class="col-md-6 mt-3">
-
-        </div>
-
       </div>
     </form>
   </div>
 
-<div class="py-3">
+<div class="pt-3">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -149,17 +145,15 @@
     </div>
   </div>
 </div>
+<div class="alert text-dark" align="center"> {$msg} </div>
 <div class="">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <ul class="media-list">
-
           {$commenti=$utente->getCommenti()}
-
           {section name=commento loop=$commenti}
-
-          <li class="media py-2">
+            <li class="media py-2">
             <a href="#" class="pull-left" >
               <img class="cerchio" src="data:{$utente->getImmagine()->getType()};base64,{$utente->getImmagine()->getData()}">
             </a>
