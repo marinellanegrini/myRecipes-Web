@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <title>Lista Ricette</title>
+  <title>myRecipes</title>
   <!-- CSS dependencies -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
@@ -79,14 +79,14 @@
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <a href="/myRecipes/web/Ricette/Ricetta/4">
+                <a href="/myRecipes/web/Ricette/Ricetta/1">
                   <div class="view">
-                    <img class="d-block w-100" src='/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg' alt="First slide">
+                    <img class="d-block w-100" src='/myRecipes/Smarty/smarty-dir/templates/img/uova-sode.jpg' alt="First slide">
                     <div class="mask rgba-black-light"></div>
                   </div>
                   <div class="carousel-caption">
-                    <h5 class="h5-responsive">Primi piatti</h5>
-                    <h1>Carbonara</h1>
+                    <h5 class="h5-responsive">Secondi piatti</h5>
+                    <h1>Uova sode</h1>
                   </div>
                 </a>
 

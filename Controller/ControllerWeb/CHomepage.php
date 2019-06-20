@@ -48,15 +48,12 @@ class CHomepage
 
             $max= $pm->contaricetta();
             $a=array();
-            for ($i=1; $i<=$max; $i++){
-
-                array_push($a,$i);
+            for ($i=2; $i<=$max; $i++){
+                    array_push($a,$i);
             }
             $b= array_combine(array_values($a),array_values($a));
-            $id= array_rand($b,9);
+            $id= array_rand($b,8);
             $ids= array_rand($b,2);
-
-
 
             $ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
             $ricette = $pm->loadAllByIds("ricetta",$id);

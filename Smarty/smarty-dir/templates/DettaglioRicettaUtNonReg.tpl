@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- PAGE settings -->
-  <title>Dettaglio Ricetta</title>
+  <title>{$ricetta->getNome()}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
@@ -138,10 +138,15 @@
       <div class="row">
         <div class="p-md-4 col-lg-12">
           <h4 class="mb-3 text-dark"><b>Preparazione</b></h4>
-          <div class="carousel slide" data-ride="carousel">
+
+            <div style="width:100%; height:140px; overflow-y: auto;">
 
           <p class="text-dark">{$ricetta->getProcedimento()}</p>
+            </div>
+
+            </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -164,7 +169,7 @@
       </div>
     </div>
   </div>
-  <div class="">
+  <div class="pt-3">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-dark">
@@ -173,29 +178,32 @@
       </div>
     </div>
   </div>
-  <div class="py-2">
+  <div class="">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="panel-body text-dark">
             <br>
             <ul class="media-list">
+              <div align="center">
+                {$errore}
+              </div>
 
-
-              {section name=commento loop=$commenti}
-              <li class="media py-2">
-                <a href=class="pull-left">
-                  <img src="data:{$commenti[commento].img->getType()};base64,{$commenti[commento].img->getData()}" alt="" class="cerchio">
-                </a>
-                <div class="media-body px-2">
+                {section name=commento loop=$commenti}
+                  <li class="media py-2">
+                    <a class="pull-left">
+                      <img src="data:{$commenti[commento].img->getType()};base64,{$commenti[commento].img->getData()}" alt="" class="cerchio">
+                    </a>
+                    <div class="media-body px-2">
                   <span class="text-muted pull-right">
                     <small class="text-muted">{$commenti[commento].commento->getData()} <br> {$commenti[commento].commento->getOra()}</small>
                   </span>
-                  <strong class="text-secondary">{$commenti[commento].utente}</strong>
-                  <p> {$commenti[commento].commento->getTesto()}  </p>
-                </div>
-              </li>
-              {/section}
+                      <strong class="text-secondary">{$commenti[commento].utente}</strong>
+                      <p> {$commenti[commento].commento->getTesto()}  </p>
+                    </div>
+                  </li>
+                {/section}
+
 
             </ul>
           </div>

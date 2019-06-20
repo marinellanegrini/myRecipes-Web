@@ -123,11 +123,20 @@ class CGestioneRicette {
                 'commento'=>$commento
             );
             $arrcommenti[]=$tmp;
+
+        }
+
+        $errore="";
+        if($arrcommenti==null){
+            $errore="Non ci sono commenti per questa ricetta";
+        }
+        else{
+            $errore="";
         }
 
 
         $view = new VDettaglio();
-        $view->mostraRicetta($ricetta, $preferita,$arrcommenti);
+        $view->mostraRicetta($ricetta, $preferita,$arrcommenti,$errore);
     }
 
     /**
@@ -173,8 +182,10 @@ class CGestioneRicette {
             $utente = $pm->loadById("utente", $idutente);
             $session->setUtenteLoggato($utente);
             if($esito){
-                //inserimento corretto, redirect alla pagina dei preferiti dell'utente (o alla pagina corrente)
-                header('Location: /myRecipes/web/Ricette/Preferiti');
+                //inserimento corretto, redirect alla pagina corrente
+                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
+                $loc = substr($referer, strpos($referer, "/myRecipes"));
+                header('Location: '.$loc);
             }
             else {
                 $viewerr = new VErrore();
@@ -254,8 +265,12 @@ class CGestioneRicette {
             $utente = $pm->loadById("utente", $idutente);
             $session->setUtenteLoggato($utente);
             if($esito){
-                //rimozione corretta, redirect alla pagina dei preferiti dell'utente
-                header('Location: /myRecipes/web/Ricette/Preferiti');
+                //rimozione corretta, redirect alla pagina dei preferiti dell'utente se la rimozione avviene dai preferiti,
+                // redirect alla ricetta stessa se la rimozione avviene dalla ricetta
+                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
+                $loc = substr($referer, strpos($referer, "/myRecipes"));
+
+                header('Location: '.$loc);
 
             }
             else {

@@ -19,8 +19,8 @@ class FUtPrefRic
 
         }
         catch (PDOException $e) {
-    	echo "Errore: " . $e->getMessage();
-    	die();
+    	    echo "Errore: " . $e->getMessage();
+    	    die();
 		}
 	}
 

@@ -9,7 +9,7 @@
 
   <script language="JavaScript"> function ingrediente()
     {
-      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}" name="idcibi">{$cibi[cibo]->getId()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" value="" style="width: 50px;"></div></div>');
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
     }
   </script>
 
@@ -137,16 +137,21 @@
           <a href="/myRecipes/web/Amministratore/InserisciCibo">L'ingrediente che cerchi non è presente? Clicca qui!
           </a>
         </div>
-
       </div>
 
-      <div class="row">
-        <div class="ml-5">
-          <div id="ingrediente" class="my-1"></div>
-        </div>
-      </div>
 
-    </div> Inserisci foto principale:<br><br>
+          <div class="container pull-left col-md-12 py-1 mt-1">
+
+            <div class="row">
+              <div class="ml-5">
+                <div id="ingrediente" class="my-1"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div> Inserisci foto principale:<br><br>
     <input type="file" id="files"  name="immprincipale" class="ml-5 py-2" style="" required>
     <br>
     <br>Inserisci le foto del procedimento: <br><br>
@@ -156,9 +161,9 @@
     <br>
     <input type="file" name="gallery[]" class="ml-5 pb-2" required>
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2">
+    <input type="file" name="gallery[]" class="ml-5 pb-2" required>
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2">
+    <input type="file" name="gallery[]" class="ml-5 pb-2" required>
 
 
     <br>
