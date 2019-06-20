@@ -161,9 +161,9 @@
     <br>
     <input type="file" name="gallery[]" class="ml-5 pb-2" required>
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2">
+    <input type="file" name="gallery[]" class="ml-5 pb-2" required>
     <br>
-    <input type="file" name="gallery[]" class="ml-5 pb-2">
+    <input type="file" name="gallery[]" class="ml-5 pb-2" required>
 
 
     <br>

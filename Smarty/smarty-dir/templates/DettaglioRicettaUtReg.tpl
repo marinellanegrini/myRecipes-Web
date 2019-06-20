@@ -222,7 +222,7 @@
               </div>
               {section name=commento loop=$commenti}
                 <li class="media py-2">
-                  <a href=class="pull-left">
+                  <a class="pull-left">
                     <img src="data:{$commenti[commento].img->getType()};base64,{$commenti[commento].img->getData()}" alt="" class="cerchio">
                   </a>
                   <div class="media-body px-2">
