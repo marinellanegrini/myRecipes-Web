@@ -88,9 +88,14 @@ class FCategoria extends FDatabase
 
     }
 
-    public function loadAll()
+    /**
+     * Caricamento di tutte le categorie
+     * @param $attr colonna rispetto alla quale ordinare le tuple
+     * @return array|tuple|null
+     */
+    public function loadAll($attr)
     {
-        $array = parent::loadAll();
+        $array = parent::loadAll($attr);
         $a=array();
         if(($array!=null) && (count($array)>0)){
             foreach($array as $i){

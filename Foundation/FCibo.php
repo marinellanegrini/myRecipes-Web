@@ -100,14 +100,19 @@ class FCibo extends FDatabase{
 
     }
 
-    public function loadAll()
+    /**
+     * Caricamento di tutti i cibi
+     * @param $attr colonna rispetto alla quale ordinare le tuple
+     * @return array|tuple|null
+     */
+    public function loadAll($attr)
     {
-        $array = parent::loadAll();
+        $array = parent::loadAll($attr);
         $a=array();
         if(($array!=null) && (count($array)>0)){
             foreach($array as $i){
-                $comm=$this->getObjectFromRow($i);
-                array_push($a, $comm);
+                $c=$this->getObjectFromRow($i);
+                array_push($a, $c);
             }
             return $a;
         }

@@ -203,6 +203,7 @@ class CGestioneAmministratore
 
             } else {
                 //errore admin non loggato redirect form di login amministratore
+                header('Location: /myRecipes/web/Amministratore/Login');
             }
 
         }
@@ -243,9 +244,10 @@ class CGestioneAmministratore
                             $viewerr->mostraErrore("Il ban non è andato a buon fine");
                          }
                     }
+                    //redirect alla home page amministratore
                     header('Location: /myRecipes/web');
                 }
-                    //redirect alla home page amministratore
+
             } else {
                 //errore admin non loggato redirect form di login amministratore
                 header('Location: /myRecipes/web/Amministratore/Login');
@@ -272,8 +274,8 @@ class CGestioneAmministratore
                 $pm = FPersistentManager::getInstance();
                 $id = $pm->store($ciboobj);
                 if($id){
-                    //inserimento corretto redirect alla home page amministratore
-                    header('Location: /myRecipes/web');
+                    //inserimento corretto redirect alla pagina di inserimento della ricetta
+                    header('Location: /myRecipes/web/Amministratore/InserisciRicetta');
                 }
                 else {
                     //errore inserimento cibo errata

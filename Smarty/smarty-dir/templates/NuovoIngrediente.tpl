@@ -29,7 +29,7 @@
               <div class="row"> Unità di misura: <input type="text" name="um" class="ml-2">
               </div>
               <br>
-              <div class="row"> Foto relativa all'ingrediente: <input type="file"  name="imgcibo" class=" ml-3">
+              <div class="row"> Foto relativa all'ingrediente: <input type="file"  name="imgcibo" class=" ml-3" required>
               </div>
               <div class="row pull-right">
                 <button type="submit" class="btn btn-primary btn-lg mr-2 mt-2" align="" style=""><b>Inserisci</b></button>
