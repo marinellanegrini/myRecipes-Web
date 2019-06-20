@@ -8,6 +8,22 @@
   <title>Profilo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
+
+  <script type="text/javascript">
+
+    function conferma() {
+      alert('Hai scelto di eliminare il tuo profilo ...');
+      if (confirm('Sei sicuro di voler cancellare il tuo profilo?')) {
+        return false;
+      }
+      else
+        alert('Eliminazione annullata.'); {
+        return true;
+      }
+    }
+
+  </script>
+
 </head>
 
 <body class="bg-light" style="">
@@ -80,7 +96,7 @@
     <div class="row">
       <div class=" mx-auto col-lg-12 col-10">
         <h3 class="text-dark display-4"><strong><b>Profilo </b></strong><div class="row pull-right ">
-            <a class="btn btn-outline-dark" href="/myRecipes/web/Utente/CancellaUtente" style="">Cancella Profilo</a>
+            <a class="btn btn-outline-dark" href="/myRecipes/web/Utente/CancellaUtente" style="" onclick="return confirm('Sei sicuro di voler cancellare il tuo profilo?');" >Cancella Profilo</a>
           </div></h3>
 
       </div>
