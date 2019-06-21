@@ -122,8 +122,7 @@ INSERT INTO utente (nome,cognome,username,password,email,stato) VALUES
 ('Lorenzo','Colarossi','LoreCola','lorenzo97','lorenzo.colarossi@gmail.com',true),
 ('Oscar','Guerra','OscGue','oscar96','oscar.guerra@gmail.com',false),
 ('Valeria','Ioannucci','valeioan','ioannucciv','valeriaioannucci@yahoo.it',true),
-('Claudia','Recchia','claurecc','claudia97','claudiarecchia@live.it',false),
-('Antonio','De Cristofaris','antdec','anto97','antodecr@gmail.com',false);
+('Claudia','Recchia','claurecc','claudia97','claudiarecchia@live.it',false);
 
 /**
 * Inserimento dei dati nella tabella categoria
