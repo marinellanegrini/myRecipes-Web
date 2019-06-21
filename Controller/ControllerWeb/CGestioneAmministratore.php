@@ -40,7 +40,6 @@ class CGestioneAmministratore
 
     /**
      * Metodo che gestisce il login dell'amministratore
-     * L'amministratore entra con username=admin e password=pippo
      */
     public function Entra(){
         $view = new VLogin();
@@ -69,7 +68,7 @@ class CGestioneAmministratore
         $session = Sessione::getInstance();
         if($session->isLoggedAdmin()){
             $pm = FPersistentManager::getInstance();
-            $cibi =$pm->loadAllObjects();
+            $cibi =$pm->loadAllObjects(); //i cibi sono necessari perchè devono essere selezionati come ingredienti
             $view = new VGestioneAmministratore();
             $view->mostraFormInserimento($cibi);
         } else {
@@ -132,10 +131,11 @@ class CGestioneAmministratore
                 $arringr = array();
                 //costruzione array di ingredienti
                 foreach ($dati['ingredienti'] as $i){
+                    // se l'associazione cibo-quantita (cioè ingrediente) esiste gia recupero l'ingrediente dal db
                     if($idingr = $pm->esisteIngrediente($i['qta'],$i['idcibo'])){
                         $ingrediente = $pm->loadById("ingrediente", $idingr);
                         array_push($arringr, $ingrediente);
-                    } else {
+                    } else { //altrimenti recupero il cibo dal db e creo un nuovo ingrediente che salvo nel db
                         $cibo = $pm->loadById("cibo", $i['idcibo']);
                         $ingrediente = new EIngrediente($i['qta'], $cibo);
                         $lastinsert = $pm->store($ingrediente);
@@ -182,7 +182,7 @@ class CGestioneAmministratore
                 $commenti = $pm->ricercaCommenti($filtri['last'], $filtri['parola']);
 
                 $arrcommenti = array();
-                //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+                //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente', 'commento' e 'ricetta'
                 foreach ($commenti as $commento){
 
                     $id = $commento->getIdUtente();
@@ -214,10 +214,8 @@ class CGestioneAmministratore
     }
 
 
-
-
     /**
-     * Ban di un commento
+     * Ban di commenti il cui ID è stato inserito dall'amministratore
      */
     public function Banna()
     {

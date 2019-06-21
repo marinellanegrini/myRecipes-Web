@@ -51,9 +51,9 @@ class VGestioneAmministratore
      * Funzione per mostrare la form di inserimento di una ricetta
      */
     public function mostraFormInserimento($cibi){
+        //assegnazione a smarty per mostrare i filtri dell'inserimento ricetta
         $this->smarty->assign('cibi',$cibi);
         $this->smarty->display("NuovaRicetta.tpl");
-        //assegnazione a smarty per mostrare i filtri dell'inserimento ricetta
     }
 
     /**

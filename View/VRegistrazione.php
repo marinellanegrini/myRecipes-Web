@@ -26,7 +26,7 @@ class VRegistrazione
     }
 
     /**
-     * Funzione che verifica che la password e la conferma sono uguali
+     * Funzione che verifica che la password e la sua conferma siano uguali
      * @return bool esito validazione
      */
     private function validaPassword(){
@@ -38,7 +38,7 @@ class VRegistrazione
     }
 
     /**
-     * Funzione che verifica se l'username inserito è gia presente
+     * Funzione che verifica se l'username inserito è gia presente nel db
      * @return mixed esito
      */
     private function validaUsername(){
@@ -62,7 +62,7 @@ class VRegistrazione
     }
 
     /**
-     * Funzione che verifica se il nome inserito è conforme
+     * Funzione che verifica se il nome inserito è conforme (non deve contenere numeri)
      * @return mixed esito
      */
     private function validaNome(){
@@ -74,7 +74,7 @@ class VRegistrazione
     }
 
     /**
-     * Funzione che verifica se il cognome inserito è conforme
+     * Funzione che verifica se il cognome inserito è conforme (non deve contenere numeri)
      * @return mixed esito
      */
     private function validaCognome(){
@@ -86,7 +86,7 @@ class VRegistrazione
     }
 
     /**
-     * Validazione input registrazione
+     * Validazione input registrazione, usando la validazione specifica per i vari campi
      * @return string che mostra l'errore presentato, stringa vuota se non ci sono errori
      */
     public function validaInput(){

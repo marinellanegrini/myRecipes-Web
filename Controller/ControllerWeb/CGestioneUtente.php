@@ -7,6 +7,8 @@ class CGestioneUtente
     /**
      * Metodo per gestire il login utente
      * 1) Se la richiesta è GET, mostriamo la form di Login (se l'utente è loggato redirect alla home page)
+     * NB: Con richista GET salvo nei dati di sessione il path della pagina che stavo visitando, cosi quando l'utente fa
+     * SUBMIT (richiesta POST) lo recupero e posso reindirizzarlo alla pagina precedente
      * 2) Se la richiesta è POST richiamiamo il metodo Entra()
      */
     public function Login(){
@@ -104,7 +106,7 @@ class CGestioneUtente
     }
 
     /**
-     * Metodo che gestisce la registrazione dell'utente
+     * Metodo che gestisce la registrazione dell'utente, utilizzando la view VRegistrazione per gestire l'input dell'utente
      *
      */
     public function Registrati(){
@@ -112,8 +114,9 @@ class CGestioneUtente
         $errore = $view->validaInput();
         if($errore){
             $view->mostraFormRegistrazione($errore);
-        } else {
+        } else { //nessun errore
             $dati = $view->recuperaDati();
+            //istanzio e salvo un oggetto EUtente
             $u = new EUtente($dati['username'],$dati['password'],$dati['email'], $dati['nome'],$dati['cognome']);
             $pm = FPersistentManager::getInstance();
             $id = $pm->store($u);
@@ -248,19 +251,20 @@ class CGestioneUtente
             $dati = $view->recuperaDati();
 
             $pm = FPersistentManager::getInstance();
+            //aggiorno l'oggetto utente
             $utente->setNome($dati['nome']);
             $utente->setCognome($dati['cognome']);
             $utente->setUsername($dati['username']);
             $utente->setEmail($dati['email']);
             $utente->setPassword($dati['password']);
 
-
-
+            //salvo gli aggiormanenti sul db
             $esito = $pm->updateDiUtente($utente);
 
             if($esito){
+                //carico l'utente aggiornato
                 $ut = $pm->loadById("utente", $utente->getId());
-                $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente
+                $sessione->setUtenteLoggato($ut); //aggiorno l'oggetto utente nei dati di sessione
                 header('Location: /myRecipes/web/Utente/Profilo');
             } else {
                 $viewerr = new VErrore();
@@ -277,7 +281,8 @@ class CGestioneUtente
         $pm = FPersistentManager::getInstance();
         $utente=$sessione->getUtente();
         $view = new VProfilo();
-        $fotoobj = $view->recuperaFoto();
+        $foto = $view->recuperaFoto();
+        $fotoobj = new EImmagine($foto['dati'],$foto['type']);
         $fotoobj->setIdesterno($utente->getId());
         $esito = $pm->updateFoto($fotoobj);
         if($esito){

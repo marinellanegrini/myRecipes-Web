@@ -33,13 +33,16 @@ class VProfilo
     }
 
 
+    /**
+     * Funzione che recupera la foto inserita dall'utente
+     * @return array associativo
+     */
     public function recuperaFoto(){
-        $tempname = $_FILES['immagine']['tmp_name'];
-        $foto = file_get_contents($tempname);
-        $foto = addslashes($foto);
-        $typefotop = $_FILES['immagine']['type'];
-        $fotoobj = new EImmagine($foto, $typefotop);
-        return $fotoobj;
+        $tmpname = $_FILES['immagine']['tmp_name'];
+        $data = file_get_contents($tmpname);
+        $foto['dati'] = addslashes($data);
+        $foto['type'] = $_FILES['immagine']['type'];
+        return $foto;
     }
 
 

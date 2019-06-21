@@ -31,6 +31,8 @@
     <textarea cols="100" name="procedimento" rows="5" class="ml-5 my-1" required></textarea>
     <br>Numero dosi:<br>
     <input type="number" name="ndosi" value="" class="ml-5 mt-1 " required><br>
+
+
     <br>Difficoltà: <br>
     <div class="py-2 ml-5 mt-1">
       <div class="form-check form-check-inline ">

@@ -7,7 +7,8 @@
 class CFrontController
 {
     /**
-     * Metodo che dalla URL recupera il controllore da istanziare e il relativo metodo con parametro
+     * Metodo che dalla URL recupera il controllore da istanziare e il relativo metodo con eventuale parametro
+     * Controllo come prima cosa se il client che fa la richiesta è web o mobile
      * /myRecipes/web/controller/metodo/param
      */
     public function run()
@@ -42,7 +43,7 @@ class CFrontController
                     }
                 }
 
-            } else {
+            } else { //richiesta per la Homepage
                 $controller = new CHomepage();
                 $controller->impostaPagina();
             }

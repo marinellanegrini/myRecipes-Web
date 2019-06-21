@@ -6,7 +6,6 @@ class VHomepage
 {
     private $smarty;
 
-
     public function __construct()
     {
         $this->smarty = new Smarty();
@@ -18,7 +17,8 @@ class VHomepage
 
     /**
      * Comunica a smarty di mostrare il template di homepage utente passando 9 ricette da mostrare nella griglia
-     * @param $ricette da mostrare
+     * @param $ricette da mostrare nella griglia
+     * @param $ricettePrinc ricette in evidenza
      *
      */
     public function mostraHomepageUtente($ricette, $ricettePrinc){
@@ -62,10 +62,6 @@ class VHomepage
         $this->smarty->display('HomepageAmministratore.tpl');
     }
 
-    public function mostraTeamMember(){
-        $this->smarty->display('MeetTheThemeUtNonReg.html');
-
-    }
 
 
 
