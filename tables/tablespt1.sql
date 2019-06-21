@@ -282,7 +282,6 @@ INSERT INTO rictoingr(id_ricetta,id_ingrediente) VALUES
 (3,5),
 (3,6),
 (4,35),
-(4,5),
 (4,11),
 (4,7),
 (4,10),
