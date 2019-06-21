@@ -265,6 +265,9 @@ class EUtente implements JsonSerializable
         $this->_commento = array_values($this->_commento);
  	}}
 
+	/**
+	 * Metodo che codifica in base64 l'immagine del profilo dell'utente e le foto delle sue ricette preferite
+	 */
  	public function codifica64() {
 		//foto profilo
 		$img=$this->getImmagine();

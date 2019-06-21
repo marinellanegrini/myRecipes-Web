@@ -128,13 +128,17 @@ class ECommento implements JsonSerializable
     public function setStato(bool $b){
         $this->bannato = $b;
     }
+
     /**
-     * 
+     * Metodo per bannare un commento
      */
     public function banna(){
         $this->bannato = true;
     }
 
+    /**
+     * Stampa le informazioni relative ai commento
+     */
     public function __toString (){
     	$stringa="id: ".$this->id." testo: ".$this->testo." data: ".$this->data." ora: ".$this->ora."bannato: ".$this->bannato." id utente: ".$this->idutente." id ricetta: ".$this->idricetta;
     	return $stringa;

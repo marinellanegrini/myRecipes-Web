@@ -307,6 +307,9 @@ class ERicetta implements JsonSerializable
     }
 
 
+    /**
+     * Metodo che codifica in base64 sia l'immagine principale della ricetta sia la gallery relativa ad essa
+     */
     public function codifica64() {
         //img principale
         $img=$this->getImmagine();
@@ -320,6 +323,9 @@ class ERicetta implements JsonSerializable
         $this->setImgpreparazione($gallery);
     }
 
+    /**
+     * Stampa le informazioni della ricetta
+     */
     public function __toString (){
         $ingr = "";
         foreach ($this->getIngredienti() as  $i) {

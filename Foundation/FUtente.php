@@ -210,7 +210,7 @@ class FUtente extends FDatabase
 
     /**Metodo che trova l'immagine relativa a un utente
      * @param oggetto EUtente
-     * @return boolean
+     * @return bool|null esito
      **/
     public function updateUtente($utente){
 
@@ -227,6 +227,9 @@ class FUtente extends FDatabase
             }
     }
 
+    /**Metodo che conta gli utenti registrati
+     * @return boolean
+     **/
     public function contaUtentiRegistrati()
     {
         $query ="SELECT COUNT(id) AS n FROM ".$this->table.";";

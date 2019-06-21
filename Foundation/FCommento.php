@@ -211,6 +211,10 @@ class FCommento extends FDatabase
 
     }
 
+
+    /** Metodo che conta i tutti i commenti fatti
+     *
+     */
     public function contaCommenti()
     {
         $query ="SELECT COUNT(id) AS n FROM ".$this->table.";";

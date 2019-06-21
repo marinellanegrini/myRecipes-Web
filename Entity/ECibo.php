@@ -93,6 +93,9 @@ class ECibo implements JsonSerializable
 	}
 
 
+	/**
+	 * Metodo che codifica in base64 tutte le immagini dell'oggetto
+	 */
 	public function codifica64() {
 
 		$img=$this->getImmagine();
