@@ -19,7 +19,9 @@ class CFrontController
         array_shift($array);
         $client = $array[1];
 
-        if ($client == 'web') {
+
+
+       if ($client == 'web') {
             $count = count($array);
             if ($array[$count - 1] == null) {
                 unset($array[$count - 1]);
@@ -41,6 +43,11 @@ class CFrontController
                         header('HTTP/1.1 405 Method Not Allowed');
                         exit;
                     }
+                }else {
+
+                    $errore="Pagina non trovata";
+                    $view = new VErrore();
+                    $view->mostraErrore($errore);
                 }
 
             } else { //richiesta per la Homepage
@@ -48,7 +55,7 @@ class CFrontController
                 $controller->impostaPagina();
             }
 
-        } else {
+        } else if($client == 'api'){
             $count = count($array);
             if ($array[$count - 1] == null) {
                 unset($array[$count - 1]);
@@ -72,6 +79,12 @@ class CFrontController
 
 
             }
+        } else{
+
+            $errore="Pagina non trovata";
+            $view = new VErrore();
+            $view->mostraErrore($errore);
+
         }
     }
 
