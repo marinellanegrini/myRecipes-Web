@@ -529,7 +529,11 @@ class FPersistentManager {
 
     }
 
-
+    /**
+     * Aggiorna l'utente
+     * @param utente da modificare
+     * @return array di ECommento
+     */
     public function updateDiUtente($utente){
         $fu = new FUtente();
         $up = $fu->updateUtente($utente);
@@ -537,6 +541,10 @@ class FPersistentManager {
 
     }
 
+    /**
+     * Restituisce il numero di ricette caricate
+     * @return numero di ricette
+     */
     public function contaricetta()
     {
         $ricetta= new FRicetta();
@@ -544,6 +552,10 @@ class FPersistentManager {
         return $r;
     }
 
+    /**
+     * Restituisce il numero di ricette salvate
+     * @return numero di ricette salvate
+     */
     public function contaricetteSalvate()
     {
         $ricetta= new FRicetta();
@@ -551,24 +563,40 @@ class FPersistentManager {
         return $r;
     }
 
+    /**
+     * Restituisce il numero di utenti registrati
+     * @return numero di utenti registrati
+     */
     public function contautentiRegistrati(){
         $utente = new FUtente();
         $r = $utente->contaUtentiRegistrati();
         return $r;
     }
 
+    /**
+     * Restituisce il numero di utenti registrati
+     * @return numero di utenti registrati
+     */
     public function contacommenti(){
         $commento = new FCommento();
         $r = $commento->contaCommenti();
         return $r;
     }
 
+    /**
+     * Restituisce tutte le categorie
+     * @return nome delle varie categorie
+     */
     public function loadAllCategory() {
         $fc = new FCategoria();
         $categorie = $fc->loadAll("nome");
         return $categorie;
     }
 
+    /**
+     * Ritorna la foto aggiornata dell'utente
+     * @return boolean esito
+     */
     public function updateFoto($foto) {
         $fu = new FImgUtente();
        $esito= $fu->updateFoto($foto);
