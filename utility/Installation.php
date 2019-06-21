@@ -4,6 +4,12 @@ require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 class Installation
 {
 
+    /**
+     * Se non è mai stata fatta l'installazione parte questo metodo
+     *-GET (prima richiesta): si imposta un cookie temporaneo per verificare i cookie abilitati e si mostra il template di installazione
+     *-POST (dopo aver compilato la form): si verifica la versione PHP, se il client ha restituito il cookie inviato prima e se
+     *ha restituito il cookie inviato con JavaScript
+     */
     static function Begin()
     {
         $smarty = new Smarty();
@@ -38,9 +44,10 @@ class Installation
 
                 $smarty->display('Installation.tpl'); // si mostra nuovamente il form di installazione con gli errori
             } else{ // ... ovvero requisti verificati
-                ////si eliminano i cookie
+                //si eliminano i cookie
                 setcookie('verificacookie','',time()-3600);
                 setcookie('javascript','',time()-3600);
+                //si fa partire l'installazione e dopo si indirizza alla homepage
                 static::install();
 
                 header('Location: /myRecipes/web/');
@@ -49,7 +56,7 @@ class Installation
     }
 
     /**
-     * Funzione che provvede alla creazione del file config.inc.php per l'accesso al database e della creazione del database.
+     * Creazione del file config.inc.php che mantiene le credenziali del DB e esecuzione delle queries per la creazione del DB e il suo popolamento
      */
     static function install(){
         try
@@ -89,6 +96,10 @@ class Installation
         }
     }
 
+    /**
+     * Metodo che verifica se è stata gia fatta l'installazione, verificando se è presente il file di configurazione
+     * @return bool esito
+     */
     static function VerifyInstallation(): bool{
         if(file_exists('config.inc.php')) return true;
         else return false;

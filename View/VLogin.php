@@ -19,7 +19,7 @@ class VLogin
 
     /**
      * Funzione per recuperare le credenziali dell'utente/admin
-     * @return array
+     * @return array con le credenziali
      */
     public function recuperaCredenziali(){
         $credenziali = array();
@@ -31,6 +31,7 @@ class VLogin
     }
     /**
      * Funzione che comunica a Smarty di mostrare lo form di login, comunicando se è Login utente o amministratore
+     * (il template è lo stesso, ma i metodi associati al submit sono differenti)
      * @param $ruolo dell'utilizzatore dell'app
      */
     public function mostraFormLogin($ruolo,$errore){

@@ -31,7 +31,7 @@ class VRisultati
     }
 
     /**
-     * Metodo che recupera i filtri inseriti nella form
+     * Metodo che recupera i filtri inseriti nella form (si impostano a null i campi non inseriti dall'utente)
      * @return array associativo con i filtri
      */
     public function recuperaFiltri(){
@@ -57,6 +57,7 @@ class VRisultati
 
     /**
      * Metodo per recuperare il nome inserito nella barra di ricerca
+     * @return $nome inserito
      */
     public function recuperaNome(){
         $nome = "";
@@ -68,6 +69,8 @@ class VRisultati
 
     /**
      * Metodo per mostrare i risultati di una ricerca
+     * @param $risultati della ricerca
+     * @param $msg messaggio vuoto se ci sono ricette, non vuoto se non ci sono ricette
      */
     public function mostraRisultati($risultati, $msg){
 

@@ -22,9 +22,10 @@ class VDettaglio
      * Metodo che mostra la ricetta
      * @param ERicetta da mostrare
      * @param bool $preferita informazione se la ricetta è preferita o no dall'utente
+     * @param $arrcommenti array associativo con i commenti e info sugli utenti che li hanno pubblicati
      *
      */
-    public function mostraRicetta($ricetta, $preferita, $arrcommenti,$errore){
+    public function mostraRicetta($ricetta, $preferita, $arrcommenti, $errore){
 
         //passaggio a smarty per mostrare la ricetta (if per utenti loggati e non)
 
@@ -61,6 +62,11 @@ class VDettaglio
         }
     }
 
+
+    /**
+     * Metodo che recupera il commento inserito dall'utente alla ricetta
+     * @return mixed
+     */
     public function recuperaCommento(){
         $commento['testo'] = $_POST['testo'];
         date_default_timezone_set('CET');

@@ -1,7 +1,7 @@
 <?php
 require_once('Smarty/smarty-libs/libs/Smarty.class.php');
 
-/** class VErrore gestisce l'input/output per gli errori
+/** class VErrore gestisce output per gli errori
  */
 class VErrore
 {
@@ -16,6 +16,10 @@ class VErrore
         $this->smarty->setConfigDir('Smarty/smarty-dir/configs');
     }
 
+    /**
+     * Funzione per mostrare i vari errori
+     * @param $messaggio di errore
+     */
     public function mostraErrore($messaggio){
         $this->smarty->assign('messaggio',$messaggio);
         $this->smarty->display('Error.tpl');

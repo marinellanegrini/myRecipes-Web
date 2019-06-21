@@ -74,6 +74,9 @@ class Sessione
         $_SESSION['utente'] = $u;
     }
 
+    /**
+     * Metodo che provvede ad eliminare i dati di sessione (quando l'utente fa logout)
+     */
     public function logout(){
         if(session_status()==PHP_SESSION_NONE){
             session_start();
@@ -83,7 +86,7 @@ class Sessione
     }
 
     /**
-     * Metodo che salva nei dati di sessione che l'amministratore è loggato (quando il login amministratore ha successo
+     * Metodo che salva nei dati di sessione che l'amministratore è loggato (quando il login amministratore ha successo)
      */
     public function setAdminLoggato(){
         if(session_status()==PHP_SESSION_NONE){
@@ -92,6 +95,10 @@ class Sessione
         $_SESSION['amministratore'] = true;
     }
 
+    /**
+     * Metodo che salva nei dati di sessione il path che l'utente stava visitando prima di effettuare il login (redirect)
+     * @param $path
+     */
     public function setPath($path){
         if(session_status()==PHP_SESSION_NONE){
             session_start();
@@ -99,6 +106,10 @@ class Sessione
         $_SESSION['path'] = $path;
     }
 
+    /**
+     * Metodo che restituisce il path salvato nei dati di sessione
+     * @return mixed
+     */
     public function getPath(){
         if(session_status()==PHP_SESSION_NONE){
             session_start();
@@ -107,6 +118,10 @@ class Sessione
         return $path;
     }
 
+
+    /**
+     * Metodo che rimuove il path dai dati di sessione (appena l'utente effettua il login)
+     */
     public function removePath() {
         if(session_status()==PHP_SESSION_NONE){
             session_start();

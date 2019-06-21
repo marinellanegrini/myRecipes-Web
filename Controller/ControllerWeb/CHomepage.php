@@ -13,11 +13,10 @@ class CHomepage
         $sessione = Sessione::getInstance();
         $pm = FPersistentManager::getInstance();
         $view = new VHomepage();
-        if($sessione->isLoggedAdmin()){
+        if($sessione->isLoggedAdmin()){ //loggato come admin
             $commenti = $pm->recuperaUltimi5Commenti();
-
             $arrcommenti = array();
-            //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+            //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente', 'commento' e 'ricetta'
             foreach ($commenti as $commento){
 
                 $id = $commento->getIdUtente();
@@ -38,32 +37,24 @@ class CHomepage
             $c= $pm->contacommenti();
             $d= $pm->contaricetta();
 
-
-
             $view->mostraHomepageAdmin($commenti, $arrcommenti, $a, $b,$c,$d);
 
-
-        } else {
+        } else { //homepage per l'utente
             //ritorna il numero di ricette contenute nel db
-
             $max= $pm->contaricetta();
             $a=array();
             for ($i=2; $i<=$max; $i++){
                     array_push($a,$i);
             }
             $b= array_combine(array_values($a),array_values($a));
+            //estrapolo ids casuali
             $id= array_rand($b,8);
             $ids= array_rand($b,2);
-
+            //carico delle ricette casuali da mostrare nella homepage
             $ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
             $ricette = $pm->loadAllByIds("ricetta",$id);
             $view->mostraHomepageUtente($ricette, $ricettePrinc);
         }
     }
 
-    public function MostraTeam(){
-        $view = new VHomepage();
-        $view->mostraTeamMember();
-
-    }
 }

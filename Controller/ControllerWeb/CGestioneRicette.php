@@ -28,7 +28,7 @@ class CGestioneRicette {
     public function cercaPerIngredienti(){
         if(($_SERVER['REQUEST_METHOD']=="POST")){
             $view = new VRisultati();
-            $idCibi = $view->recuperaIngredienti();
+            $idCibi = $view->recuperaIngredienti(); //id di cibi selezionati dall'utente
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->ricercaTramiteIngrediente($idCibi);
             if($ricette!=null){
@@ -53,7 +53,7 @@ class CGestioneRicette {
     public function cercaAvanzata(){
         if(($_SERVER['REQUEST_METHOD']=="POST")){
             $view = new VRisultati();
-            $filtri = $view->recuperaFiltri();
+            $filtri = $view->recuperaFiltri(); //filtri inseriti dall'utente
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->ricercaTramiteFiltri($filtri);
             if($ricette!=null){
@@ -77,7 +77,7 @@ class CGestioneRicette {
     public function cercaDaNome(){
         if(($_SERVER['REQUEST_METHOD']=="POST")){
             $view = new VRisultati();
-            $nome = $view->recuperaNome();
+            $nome = $view->recuperaNome(); //nome inserito nella barra di ricerca
             $pm = FPersistentManager::getInstance();
             $ricette = $pm->search("ricetta", $nome, "nome");
             if($ricette!=null){
@@ -97,13 +97,15 @@ class CGestioneRicette {
     }
 
     /**
-     * Metodo che dato l'id della ricetta selezionata restituisce una ricetta
+     * Metodo che dato l'id della ricetta selezionata restituisce la ricetta
      * @param $id identificativo ricetta selezionata dall'utente
      */
     public function Ricetta($id){
         $pm = FPersistentManager::getInstance();
         $ricetta = $pm->loadById("ricetta",$id);
         $session = Sessione::getInstance();
+        //se l'utente è loggato si verifica se preferisce questa ricetta (cuore pieno o vuoto a seconda dei casi)
+        //se non è loggato sicuramente il cuore è vuoto
         if($session->isLoggedUtente()){
             $preferita = $pm->UtentePrefRic($id,$session->getUtente()->getId());
         } else {
@@ -111,7 +113,7 @@ class CGestioneRicette {
         }
         $commenti = $ricetta->getCommenti();
         $arrcommenti = array();
-        //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente' e 'commento'
+        //costruisco un array in cui ogni elemento è un array associativo con chiavi 'utente', 'commento' e 'img' profilo utente
         foreach ($commenti as $commento){
             $id = $commento->getIdUtente();
             $utente = $pm->loadById("utente",$id);
@@ -133,10 +135,8 @@ class CGestioneRicette {
         else{
             $errore="";
         }
-
-
         $view = new VDettaglio();
-        $view->mostraRicetta($ricetta, $preferita,$arrcommenti,$errore);
+        $view->mostraRicetta($ricetta, $preferita, $arrcommenti, $errore);
     }
 
     /**
@@ -178,14 +178,14 @@ class CGestioneRicette {
             $n = $ric->getNsalvataggi();
             $pm->update("ricetta",$idricetta,'nsalvataggi',$n); //aggiornamento ricetta db
             $esito =  $pm->storeUtPrefRic($idricetta, $idutente); //aggiunta di una entry
-            //devo aggiornare l'oggetto utente nei dati di sessione
+            //devo aggiornare l'oggetto utente nei dati di sessione (ha un nuovo preferito)
             $utente = $pm->loadById("utente", $idutente);
             $session->setUtenteLoggato($utente);
             if($esito){
                 //inserimento corretto, redirect alla pagina corrente
-                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
-                $loc = substr($referer, strpos($referer, "/myRecipes"));
-                header('Location: '.$loc);
+                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando quando ho aggiunto ai preferiti
+                $loc = substr($referer, strpos($referer, "/myRecipes")); //recupero parte path
+                header('Location: '.$loc); //reindirizzamento al referer
             }
             else {
                 $viewerr = new VErrore();
@@ -200,7 +200,7 @@ class CGestioneRicette {
 
     }
 
-     /** Metodo che permettte di gestire l'inserimento di un commento dell'utente (solo utenti loggati)
+     /** Metodo che permette di gestire l'inserimento di un commento dell'utente (solo utenti loggati)
      * @param $idricetta id ricetta commentata
      *
      */
@@ -212,10 +212,11 @@ class CGestioneRicette {
                 $commento = $view->recuperaCommento();
                 $utente = $session->getUtente();
                 $idutente = $utente->getId();
+                //costruzione di ECommento
                 $com = new ECommento($commento['testo'], $commento['data'], $commento['ora'], $idutente, $idricetta);
                 $pm = FPersistentManager::getInstance();
                 $id = $pm->store($com);
-                //devo aggiornare l'oggetto utente nei dati di sessione
+                //devo aggiornare l'oggetto utente nei dati di sessione (ha un nuovo commento)
                 $utente = $pm->loadById("utente", $idutente);
                 $session->setUtenteLoggato($utente);
                 if($id){
@@ -267,10 +268,10 @@ class CGestioneRicette {
             if($esito){
                 //rimozione corretta, redirect alla pagina dei preferiti dell'utente se la rimozione avviene dai preferiti,
                 // redirect alla ricetta stessa se la rimozione avviene dalla ricetta
-                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
-                $loc = substr($referer, strpos($referer, "/myRecipes"));
+                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando quando ho rimosso dai preferiti
+                $loc = substr($referer, strpos($referer, "/myRecipes")); //recupero parte path
 
-                header('Location: '.$loc);
+                header('Location: '.$loc); //reindirizzamento al referer
 
             }
             else {
