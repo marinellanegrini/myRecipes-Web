@@ -13,6 +13,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <script>
+    function ready() {
+      if (!navigator.cookieEnabled) {
+        alert('Devi abilitare i cookies per utilizzare il sito!');
+      }
+    }
+    document.addEventListener("DOMContentLoaded", ready);
+  </script>
+
 </head>
 
 <body class="bg-light" style="">
