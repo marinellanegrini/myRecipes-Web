@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Composer.html">\Composer</a></li>
+                                                        <li><a href="../namespaces/Firebase.html">\Firebase</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">441</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1536401878"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1536401878" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-145117358"></a>
+                                <a href="../namespaces/Composer.html" style="margin-left: 30px; padding-left: 0">Composer</a>
+            </div>
+            <div id="namespace-145117358" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-153455748"></a>
+                                <a href="../namespaces/Composer.Autoload.html" style="margin-left: 30px; padding-left: 0">Autoload</a>
+            </div>
+            <div id="namespace-153455748" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Composer.Autoload.ClassLoader.html">ClassLoader</a></li>
+                                                    <li class="class"><a href="../classes/Composer.Autoload.ComposerStaticInit27878558b82c4ff50bca254d85cd58fa.html">ComposerStaticInit27878558b82c4ff50bca254d85cd58fa</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-884725316"></a>
+                                <a href="../namespaces/Firebase.html" style="margin-left: 30px; padding-left: 0">Firebase</a>
+            </div>
+            <div id="namespace-884725316" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2103742640"></a>
+                                <a href="../namespaces/Firebase.JWT.html" style="margin-left: 30px; padding-left: 0">JWT</a>
+            </div>
+            <div id="namespace-2103742640" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Firebase.JWT.BeforeValidException.html">BeforeValidException</a></li>
+                                                    <li class="class"><a href="../classes/Firebase.JWT.ExpiredException.html">ExpiredException</a></li>
+                                                    <li class="class"><a href="../classes/Firebase.JWT.JWT.html">JWT</a></li>
+                                                    <li class="class"><a href="../classes/Firebase.JWT.SignatureInvalidException.html">SignatureInvalidException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CFrontController.html">CFrontController</a></li>
+                                                    <li class="class"><a href="../classes/CGestioneAmministratore.html">CGestioneAmministratore</a></li>
+                                                    <li class="class"><a href="../classes/CGestioneRicette.html">CGestioneRicette</a></li>
+                                                    <li class="class"><a href="../classes/CGestioneUtente.html">CGestioneUtente</a></li>
+                                                    <li class="class"><a href="../classes/CHomepage.html">CHomepage</a></li>
+                                                    <li class="class"><a href="../classes/ComposerAutoloaderInit27878558b82c4ff50bca254d85cd58fa.html">ComposerAutoloaderInit27878558b82c4ff50bca254d85cd58fa</a></li>
+                                                    <li class="class"><a href="../classes/ECategoria.html">ECategoria</a></li>
+                                                    <li class="class"><a href="../classes/ECibo.html">ECibo</a></li>
+                                                    <li class="class"><a href="../classes/ECommento.html">ECommento</a></li>
+                                                    <li class="class"><a href="../classes/EImmagine.html">EImmagine</a></li>
+                                                    <li class="class"><a href="../classes/EIngrediente.html">EIngrediente</a></li>
+                                                    <li class="class"><a href="../classes/ERicetta.html">ERicetta</a></li>
+                                                    <li class="class"><a href="../classes/EUtente.html">EUtente</a></li>
+                                                    <li class="class"><a href="../classes/FCategoria.html">FCategoria</a></li>
+                                                    <li class="class"><a href="../classes/FCibo.html">FCibo</a></li>
+                                                    <li class="class"><a href="../classes/FCommento.html">FCommento</a></li>
+                                                    <li class="class"><a href="../classes/FGalleryRicetta.html">FGalleryRicetta</a></li>
+                                                    <li class="class"><a href="../classes/FImgCibo.html">FImgCibo</a></li>
+                                                    <li class="class"><a href="../classes/FImgRicetta.html">FImgRicetta</a></li>
+                                                    <li class="class"><a href="../classes/FImgUtente.html">FImgUtente</a></li>
+                                                    <li class="class"><a href="../classes/FIngrediente.html">FIngrediente</a></li>
+                                                    <li class="class"><a href="../classes/FPersistentManager.html">FPersistentManager</a></li>
+                                                    <li class="class"><a href="../classes/FRicetta.html">FRicetta</a></li>
+                                                    <li class="class"><a href="../classes/FRictoIngr.html">FRictoIngr</a></li>
+                                                    <li class="class"><a href="../classes/FUtente.html">FUtente</a></li>
+                                                    <li class="class"><a href="../classes/FUtPrefRic.html">FUtPrefRic</a></li>
+                                                    <li class="class"><a href="../classes/Installation.html">Installation</a></li>
+                                                    <li class="class"><a href="../classes/MCGestioneRicetteMobile.html">MCGestioneRicetteMobile</a></li>
+                                                    <li class="class"><a href="../classes/MCGestioneUtenteMobile.html">MCGestioneUtenteMobile</a></li>
+                                                    <li class="class"><a href="../classes/Sessione.html">Sessione</a></li>
+                                                    <li class="class"><a href="../classes/Token.html">Token</a></li>
+                                                    <li class="class"><a href="../classes/VCommenti.html">VCommenti</a></li>
+                                                    <li class="class"><a href="../classes/VDettaglio.html">VDettaglio</a></li>
+                                                    <li class="class"><a href="../classes/VErrore.html">VErrore</a></li>
+                                                    <li class="class"><a href="../classes/VGestioneAmministratore.html">VGestioneAmministratore</a></li>
+                                                    <li class="class"><a href="../classes/VHomepage.html">VHomepage</a></li>
+                                                    <li class="class"><a href="../classes/VInserimentoRicetta.html">VInserimentoRicetta</a></li>
+                                                    <li class="class"><a href="../classes/VLogin.html">VLogin</a></li>
+                                                    <li class="class"><a href="../classes/VMobile.html">VMobile</a></li>
+                                                    <li class="class"><a href="../classes/VModificaProfilo.html">VModificaProfilo</a></li>
+                                                    <li class="class"><a href="../classes/VPreferiti.html">VPreferiti</a></li>
+                                                    <li class="class"><a href="../classes/VProfilo.html">VProfilo</a></li>
+                                                    <li class="class"><a href="../classes/VRegistrazione.html">VRegistrazione</a></li>
+                                                    <li class="class"><a href="../classes/VRicerca.html">VRicerca</a></li>
+                                                    <li class="class"><a href="../classes/VRisultati.html">VRisultati</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>FCommento</h1>
+                    <p><em>La classe FCommento fornisce la persistenza</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/FCommento.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_bind" class="">bind()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_getObjectFromRow" class="">getObjectFromRow()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_loadById" class="">loadById()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_loadAllByIds" class="">loadAllByIds()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_loadByIdRicetta" class="">loadByIdRicetta()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_loadByIdUtente" class="">loadByIdUtente()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_search" class="">search()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_ricercaCommenti" class="">ricercaCommenti()</a><br />
+                                                                    <a href="../classes/FCommento.html#method_contaCommenti" class="">contaCommenti()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Foundation.FCommento.html"><div class="path-wrapper">Foundation/FCommento.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Foundation</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper">\FDatabase</div>
+                                                                                                    <div class="namespace-wrapper">\FCommento</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Gruppo 7</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct() </pre>
+                <p><em></em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_bind" name="method_bind" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">bind()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">bind(  <span class="argument">$stmt</span>,   <span class="argument">$commento</span>) </pre>
+                <p><em>Metodo che effettua il bind degli attributi di
+ECommento, con i valori contenuti nella tabella commento</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$stmt </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$commento </td>
+                                <td><p>da salvare</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getObjectFromRow" name="method_getObjectFromRow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getObjectFromRow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getObjectFromRow(  <span class="argument">$row</span>) : \un</pre>
+                <p><em>Questo metodo crea un oggetto da una riga della tabella commento</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$row </td>
+                                <td><p>array che rappresenta una riga della tabella commento</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \un
+                                            &mdash; <p>oggetto di tipo ECommento</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadById" name="method_loadById" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">loadById()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadById(  <span class="argument">$id</span>) : \oggetto</pre>
+                <p><em>Permette di caricare un commento dal db</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$id </td>
+                                <td><p>del commento</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \oggetto
+                                            &mdash; <p>di tipo ECommento</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadAllByIds" name="method_loadAllByIds" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">loadAllByIds()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadAllByIds(  <span class="argument">$ids</span>) : array</pre>
+                <p><em>Load di commenti dal database dato un gruppo di id</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$ids </td>
+                                <td><p>array di ids degli oggetti da recuperare</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>di ECommento</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadByIdRicetta" name="method_loadByIdRicetta" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">loadByIdRicetta()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadByIdRicetta(  <span class="argument">$idricetta</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idricetta </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadByIdUtente" name="method_loadByIdUtente" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">loadByIdUtente()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadByIdUtente(  <span class="argument">$idutente</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$idutente </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_search" name="method_search" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">search()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">search(  <span class="argument">$val</span>,   <span class="argument">$attr</span>) </pre>
+                <p><em></em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$val </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$attr </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ricercaCommenti" name="method_ricercaCommenti" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">ricercaCommenti()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ricercaCommenti(  <span class="argument">$filtri</span>) : array</pre>
+                <p><em>Metodo che permette all&#039;amministratore di recuperare commenti da una parola nel testo e indicando il numero di commenti da ottenere</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$filtri </td>
+                                <td><p>array associativo che contiene i filtri inseriti per i commenti (NULL se nessun filtro è stato inserito)
+la componente 'ultimi' è un intero che rappresenta quanti commenti ottenere, 'parola' è la parola contenuta nel testo dei commenti che si vogliono ottenere</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>di ECommento recuperati secondo i filtri</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_contaCommenti" name="method_contaCommenti" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">contaCommenti()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">contaCommenti() </pre>
+                <p><em>Metodo che conta i tutti i commenti fatti</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">FCommento.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Foundation/FCommento.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Composer.html">\Composer</a></li>
+                                                                            <li><a href="../namespaces/Firebase.html">\Firebase</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on June 21st, 2019 at 11:08.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
