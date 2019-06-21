@@ -10,6 +10,17 @@
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
 </head>
 
+<script>
+
+  
+  function ready() {
+    if (!navigator.cookieEnabled) {
+      alert('Devi abilitare i cookies per utilizzare il sito!');
+    }
+  }
+  document.addEventListener("DOMContentLoaded", ready);
+</script>
+
 <body style="	background-image: url(/myRecipes/Smarty/smarty-dir/templates/img/carbonara.jpg);	background-position: top left;	background-size: cover;">
 
 <div class="alert">

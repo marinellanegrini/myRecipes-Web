@@ -7,6 +7,14 @@
     <title>Risultati Ricerca</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="/myRecipes/Smarty/smarty-dir/templates/css/wireframe.css">
+    <script>
+        function ready() {
+            if (!navigator.cookieEnabled) {
+                alert('Devi abilitare i cookies per utilizzare il sito!');
+            }
+        }
+        document.addEventListener("DOMContentLoaded", ready);
+    </script>
 </head>
 
 <body class="bg-light" style="">
