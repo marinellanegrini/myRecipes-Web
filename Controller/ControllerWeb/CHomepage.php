@@ -47,8 +47,10 @@ class CHomepage
                     array_push($a,$i);
             }
             $b= array_combine(array_values($a),array_values($a));
+
             //estrapolo ids casuali
-            $id= array_rand($b,8);
+            $id= array_rand($b,9);
+
             $ids= array_rand($b,2);
             //carico delle ricette casuali da mostrare nella homepage
             $ricettePrinc = $pm->loadAllByIds("ricetta",$ids);
