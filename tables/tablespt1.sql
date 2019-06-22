@@ -191,7 +191,7 @@ INSERT INTO cibo(nome, unitamisura) VALUES
 ('Pomodori','gr'),
 ('Prosciutto cotto','gr'),
 ('Olive nere','gr'),
-('Tonno sott''olio','gr'),
+('Tonno sott&#8217;olio','gr'),
 ('Cioccolato fondente','gr'),
 ('Lievito per dolci','gr'),
 ('Cacao','gr'),
