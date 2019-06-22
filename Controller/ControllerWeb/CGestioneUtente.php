@@ -61,7 +61,12 @@ class CGestioneUtente
 
             $location = $sessione->getPath(); //recupero il path salvato precedentemente
             $sessione->removePath(); //cancello il path dai dati di sessione
-            header('Location: '.$location); //redirect alla location precedente
+            if($location == '/myRecipes/utility/MeetTheThemeUtNonReg.html'){
+                header('Location: /myRecipes/utility/MeetTheThemeUtReg.html'); //redirect al chi siamo ut reg
+            } else {
+                header('Location: '.$location); //redirect alla location precedente
+            }
+
         }
         else {
             $viewerr = new VLogin();
