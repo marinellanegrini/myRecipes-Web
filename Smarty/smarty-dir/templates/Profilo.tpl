@@ -169,7 +169,9 @@
                   <p> Questo commento è stato bannato</p>
                 </div>
               {else}
+                <a href="/myRecipes/web/Ricette/Ricetta/{$commenti[commento]->getIdRicetta()}">
                 <p> {$commenti[commento]->getTesto()}  </p>
+                </a>
               {/if}
 
             </div>
