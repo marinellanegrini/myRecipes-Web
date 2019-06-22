@@ -1,1 +1,1 @@
-<?php $GLOBALS['database']= 'cia'; $GLOBALS['username']=  'root'; $GLOBALS['password']= 'pippo';?>
+<?php $GLOBALS['database']= 'univaq'; $GLOBALS['username']=  'root'; $GLOBALS['password']= 'pippo';?>
