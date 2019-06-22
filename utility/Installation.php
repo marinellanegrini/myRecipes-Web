@@ -24,7 +24,7 @@ class Installation
             $smarty->display('Installation.tpl');
 
 
-        } else{ //Metodo POST dopo la compilazione della form
+        } else { //Metodo POST dopo la compilazione della form
             $php = true;
             $cookie=true;
             $js = true;
@@ -34,7 +34,9 @@ class Installation
             }
             if(!isset($_COOKIE['verificacookie'])){
                 $errore = $errore." Cookie non abilitati";
-                $cookie = false;} //cookie non abilitati
+                $cookie = false;
+            } //cookie non abilitati
+
             if(!isset($_COOKIE['javascript'])){
                 $errore = $errore." Javascript non abilitato";
                 $js= false;
