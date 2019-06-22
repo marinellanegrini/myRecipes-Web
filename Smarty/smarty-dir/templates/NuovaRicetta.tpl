@@ -9,7 +9,11 @@
 
   <script language="JavaScript"> function ingrediente()
     {
+<<<<<<< HEAD
       $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}" >{$cibi[cibo]->getId()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div>');
+=======
+      $("#ingrediente").append('<br/><div class="row"><div class="ml-5"><select name="idcibi[]">{section name=cibo loop=$cibi}<option value="{$cibi[cibo]->getId()}">{$cibi[cibo]->getNome()} ({$cibi[cibo]->getUm()})</option>{/section}</select></div><div class="ml-3"> Quantità: <input type="number" name="qta[]" style="width: 50px;"></div></div>');
+>>>>>>> 05029282cea8a825cf2365149c040a2309e724dd
     }
   </script>
 
@@ -144,7 +148,7 @@
 
 
       <div class="row">
-        <div class="pull-left ml-2">
+        <div class="ml-2 pull-left">
           <div id="ingrediente" class="my-1"></div>
         </div>
       </div>

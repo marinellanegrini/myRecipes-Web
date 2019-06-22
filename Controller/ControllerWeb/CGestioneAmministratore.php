@@ -64,7 +64,7 @@ class CGestioneAmministratore
      * Funzione per avviare l'inserimento di una ricetta (mostrare form inserimento)
      * solo se l'admin è loggato, altrimenti redirect form di login amministratore
      */
-    public function InserisciRicetta(){
+    public function InserisciRicetta() {
         $session = Sessione::getInstance();
         if($session->isLoggedAdmin()){
             $pm = FPersistentManager::getInstance();
