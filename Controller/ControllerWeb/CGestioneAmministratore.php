@@ -130,14 +130,14 @@ class CGestioneAmministratore
 
                 $arringr = array();
                 //costruzione array di ingredienti
-                foreach ($dati['ingredienti'] as $i){
+                foreach ($dati['ingredienti'] as $c => $i){
                     // se l'associazione cibo-quantita (cioè ingrediente) esiste gia recupero l'ingrediente dal db
-                    if($idingr = $pm->esisteIngrediente($i['qta'],$i['idcibo'])){
+                    if($idingr = $pm->esisteIngrediente($i,$c)){
                         $ingrediente = $pm->loadById("ingrediente", $idingr);
                         array_push($arringr, $ingrediente);
                     } else { //altrimenti recupero il cibo dal db e creo un nuovo ingrediente che salvo nel db
-                        $cibo = $pm->loadById("cibo", $i['idcibo']);
-                        $ingrediente = new EIngrediente($i['qta'], $cibo);
+                        $cibo = $pm->loadById("cibo", $c);
+                        $ingrediente = new EIngrediente($i, $cibo);
                         $lastinsert = $pm->store($ingrediente);
                         $ingrediente = $pm->loadById("ingrediente", $lastinsert);
                         array_push($arringr, $ingrediente);
