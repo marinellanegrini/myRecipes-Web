@@ -19,8 +19,12 @@ class CGestioneUtente
                 //redirect alla home page
                 header('Location: /myRecipes/web');
             } else {
-                $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
-                $loc = substr($referer, strpos($referer, "/myRecipes")); //estrapolo la parte path della pagina che stavo visitando
+                if(isset($_SERVER['HTTP_REFERER'])) {
+                    $referer = $_SERVER['HTTP_REFERER']; //indirizzo che stavo visitando
+                    $loc = substr($referer, strpos($referer, "/myRecipes")); //estrapolo la parte path della pagina che stavo visitando
+                } else { //arrivo al login digitando dalla URL
+                    $loc = "/myRecipes/web";
+                }
                 $sessione->setPath($loc); //salvo nei dati di sessione il path che stavo visitando
                 $view = new VLogin();
                 $view->mostraFormLogin("utente","");
