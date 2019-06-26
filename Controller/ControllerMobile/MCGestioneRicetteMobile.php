@@ -73,6 +73,9 @@ class MCGestioneRicetteMobile{
         $utente = $t->getAuthUtente();
 
         $ricette = $utente->getPreferiti();
+        foreach ($ricette as $ricetta) {
+            $ricetta->codifica64();
+        }
         $view = new VMobile();
         $view->mandaDati($ricette);
     }

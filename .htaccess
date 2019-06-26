@@ -4,7 +4,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /myRecipes/index.php [L]
 
-
 </IfModule>
 
 <IfModule mod_headers.c>
