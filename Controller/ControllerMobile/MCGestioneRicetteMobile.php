@@ -56,12 +56,16 @@ class MCGestioneRicetteMobile{
     }
 
 
-    public function Ricetta($id) {
+    public function Ricetta($nome) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
-        $ricetta = $pm->loadById("ricetta",$id);
-        $ricetta->codifica64();
-        $view->mandaDati($ricetta);
+        $ricette = $pm->search("ricetta", $nome, "nome");
+        if($ricette!=null){
+            foreach ($ricette as $ricetta){
+                $ricetta->codifica64();
+            }
+        }
+        $view->mandaDati($ricette);
     }
 
     public function Preferiti() {

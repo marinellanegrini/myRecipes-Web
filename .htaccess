@@ -4,10 +4,6 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /myRecipes/index.php [L]
 
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
-
 
 </IfModule>
 

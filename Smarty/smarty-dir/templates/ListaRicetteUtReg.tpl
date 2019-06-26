@@ -44,7 +44,7 @@
 
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link text-white" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Profilo <i class="fa fa-user-o fa-fw" aria-hidden="true">
+              <a class="nav-link text-white" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Profilo <i class="fa fa-user-o fa-fw" aria-hidden="true">
                 </i>
               </a>
               <div class="dropdown-menu">
