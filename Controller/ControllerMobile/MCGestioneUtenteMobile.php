@@ -79,4 +79,12 @@ class MCGestioneUtenteMobile
 
     }
 
+    public function Utente($id) {
+        $pm = FPersistentManager::getInstance();
+        $utente = $pm->loadById("utente", $id);
+        $view = new VMobile();
+        $utente->codifica64();
+        $view->mandaDati($utente);
+    }
+
 }
