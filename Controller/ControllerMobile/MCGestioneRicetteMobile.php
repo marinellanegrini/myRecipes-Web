@@ -2,7 +2,7 @@
 
 class MCGestioneRicetteMobile{
 
-    public function RicercaPerIngredienti(){
+    public function Cibi(){
         $pm = FPersistentManager::getInstance();
         $cibi = $pm->loadAllObjects();
         foreach ($cibi as $cibo)
@@ -16,10 +16,14 @@ class MCGestioneRicetteMobile{
 
     public function PerIngredienti(){
         $view = new VMobile();
-        $json = $view->recuperaDati();
-        // convertire da json a array di id cibo
+        $ids = $view->recuperaDati();
         $pm = FPersistentManager::getInstance();
-        $ricette = $pm->ricercaTramiteIngrediente(/* arrayidcibo*/);
+        $ricette = $pm->ricercaTramiteIngrediente($ids);
+        if($ricette!=null){
+            foreach ($ricette as $ricetta){
+                $ricetta->codifica64();
+            }
+        }
         $view->mandaDati($ricette);
     }
 
@@ -55,8 +59,15 @@ class MCGestioneRicetteMobile{
         $view->mandaDati($ricette);
     }
 
+    public function Ricetta($id) {
+        $view = new VMobile();
+        $pm = FPersistentManager::getInstance();
+        $ricetta = $pm->loadById("ricetta",$id);
+        $ricetta->codifica64();
+        $view->mandaDati($ricetta);
+    }
 
-    public function Ricetta($nome) {
+    public function Nome($nome) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
         $ricette = $pm->search("ricetta", $nome, "nome");
@@ -67,7 +78,6 @@ class MCGestioneRicetteMobile{
         }
         $view->mandaDati($ricette);
     }
-
     public function Preferiti() {
         $t = Token::getInstance();
         $utente = $t->getAuthUtente();
