@@ -79,4 +79,23 @@ class MCGestioneUtenteMobile
 
     }
 
+    public function updateimmagine(){
+        $pm = FPersistentManager::getInstance();
+        $view = new VMobile();
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+        $json = $view->recuperaDati();
+        $json['data'] = base64_decode($json['data']);
+        $fotoobj = new EImmagine($json['data'],$json['type']);
+        $fotoobj->setIdesterno($utente->getId());
+        $esito = $pm->updateFoto($fotoobj);
+        if($esito){
+            $ut = $pm->loadById("utente", $utente->getId());
+            $ut->codifica64();
+            $view->mandaDati($ut);
+        } else {
+            header("HTTP/1.1 500 Internal Server Error");
+        }
+    }
+
 }
