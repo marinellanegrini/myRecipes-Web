@@ -79,12 +79,46 @@ class MCGestioneUtenteMobile
 
     }
 
+
+    public function updateimmagine(){
+        $pm = FPersistentManager::getInstance();
+        $view = new VMobile();
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+        $json = $view->recuperaDati();
+        $json['data'] = base64_decode($json['data']);
+        $fotoobj = new EImmagine($json['data'],$json['type']);
+        $fotoobj->setIdesterno($utente->getId());
+        $esito = $pm->updateFoto($fotoobj);
+        if($esito){
+            $ut = $pm->loadById("utente", $utente->getId());
+            $ut->codifica64();
+            $view->mandaDati($ut);
+        } else {
+            header("HTTP/1.1 500 Internal Server Error");
+        }
+    }
+
     public function Utente($id) {
         $pm = FPersistentManager::getInstance();
         $utente = $pm->loadById("utente", $id);
         $view = new VMobile();
         $utente->codifica64();
         $view->mandaDati($utente);
+
+    }
+
+    public function RimuoviCommento($idcommento){
+        //dal token recupero i dati dell'utente
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+        $pm = FPersistentManager::getInstance();
+        $ret1 = $pm->loadById("commento",$idcommento);
+        $pm->delete("commento", $idcommento);
+        $utente = $pm->loadById("utente", $utente->getId());
+        $utente->codifica64();
+        $view = new VMobile();
+        $view->mandaDati($utente); // utente aggiornato
     }
 
 }

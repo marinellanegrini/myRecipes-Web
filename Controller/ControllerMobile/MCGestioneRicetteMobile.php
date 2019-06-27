@@ -32,7 +32,7 @@ class MCGestioneRicetteMobile{
         $filtri = $view->recuperaDati();
 
         $s = $filtri['tprep'];
-        if ($s == "Qualsiasi") {
+        if ($s == null) {
             $filtri['tprep'] = null;
         } elseif (strlen($s)>3) {
             $a = explode("-",$s);
@@ -41,13 +41,8 @@ class MCGestioneRicetteMobile{
             $a = substr($s, 0, 2);
             $filtri['tprep'] = (int)$a+1;
         }
-        if ($filtri['diff'] == "Qualsiasi") {
-            $filtri['diff'] = null;
-        } else {
+        if ($filtri['diff'] !== null) {
             $filtri['diff'] = (int) $filtri['diff'];
-        }
-        if ($filtri['cat'] == "Qualsiasi") {
-            $filtri['cat'] = null;
         }
         $pm = FPersistentManager::getInstance();
         $ricette = $pm->ricercaTramiteFiltri($filtri);
@@ -59,6 +54,7 @@ class MCGestioneRicetteMobile{
         $view->mandaDati($ricette);
     }
 
+
     public function Ricetta($id) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
@@ -66,7 +62,7 @@ class MCGestioneRicetteMobile{
         $ricetta->codifica64();
         $view->mandaDati($ricetta);
     }
-
+    
     public function Nome($nome) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
@@ -78,6 +74,7 @@ class MCGestioneRicetteMobile{
         }
         $view->mandaDati($ricette);
     }
+
     public function Preferiti() {
         $t = Token::getInstance();
         $utente = $t->getAuthUtente();
