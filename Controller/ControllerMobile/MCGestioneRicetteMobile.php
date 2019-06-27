@@ -62,7 +62,7 @@ class MCGestioneRicetteMobile{
         $ricetta->codifica64();
         $view->mandaDati($ricetta);
     }
-    
+
     public function Nome($nome) {
         $view = new VMobile();
         $pm = FPersistentManager::getInstance();
