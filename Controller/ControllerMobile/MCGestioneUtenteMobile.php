@@ -87,12 +87,13 @@ class MCGestioneUtenteMobile
         $utente = $t->getAuthUtente();
         $json = $view->recuperaDati();
         $json['data'] = base64_decode($json['data']);
-        $fotoobj = new EImmagine($json['data'],$json['type']);
-        $fotoobj->setIdesterno($utente->getId());
+        $fotoobj = new EImmagine(addslashes($json['data']),$json['type']);
+        $fotoobj->setIdesterno($json['idesterno']);
         $esito = $pm->updateFoto($fotoobj);
         if($esito){
             $ut = $pm->loadById("utente", $utente->getId());
             $ut->codifica64();
+
             $view->mandaDati($ut);
         } else {
             header("HTTP/1.1 500 Internal Server Error");
