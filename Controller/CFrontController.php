@@ -16,7 +16,10 @@ class CFrontController
 
         $path = $_SERVER['REQUEST_URI'];
         $array = explode('/', $path);
+
+
         array_shift($array);
+
         $client = $array[1];
 
 

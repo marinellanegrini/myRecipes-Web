@@ -79,6 +79,7 @@ class MCGestioneUtenteMobile
 
     }
 
+
     public function updateimmagine(){
         $pm = FPersistentManager::getInstance();
         $view = new VMobile();
@@ -96,6 +97,15 @@ class MCGestioneUtenteMobile
         } else {
             header("HTTP/1.1 500 Internal Server Error");
         }
+    }
+
+    public function Utente($id) {
+        $pm = FPersistentManager::getInstance();
+        $utente = $pm->loadById("utente", $id);
+        $view = new VMobile();
+        $utente->codifica64();
+        $view->mandaDati($utente);
+
     }
 
 }

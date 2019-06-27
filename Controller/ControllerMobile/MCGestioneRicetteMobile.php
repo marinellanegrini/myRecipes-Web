@@ -2,7 +2,7 @@
 
 class MCGestioneRicetteMobile{
 
-    public function RicercaPerIngredienti(){
+    public function Cibi(){
         $pm = FPersistentManager::getInstance();
         $cibi = $pm->loadAllObjects();
         foreach ($cibi as $cibo)
@@ -16,10 +16,14 @@ class MCGestioneRicetteMobile{
 
     public function PerIngredienti(){
         $view = new VMobile();
-        $json = $view->recuperaDati();
-        // convertire da json a array di id cibo
+        $ids = $view->recuperaDati();
         $pm = FPersistentManager::getInstance();
-        $ricette = $pm->ricercaTramiteIngrediente(/* arrayidcibo*/);
+        $ricette = $pm->ricercaTramiteIngrediente($ids);
+        if($ricette!=null){
+            foreach ($ricette as $ricetta){
+                $ricetta->codifica64();
+            }
+        }
         $view->mandaDati($ricette);
     }
 
@@ -28,7 +32,7 @@ class MCGestioneRicetteMobile{
         $filtri = $view->recuperaDati();
 
         $s = $filtri['tprep'];
-        if ($s == "Qualsiasi") {
+        if ($s == null) {
             $filtri['tprep'] = null;
         } elseif (strlen($s)>3) {
             $a = explode("-",$s);
@@ -37,13 +41,8 @@ class MCGestioneRicetteMobile{
             $a = substr($s, 0, 2);
             $filtri['tprep'] = (int)$a+1;
         }
-        if ($filtri['diff'] == "Qualsiasi") {
-            $filtri['diff'] = null;
-        } else {
+        if ($filtri['diff'] !== null) {
             $filtri['diff'] = (int) $filtri['diff'];
-        }
-        if ($filtri['cat'] == "Qualsiasi") {
-            $filtri['cat'] = null;
         }
         $pm = FPersistentManager::getInstance();
         $ricette = $pm->ricercaTramiteFiltri($filtri);
@@ -64,11 +63,27 @@ class MCGestioneRicetteMobile{
         $view->mandaDati($ricetta);
     }
 
+    public function Nome($nome) {
+        $view = new VMobile();
+        $pm = FPersistentManager::getInstance();
+        $ricette = $pm->search("ricetta", $nome, "nome");
+        if($ricette!=null){
+            foreach ($ricette as $ricetta){
+                $ricetta->codifica64();
+            }
+        }
+        $view->mandaDati($ricette);
+    }
+
+
     public function Preferiti() {
         $t = Token::getInstance();
         $utente = $t->getAuthUtente();
 
         $ricette = $utente->getPreferiti();
+        foreach ($ricette as $ricetta) {
+            $ricetta->codifica64();
+        }
         $view = new VMobile();
         $view->mandaDati($ricette);
     }

@@ -319,7 +319,6 @@ class CGestioneUtente
             $utente = $session->getUtente();
             $idutente = $utente->getId();
             $pm = FPersistentManager::getInstance();
-            $ret1 = $pm->loadById("commento",$idcommento);
             $final = $pm->delete("commento", $idcommento);
 
             //devo aggiornare l'oggetto utente nei dati di sessione

@@ -133,6 +133,7 @@ class CGestioneAmministratore
                 foreach ($dati['ingredienti'] as $c => $i){
                     // se l'associazione cibo-quantita (cioè ingrediente) esiste gia recupero l'ingrediente dal db
                     if($idingr = $pm->esisteIngrediente($i, $c)){
+
                         $ingrediente = $pm->loadById("ingrediente", $idingr);
                         array_push($arringr, $ingrediente);
                     } else { //altrimenti recupero il cibo dal db e creo un nuovo ingrediente che salvo nel db
