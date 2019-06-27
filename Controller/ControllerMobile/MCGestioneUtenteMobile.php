@@ -108,4 +108,17 @@ class MCGestioneUtenteMobile
 
     }
 
+    public function RimuoviCommento($idcommento){
+        //dal token recupero i dati dell'utente
+        $t = Token::getInstance();
+        $utente = $t->getAuthUtente();
+        $pm = FPersistentManager::getInstance();
+        $ret1 = $pm->loadById("commento",$idcommento);
+        $pm->delete("commento", $idcommento);
+        $utente = $pm->loadById("utente", $utente->getId());
+        $utente->codifica64();
+        $view = new VMobile();
+        $view->mandaDati($utente); // utente aggiornato
+    }
+
 }

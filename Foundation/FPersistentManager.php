@@ -110,9 +110,7 @@ class FPersistentManager {
      */
     public function store($obj){
         $nameobj = get_class($obj);
-        $f = new $nameobj;
-        $id = $f->store($obj);
-        /*switch ($nameobj){
+        switch ($nameobj){
             case "ECategoria":
                 $fcat = new FCategoria();
                 $id = $fcat->store($obj);
@@ -139,7 +137,7 @@ class FPersistentManager {
                 break;
             default:
                 $id = false;
-        }*/
+        }
         return $id;
 
     }
